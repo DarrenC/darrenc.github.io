@@ -47,6 +47,7 @@
   - [Building C++ projects](#building-c-projects)
     - [CMake](#cmake)
     - [Quick summary](#quick-summary)
+    - [Build also with Ninja](#build-also-with-ninja)
     - [List of C++ Learning Topics initial](#list-of-c-learning-topics-initial)
   - [C++ Advanced Course Notes](#c-advanced-course-notes)
     - [Topics I need to know better](#topics-i-need-to-know-better)
@@ -619,6 +620,10 @@ This seems like a very good way of handling complex makefiles
 - § cmake . - builds the makefile
 - § make - executes makefile to create binary etc.
 - § ./hello - execute your file
+
+### Build also with Ninja
+
+ - https://dmerej.info/blog/post/chuck-norris-part-1-cmake-ninja/
 
 ------------------------------------------------------------------------
 
