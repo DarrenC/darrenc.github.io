@@ -20,7 +20,9 @@
     - [Load Testing](#load-testing)
     - [Restful Resources Testing - Postman and Newman](#restful-resources-testing---postman-and-newman)
 
-## Regrouping all old wiki testing articles
+## Interesting articles
+
+- How different companies do their testing - <https://github.com/abhivaikar/howtheytest>
 
 ## Selenium
 
