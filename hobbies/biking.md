@@ -34,3 +34,9 @@
         ingredients from Costco or similar (don't skimp on the quality
         or you may not be getting real maple syrup and honey) I probably
         get 100 gels worth.
+
+## Road bike stuff
+
+### Parts
+
+- Crankset Shimano 50/34 - <https://www.probikeshop.fr/route/transmission-pedaliers-pedaliers-c19.html?t=0&manId=31&catId=19&page=1&display_mode=3&sales=false&29=583&26=736>
