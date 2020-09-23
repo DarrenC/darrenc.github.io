@@ -1,4 +1,4 @@
-# Getting Started
+# Scala
 
 This page is now really old....
 
