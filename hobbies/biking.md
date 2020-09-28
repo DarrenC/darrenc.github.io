@@ -40,3 +40,7 @@
 ### Parts
 
 - Crankset Shimano 50/34 - <https://www.probikeshop.fr/route/transmission-pedaliers-pedaliers-c19.html?t=0&manId=31&catId=19&page=1&display_mode=3&sales=false&29=583&26=736>
+
+### Setup 
+
+- Setup of bars - angles etc. <https://cyclingtips.com/2018/09/how-to-set-up-road-bike-drop-handlebars-tips-guidelines/>
