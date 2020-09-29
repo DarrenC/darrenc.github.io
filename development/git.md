@@ -104,6 +104,14 @@ git config --global credential.helper wincred
 - Also on Win10 you might have issues with the windows credential
     manager when changing passwords -
     <https://cmatskas.com/how-to-update-your-git-credentials-on-windows/>
+    
+### SSH keys with git commands
+
+#### Git pull using an ssh key
+
+```bash
+git -c core.sshCommand="ssh -i ~/.ssh/id_rsa_sos_nightly" clone ssh://git@git.rnd.amadeus.net/~dcostello/otf-orchestrator.git otf-orchestrator-nightly
+```
 
 ### Long file paths workaround
 
