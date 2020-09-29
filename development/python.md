@@ -336,6 +336,10 @@ if [name == 'main':
 
 <http://flask.pocoo.org/>
 
+### Pandas & Matplotlib
+
+TODO - but see section below for infos.
+
 ### Notes from Evernote
 
 ### Articles To Read
@@ -348,7 +352,7 @@ if [name == 'main':
 
 - Python interview questions but also helpful tutorial -
     <https://www.codementor.io/python/tutorial/essential-python-interview-questions>
-
+      
 ### Topics List
 
 TODO - get from the book
@@ -808,3 +812,39 @@ a[:] # a copy of the whole array
 # There is also the step value, which can be used with any of the
 above: a[start:stop:step] # start through not past stop, by step
 ```
+
+## Data Visualization - Pandas and Matplotlib
+
+### Really simple example of reading a file into a panda dataframe then plotting it to a file
+
+Shows examples of 
+- custom separator
+- skipping rows
+- skipping whitespace
+- giving explicit column names
+- specifying a column to be a date
+
+```python
+#!/usr/bin/env python3
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('data/result.txt',
+                 sep='|',
+                 skiprows=2,
+                 names=['Baseline', 'microsecs_per_iter', 'iter_per_microsecs', 'date'],
+                 skipinitialspace=True,
+                 parse_dates=['date'])
+
+df.plot(x='date',
+        y='iter_per_microsecs',
+        kind='line')
+
+plt.savefig('baseline_report.png')
+```
+
+### Some links 
+
+- [Pandas docs - reading from types of files & streams](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html)
+  - [in particular text/csv](https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html)
