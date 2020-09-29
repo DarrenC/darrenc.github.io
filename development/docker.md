@@ -158,7 +158,9 @@ openapi2puml-test-image
 $ sudo docker run -v $PWD/examples:/openapi2puml/examples -it openapi2puml-test-image
 ```
 
-## Pushing an image to dockerhub
+## Working with Image Repositories (e.g. dockerhub
+
+### Pushing an image to dockerhub
 
 ```bash
 # Create an account on docker hub
@@ -168,3 +170,7 @@ $ docker login -u <username>
 $ docker tag openapi2puml-test-image:latest openapi2puml/openapi2puml:0.0.1
 $ docker push openapi2puml/openapi2puml:0.0.1
 ```
+
+### Getting a list of all the tags on dockerhub
+
+- <https://stackoverflow.com/questions/28320134/how-can-i-list-all-tags-for-a-docker-image-on-a-remote-registry>
