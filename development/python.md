@@ -89,7 +89,18 @@
 **Running with py, py3 etc.**
 TODO - works on win machine in work....
 
-### Installing venv (and pip too)
+
+### Virtual Environments
+
+- <https://realpython.com/python-virtual-environments-a-primer/>
+
+#### Venv in production
+
+It seems like venv can be a good thing to use in production environments also to avoid dependencies with other projects and impacting system level packages. 
+
+- [Reddit discussion on venv in prod](https://www.reddit.com/r/Python/comments/2grmnn/virtualenv_on_production/)
+
+#### Installing venv (and pip too)
 
 Command I used was:
 
@@ -125,10 +136,6 @@ PEP - Python Enhancement Proposal
 Python-Project dir - setup.py --python-project
 
 1. init.py
-
-## Virtual Environments
-
-- <https://realpython.com/python-virtual-environments-a-primer/>
 
 ## Python Advanced Training - ENV Setup
 
