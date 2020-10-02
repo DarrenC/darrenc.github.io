@@ -34,3 +34,14 @@
         ingredients from Costco or similar (don't skimp on the quality
         or you may not be getting real maple syrup and honey) I probably
         get 100 gels worth.
+
+## Road bike stuff
+
+### Parts
+
+- Crankset Shimano 50/34 - <https://www.probikeshop.fr/route/transmission-pedaliers-pedaliers-c19.html?t=0&manId=31&catId=19&page=1&display_mode=3&sales=false&29=583&26=736>
+
+### Setup 
+
+- Setup of bars - angles etc. <https://cyclingtips.com/2018/09/how-to-set-up-road-bike-drop-handlebars-tips-guidelines/>
+- Another bar setup - nice, with lots of pictures <https://blog.bikefit.com/adjusting-hand-position-in-bike-fitting/>

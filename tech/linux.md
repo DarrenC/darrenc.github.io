@@ -248,6 +248,23 @@ netstat -anp --inet
 
 - Using ssh-add to keep ssh passphrase in session -
     <https://kb.iu.edu/d/aeww>
+    
+#### links about using ssh agent & security
+
+- https://www.commandprompt.com/blog/security_considerations_while_using_ssh-agent/
+- https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login
+- https://linux.101hacks.com/unix/ssh-agent/
+- https://stackoverflow.com/questions/2205282/ssh-agent-and-crontab-is-there-a-good-way-to-get-these-to-meet
+- https://stackoverflow.com/questions/24495395/using-cron-with-ssh-keys
+- This one looks promising for a fully programatic way to do it by handling the ssh agent stuff on and off - https://www.akadia.com/services/ssh_agent.html
+- https://stackoverflow.com/questions/869589/why-ssh-fails-from-crontab-but-succedes-when-executed-from-a-command-line
+
+#### Some other articles about ssh login without password (NB - ssh agent solution is useful)
+
+- https://stackoverflow.com/questions/1595848/configuring-git-over-ssh-to-login-once
+- talks about keychain and -K option for restarts - https://stackoverflow.com/questions/21095054/ssh-key-still-asking-for-password-and-passphrase
+- https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login
+- https://stackoverflow.com/questions/12033249/ssh-agent-forwarding-inside-cron-jobs
 
 ### Cleaning Snaps
 

@@ -89,7 +89,18 @@
 **Running with py, py3 etc.**
 TODO - works on win machine in work....
 
-### Installing venv (and pip too)
+
+### Virtual Environments
+
+- <https://realpython.com/python-virtual-environments-a-primer/>
+
+#### Venv in production
+
+It seems like venv can be a good thing to use in production environments also to avoid dependencies with other projects and impacting system level packages. 
+
+- [Reddit discussion on venv in prod](https://www.reddit.com/r/Python/comments/2grmnn/virtualenv_on_production/)
+
+#### Installing venv (and pip too)
 
 Command I used was:
 
@@ -125,10 +136,6 @@ PEP - Python Enhancement Proposal
 Python-Project dir - setup.py --python-project
 
 1. init.py
-
-## Virtual Environments
-
-- <https://realpython.com/python-virtual-environments-a-primer/>
 
 ## Python Advanced Training - ENV Setup
 
@@ -329,6 +336,10 @@ if [name == 'main':
 
 <http://flask.pocoo.org/>
 
+### Pandas & Matplotlib
+
+TODO - but see section below for infos.
+
 ### Notes from Evernote
 
 ### Articles To Read
@@ -341,7 +352,7 @@ if [name == 'main':
 
 - Python interview questions but also helpful tutorial -
     <https://www.codementor.io/python/tutorial/essential-python-interview-questions>
-
+      
 ### Topics List
 
 TODO - get from the book
@@ -801,3 +812,39 @@ a[:] # a copy of the whole array
 # There is also the step value, which can be used with any of the
 above: a[start:stop:step] # start through not past stop, by step
 ```
+
+## Data Visualization - Pandas and Matplotlib
+
+### Really simple example of reading a file into a panda dataframe then plotting it to a file
+
+Shows examples of 
+- custom separator
+- skipping rows
+- skipping whitespace
+- giving explicit column names
+- specifying a column to be a date
+
+```python
+#!/usr/bin/env python3
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('data/result.txt',
+                 sep='|',
+                 skiprows=2,
+                 names=['Baseline', 'microsecs_per_iter', 'iter_per_microsecs', 'date'],
+                 skipinitialspace=True,
+                 parse_dates=['date'])
+
+df.plot(x='date',
+        y='iter_per_microsecs',
+        kind='line')
+
+plt.savefig('baseline_report.png')
+```
+
+### Some links 
+
+- [Pandas docs - reading from types of files & streams](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html)
+  - [in particular text/csv](https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html)

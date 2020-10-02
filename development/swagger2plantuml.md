@@ -53,11 +53,27 @@ through the logic
         mustache template
   - calling the mustache template to generate the plantuml code
 
+### Class building
+
+We get the list of Models and loop through each one
+- Super class: this is getting I guess the extended parent class but has different processing depending on if model is arrray model or impl TODO - understand this better
+- Class Members: getting the properties of the class but varies depending on ref properties or simple properties and a lot of refactoring is neeeded here 
+  - TODO: many repeated overloads without clear indication of what the override does
+- Child classes: getting child class relations here but not very clear about what this is and why it is needed... TODO - expand understanding of this one and especially why we don't have source class added here and instead do it in the relation building.
+
+### Interface building
+
+- Converts paths to Interfaces
+  - TODO - the way that the tags are used to determine Interface name means that we cannot decode the stripe spec for example since it doesn't use tags or ids.
+
+### Relation building
+
 ### My Notes
 
 - There are a lot of misplaced responsibilities in the current setup
   - The mustache utility also writes the plantuml file
     - this responsibility is not well placed and stops us using the generator for anything apart from generating files, we could never use it say a web app or as a service to stream back the generated puml code in text for example.
+
 
 ```plantuml
 Alice -> Bob: Authentication Request
