@@ -32,7 +32,7 @@
     - [Articles To Read](#articles-to-read)
     - [Lists of Useful Python Links](#lists-of-useful-python-links)
     - [Topics List](#topics-list)
-  - [Romain's Book from 1A Python training](#romains-book-from-1a-python-training)
+  - [Romain's Book](#romains-book)
     - [General Notes](#general-notes)
       - [functions](#functions)
       - [method](#method)
@@ -352,7 +352,7 @@ TODO - get from the book
 
 ------------------------------------------------------------------------
 
-## Romain's Book from 1A Python training
+## Romain's Book
 
 ### General Notes
 

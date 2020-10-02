@@ -170,7 +170,7 @@ There are 2 scenarios -
     made to the main repo.
 
 ```bash
-    git remote add upstream https://dcostello@rndwww.nce.amadeus.net/git/scm/sspfe/orchestrator-orc-api.git
+    git remote add upstream <upstream url>
     # To not commit the full merge do this
      git pull --no-commit --no-ff --no-tags --progress upstream +refs/pull-requests/2/merge
     # If you don't care do this
@@ -179,9 +179,6 @@ There are 2 scenarios -
 
 (This example is a bit more complicated since it doesn't actually merge
 the changes into local
-
-- <https://rndwww.nce.amadeus.net/confluence/pages/viewpage.action?pageId=110004908>
-- How to audit an open pull request with git commands (even if it isvery big). )
 
 ### Why don't I see all remote branches? Getting all branches when there are multiple remotes defined
 

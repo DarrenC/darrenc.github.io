@@ -127,7 +127,7 @@ sudo apt upgrade
 
 # List all packages, grep for a particular package. Version is also displayed.
 $ apt list
-$ apt list | grep amadeubuntu-vpn
+$ apt list | grep <packageName>
 $ apt list --installed
 $ apt list --upgradeable
 
@@ -146,7 +146,7 @@ $ apt show package_name
 ```bash
 # seeing a list of installed packages
 dpkg -l | less
-dpkg -l amadeubuntu-vpn
+dpkg -l <packageName>
 
 #To check whether a package is installed or not:
 

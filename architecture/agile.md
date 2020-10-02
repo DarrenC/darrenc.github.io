@@ -67,8 +67,6 @@ Intro Video - <http://www.youtube.com/watch?v=XU0llRltyFM>
 
 ### Training Notes
 
-Fabrice Galant - Trainer -> Works for Data4 - Was involved in the 1A Agile Transformation for AeTM
-
 ### Training Aims
 
 - Learn Agile Principles and Mindset
@@ -83,7 +81,7 @@ Scrum -> Framework
 - Question board
 - Niko Niko
 
-**Note** - in Amadeus we never MoSCoW requirements like we did in AIB
+**Note** - MoSCoW requirements could be important
 
 - Scrum Master -> Is a CHANGE AGENT - bringing change to the team
 
