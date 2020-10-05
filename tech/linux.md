@@ -14,6 +14,8 @@
     - [Checking Hardware Configuration](#checking-hardware-configuration)
     - [Checking network usage](#checking-network-usage)
     - [SSH tips](#ssh-tips)
+      - [links about using ssh agent & security](#links-about-using-ssh-agent--security)
+      - [Some other articles about ssh login without password (NB - ssh agent solution is useful)](#some-other-articles-about-ssh-login-without-password-nb---ssh-agent-solution-is-useful)
     - [Cleaning Snaps](#cleaning-snaps)
     - [FStab](#fstab)
     - [Managing Swap space](#managing-swap-space)
@@ -24,6 +26,11 @@
   - [Small Linux installs](#small-linux-installs)
     - [**Creating a boot USB key**](#creating-a-boot-usb-key)
   - [SED AWK](#sed-awk)
+    - [SED Stuff](#sed-stuff)
+      - [Simple SED examples](#simple-sed-examples)
+      - [SED - Adding stuff to the end of the line](#sed---adding-stuff-to-the-end-of-the-line)
+      - [Miscellaneous SED stuff](#miscellaneous-sed-stuff)
+    - [AWK Stuff](#awk-stuff)
   - [Annoying repeated - "System program problem detected" messages](#annoying-repeated---system-program-problem-detected-messages)
   - [Terminal Commands](#terminal-commands)
     - [Checking number of CPUs - lscpu](#checking-number-of-cpus---lscpu)
@@ -248,23 +255,23 @@ netstat -anp --inet
 
 - Using ssh-add to keep ssh passphrase in session -
     <https://kb.iu.edu/d/aeww>
-    
+
 #### links about using ssh agent & security
 
-- https://www.commandprompt.com/blog/security_considerations_while_using_ssh-agent/
-- https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login
-- https://linux.101hacks.com/unix/ssh-agent/
-- https://stackoverflow.com/questions/2205282/ssh-agent-and-crontab-is-there-a-good-way-to-get-these-to-meet
-- https://stackoverflow.com/questions/24495395/using-cron-with-ssh-keys
-- This one looks promising for a fully programatic way to do it by handling the ssh agent stuff on and off - https://www.akadia.com/services/ssh_agent.html
-- https://stackoverflow.com/questions/869589/why-ssh-fails-from-crontab-but-succedes-when-executed-from-a-command-line
+- <https://www.commandprompt.com/blog/security_considerations_while_using_ssh-agent/>
+- <https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login/>
+- <https://linux.101hacks.com/unix/ssh-agent/>
+- <https://stackoverflow.com/questions/2205282/ssh-agent-and-crontab-is-there-a-good-way-to-get-these-to-meet/>
+- <https://stackoverflow.com/questions/24495395/using-cron-with-ssh-keys/>
+- This one looks promising for a fully programatic way to do it by handling the ssh agent stuff on and off - <https://www.akadia.com/services/ssh_agent.html>
+- <https://stackoverflow.com/questions/869589/> why-ssh-fails-from-crontab-but-succedes-when-executed-from-a-command-line
 
 #### Some other articles about ssh login without password (NB - ssh agent solution is useful)
 
-- https://stackoverflow.com/questions/1595848/configuring-git-over-ssh-to-login-once
-- talks about keychain and -K option for restarts - https://stackoverflow.com/questions/21095054/ssh-key-still-asking-for-password-and-passphrase
-- https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login
-- https://stackoverflow.com/questions/12033249/ssh-agent-forwarding-inside-cron-jobs
+- <https://stackoverflow.com/questions/1595848/configuring-git-over-ssh-to-login-once>
+- talks about keychain and -K option for restarts - <https://stackoverflow.com/questions/21095054/ssh-key-still-asking-for-password-and-passphrase>
+- <https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login>
+- <https://stackoverflow.com/questions/12033249/ssh-agent-forwarding-inside-cron-jobs>
 
 ### Cleaning Snaps
 
@@ -442,18 +449,44 @@ activate the partition.
 
 ## SED AWK
 
-- SED documentation -
-    <http://www.tldp.org/LDP/Bash-Beginners-Guide/html/chap_05.html>
-- AWK documentation -
-    <http://www.tldp.org/LDP/Bash-Beginners-Guide/html/chap_06.html>
+- [Explanation of SED vs AWK](https://www.makeuseof.com/tag/sed-awk-learn/)
+
+### SED Stuff
+
+- SED documentation - <http://www.tldp.org/LDP/Bash-Beginners-Guide/html/chap_05.html>
+- Better SED examples -
+  - [Grymoire tutorial](https://www.grymoire.com/Unix/Sed.html#uh-53)
+  - [GNU SED manual](https://www.gnu.org/software/sed/manual/sed.html)
+    - Examples - <https://www.gnu.org/software/sed/manual/sed.html#Joining-lines>
+
+#### Simple SED examples
 
 ```bash
-# Delete everything between UNB and UNZ lines for all *.err files, creating a backup .bak for each one and modifying the original
-sed -i.bak '/UNB/,/UNZ/d' *.err
+# Delete everything between BEGIN and END lines for all *.txt files, creating a backup .bak for each one and modifying the original
+sed -i.bak '/BEGIN/,/END/d' *.txt
 
 # same thing with another string
-sed -i.bak2 '/EdiOtfSrvFree/,/EdiOtfSrvMain/d' *.err
+sed -i.bak2 '/EditStuff/,/EditStuffFinish/d' *.err
 ```
+
+#### SED - Adding stuff to the end of the line
+
+- <https://stackoverflow.com/questions/15978504/add-text-at-the-end-of-each-line>
+
+```bash
+# Finds end of line with $, then adds ":80" to it
+sed -n 's/$/:80/' ips.txt > new-ips.txt
+```
+
+#### Miscellaneous SED stuff
+
+- Special Chars - <https://stackoverflow.com/questions/43108359/how-to-remove-all-special-characters-in-linux-text>
+- Print previous line before match - <https://unix.stackexchange.com/questions/206886/print-previous-line-after-a-pattern-match-using-sed>
+- Windows carrige return ^M in files - <https://superuser.com/questions/194668/grep-to-find-files-that-contain-m-windows-carriage-return>
+
+### AWK Stuff
+
+- AWK documentation - <http://www.tldp.org/LDP/Bash-Beginners-Guide/html/chap_06.html>
 
 ## Annoying repeated - "System program problem detected" messages
 
@@ -580,7 +613,7 @@ $ mkdir -p /target/dir && tar -C $_
 Julia Evans cartoon of it:
 <https://twitter.com/b0rk/status/993682480069824512?lang=en>
 
-![](/tar_fromjuliaevans.jpeg){width="800"}
+![julia evans cartoon of tar](/tar_fromjuliaevans.jpeg){width="800"}
 
 ### ifconfig is dead, use ip instead
 

@@ -8,9 +8,11 @@
     - [Vector style assignment](#vector-style-assignment)
   - [GTest](#gtest)
     - [Custom Failure Message in Assertions](#custom-failure-message-in-assertions)
+  - [Celero benchmarking](#celero-benchmarking)
   - [Windows compiling C code](#windows-compiling-c-code)
   - [Printing a C String](#printing-a-c-string)
   - [Boost libraries](#boost-libraries)
+    - [Installing](#installing)
     - [Date and Time stuff](#date-and-time-stuff)
     - [Boost String manipulation](#boost-string-manipulation)
   - [C++ examples](#c-examples)
@@ -45,10 +47,11 @@
   - [Forward Declarations](#forward-declarations)
   - [Functions](#functions)
   - [Building C++ projects](#building-c-projects)
+    - [Compiler information](#compiler-information)
     - [CMake](#cmake)
     - [Quick summary](#quick-summary)
     - [Build also with Ninja](#build-also-with-ninja)
-    - [List of C++ Learning Topics initial](#list-of-c-learning-topics-initial)
+  - [List of C++ Learning Topics initial](#list-of-c-learning-topics-initial)
   - [C++ Advanced Course Notes](#c-advanced-course-notes)
     - [Topics I need to know better](#topics-i-need-to-know-better)
     - [Course Overview](#course-overview)
@@ -150,6 +153,11 @@ When failing a test you can add a custom message like this:
   EXPECT_EQ(expected, actual) << "Expected not equal to actual...";
 ```
 
+## Celero benchmarking
+
+- Main git hub - <https://github.com/DigitalInBlue/Celero>
+  - TODO - see how to output in csv
+
 ## Windows compiling C code
 
 - <https://arachnoid.com/cpptutor/setup_windows.html>
@@ -169,6 +177,11 @@ When failing a test you can add a custom message like this:
 ```
 
 ## Boost libraries
+
+### Installing
+
+- Install the package: sudo apt install libboost-all-dev
+- Otherwise it can be included from other dependencies in your projects
 
 ### Date and Time stuff
 
@@ -605,6 +618,13 @@ It's a feature introduced in C++11 - it means that you want to use the compiler-
 
 ## Building C++ projects
 
+### Compiler information
+
+- How compiler works - <https://www.toptal.com/c-plus-plus/c-plus-plus-understanding-compilation>
+- Stackoverflow expl of .a and .so files - <https://stackoverflow.com/questions/9809213/what-are-a-and-so-files>
+  - .a is statically linked archive from compile time - if it changes you need to recompile
+  - .so is shared object - it can change independently of your code since only linked at runtime (with ln command).
+
 ### CMake
 
 This seems like a very good way of handling complex makefiles
@@ -623,11 +643,11 @@ This seems like a very good way of handling complex makefiles
 
 ### Build also with Ninja
 
- - https://dmerej.info/blog/post/chuck-norris-part-1-cmake-ninja/
+- <https://dmerej.info/blog/post/chuck-norris-part-1-cmake-ninja/>
 
 ------------------------------------------------------------------------
 
-### List of C++ Learning Topics initial
+## List of C++ Learning Topics initial
 
 - References
 - auto auto&&
