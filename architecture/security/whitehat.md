@@ -34,3 +34,5 @@
         as the SSL, using encryption to protect the transfer of data and
         information. The two terms are often used interchangeably in the
         industry although SSL is still widely used.
+
+- [Dev.to Securing APIs nice read](https://dev.to/bearer/api-security-best-practices-3gjl?utm_source=digest_mailer&utm_medium=email&utm_campaign=digest_email)
