@@ -6,6 +6,8 @@
   - [Git tips](#git-tips)
     - [Git Bash in Windows](#git-bash-in-windows)
     - [Credentials management Configuration](#credentials-management-configuration)
+    - [SSH keys with git commands](#ssh-keys-with-git-commands)
+      - [Git pull using an ssh key](#git-pull-using-an-ssh-key)
     - [Long file paths workaround](#long-file-paths-workaround)
     - [Reset to version in HEAD](#reset-to-version-in-head)
     - [Get rid of local changes to a file before they are added](#get-rid-of-local-changes-to-a-file-before-they-are-added)
@@ -104,7 +106,7 @@ git config --global credential.helper wincred
 - Also on Win10 you might have issues with the windows credential
     manager when changing passwords -
     <https://cmatskas.com/how-to-update-your-git-credentials-on-windows/>
-    
+
 ### SSH keys with git commands
 
 #### Git pull using an ssh key

@@ -40,7 +40,9 @@
     - [top cheatsheet](#top-cheatsheet)
     - [tar](#tar)
     - [ifconfig is dead, use ip instead](#ifconfig-is-dead-use-ip-instead)
-    - [Disk usage](#disk-usage)
+    - [Disk Usage, Disk Free space](#disk-usage-disk-free-space)
+      - [NCDU - disk space usage checker](#ncdu---disk-space-usage-checker)
+      - [du and df](#du-and-df)
     - [netstat](#netstat)
     - [Lookup hostname from IP address](#lookup-hostname-from-ip-address)
     - [File Permissions](#file-permissions)
@@ -622,10 +624,11 @@ Julia Evans cartoon of it:
     ip -c a
 ```
 
-### Disk usage
+### Disk Usage, Disk Free space
 
-- NCDU - disk space usage checker
-    <https://www.ostechnix.com/check-disk-space-usage-linux-using-ncdu/>
+#### NCDU - disk space usage checker
+
+- <https://www.ostechnix.com/check-disk-space-usage-linux-using-ncdu/>
 
 ```bash
 # install
@@ -635,6 +638,8 @@ sudo apt-get install ncdu
 ncdu
 ```
 
+#### du and df
+
 - Finding usage of current directory + files as a single value
 
 ```bash
@@ -642,6 +647,12 @@ du -sh .
 
 # to find just in the current directory per folder
 du -h --max-depth=1
+```
+
+- Finding free space
+
+```bash
+df
 ```
 
 ### netstat

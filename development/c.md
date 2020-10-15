@@ -27,6 +27,8 @@
     - [Named Parameters](#named-parameters)
       - [Enums and pointers to enums](#enums-and-pointers-to-enums)
   - [Vectors, Maps etc](#vectors-maps-etc)
+    - [Map](#map)
+      - [Map with struct as a key](#map-with-struct-as-a-key)
     - [Vectors](#vectors)
     - [Vector initialize](#vector-initialize)
     - [Vector basic operations](#vector-basic-operations)
@@ -336,6 +338,8 @@ a GSoap pointer to an enum value:
 
 ## Vectors, Maps etc
 
+### Map
+
 <http://www.cplusplus.com/reference/map/map/find/>
 
 ```cpp
@@ -350,6 +354,13 @@ if (it != mymap.end())
   - If you need guaranteed perf - map is better -> backed by BST
   - If you have no memory constraint and good hashing -
         unordered_map can be faster...
+
+#### Map with struct as a key
+
+If using a map with a key which is a struct or complex key, there needs to be a hash function provided also to handle key collisions
+
+- <https://www.geeksforgeeks.org/how-to-create-an-unordered_map-of-user-defined-class-in-cpp/>
+- <https://www.techiedelight.com/use-struct-key-std-unordered_map-cpp/>
 
 ### Vectors
 

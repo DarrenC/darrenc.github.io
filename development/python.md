@@ -2,11 +2,12 @@
 
 - [Python](#python)
   - [Python Setup and Infrastructure](#python-setup-and-infrastructure)
-    - [Installing venv (and pip too)](#installing-venv-and-pip-too)
+    - [Virtual Environments](#virtual-environments)
+      - [Venv in production](#venv-in-production)
+      - [Installing venv (and pip too)](#installing-venv-and-pip-too)
     - [Getting it working with PyCharm when installed using Ubuntu Snap](#getting-it-working-with-pycharm-when-installed-using-ubuntu-snap)
     - [Running Python scripts from commandline](#running-python-scripts-from-commandline)
   - [Basic Python Project structure](#basic-python-project-structure)
-  - [Virtual Environments](#virtual-environments)
   - [Python Advanced Training - ENV Setup](#python-advanced-training---env-setup)
     - [Environment setup](#environment-setup)
   - [Files and IO](#files-and-io)
@@ -28,6 +29,7 @@
     - [CSV Reader/Writer](#csv-readerwriter)
     - [Jupyter](#jupyter)
     - [Flask Web Framework](#flask-web-framework)
+    - [Pandas & Matplotlib](#pandas--matplotlib)
     - [Notes from Evernote](#notes-from-evernote)
     - [Articles To Read](#articles-to-read)
     - [Lists of Useful Python Links](#lists-of-useful-python-links)
@@ -75,6 +77,9 @@
     - [Other topics to be covered](#other-topics-to-be-covered)
   - [O'Reilly cookbook on python strings](#oreilly-cookbook-on-python-strings)
   - [Slices](#slices)
+  - [Data Visualization - Pandas and Matplotlib](#data-visualization---pandas-and-matplotlib)
+    - [Really simple example of reading a file into a panda dataframe then plotting it to a file](#really-simple-example-of-reading-a-file-into-a-panda-dataframe-then-plotting-it-to-a-file)
+    - [Some links](#some-links)
 
 - Main documentation: <https://docs.python.org/3/tutorial/index.html>
 - Book with nice tips:
@@ -86,17 +91,13 @@
 
 ## Python Setup and Infrastructure
 
-**Running with py, py3 etc.**
-TODO - works on win machine in work....
-
-
 ### Virtual Environments
 
 - <https://realpython.com/python-virtual-environments-a-primer/>
 
 #### Venv in production
 
-It seems like venv can be a good thing to use in production environments also to avoid dependencies with other projects and impacting system level packages. 
+It seems like venv can be a good thing to use in production environments also to avoid dependencies with other projects and impacting system level packages.
 
 - [Reddit discussion on venv in prod](https://www.reddit.com/r/Python/comments/2grmnn/virtualenv_on_production/)
 
@@ -173,7 +174,6 @@ print(temp_path)
 file_dc = temp_path # "functional.log"
 
 # Open and read entire file
-
 with file_dc.open() as f:
   print(f.read())
 
@@ -184,11 +184,8 @@ print(file_dc.read_text())
 filename = Path("source_data/text_files/raw_data.txt")
 
 print(filename.name) # prints "raw_data.txt"
-
 print(filename.suffix) # prints "txt"
-
 print(filename.stem) # prints "raw_data"
-
 print(filname.absolute()) # prints full file name + path
 
 if not filename.exists():
@@ -352,7 +349,7 @@ TODO - but see section below for infos.
 
 - Python interview questions but also helpful tutorial -
     <https://www.codementor.io/python/tutorial/essential-python-interview-questions>
-      
+
 ### Topics List
 
 TODO - get from the book
@@ -817,7 +814,8 @@ above: a[start:stop:step] # start through not past stop, by step
 
 ### Really simple example of reading a file into a panda dataframe then plotting it to a file
 
-Shows examples of 
+Shows examples of:
+
 - custom separator
 - skipping rows
 - skipping whitespace

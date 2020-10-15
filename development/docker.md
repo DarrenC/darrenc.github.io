@@ -1,15 +1,19 @@
 # Docker
 
 - [Docker](#docker)
+  - [Articles](#articles)
   - [Basic commands](#basic-commands)
   - [Really simple HelloWorld java cmd line](#really-simple-helloworld-java-cmd-line)
   - [Example from openapi2puml for working with a jar](#example-from-openapi2puml-for-working-with-a-jar)
     - [Volumes and sharing between docker container and host](#volumes-and-sharing-between-docker-container-and-host)
     - [Experience with openapi2puml and volumes](#experience-with-openapi2puml-and-volumes)
-  - [Pushing an image to dockerhub](#pushing-an-image-to-dockerhub)
+  - [Working with Image Repositories (e.g. dockerhub](#working-with-image-repositories-eg-dockerhub)
+    - [Pushing an image to dockerhub](#pushing-an-image-to-dockerhub)
+    - [Getting a list of all the tags on dockerhub](#getting-a-list-of-all-the-tags-on-dockerhub)
 
-- Docker mainsite link with install + Python example -
-    <https://docs.docker.com/get-started/part2/>
+## Articles
+
+- Docker mainsite link with install + Python example - <https://docs.docker.com/get-started/part2/>
 - <https://stackify.com/guide-docker-java/>
 - <https://hub.docker.com/_/openjdk>
 - <https://www.jetbrains.com/help/idea/run-and-debug-a-spring-boot-application-using-docker-compose.html>
@@ -18,6 +22,7 @@
 - <https://stackoverflow.com/questions/49382277/docker-jar-not-found>
 - <https://forums.docker.com/t/access-docker-container-files/28906> -
     possible soln for issue of paths and jars
+- [Nice overview of building java apps with docker including multi-stage](https://blog.frankel.ch/hitchhiker-guide-containerizing-java-apps/)
 
 ## Basic commands
 
