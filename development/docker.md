@@ -2,7 +2,9 @@
 
 - [Docker](#docker)
   - [Articles](#articles)
+    - [Trainings](#trainings)
   - [Basic commands](#basic-commands)
+    - [Starting and stopping containers](#starting-and-stopping-containers)
   - [Really simple HelloWorld java cmd line](#really-simple-helloworld-java-cmd-line)
   - [Example from openapi2puml for working with a jar](#example-from-openapi2puml-for-working-with-a-jar)
     - [Volumes and sharing between docker container and host](#volumes-and-sharing-between-docker-container-and-host)
@@ -24,7 +26,37 @@
     possible soln for issue of paths and jars
 - [Nice overview of building java apps with docker including multi-stage](https://blog.frankel.ch/hitchhiker-guide-containerizing-java-apps/)
 
+### Trainings
+
+- [Docker, Dockerfile, and Docker-Compose (2020 Ready!)](https://learning.oreilly.com/videos/docker-dockerfile-and/9781800206847/9781800206847-video3_3)
+
 ## Basic commands
+
+### Starting and stopping containers
+
+```bash
+
+# Run a docker image interactively and connecting with bash terminal, downloading if necessary
+docker run -it ubuntu /bin/bash
+
+# Run with a name, detached and will rm the container on exit
+docker run -it -d --rm --name linux1 ubuntu /bin/bash
+
+# List all containers
+docker ps
+docker ps -a # list even stopped containers
+
+# start/stop a container
+docker start <container id>
+docker stop <container id>
+
+# attach to a running container
+docker attach <container id>
+docker attach <container name>
+
+# remove a container
+docker rm <container id>
+```
 
 - Can override the CMD from the dockerfile when running (eg run shell
     to see structure of container).
@@ -52,7 +84,7 @@ docker ps
 docker exec -ti <container id from docker ps> bash
 
 # Docker compose with detached and select container to start
-$ docker-compose up -d sos
+$ docker-compose up -d <service or container name>
 $ docker-compose down
 
 # tailing the container log
