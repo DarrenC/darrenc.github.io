@@ -689,20 +689,20 @@ Give user,group and other permissions to read, write and execute
 # find jpg files in the current directory
 find . -name '*.jpg'
 
-# find in the current directory files modified in the last minute find
-. -maxdepth 1 -mmin -1
+# find in the current directory files modified in the last minute 
+find . -maxdepth 1 -mmin -1
 
-# find with date details and ordering by date find . -mmin -15 -printf
-"%T@ %Tc %p\n" | sort -n
+# find with date details and ordering by date 
+find . -mmin -15 -printf "%T@ %Tc %p\n" | sort -n
 
 # find .log files and then copy them to ~/someDir
 find . -name "*.log" -mmin -45 -exec cp {} ~/someDir \;
 
-# find dirs without a certain filename find base_dir -mindepth 2
--maxdepth 2 -type d '!' -exec test -e "{}/cover.jpg" ';' -print
+# find dirs without a certain filename 
+find base_dir -mindepth 2 -maxdepth 2 -type d '!' -exec test -e "{}/cover.jpg" ';' -print
 
-# find and delete - good for deleting lots of files where rm stops
-working find . -name "simulation.log" -delete
+# find and delete - good for deleting lots of files where rm stops working 
+find . -name "simulation.log" -delete
 ```
 
 ### List files in directories in a Tree
@@ -723,7 +723,8 @@ levels with size of each file tree -a -L 2 -s
     <https://shapeshed.com/unix-wc/>
 
 ```bash
-# count the number of files in a dir ls -l | wc -l
+# count the number of files in a dir 
+ls -l | wc -l
 ```
 
 ### Grep

@@ -12,6 +12,8 @@
     - [Environment setup](#environment-setup)
   - [Files and IO](#files-and-io)
     - [Files and Paths](#files-and-paths)
+      - [Use pathlib instead of os.path](#use-pathlib-instead-of-ospath)
+      - [Reading and writing lines of files](#reading-and-writing-lines-of-files)
   - [Getting input](#getting-input)
     - [Nice input paradigm](#nice-input-paradigm)
   - [Working with the Operating System](#working-with-the-operating-system)
@@ -163,7 +165,7 @@ hierarchy
 
 ### Files and Paths
 
-Use pathlib instead of os.path:
+#### Use pathlib instead of os.path
 
 ```python
 from pathlib import Path
@@ -199,6 +201,21 @@ else:
     <https://medium.com/@ageitgey/python-3-quick-tip-the-easy-way-to-deal-with-file-paths-on-windows-mac-and-linux-11a072b58d5f>
 - <https://pathlib.readthedocs.io/en/pep428/>
 - python3 docs - <https://docs.python.org/3/library/pathlib.html>
+
+#### Reading and writing lines of files
+
+```python
+# Example of adding a string to each line of a file being read then writing out. 
+# Handles newline stripping and re-adding :)
+file_name = "testlorem"
+string_to_add = "added"
+
+with open(file_name, 'r') as f:
+    file_lines = [''.join([x.rstrip(), string_to_add, '\n']) for x in f.readlines()]
+
+with open(file_name, 'w') as f:
+    f.writelines(file_lines)
+```
 
 ## Getting input
 
@@ -842,7 +859,14 @@ df.plot(x='date',
 plt.savefig('baseline_report.png')
 ```
 
-### Some links 
+### Some links
 
 - [Pandas docs - reading from types of files & streams](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html)
   - [in particular text/csv](https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html)
+
+https://ourcodingclub.github.io/tutorials/pandas-python-intro/
+https://matplotlib.org/index.html
+Save plot to a file - https://chartio.com/resources/tutorials/how-to-save-a-plot-to-a-file-using-matplotlib/
+https://python-graph-gallery.com/matplotlib/
+
+- [Pandas, grouping by multiple columns e.g. by date and category](https://scentellegher.github.io/programming/2017/07/15/pandas-groupby-multiple-columns-plot.html)
