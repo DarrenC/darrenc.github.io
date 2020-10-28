@@ -116,6 +116,17 @@ docker run -it --rm --name my-running-script php:7.2-cli /bin/bash
 # Nice example to show form of docker run <options> <image - php:7.2-cli> <cmd - phpindex.php> to output result of running a php file
 docker run -it --rm -v ${PWD}:/myfiles -w /myfiles --name my-running-script php:7.2-cli phpindex.php
 
+## Working with file systems and volumes
+
+```bash
+# outputting an ls to a file on the host (NB --rm to remove once done)
+docker run --rm -v ${PWD}:/myvol ubuntu /bin/bash -c "ls -lha > /myvol/myfile.txt"
+
+# docker run with setting working directory - like doing cd <dir> inside the docker container
+docker run ... -w <dir>
+
+# Dockerfile ENTRY_POINT is a command to run when starting the containerf
+ENTRYPOINT ["rar"]
 ```
 
 Assuming Docker is already setup...
