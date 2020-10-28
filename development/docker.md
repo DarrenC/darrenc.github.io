@@ -5,6 +5,7 @@
     - [Trainings](#trainings)
   - [Basic commands](#basic-commands)
     - [Starting and stopping containers](#starting-and-stopping-containers)
+  - [Working with file systems and volumes](#working-with-file-systems-and-volumes)
   - [Really simple HelloWorld java cmd line](#really-simple-helloworld-java-cmd-line)
   - [Example from openapi2puml for working with a jar](#example-from-openapi2puml-for-working-with-a-jar)
     - [Volumes and sharing between docker container and host](#volumes-and-sharing-between-docker-container-and-host)
@@ -103,6 +104,19 @@ docker network prune --force # good to run every so often to get rid of conflict
 
 # docker image delete
 # TODO
+```
+
+## Working with file systems and volumes
+
+```bash
+# outputting an ls to a file on the host (NB --rm to remove once done)
+docker run --rm -v ${PWD}:/myvol ubuntu /bin/bash -c "ls -lha > /myvol/myfile.txt"
+
+# docker run with setting working directory - like doing cd <dir> inside the docker container
+docker run ... -w <dir>
+
+# Dockerfile ENTRY_POINT is a command to run when starting the containerf
+ENTRYPOINT ["rar"]
 ```
 
 Assuming Docker is already setup...
