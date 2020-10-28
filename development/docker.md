@@ -5,6 +5,7 @@
     - [Trainings](#trainings)
   - [Basic commands](#basic-commands)
     - [Starting and stopping containers](#starting-and-stopping-containers)
+  - [Volumes and Mounting](#volumes-and-mounting)
   - [Really simple HelloWorld java cmd line](#really-simple-helloworld-java-cmd-line)
   - [Example from openapi2puml for working with a jar](#example-from-openapi2puml-for-working-with-a-jar)
     - [Volumes and sharing between docker container and host](#volumes-and-sharing-between-docker-container-and-host)
@@ -103,6 +104,18 @@ docker network prune --force # good to run every so often to get rid of conflict
 
 # docker image delete
 # TODO
+```
+
+## Volumes and Mounting 
+
+```bash
+
+# --rm to remove the container after the run....
+docker run -it --rm --name my-running-script php:7.2-cli /bin/bash
+
+# Nice example to show form of docker run <options> <image - php:7.2-cli> <cmd - phpindex.php> to output result of running a php file
+docker run -it --rm -v ${PWD}:/myfiles -w /myfiles --name my-running-script php:7.2-cli phpindex.php
+
 ```
 
 Assuming Docker is already setup...
