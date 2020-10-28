@@ -6,6 +6,15 @@
   - [Basic commands](#basic-commands)
     - [Starting and stopping containers](#starting-and-stopping-containers)
   - [Volumes and Mounting](#volumes-and-mounting)
+  - [Port Forwarding and server logs](#port-forwarding-and-server-logs)
+  - [Dockerfiles](#dockerfiles)
+    - [Simple Dockerfile](#simple-dockerfile)
+    - [Dockerfile with EXPOSE for php dev server](#dockerfile-with-expose-for-php-dev-server)
+  - [Push to dockerhub example](#push-to-dockerhub-example)
+  - [Docker-compose files](#docker-compose-files)
+    - [Workaround for issues with VPN and address pools](#workaround-for-issues-with-vpn-and-address-pools)
+    - [Working with a pre-defined image and mapping volumes](#working-with-a-pre-defined-image-and-mapping-volumes)
+    - [Extending a predefined image with Dockerfile + docker-compose](#extending-a-predefined-image-with-dockerfile--docker-compose)
   - [Really simple HelloWorld java cmd line](#really-simple-helloworld-java-cmd-line)
   - [Example from openapi2puml for working with a jar](#example-from-openapi2puml-for-working-with-a-jar)
     - [Volumes and sharing between docker container and host](#volumes-and-sharing-between-docker-container-and-host)
@@ -30,6 +39,9 @@
 ### Trainings
 
 - [Docker, Dockerfile, and Docker-Compose (2020 Ready!)](https://learning.oreilly.com/videos/docker-dockerfile-and/9781800206847/9781800206847-video3_3)
+
+- Tip - use the docs on dockerhub to see how to use the images
+  - [MySQL image](https://hub.docker.com/_/mysql)
 
 ## Basic commands
 
@@ -57,6 +69,8 @@ docker attach <container name>
 
 # remove a container
 docker rm <container id>
+-f # force the removal of the container
+
 ```
 
 - Can override the CMD from the dockerfile when running (eg run shell
@@ -104,19 +118,12 @@ docker network prune --force # good to run every so often to get rid of conflict
 
 # docker image delete
 # TODO
+
+# See the configuration of the docker container
+docker inspect <container_id>
 ```
 
 ## Volumes and Mounting 
-
-```bash
-
-# --rm to remove the container after the run....
-docker run -it --rm --name my-running-script php:7.2-cli /bin/bash
-
-# Nice example to show form of docker run <options> <image - php:7.2-cli> <cmd - phpindex.php> to output result of running a php file
-docker run -it --rm -v ${PWD}:/myfiles -w /myfiles --name my-running-script php:7.2-cli phpindex.php
-
-## Working with file systems and volumes
 
 ```bash
 # outputting an ls to a file on the host (NB --rm to remove once done)
@@ -127,7 +134,203 @@ docker run ... -w <dir>
 
 # Dockerfile ENTRY_POINT is a command to run when starting the containerf
 ENTRYPOINT ["rar"]
+
+# --rm to remove the container after the run....
+docker run -it --rm --name my-running-script php:7.2-cli /bin/bash
+
+# Nice example to show form of docker run <options> <image - php:7.2-cli> <cmd - phpindex.php> to output result of running a php file
+docker run -it --rm -v ${PWD}:/myfiles -w /myfiles --name my-running-script php:7.2-cli phpindex.php
+
 ```
+
+## Port Forwarding and server logs
+
+```bash
+# Run a httpd daemon with -p to forward HOST port 8080 to GUEST(container) port 80 - can browse to http://localhost:8080 from local machine
+docker run -d -p 8080:80 httpd
+
+```
+
+## Dockerfiles
+
+### Simple Dockerfile 
+
+```bash
+
+# Simple Dockerfile (index.php created already in the same dir)
+FROM php:7.2-cli
+
+RUN mkdir /myproject
+COPY index.php /myproject
+WORKDIR /myproject
+
+CMD php index.php
+
+# build image with tag myphpapp - . indicates Dockerfile found in this directory
+docker build -t myphpapp .
+docker run myphpapp
+
+# listing images and deleting them (nb need to remove containers first)
+docker image ls
+docker rmi <tag>
+```
+
+### Dockerfile with EXPOSE for php dev server
+
+- [Link to docker docs EXPOSE](https://docs.docker.com/engine/reference/builder/#expose)
+  - "-P" publishes all ports
+  - Otherwise map with -p
+  - If the base image (something like php-apache) already exposes a port, you can just do the mapping, no need to explicity use EXPOSE in your image.
+
+```bash
+
+# Dockerfile with EXPOSE
+FROM php:7.2-cli
+
+EXPOSE 8000
+RUN mkdir /myproject
+COPY index.php /myproject
+WORKDIR /myproject
+
+CMD ["php", "-S", "0.0.0.0:8000"]
+
+# build as before
+docker build -t myphpapp .
+
+# run with port forward to map host to guest ports
+docker run--name myphp-container-p 8080:8000 myphpapp
+
+```
+
+## Push to dockerhub example
+
+```bash
+docker login
+# Assume you already have an image mycurl and your username is myUser123
+docker tag mycurl myUser123/mycurl:latest
+# See both local tag + userId/tag created
+docker image ls
+# push to dockerhub
+docker push myUser123/mycurl:latest
+# cleanup local images
+docker rmi mycurl
+docker rmi myUser123/mycurl:latest
+
+```
+
+## Docker-compose files
+
+```bash
+
+# Sample docker-compose.yaml with an associated Dockerfile
+version: '3'
+
+services:
+  phpapp:
+    ports:
+      - "8080:80"
+    build:
+      context: ./
+      dockerfile: Dockerfile
+# This bit was added for the workaround below
+networks:
+  default:
+    external:
+      name: localdev
+
+# start, first time will build
+docker-compose up
+
+# force a rebuild 
+docker-compose up --build
+
+# clean up containers
+docker-compose rm
+
+```
+
+### Workaround for issues with VPN and address pools
+
+```pre
+From: https://github.com/docker/for-linux/issues/418
+
+Error received: 
+ERROR: could not find an available, non-overlapping IPv4 address pool among the defaults to assign to the network
+
+My recommended work-around is to create a network utilizing an unused private address range on your machine:
+
+docker network create localdev --subnet 10.0.1.0/24
+
+Configure docker compose to use this as an external network. Either adding the following to the compose file or the override file as shown:
+
+$ cat docker-compose.override.yml
+version: '3'
+networks:
+  default:
+    external:
+      name: localdev
+
+
+```
+
+### Working with a pre-defined image and mapping volumes
+
+```yaml
+# with this version you can make changes on the fly for files in the folder with the docker-compose
+version: '3'
+
+services:
+  phpapp:
+    image: php:7.2-apache
+    ports:
+      - "8080:80"
+    volumes:
+      - "./:/var/www/html"
+
+networks:
+  default:
+    external:
+      name: localdev
+
+```
+
+### Extending a predefined image with Dockerfile + docker-compose
+
+The example below will extend the base php-apache image with a bunch of extra modules - e.g mysql
+
+```pre
+FROM php:7.2-apache
+
+RUN apt-get -y update \
+&& apt-get install -y libicu-dev \
+&& docker-php-ext-configure intl \
+&& docker-php-ext-install intl
+
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+```
+
+```yaml
+version: '3'
+
+services:
+  phpapp:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: php:7.2-apache
+    ports:
+      - "8080:80"
+    volumes:
+      - "./:/var/www/html"
+    container_name: my-php-app
+
+networks:
+  default:
+    external:
+      name: localdev
+
+```
+
 
 Assuming Docker is already setup...
 
