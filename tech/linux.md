@@ -772,6 +772,10 @@ find .  -name "*.edi" -exec  grep  -H -E -o -c  "AirShoppingRS"  {} \; | grep 0
 # -l is to suppress the normal output which includes the matching string
 # -L is to find things that DON'T match
 grep -rL "NOTTHISSTRING" $(grep -rl WITHTHISSTRING '.' --include=*.cpp)
+
+# Example for finding a lib with a certain symbol 
+for lib in `find . -name "*.so"` ; do  grep "someSymbol" $lib >/dev/null; if [ $? -eq 0 ]; then echo $lib; fi  done
+
 ```
 
 ### System Suspend from commandline

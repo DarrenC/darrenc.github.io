@@ -16,6 +16,7 @@
     - [Working with a pre-defined image and mapping volumes](#working-with-a-pre-defined-image-and-mapping-volumes)
     - [Extending a predefined image with Dockerfile + docker-compose](#extending-a-predefined-image-with-dockerfile--docker-compose)
   - [Really simple HelloWorld java cmd line](#really-simple-helloworld-java-cmd-line)
+  - [Running containers as different users](#running-containers-as-different-users)
   - [Example from openapi2puml for working with a jar](#example-from-openapi2puml-for-working-with-a-jar)
     - [Volumes and sharing between docker container and host](#volumes-and-sharing-between-docker-container-and-host)
     - [Experience with openapi2puml and volumes](#experience-with-openapi2puml-and-volumes)
@@ -363,6 +364,12 @@ CMD [ "java", "HelloWorld" ]
 sudo docker build . -t blah
 sudo docker run -t blah
 ```
+
+## Running containers as different users
+
+By default, everything inside docker runs as root. This can be problematic if files/directories are created since they will be owned by root.
+
+- [Running docker container as non-root user](https://medium.com/redbubble/running-a-docker-container-as-a-non-root-user-7d2e00f8ee15)
 
 ## Example from openapi2puml for working with a jar
 
