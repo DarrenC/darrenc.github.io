@@ -23,6 +23,8 @@
   - [Working with Image Repositories (e.g. dockerhub](#working-with-image-repositories-eg-dockerhub)
     - [Pushing an image to dockerhub](#pushing-an-image-to-dockerhub)
     - [Getting a list of all the tags on dockerhub](#getting-a-list-of-all-the-tags-on-dockerhub)
+  - [Issues with docker on WSL2](#issues-with-docker-on-wsl2)
+    - [Issue with mapping a data dir for mysql using a volume](#issue-with-mapping-a-data-dir-for-mysql-using-a-volume)
 
 ## Articles
 
@@ -445,3 +447,11 @@ $ docker push openapi2puml/openapi2puml:0.0.1
 ### Getting a list of all the tags on dockerhub
 
 - <https://stackoverflow.com/questions/28320134/how-can-i-list-all-tags-for-a-docker-image-on-a-remote-registry>
+
+## Issues with docker on WSL2
+
+### Issue with mapping a data dir for mysql using a volume 
+
+In my case the issue occured when mounting a directory from my c drive when using Windows Subsystem for Linux 2 (WSL2). Mounting a directory from my user directory of the wsl linux system worked fine.
+
+If I understand correctly this seems to be a known issue in docker for windows occurring for named volumes: docker/for-win#4812
