@@ -34,6 +34,7 @@
     - [Vector basic operations](#vector-basic-operations)
     - [Vector size - size_type](#vector-size---size_type)
     - [Vector searching](#vector-searching)
+    - [Vector (and containers in general) removing things in-place](#vector-and-containers-in-general-removing-things-in-place)
   - [Constructors - default, delete and explicit keywords](#constructors---default-delete-and-explicit-keywords)
     - [Default](#default)
     - [Delete](#delete)
@@ -126,7 +127,7 @@ technical features - eventually add/create the advanced stuff too.
 ### Vector style assignment
 
 ```cpp
-    std::vector<ParameterType *> &parameters = DEREF(AirShoppingRQ18_1::soap_new_std__vectorTemplateOfPointerTov181__CurParameterType(iSoap));
+    std::vector<ParameterType *> &parameters = DEREF(SomeMessage::soap_new_std__vectorTemplateOfPointerToSomeMessage__CurParameterType(iSoap));
     parameters.emplace_back(someParameterType);
 ```
 
@@ -432,6 +433,13 @@ Finding elements in a vector in different ways -
 - C++11 has range based for loop for(auto && blah: blahs)...
 
 TODO - ask/learn more about both approaches
+
+### Vector (and containers in general) removing things in-place
+
+- DON'T use counters and container.size()
+- DO USE -  iterator and container.end() with erase/remove functions
+  - <https://www.freecodecamp.org/news/how-to-remove-elements-from-a-container-in-c/>
+  - <https://www.fluentcpp.com/2018/09/14/how-to-remove-elements-from-a-sequence-container/>
 
 ## Constructors - default, delete and explicit keywords
 

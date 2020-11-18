@@ -703,6 +703,9 @@ find base_dir -mindepth 2 -maxdepth 2 -type d '!' -exec test -e "{}/cover.jpg" '
 
 # find and delete - good for deleting lots of files where rm stops working 
 find . -name "simulation.log" -delete
+
+# find with multiple matches (from a bash script)
+list_of_files="$(find . -type f -name "filename1-*" -or -name "*-filename2")"
 ```
 
 ### List files in directories in a Tree
