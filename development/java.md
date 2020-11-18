@@ -127,10 +127,10 @@ getAllJavaArticles() {
 ### **Example of :: operator**
 
 ```java
-    private void initializeFlightContext() {
-      flightContext = offerPricingInfoResponse.getFlightList().stream()
-          .collect(Collectors.toMap(Flight::getFlightId, flight -> GetOfferBuilderContext.createSwaggerFlightId(flight)));
-          .collect(Collectors.toMap(Flight::getFlightId, GetOfferBuilderContext::createSwaggerFlightId));
+    private void initializeContext() {
+      Context = SomeResponse.getStuffList().stream()
+          .collect(Collectors.toMap(Stuff::getStuffId, stuff -> GetStuffBuilderContext.createSwaggerStuffId(stuff)));
+          .collect(Collectors.toMap(Stuff::getStuffId, GetOfferBuilderContext::createSwaggerStuffId));
     }
 ```
 

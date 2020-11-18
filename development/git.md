@@ -112,7 +112,7 @@ git config --global credential.helper wincred
 #### Git pull using an ssh key
 
 ```bash
-git -c core.sshCommand="ssh -i ~/.ssh/id_rsa_sos_nightly" clone ssh://git@git.rnd.amadeus.net/~dcostello/otf-orchestrator.git otf-orchestrator-nightly
+git -c core.sshCommand="ssh -i ~/.ssh/id_rsa_sos_nightly" clone ssh://git@github.com/~me/otf-orchestrator.git otf-orchestrator-nightly
 ```
 
 ### Long file paths workaround
@@ -149,7 +149,7 @@ git remote -v
 ### Comparing with previous version (works for file or dir) - useful after pull
 
 ```bash
-git diff feature/official-codegen@{1} feature/official-codegen flight-offers.yaml
+git diff feature/official-codegen@{1} feature/official-codegen MySwaggerSpec.yaml
 ```
 
 ### Checking out the latest version based on tag

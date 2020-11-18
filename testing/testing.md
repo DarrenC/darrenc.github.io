@@ -1,7 +1,7 @@
 # Testing
 
 - [Testing](#testing)
-  - [Regrouping all old wiki testing articles](#regrouping-all-old-wiki-testing-articles)
+  - [Interesting articles](#interesting-articles)
   - [Selenium](#selenium)
   - [JUnit testing with Java](#junit-testing-with-java)
     - [JUnit 5](#junit-5)
@@ -10,7 +10,7 @@
     - [Mockito](#mockito)
     - [PowerMock](#powermock)
     - [Geb Testing Framework](#geb-testing-framework)
-  - [JUnit etc. - TODO  merge with sections above](#junit-etc---todo-merge-with-sections-above)
+  - [JUnit etc. - TODO  merge with sections above](#junit-etc---todo--merge-with-sections-above)
     - [Mockito - Partial Mocking and Spying](#mockito---partial-mocking-and-spying)
     - [Mockito - any() and raw values](#mockito---any-and-raw-values)
     - [Mockito - stub() when() and given() - when to use what](#mockito---stub-when-and-given---when-to-use-what)
@@ -202,7 +202,7 @@ Mockito - with mocking Class\<?\> style objects
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.nullValue;
 
-    Assert.assertThat(flightPreferencesList, is(nullValue()));
+    Assert.assertThat(preferencesList, is(nullValue()));
 ```
 
 ### Mockito and Dependency Injection

@@ -765,10 +765,10 @@ grep -o SOMESTRING myFile.txt | wc -l
     <https://www.gnu.org/savannah-checkouts/gnu/grep/manual/grep.html#index-_002d_002dno_002dmessages>
 
 ```bash
-find .  -name "*.edi" -exec  grep  -H -E -o -c  "AirShoppingRS"  {} \;
-find .  -name "*.edi" -exec  grep  -H -E -o -c  "AirShoppingRS"  {} \;
+find .  -name "*.edi" -exec  grep  -H -E -o -c  "SomeString"  {} \;
+find .  -name "*.edi" -exec  grep  -H -E -o -c  "SomeString"  {} \;
 # Find files of a particular name not containing a string - bit at the end is to look for count 0
-find .  -name "*.edi" -exec  grep  -H -E -o -c  "AirShoppingRS"  {} \; | grep 0
+find .  -name "*.edi" -exec  grep  -H -E -o -c  "SomeString"  {} \; | grep 0
 
 # This is a really nice way to find files of a particular type containing WITHTHISSTRING but not containing NOTTHISSTRING
 # The inner grep feeds the filenames of the matches into the outer grep

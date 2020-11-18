@@ -86,7 +86,7 @@
 - <http://www.cprogramming.com/tutorial/c-tutorial.html>
 - <http://www.slideshare.net/EmertxeSlides/c-programming-refresher-part-i>
 - <https://github.com/humzashah/c_refresher>
-- From Amadeus
+- From DC learnings internal
       - <http://www.worldbestlearningcenter.com/index_files/cpp-tutorial-questions-answers-pointers-partII.htm>
       - <https://openclassrooms.com/fr/courses/1894236-programmez-avec-le-langage-c>
   - Most Vexing parse problem - <https://en.wikipedia.org/wiki/Most_vexing_parse>
@@ -1126,8 +1126,7 @@ STL uses no inheritance and has no object orientation...
 
 - Slides 206-220
   - lambda examples ->
-  - NB OTF ORC (and SSP) use C++11 so some C++14 features are not
-        available to us.
+  - NB I'm using C++11 so some C++14 features are not available.
 
 - Slide 223
   - Insert algorithms to add new elements with special iterators.
