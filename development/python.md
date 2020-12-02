@@ -859,6 +859,9 @@ df.plot(x='date',
 plt.savefig('baseline_report.png')
 ```
 
+- [Using groupby in pandas to extract groups](https://www.geeksforgeeks.org/python-pandas-dataframe-groupby/)
+- Official docs for pandas groupby - <https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html>
+
 ### Some links
 
 - [Pandas docs - reading from types of files & streams](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html)

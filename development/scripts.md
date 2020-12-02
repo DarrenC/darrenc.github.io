@@ -8,7 +8,8 @@
     - [Tutorials on writing scripts](#tutorials-on-writing-scripts)
     - [Here docs - ssh and then run commands from a script](#here-docs---ssh-and-then-run-commands-from-a-script)
       - [Example of running a here doc with the ssh command to launch commands remotely](#example-of-running-a-here-doc-with-the-ssh-command-to-launch-commands-remotely)
-  - [Stuff for the gatling script](#stuff-for-the-gatling-script)
+    - [Source vs ./](#source-vs-)
+  - [Stuff for the reporting script](#stuff-for-the-reporting-script)
     - [Reporting](#reporting)
     - [Proposing a list of simulations to choose from](#proposing-a-list-of-simulations-to-choose-from)
 
@@ -74,7 +75,15 @@ ssh ${connection_string} <<'ENDSSH'
  ls -la ENDSSH
 ```
 
-## Stuff for the gatling script
+### Source vs ./
+
+When running a script can do either "source" or ./ 
+
+In most cases this is completely the same (source is a synonym of .) but there are some differences relating to source reusing the existing shell and ./ starting a sub-shell. This could have a side-effect for example if you "cd " inside the script being executed.
+
+- [Documentation of source here](https://ss64.com/bash/source.html)
+
+## Stuff for the reporting script
 
 ### Reporting
 
