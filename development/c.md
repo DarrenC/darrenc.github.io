@@ -15,6 +15,7 @@
     - [Installing](#installing)
     - [Date and Time stuff](#date-and-time-stuff)
     - [Boost String manipulation](#boost-string-manipulation)
+      - [String Splitting using boost (among others)](#string-splitting-using-boost-among-others)
   - [C++ examples](#c-examples)
     - [auto&& auto - auto type deduction in range based for loops](#auto-auto---auto-type-deduction-in-range-based-for-loops)
     - [References and Pointers](#references-and-pointers)
@@ -218,6 +219,10 @@ When failing a test you can add a custom message like this:
 - other functions also like that - see Boost for more infos
   - <https://www.boost.org/doc/libs/1_60_0/doc/html/string_algo.html>
   - <https://www.boost.org/doc/libs/1_60_0/doc/html/string_algo/quickref.html#idm45555128584624>
+
+#### String Splitting using boost (among others)
+
+- [Examples of splitting string in multiple ways including boost::split](http://www.martinbroadhurst.com/how-to-split-a-string-in-c.html)
 
 ## C++ examples
 
