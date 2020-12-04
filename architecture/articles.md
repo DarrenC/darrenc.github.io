@@ -8,6 +8,7 @@
   - [Lucene + SOLR](#lucene--solr)
   - [Architecture + Craftsmanship stuff](#architecture--craftsmanship-stuff)
   - [Code Software Craftsmanship](#code-software-craftsmanship)
+  - [Data Science](#data-science)
   - [Domain Specific Languages](#domain-specific-languages)
   - [Javascript](#javascript)
   - [CSS stuff](#css-stuff)
@@ -135,6 +136,11 @@ LUCENE + SOLR stuff - do some tutorials
 
 Books DS and Algo Analysis in Java - Mark Allen Weiss 2)Algorithms, 4th
 Edition
+
+## Data Science
+
+- Linear regression: <https://towardsdatascience.com/understanding-the-fundamentals-of-linear-regression-7e64afd614e1>
+- <https://towardsdatascience.com/understanding-multiple-regression-249b16bde83e>
 
 ## Domain Specific Languages
 
