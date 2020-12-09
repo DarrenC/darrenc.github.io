@@ -7,6 +7,7 @@
     - [Simple Soap String assignment](#simple-soap-string-assignment)
     - [Vector style assignment](#vector-style-assignment)
   - [GTest](#gtest)
+    - [TEST, TEST_F, TEST_P](#test-test_f-test_p)
     - [Custom Failure Message in Assertions](#custom-failure-message-in-assertions)
   - [Celero benchmarking](#celero-benchmarking)
   - [Windows compiling C code](#windows-compiling-c-code)
@@ -145,6 +146,14 @@ technical features - eventually add/create the advanced stuff too.
   - <https://developer.ibm.com/articles/au-googletestingframework/>
   - Alternative to GMock - FSeam -
         <https://www.fluentcpp.com/2019/07/02/fseam-a-mocking-framework-that-requires-no-change-in-code-part-1/>
+
+### TEST, TEST_F, TEST_P
+
+These are different use cases for GTest [Stack Overflow question about the diffs with nice explanation](https://stackoverflow.com/questions/58600728/what-is-the-difference-between-test-test-f-and-test-p) and the docs [Link to TEST_F docs](https://stackoverflow.com/questions/58600728/what-is-the-difference-between-test-test-f-and-test-p)
+
+- TEST - individual tests
+- TEST_F - test fixtures if you want tests on the same data
+- TEST_P - tests with parameters
 
 ### Custom Failure Message in Assertions
 

@@ -88,6 +88,11 @@
 
 ## Git tips
 
+- Visualizing git history
+  - Lots of nice tools here - <https://livablesoftware.com/tools-to-visualize-the-history-of-a-git-repository/>
+    - Including my favourite - GOURCE :)
+  - <https://www.producthunt.com/posts/github-visualizer>
+
 ### Git Bash in Windows
 
 Also very useful Git shell window in windows can run .sh bash scripts,
