@@ -15,6 +15,10 @@
 
 ## Bash scripts
 
+Books:
+
+- <https://linuxcommand.org/index.php> and the pdf version <https://netcologne.dl.sourceforge.net/project/linuxcommand/TLCL/19.01/TLCL-19.01.pdf>
+
 ### Checking logged in user
 
 ```bash
@@ -60,7 +64,7 @@ $? = was last command successful. Answer is 0 which means 'yes'
 
 ### Tutorials on writing scripts
 
-- <http://linuxcommand.org/lc3_wss0120.php>
+- <https://linuxcommand.org/index.php> and the pdf version <https://netcologne.dl.sourceforge.net/project/linuxcommand/TLCL/19.01/TLCL-19.01.pdf>
 - <https://arachnoid.com/linux/shell_programming.html>
 
 ### Here docs - ssh and then run commands from a script

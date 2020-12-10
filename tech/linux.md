@@ -1,6 +1,7 @@
 # Linux
 
 - [Linux](#linux)
+  - [Books and articles](#books-and-articles)
   - [Ubuntu](#ubuntu)
     - [Ubuntu Midi keyboard](#ubuntu-midi-keyboard)
     - [Onedrive sync for linux](#onedrive-sync-for-linux)
@@ -65,6 +66,10 @@
   - [Vim Cheatsheet](#vim-cheatsheet)
     - [General text manipulation](#general-text-manipulation)
   - [Less Cheatsheet](#less-cheatsheet)
+
+## Books and articles
+
+- <https://linuxcommand.org/index.php> and the pdf version <https://netcologne.dl.sourceforge.net/project/linuxcommand/TLCL/19.01/TLCL-19.01.pdf>
 
 ## Ubuntu
 
