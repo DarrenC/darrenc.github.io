@@ -34,6 +34,7 @@
     - [AWK Stuff](#awk-stuff)
   - [Annoying repeated - "System program problem detected" messages](#annoying-repeated---system-program-problem-detected-messages)
   - [Terminal Commands](#terminal-commands)
+    - [Moving and copying files](#moving-and-copying-files)
     - [Checking number of CPUs - lscpu](#checking-number-of-cpus---lscpu)
     - [SCP & cp](#scp--cp)
     - [Linux IP address](#linux-ip-address)
@@ -516,6 +517,13 @@ sudo rm /var/crash/*
 ```
 
 ## Terminal Commands
+
+### Moving and copying files
+
+```bash
+# Move multiple files/directories to a directory
+mv -t <DESTINATION> <source1> <source2> ......
+```
 
 ### Checking number of CPUs - lscpu
 

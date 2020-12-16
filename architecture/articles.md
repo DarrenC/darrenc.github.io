@@ -55,6 +55,7 @@
 
 ## List of Articles
 
+- MOOC.fi - massive online learning with java, devops, data science etc. - <https://www.mooc.fi/en#courses>
 - Farnham Street - <https://fs.blog>
   - <https://fs.blog/mental-models/> - Mental Models
 - <https://www.phparch.com/2018/10/the-dev-lead-trenches-burning-out/>

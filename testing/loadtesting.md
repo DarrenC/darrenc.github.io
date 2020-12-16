@@ -25,6 +25,15 @@ Based on Scala + Akka
     - Git commands one - <https://github.com/GerritForge/gatling-git> 
     - JDBC one - <https://github.com/rbraeunlich/gatling-jdbc>
 
+### Gatling Feeders
+
+Using Feeders we can parameterize tests using various sources of data - DB, file etc.
+
+- Gatling docs - <https://gatling.io/docs/current/session/feeder/>
+  - Example in tutorial - <https://gatling.io/docs/current/advanced_tutorial/>
+- Examples - <https://chercher.tech/gatling/gatling-feeders>
+- <https://stackoverflow.com/questions/35730086/how-can-i-turn-a-simple-iterative-loop-into-a-feeder-in-gatling>
+
 ## JMeter
 
 The original open source load tester.
