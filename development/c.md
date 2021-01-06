@@ -3,9 +3,10 @@
 - [C and C++](#c-and-c)
   - [C/C++ Learning](#cc-learning)
     - [My Small TODO list for basic C learning](#my-small-todo-list-for-basic-c-learning)
-    - [GSoap](#gsoap)
+  - [GSoap](#gsoap)
     - [Simple Soap String assignment](#simple-soap-string-assignment)
     - [Vector style assignment](#vector-style-assignment)
+    - [GSoap and namespace conflicts](#gsoap-and-namespace-conflicts)
   - [GTest](#gtest)
     - [TEST, TEST_F, TEST_P](#test-test_f-test_p)
     - [Custom Failure Message in Assertions](#custom-failure-message-in-assertions)
@@ -105,7 +106,7 @@ technical features - eventually add/create the advanced stuff too.
 - Define compiling, linking etc.
 - bibliography
 
-### GSoap
+## GSoap
 
 - GSoap Basics: <https://en.wikipedia.org/wiki/GSOAP>
   - Tutorials: <https://www.genivia.com/dev.html>
@@ -132,6 +133,10 @@ technical features - eventually add/create the advanced stuff too.
     std::vector<ParameterType *> &parameters = DEREF(SomeMessage::soap_new_std__vectorTemplateOfPointerToSomeMessage__CurParameterType(iSoap));
     parameters.emplace_back(someParameterType);
 ```
+
+### GSoap and namespace conflicts
+
+- <https://stackoverflow.com/questions/33097098/gsoap-with-multiple-wsdls-with-same-operations>
 
 ## GTest
 
