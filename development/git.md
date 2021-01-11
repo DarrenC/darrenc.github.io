@@ -117,7 +117,7 @@ git config --global credential.helper wincred
 #### Git pull using an ssh key
 
 ```bash
-git -c core.sshCommand="ssh -i ~/.ssh/id_rsa_sos_nightly" clone ssh://git@github.com/~me/otf-orchestrator.git otf-orchestrator-nightly
+git -c core.sshCommand="ssh -i ~/.ssh/id_rsa_blah" clone ssh://git@github.com/~me/my-repo.git myrepo-nightly
 ```
 
 ### Long file paths workaround
