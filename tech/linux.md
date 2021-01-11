@@ -185,10 +185,11 @@ lsb_release -a # for all information related to the Ubuntu version,
 lsb_release -r # for the exact version
 sudo fdisk -l # for partition information with all details.
 
-dpkg -l | grep linux-image # displays all automatically installed kernels
+dpkg -l | grep linux-image # displays all installed kernels
 dpkg -l | tail -n +6 | grep -E 'linux-image-[0-9]+'
 
 apt-mark showmanual 'linux-image-.*' # show manually installed kernels
+apt-mark showauto 'linux-image-.*'   # show auto installed kernels
 
 sudo apt --purge autoremove # remove unused old kernels (only removes auto installed kernels I think)
 
