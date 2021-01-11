@@ -720,7 +720,7 @@ This seems like a very good way of handling complex makefiles
 - assert vs static_assert
 - Templates
 - Overloading operators
-- Unique, shared pointers in boost - see where they're used in ORC
+- Unique, shared pointers in boost - see where they're used in real projects
     code and slides 64 onwards - also in the exercise 3
   - example unique_pointer here
         <https://en.cppreference.com/book/intro/smart_pointers>

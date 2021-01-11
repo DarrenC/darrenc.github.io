@@ -22,7 +22,7 @@
   - [Android](#android)
   - [Shortcuts Eclipse](#shortcuts-eclipse)
   - [Coding Katas](#coding-katas)
-  - [ORC Stuff](#orc-stuff)
+  - [Eclipse collections Stuff](#eclipse-collections-stuff)
   - [Geek construction toys](#geek-construction-toys)
   - [Readme.MD viewer](#readmemd-viewer)
     - [Conway's Law](#conways-law)
@@ -233,9 +233,9 @@ Ctrl-Shift-M - imports, so to convert static call to static import
       Prime Factors - https://github.com/alebaffa/codingdojo/tree/master/primefactors/python
       Game of Life - http://codingdojo.org/cgi-bin/index.pl?action=browse&diff=1&id=KataGameOfLife
 
-## ORC Stuff
+## Eclipse collections Stuff
 
-      https://github.com/eclipse/eclipse-collections See Also Nico's mail for the diff topics
+      https://github.com/eclipse/eclipse-collections 
 
 ## Geek construction toys
 

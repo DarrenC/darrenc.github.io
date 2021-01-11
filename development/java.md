@@ -223,16 +223,16 @@ Example 1 - Filter a list (here it's based on finding IError.getType()
 equal to ErrorType.WARNING)
 
 ```java
-MutableList<IError> warnings = orcResponse.getErrors().select(e ->e.getType().equals(ErrorType.WARNING));
+MutableList<IError> warnings = myResponse.getErrors().select(e ->e.getType().equals(ErrorType.WARNING));
 
 // vs Lambdas
-orcResponse.getErrors().stream().filter(e -> e.getType().equals(ErrorType.WARNING)).collect(Collectors.toList());
+myResponse.getErrors().stream().filter(e -> e.getType().equals(ErrorType.WARNING)).collect(Collectors.toList());
 
 // Example 2 - Check for any occurrence in a list
 boolean areThereErrors =
-orcResponse.getErrors().anySatisfy(e -> e.getType().equals(ERROR));
+myResponse.getErrors().anySatisfy(e -> e.getType().equals(ERROR));
 
-orcResponse.getErrors().stream().anyMatch(e ->
+myResponse.getErrors().stream().anyMatch(e ->
 e.getType().equals(ERROR));
 
 ```
