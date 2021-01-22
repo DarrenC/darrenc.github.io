@@ -13,6 +13,7 @@
     - [Get rid of local changes to a file before they are added](#get-rid-of-local-changes-to-a-file-before-they-are-added)
     - [Check where your remote repo is - e.g. personal, main repo, fork etc](#check-where-your-remote-repo-is---eg-personal-main-repo-fork-etc)
     - [Comparing with previous version (works for file or dir) - useful after pull](#comparing-with-previous-version-works-for-file-or-dir---useful-after-pull)
+    - [Seeing a large diff in the command line to compare a remote to your repo](#seeing-a-large-diff-in-the-command-line-to-compare-a-remote-to-your-repo)
     - [Checking out the latest version based on tag](#checking-out-the-latest-version-based-on-tag)
     - [Pulling in a remote Pull Request to a local repo](#pulling-in-a-remote-pull-request-to-a-local-repo)
     - [Why don't I see all remote branches? Getting all branches when there are multiple remotes defined](#why-dont-i-see-all-remote-branches-getting-all-branches-when-there-are-multiple-remotes-defined)
@@ -155,6 +156,13 @@ git remote -v
 
 ```bash
 git diff feature/official-codegen@{1} feature/official-codegen MySwaggerSpec.yaml
+```
+
+### Seeing a large diff in the command line to compare a remote to your repo
+
+```bash
+# Here we compare the origin/develop branch of your repo to a different remote repo branch
+git diff --word-diff-regex=. origin/develop...someOtherRepoRemote/newBranchWithChanges
 ```
 
 ### Checking out the latest version based on tag
