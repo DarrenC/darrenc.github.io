@@ -27,6 +27,7 @@
 - <http://lecalligraphe.com/produit.php?ref=PP450&id_rubrique=9> - set of 4 pens
 - <http://www.comptoirdesecritures.com/cgi-bin/sh000002.pl?REFPAGE=http%3a%2f%2fwww.comptoirdesecritures.com%2f&WD=porte&PN=Accessoires_calligraphie_occidentale.html%23aBA01118#aBA01118> French Site
 - <http://www.johnnealbooks.com/prod_detail_list/133>
+- [Pen Refills](https://www.jetpens.com/blog/the-ultimate-guide-to-pen-refills/pt/231#euro-style-refill)
 
 ## Calligraphy Using Software
 
