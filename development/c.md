@@ -139,6 +139,22 @@ technical features - eventually add/create the advanced stuff too.
 
 - <https://stackoverflow.com/questions/33097098/gsoap-with-multiple-wsdls-with-same-operations>
 
+### GSoap file generation - splitting files
+
+- <https://www.genivia.com/doc/guide/html/index.html#soapcpp2-f>
+
+**soapcpp2 -f**
+
+This option splits the serialization source code saved to soapC.c and soapC.cpp files into multiple soapC_NNN files as specified by the numeric parameter. This option alleviates compilation issues with very large source code files.
+
+For example:
+
+soapcpp2 -f40 file.h
+
+This generates multiple soapC_NNN.cpp files each with 40 serializers, with NNN counting from 001 onward.
+
+The value of this option must be larger or equal to 10.
+
 ## GTest
 
 - Testing in C++
