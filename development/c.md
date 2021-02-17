@@ -21,8 +21,9 @@
   - [C++ examples](#c-examples)
     - [auto&& auto - auto type deduction in range based for loops](#auto-auto---auto-type-deduction-in-range-based-for-loops)
     - [References and Pointers](#references-and-pointers)
-    - [**Links**](#links)
+      - [Pointer Links](#pointer-links)
     - [String Manipulation](#string-manipulation)
+      - [Printing integers, appending to strings](#printing-integers-appending-to-strings)
     - [Includes](#includes)
       - [Difference between include "" and include <>](#difference-between-include--and-include-)
     - [cin to read input](#cin-to-read-input)
@@ -257,7 +258,7 @@ When failing a test you can add a custom message like this:
 
 TODO -> example from Julien with pointers and addresses...
 
-### **Links**
+#### Pointer Links
 
 - Basic introduction to Pointers -
     <https://www.brainstobytes.com/a-gentle-introduction-to-pointers-in-c/>
@@ -283,6 +284,33 @@ TODO -> example from Julien with pointers and addresses...
     - if(myString.empty())
       - <http://www.cplusplus.com/reference/string/string/empty>
 
+#### Printing integers, appending to strings
+
+- [Different ways of casting strings to Ints](https://www.techiedelight.com/concatenate-integer-string-object-cpp)
+
+``` cpp
+#include <iostream>
+#include <string>
+#include <sstream>
+ 
+std::string toString(auto &i){
+   std::stringstream ss;
+   ss << i;
+ 
+   return ss.str();
+}
+ 
+int main()
+{
+    int i = 17;
+    std::string s = "C++" + toString(i);
+ 
+    std::cout << s << '\n';
+ 
+    return 0;
+}
+```
+ 
 ### Includes
 
 #### Difference between include "" and include <>
