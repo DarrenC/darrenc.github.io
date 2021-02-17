@@ -286,7 +286,7 @@ TODO -> example from Julien with pointers and addresses...
 
 #### Printing integers, appending to strings
 
-- [Different ways of casting strings to Ints](https://www.techiedelight.com/concatenate-integer-string-object-cpp)
+- [Different ways of having int as string and concatenating](https://www.techiedelight.com/concatenate-integer-string-object-cpp)
 
 ``` cpp
 #include <iostream>
