@@ -387,6 +387,9 @@ try
     //blah
 }
 ```
+### Reading from Standard in using Scanner
+
+- <https://www.reddit.com/r/javahelp/wiki/scanner>
 
 link to article on serialization:
 <http://java.sun.com/developer/technicalArticles/Programming/serialization/>
