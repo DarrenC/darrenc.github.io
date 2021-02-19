@@ -8,6 +8,10 @@
 
 ## Training
 
+### Exercises
+
+- Chest exercises: <https://www.healthline.com/health/fitness-exercise/incline-vs-flat-bench>
+
 ### Maple Syrup gel recipe
 
 - Maple Syrup Gel Recipe:
