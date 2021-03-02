@@ -37,3 +37,5 @@
 
 - [Dev.to Securing APIs nice read](https://dev.to/bearer/api-security-best-practices-3gjl?utm_source=digest_mailer&utm_medium=email&utm_campaign=digest_email)
 - OWASP Site (and Top10) - <https://owasp.org/www-project-top-ten/>
+- Gab hack - <https://arstechnica.com/information-technology/2021/03/gab-the-far-right-website-has-been-hacked-and-70gb-of-data-leaked/>
+- 
