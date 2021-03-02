@@ -71,6 +71,7 @@
 ## Books and articles
 
 - <https://linuxcommand.org/index.php> and the pdf version <https://netcologne.dl.sourceforge.net/project/linuxcommand/TLCL/19.01/TLCL-19.01.pdf>
+- Gamifying linux learning - <https://www.reddit.com/r/linux4noobs/comments/luzgz9/looking_for_websites_like_overthewire_to_learn/>
 
 ## Ubuntu
 
