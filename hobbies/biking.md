@@ -49,6 +49,7 @@
 
 - Setup of bars - angles etc. <https://cyclingtips.com/2018/09/how-to-set-up-road-bike-drop-handlebars-tips-guidelines/>
 - Another bar setup - nice, with lots of pictures <https://blog.bikefit.com/adjusting-hand-position-in-bike-fitting/>
+- Adjusting brakes - shimano manual - <https://si.shimano.com/pdfs/dm/DM-BR0003-08-ENG.pdf>
 
 ## Tools
 
