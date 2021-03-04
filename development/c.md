@@ -164,6 +164,7 @@ The value of this option must be larger or equal to 10.
         <https://stackoverflow.com/questions/13696376/what-is-the-difference-between-gtest-and-gmock>
   - Setup and teardown -
         <https://stackoverflow.com/questions/45808171/why-are-setup-teardown-virtual-in-gtest>
+        - override vs virtual for an overriden function (use override from C++11 onwards but equivalent)
   - <https://stackoverflow.com/questions/26030700/unit-testing-c-setup-and-teardown>
   - <https://developer.ibm.com/articles/au-googletestingframework/>
   - Alternative to GMock - FSeam -
