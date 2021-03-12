@@ -39,6 +39,7 @@
     possible soln for issue of paths and jars
 - [Nice overview of building java apps with docker including multi-stage](https://blog.frankel.ch/hitchhiker-guide-containerizing-java-apps/)
 - [Overview of docker by a fullstack-dev](https://blog.andrewray.me/towards-a-strong-mental-model-of-docker/)
+- [Building docker images with small final size](https://phoenixnap.com/kb/docker-image-size)
 
 ### Trainings
 
