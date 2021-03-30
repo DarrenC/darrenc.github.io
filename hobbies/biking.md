@@ -51,6 +51,13 @@
 - Another bar setup - nice, with lots of pictures <https://blog.bikefit.com/adjusting-hand-position-in-bike-fitting/>
 - Adjusting brakes - shimano manual - <https://si.shimano.com/pdfs/dm/DM-BR0003-08-ENG.pdf>
 
-## Tools
+## Tools and Tech
 
 - Torque wrenches - <https://www.bikeradar.com/features/the-best-cycling-torque-wrenches/>
+- GPS -> Edge 520 plus
+  - https://www.alltricks.fr/F-11915-compteurs-velo/P-361571-garmin-gps-edge-520-plus-noir?gclid=Cj0KCQjwmIuDBhDXARIsAFITC_67KCH7RrLq7LY-ZRnKgVkn2EuEM0rNtFc9Rb-x__kC6ys3yTxiAD8aAu5uEALw_wcB
+  - https://www.dcrainmaker.com/2018/04/hands-on-garmin-edge-520-plus-with-mapping.html
+  - https://www.dcrainmaker.com/2015/07/garmin-edge-520.html
+  - https://www.dcrainmaker.com/2019/08/how-to-install-free-maps-on-your-garmin-edge.html
+  - https://forums.garmin.com/sports-fitness/cycling/f/edge-520-520-plus/129614/update-maps-from-openstreetmaps
+  - https://5cycling.com/garmin-edge-520-plus-review/  
