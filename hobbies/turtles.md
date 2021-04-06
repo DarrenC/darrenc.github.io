@@ -1,9 +1,9 @@
-# Turtles
+# Turtles and Pets
 
 - [Turtles](#turtles)
   - [Articles](#articles)
 
-## Articles
+## Turtle Articles
 
 Sternotherus carinatus, cinosterne caréné, Razor backed musk turtle
 
@@ -12,3 +12,10 @@ Sternotherus carinatus, cinosterne caréné, Razor backed musk turtle
 - <https://en.wikipedia.org/wiki/Razor-backed_musk_turtle>
 - <https://www.bebesaurus.com/blog/fiche-d-elevage-sternotherus-carinatus-cinosterne-carene-n65>
 - Tips on care including feeding <https://www.exotic-pets.co.uk/razorback-musk-turtle.html>
+
+
+## Hens
+
+### Health
+
+- blood in poop - <https://www.freedomrangerhatchery.com/blog/coccidiosis-your-chickens-what-you-need-to-know/>
