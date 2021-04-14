@@ -22,3 +22,4 @@ Sternotherus carinatus, cinosterne caréné, Razor backed musk turtle
   - <https://afarmgirlinthemaking.com/how-to-beat-coccidiosis-and-keep-your-flock-healthy/>
   - <https://cluckin.net/how-to-treat-and-prevent-coccidiosis-in-chickens.html>
   - <https://poules-club.com/coccidiose-poule/#traitement-et-pr%C3%A9vention-de-la-maladie>
+  - Hens not laying Sablepoot - <http://forum.thepoultrysite.com/discussion/21955/still-problems-with-sablepoot-maizie>
