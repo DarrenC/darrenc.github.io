@@ -767,7 +767,7 @@ grep -o SOMESTRING myFile.txt | wc -l
 - -i: performs a case-insensitive search.
 - -n: displays the lines containing the pattern along with the line
     numbers.
-- -v: displays the lines not containing the specified pattern.
+- -v: displays the lines NOT containing the specified pattern.
 - -c: displays the count of the matching patterns.
 - -r: recursive matches through sub dirs
 - -L: display files NOT matching the pattern
@@ -793,6 +793,9 @@ grep -rL "NOTTHISSTRING" $(grep -rl WITHTHISSTRING '.' --include=*.cpp)
 
 # Example for finding a lib with a certain symbol 
 for lib in `find . -name "*.so"` ; do  grep "someSymbol" $lib >/dev/null; if [ $? -eq 0 ]; then echo $lib; fi  done
+
+# Finding a process with grep and filtering your grep from the result
+ps aux | grep some_process | grep -v grep
 
 ```
 
