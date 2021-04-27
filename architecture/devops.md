@@ -3,13 +3,11 @@
 - [Devops](#devops)
   - [Devops Roadmap](#devops-roadmap)
 
-
 ## Devops Roadmap
 
 - <https://roadmap.sh/devops>
 - Also a useful list: <https://www.reddit.com/r/devops/comments/j5k2nw/switching_to_a_career_in_devops_which_tools_will/>
-  - 
-    Config management; Ansible, Puppet, Chef, Saltstac, Packer (kinda also provisioning)
+  - Config management; Ansible, Puppet, Chef, Saltstac, Packer (kinda also provisioning)
     Provisioning: Terraform, Salt, Ansible, Cloudformation (terraform the best in class in my opinion)
     CI/CD: Jenkins, Bamboo, GitLab CI/CD, CircleCI, Travis CI, Jfrog Pipelines, TeamCity
     Version Control: Git, SVN
@@ -28,4 +26,3 @@ I am sure I missed a lot. But even more importantly in devops are some general p
     Agile/Scrum
 
 I would suggest checking out some books such as the Phoenix Project, DevOps Handbook, The Goal, Site Reliability Engineering (O'Reilly), Infrastructure as Code (O'Reilly),
-

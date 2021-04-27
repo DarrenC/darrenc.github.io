@@ -2,26 +2,16 @@
 
 - [Gang of Four Design Patterns](#gang-of-four-design-patterns)
   - [Links](#links)
-  - [Structural](#structural)
-    - [Adapter](#adapter)
   - [Spring Design Patterns](#spring-design-patterns)
   - [JEE Design Patterns](#jee-design-patterns)
   - [List of Design Patterns](#list-of-design-patterns)
     - [Creational pattern](#creational-pattern)
-    - [Structural](#structural-1)
+    - [Structural](#structural)
     - [Behavioral](#behavioral)
 
 ## Links
 
 - <https://en.wikipedia.org/wiki/Design_Patterns>
-
-## Structural
-
-These concern class and object composition. They use inheritance to
-compose interfaces and define ways to compose objects to obtain new
-functionality.
-
-### Adapter
 
 ## Spring Design Patterns
 
