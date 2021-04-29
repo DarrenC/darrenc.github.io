@@ -1,6 +1,7 @@
 # Docker
 
 - [Docker](#docker)
+  - [Overview](#overview)
   - [Articles](#articles)
     - [Trainings](#trainings)
   - [Basic commands](#basic-commands)
@@ -25,6 +26,10 @@
     - [Getting a list of all the tags on dockerhub](#getting-a-list-of-all-the-tags-on-dockerhub)
   - [Issues with docker on WSL2](#issues-with-docker-on-wsl2)
     - [Issue with mapping a data dir for mysql using a volume](#issue-with-mapping-a-data-dir-for-mysql-using-a-volume)
+
+## Overview
+
+Docker is a container engine built on LXC tech - VE implementations of Linux environments.
 
 ## Articles
 
@@ -128,7 +133,7 @@ docker network prune --force # good to run every so often to get rid of conflict
 docker inspect <container_id>
 ```
 
-## Volumes and Mounting 
+## Volumes and Mounting
 
 ```bash
 # outputting an ls to a file on the host (NB --rm to remove once done)
@@ -158,7 +163,7 @@ docker run -d -p 8080:80 httpd
 
 ## Dockerfiles
 
-### Simple Dockerfile 
+### Simple Dockerfile
 
 ```bash
 
@@ -336,7 +341,6 @@ networks:
 
 ```
 
-
 Assuming Docker is already setup...
 
 ## Really simple HelloWorld java cmd line
@@ -452,7 +456,7 @@ $ docker push openapi2puml/openapi2puml:0.0.1
 
 ## Issues with docker on WSL2
 
-### Issue with mapping a data dir for mysql using a volume 
+### Issue with mapping a data dir for mysql using a volume
 
 In my case the issue occured when mounting a directory from my c drive when using Windows Subsystem for Linux 2 (WSL2). Mounting a directory from my user directory of the wsl linux system worked fine.
 

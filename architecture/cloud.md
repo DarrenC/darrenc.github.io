@@ -36,3 +36,31 @@ Also:
 - Availability Zone: unique physical location - i.e. one or more datacentres
 - Region: group of AZ deployed with a defined latency perimeter, connected by low-latency network
 - Geography: area of the world containing a discrete market containing one/more regions
+
+### Kubernetes
+
+- Containers grouped in pods, deployed on nodes (physical servers) within a cluster.
+- Kubernetes has solutions for shared volumes between containers (TODO - investigate this) and other shared and mirrored data sources when working with stateful microservices.
+
+### Microservice
+
+- Independently deployable service with a single clearly scoped purpose or capability.
+  - Cloud native, scalable, platform independent, decoupled and isolated, autonomous, devops continuous integration & deployment.
+  
+### Service Mesh
+
+- Network of microservices making up an application.
+- ISTIO, Linkerd are tools that handle this as complexity grows.
+
+### Monitoring and Alerting
+
+- Prometheus - monitoring and alerting
+- Grafana/Kibana - data visualization
+- Fluentd - data gathering
+- Kafka - messaging
+
+### Logging
+
+- Splunk
+- Elastic search
+- ELK - elastic search, logstash, kibana
