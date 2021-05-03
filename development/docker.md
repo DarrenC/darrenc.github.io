@@ -26,6 +26,9 @@
     - [Getting a list of all the tags on dockerhub](#getting-a-list-of-all-the-tags-on-dockerhub)
   - [Issues with docker on WSL2](#issues-with-docker-on-wsl2)
     - [Issue with mapping a data dir for mysql using a volume](#issue-with-mapping-a-data-dir-for-mysql-using-a-volume)
+  - [TCPDump with Docker containers](#tcpdump-with-docker-containers)
+    - [Related Articles for TCPDUMP](#related-articles-for-tcpdump)
+  - [JMX and docker containers](#jmx-and-docker-containers)
 
 ## Overview
 
@@ -461,3 +464,68 @@ $ docker push openapi2puml/openapi2puml:0.0.1
 In my case the issue occured when mounting a directory from my c drive when using Windows Subsystem for Linux 2 (WSL2). Mounting a directory from my user directory of the wsl linux system worked fine.
 
 If I understand correctly this seems to be a known issue in docker for windows occurring for named volumes: docker/for-win#4812
+
+## TCPDump with Docker containers
+
+If you need to get tcp dumps of traffic within a docker network (eg.g. multiple containers in docker-compose)
+
+- docker-compose file tells me the ip address used for the network (or defaults to 172.17.0.1)
+
+```yaml
+networks:
+    mynet:
+        driver: "bridge"
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.17.0.1/16
+                  gateway: 172.17.0.1
+```
+
+- On the machine running docker containers we can see the ip address and the associated network name:
+
+```shell
+$ ip addr
+...
+142: br-fe8387ea603a: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 02:42:4c:15:26:27 brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.20.255.255 scope global br-fe8387ea603a
+       valid_lft forever preferred_lft forever
+    inet6 fe80::42:4cff:fe15:2627/64 scope link 
+       valid_lft forever preferred_lft forever
+...       
+```
+
+- We get the interface name and put it in tcpdump using:
+  - Port number of our application to filter
+  - Limiting to 100 records captured
+  - Printin contents of the packets with -A
+
+```shell
+$ sudo tcpdump -i br-fe8387ea603a port 7323 -c 100 -A
+
+...
+PACKETS STUFF HERE -
+
+.M.@.@................b.aZ.M.....b<.....
+.gR.E\.WHTTP/1.1 200 OK
+Connection: keep-alive
+Cache-Control: no-cache, must-revalidate, no-transform, no-store
+Content-Type: application/json
+Content-Length: 2335
+Date: Fri, 18 Jan 2019 15:36:23 GMT
+...
+```
+
+### Related Articles for TCPDUMP
+
+- Julia Evan's EXCELLENT comic <https://jvns.ca/tcpdump-zine.pdf>
+- Nice page of examples giving specifically the case with docker containers <https://faun.pub/snooping-on-container-traffic-in-docker-compose-d34764a01276>
+- Using a docker container to run tcpdump within the docker group <https://rmoff.net/2019/11/29/using-tcpdump-with-docker/>
+  - Similar (didn't follow this one) <https://xxradar.medium.com/how-to-tcpdump-effectively-in-docker-2ed0a09b5406>
+  - Nice docker network explanation + diagram <https://www.freecodecamp.org/news/how-to-get-a-docker-container-ip-address-explained-with-examples/>
+
+## JMX and docker containers
+
+- JMX from machine 1 to JVM running on machine 2 - <https://stackoverflow.com/questions/31257968/how-to-access-jmx-interface-in-docker-from-outside>
+- Log4J with JMX - <https://logging.apache.org/log4j/2.x/manual/jmx.html>
