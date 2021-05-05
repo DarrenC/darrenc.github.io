@@ -799,6 +799,20 @@ ps aux | grep some_process | grep -v grep
 
 ```
 
+#### Grep patterns
+
+- <https://www.digitalocean.com/community/tutorials/using-grep-regular-expressions-to-search-for-text-patterns-in-linux>
+
+```bash
+# Example using grouping with alternative matches
+$ grep -E "(GPL|General Public License)" GPL-3
+
+Output:
+The *GNU General Public License* is a free, copyleft license for...
+Developers that use the GNU *GPL* protect your rights with two steps: ...
+  
+```
+
 ### System Suspend from commandline
 
 - <https://unix.stackexchange.com/questions/484550/pm-suspend-vs-systemctl-suspend>
