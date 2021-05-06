@@ -2,13 +2,16 @@
 
 - [Maven](#maven)
   - [Books, articles](#books-articles)
-  - [POM Reference - exlcuding Dependencies](#pom-reference---exlcuding-dependencies)
+    - [Maven References to quick schemas and tags](#maven-references-to-quick-schemas-and-tags)
+  - [POM Reference - excluding Dependencies](#pom-reference---excluding-dependencies)
     - [Exclusions](#exclusions)
-    - [Maven plugin for JaxB](#maven-plugin-for-jaxb)
-    - [Maven Goals and Phases](#maven-goals-and-phases)
-    - [Maven Assembly plugin](#maven-assembly-plugin)
-    - [Maven copy dependencies plugin](#maven-copy-dependencies-plugin)
-    - [Options for plugins](#options-for-plugins)
+  - [Maven plugin for JaxB](#maven-plugin-for-jaxb)
+  - [Maven Goals and Phases](#maven-goals-and-phases)
+  - [Maven Assembly plugin](#maven-assembly-plugin)
+  - [Maven copy dependencies plugin](#maven-copy-dependencies-plugin)
+  - [Maven Build Helper plugin](#maven-build-helper-plugin)
+  - [Maven Profiles](#maven-profiles)
+  - [Options for plugins](#options-for-plugins)
     - [Maven links](#maven-links)
 
 ## Books, articles
@@ -18,7 +21,12 @@
 - Publishing to maven central repo -
     <https://dzone.com/articles/publish-your-artifacts-to-maven-central>
 
-## POM Reference - exlcuding Dependencies
+### Maven References to quick schemas and tags
+
+- Lifecycles and phases - <http://maven.apache.org/ref/3.8.1/maven-core/lifecycles.html>
+- POM element schema structure quick-card - <https://maven.apache.org/ref/3.8.1/maven-model/maven.html>
+
+## POM Reference - excluding Dependencies
 
 ### Exclusions
 
@@ -29,7 +37,6 @@ requires maven-core, and we do not wish to use it or its dependencies,
 then we would add it as an exclusion.
 
 ```xml
-
 <project xmlns="<http://maven.apache.org/POM/4.0.0>"
 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -92,7 +99,7 @@ so you clip all the transitive dependencies:
 - exclusions:
   - Exclusions contain one or more exclusion elements, each containing a groupId and artifactId denoting a dependency to exclude. Unlike optional, which may or may not be installed and used, exclusions actively remove themselves from the dependency tree.
 
-### Maven plugin for JaxB
+## Maven plugin for JaxB
 
 - <https://github.com/highsource/maven-jaxb2-plugin>
 
@@ -103,14 +110,14 @@ This Maven plugin wraps and enhances the JAXB Schema Compiler (XJC) and
 allows compiling XML Schemas (as well as WSDL, DTDs, RELAX NG) into Java
 classes in Maven builds.
 
-### Maven Goals and Phases
+## Maven Goals and Phases
 
 - <https://www.baeldung.com/maven-goals-phases>
 
 Basic idea: Maven has build lifecycle made of phases, which are made up
 of goals.
 
-### Maven Assembly plugin
+## Maven Assembly plugin
 
 Can be used to build executable jars, zips etc. In general can be
 replaced by the maven shadow plugin for building an "uberjar" but
@@ -170,7 +177,7 @@ mvn org.apache.maven.plugins:maven-assembly-plugin:2.3:single
     </plugin>
 ```
 
-### Maven copy dependencies plugin
+## Maven copy dependencies plugin
 
 - Can be used to copy dependencies and even recreate the structure of the repo + pom files etc.
   - <http://maven.apache.org/plugins/maven-dependency-plugin/copy-dependencies-mojo.html>
@@ -214,7 +221,30 @@ mvn org.apache.maven.plugins:maven-dependency-plugin:3.1.2:copy-dependencies
 
 ```
 
-### Options for plugins
+## Maven Build Helper plugin
+
+Can be useful to "add" sources or tests to the list of files to be considered for a compile. Works in a "generate-sources" phase before the build.
+
+- <https://stackoverflow.com/questions/6025596/conditional-exclusion-of-file-from-compilation-in-maven-project>
+- Quick description - <https://www.mojohaus.org/build-helper-maven-plugin/add-source-mojo.html>
+- How to use it - <https://www.mojohaus.org/build-helper-maven-plugin/usage.html>
+
+I've made use of it in a profile to add back an excluded source to the build.
+
+## Maven Profiles
+
+You can build differently depending on the required context - e.g. environment diffs etc.
+
+- <https://maven.apache.org/guides/introduction/introduction-to-profiles.html>
+- <https://maven.apache.org/guides/mini/guide-building-for-different-environments.html>
+
+```shell
+# Basic usage
+mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
+mvn clean package -P build_for_test
+```
+
+## Options for plugins
 
 From the maven docs it can be difficult to work out what the command
 line options are, especially when the xml and command line formats are
