@@ -7,6 +7,7 @@
     - [Simple Soap String assignment](#simple-soap-string-assignment)
     - [Vector style assignment](#vector-style-assignment)
     - [GSoap and namespace conflicts](#gsoap-and-namespace-conflicts)
+    - [GSoap file generation - splitting files](#gsoap-file-generation---splitting-files)
   - [GTest](#gtest)
     - [TEST, TEST_F, TEST_P](#test-test_f-test_p)
     - [Custom Failure Message in Assertions](#custom-failure-message-in-assertions)
@@ -1100,6 +1101,8 @@ a parent-child conversion via template parameter
 vtab example to explain why member templates can never be virtual one
 vtab per class (need to understand more about vtab and virtual
 functions)
+
+- article explaining vtables - <https://pabloariasal.github.io/2017/06/10/understanding-virtual-tables/>
 
 - Slide 156
 
