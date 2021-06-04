@@ -131,6 +131,10 @@ sed 's/-\([0-9.]\+\)/(\1)/g' inputfile
 
 # Find a number preceeded by a , followed by ,null] and delete it from the string (//g)
 no_nulls=$(echo "$original_string" | sed 's/\(,[0-9]\+,null]\)//g' )
+
+# Editing the line after the matching one - find a line containing FIXME and then on the next line (n;) add a prefix blah__ to the first character found.
+sed -i '/FIXME.*/{n;s/\([a-z,A-Z]\)/blah__\0/;}' myfile.txt
+
 ```
 
 ### Shell Parameter Expansions

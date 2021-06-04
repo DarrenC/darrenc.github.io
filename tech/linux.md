@@ -54,6 +54,7 @@
     - [Grep](#grep)
       - [**Other options**](#other-options)
     - [Grep to find text within files](#grep-to-find-text-within-files)
+      - [Grep patterns](#grep-patterns)
     - [System Suspend from commandline](#system-suspend-from-commandline)
     - [Ubuntu on a netbook](#ubuntu-on-a-netbook)
     - [Docker Installs for Linux - Ubuntu](#docker-installs-for-linux---ubuntu)
@@ -468,6 +469,7 @@ activate the partition.
   - [Grymoire tutorial](https://www.grymoire.com/Unix/Sed.html#uh-53)
   - [GNU SED manual](https://www.gnu.org/software/sed/manual/sed.html)
     - Examples - <https://www.gnu.org/software/sed/manual/sed.html#Joining-lines>
+  - <https://fabianlee.org/2018/10/28/linux-using-sed-to-insert-lines-before-or-after-a-match/>
 
 #### Simple SED examples
 
