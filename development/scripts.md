@@ -135,6 +135,12 @@ no_nulls=$(echo "$original_string" | sed 's/\(,[0-9]\+,null]\)//g' )
 # Editing the line after the matching one - find a line containing FIXME and then on the next line (n;) add a prefix blah__ to the first character found.
 sed -i '/FIXME.*/{n;s/\([a-z,A-Z]\)/blah__\0/;}' myfile.txt
 
+
+# https://stackoverflow.com/questions/26568952/how-to-replace-multiple-patterns-at-once-with-sed
+# Here what's interesting is more the "&" to output the captured match which helped where \1 wasn't good.
+# This example adds a \n before each match of AND, GROUP BY etc.
+sed -e 's:AND:\n&:g' -e 's:GROUP BY:\n&:g' -e 's:UNION:\n&:g' -e 's:FROM:\n&:g' file
+
 ```
 
 ### Shell Parameter Expansions
