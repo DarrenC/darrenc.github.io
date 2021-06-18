@@ -443,6 +443,17 @@ If using a map with a key which is a struct or complex key, there needs to be a 
 
 - Declaring a vector will initialize an empty vector so can check this with v.empty();
 
+- The ```void reserve(size_type numberOfElements)``` function can be used when we know in advance the minimum number of elements in the vector we want to create. <https://www.geeksforgeeks.org/using-stdvectorreserve-whenever-possible/>. It will reserve that amount of memory to avoid reallocating up to that number of elements which can improve performance.
+
+```cpp
+    int sizeOfVector = 5000;
+  
+    vector<int> v1, v2;
+  
+    // Reserve space in v2
+    v2.reserve(sizeOfVector);
+```
+
 ### Vector basic operations
 
 - front() - get the item from the front of the vector
