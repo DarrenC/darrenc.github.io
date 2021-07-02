@@ -13,12 +13,13 @@
     - [Using Debian package manager](#using-debian-package-manager)
     - [Checking Kernel and system info](#checking-kernel-and-system-info)
     - [Checking Hardware Configuration](#checking-hardware-configuration)
-    - [Checking network usage](#checking-network-usage)
-    - [SSH tips](#ssh-tips)
-      - [links about using ssh agent & security](#links-about-using-ssh-agent--security)
+  - [Checking network usage](#checking-network-usage)
+  - [User Stuff](#user-stuff)
+  - [SSH tips](#ssh-tips)
+    - [links about using ssh agent & security](#links-about-using-ssh-agent--security)
       - [Some other articles about ssh login without password (NB - ssh agent solution is useful)](#some-other-articles-about-ssh-login-without-password-nb---ssh-agent-solution-is-useful)
-    - [Cleaning Snaps](#cleaning-snaps)
-    - [FStab](#fstab)
+  - [Cleaning Snaps](#cleaning-snaps)
+  - [FStab](#fstab)
     - [Managing Swap space](#managing-swap-space)
     - [Managing /var space](#managing-var-space)
     - [Setting java version](#setting-java-version)
@@ -255,19 +256,26 @@ sudo lshw -class memory
 
 ```
 
-### Checking network usage
+## Checking network usage
 
 ```bash
 # See what process send/receives most packets
 netstat -anp --inet
 ```
 
-### SSH tips
+## User Stuff
 
-- Using ssh-add to keep ssh passphrase in session -
-    <https://kb.iu.edu/d/aeww>
+- Checking user groups - <https://www.cyberciti.biz/faq/which-groups-do-i-belong-to/>
+  - ``` $ groups ```
+  - ``` $ whoami ```
 
-#### links about using ssh agent & security
+## SSH tips
+
+- Using ssh-add to keep ssh passphrase in session - <https://kb.iu.edu/d/aeww>
+- ssh academy - ssh, keygen etc. - <https://www.ssh.com/academy/ssh>
+  - ssh Copy-ID to add ssh keys to authorized keys - <https://www.ssh.com/academy/ssh/copy-id#how-ssh-copy-id-works>
+
+### links about using ssh agent & security
 
 - <https://www.commandprompt.com/blog/security_considerations_while_using_ssh-agent/>
 - <https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login/>
@@ -284,13 +292,13 @@ netstat -anp --inet
 - <https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login>
 - <https://stackoverflow.com/questions/12033249/ssh-agent-forwarding-inside-cron-jobs>
 
-### Cleaning Snaps
+## Cleaning Snaps
 
 - <https://superuser.com/questions/1310825/how-to-remove-old-version-of-installed-snaps>
 - Also here some tips for managing the snaps:
     <https://www.linuxuprising.com/2019/04/how-to-remove-old-snap-versions-to-free.html>
 
-### FStab
+## FStab
 
 The configuration file /etc/fstab contains the necessary information to
 automate the process of mounting partitions.
@@ -494,7 +502,7 @@ sed -n 's/$/:80/' ips.txt > new-ips.txt
 
 - Special Chars - <https://stackoverflow.com/questions/43108359/how-to-remove-all-special-characters-in-linux-text>
 - Print previous line before match - <https://unix.stackexchange.com/questions/206886/print-previous-line-after-a-pattern-match-using-sed>
-- Windows carrige return ^M in files - <https://superuser.com/questions/194668/grep-to-find-files-that-contain-m-windows-carriage-return>
+- Windows carriage return ^M in files - <https://superuser.com/questions/194668/grep-to-find-files-that-contain-m-windows-carriage-return>
 
 ### AWK Stuff
 
