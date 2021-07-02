@@ -265,6 +265,8 @@ When failing a test you can add a custom message like this:
 
 - <https://blog.petrzemek.net/2016/08/17/auto-type-deduction-in-range-based-for-loops/>
   - Information about using const auto&, auto&& etc. in loops and the different implications.
+- Details of the possible performance gains of using it
+  - <https://www.codeproject.com/Articles/453022/The-new-Cplusplus-11-rvalue-reference-and-why-you>
 
 ### References and Pointers
 
