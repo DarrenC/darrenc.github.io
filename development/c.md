@@ -519,7 +519,7 @@ TODO - ask/learn more about both approaches
 
 ### Containers - emplace_back vs push_back
 
-- emplace_back can take varadic args
+- emplace_back can take variadic args
 - emplace_back avoids creating a temp object in all cases, push_back may create a temp object in some cases
   - <https://stackoverflow.com/questions/4303513/push-back-vs-emplace-back>
 
@@ -762,6 +762,14 @@ This seems like a very good way of handling complex makefiles
 #### CMake Public and Private target link libraries
 
 - TODO - understand public/private linkage to avoid forcing re-linking for every change, only for public ones
+- A nice explanation - <https://cmake.org/pipermail/cmake/2016-May/063400.html>
+  - Private - A links B as private to say that nothing in the public API of A uses B
+  - Interface - A links B as interface to say that nothing in the implementation of A uses B, but B is used in the public API of A.
+  - Public - A links B as public to say that A uses B both in the public API of A and in the implementation of A.
+  - In terms of cpp and hpp (my take on it so may need corrections :))
+    - Private - A uses B only in the .cpp files
+    - Interface - A uses B only in the .hpp files
+    - Public - A uses B in both .hpp and .cpp files
 
 ### Quick summary
 
