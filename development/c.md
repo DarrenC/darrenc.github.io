@@ -40,6 +40,7 @@
     - [Vector size - size_type](#vector-size---size_type)
     - [Vector searching](#vector-searching)
     - [Vector (and containers in general) removing things in-place](#vector-and-containers-in-general-removing-things-in-place)
+    - [Containers - emplace_back vs push_back](#containers---emplace_back-vs-push_back)
   - [Constructors - default, delete and explicit keywords](#constructors---default-delete-and-explicit-keywords)
     - [Default](#default)
     - [Delete](#delete)
@@ -57,6 +58,7 @@
   - [Building C++ projects](#building-c-projects)
     - [Compiler information](#compiler-information)
     - [CMake](#cmake)
+      - [CMake Public and Private target link libraries](#cmake-public-and-private-target-link-libraries)
     - [Quick summary](#quick-summary)
     - [Build also with Ninja](#build-also-with-ninja)
   - [List of C++ Learning Topics initial](#list-of-c-learning-topics-initial)
@@ -458,10 +460,8 @@ If using a map with a key which is a struct or complex key, there needs to be a 
 
 - front() - get the item from the front of the vector
 - back() - get the item from the back of the vector
-- emplace_back()/push_back() - adding items to the back of the vector - STD way to add to the vector
-  - emplace_back can take varadic args
-  - in some cases emplace_back might avoid creating extra objects
-    - <https://stackoverflow.com/questions/4303513/push-back-vs-emplace-back>
+- emplace_back()/push_back() - adding items to the back of the vector - STD way to add to the vector  
+  - General rule: Favour emplace_back over push_back (see below for more details)
 - empty() check if the vector is empty
 
 ```cpp
@@ -472,8 +472,8 @@ int main () {
 
     std::vector<int> myvector;
 
-    myvector.push_back(78);
-    myvector.push_back(16);
+    myvector.emplace_back(78);
+    myvector.emplace_back(16);
 
     // now front equals 78, and back 16
 
@@ -516,6 +516,36 @@ TODO - ask/learn more about both approaches
 - DO USE -  iterator and container.end() with erase/remove functions
   - <https://www.freecodecamp.org/news/how-to-remove-elements-from-a-container-in-c/>
   - <https://www.fluentcpp.com/2018/09/14/how-to-remove-elements-from-a-sequence-container/>
+
+### Containers - emplace_back vs push_back
+
+- emplace_back can take varadic args
+- emplace_back avoids creating a temp object in all cases, push_back may create a temp object in some cases
+  - <https://stackoverflow.com/questions/4303513/push-back-vs-emplace-back>
+
+> emplace_back is really useful: void emplace_back(Args&&...);
+>
+> Instead of taking a value_type it takes a variadic list of arguments, so that means that you can now
+> perfectly forward the arguments and construct directly an object into a container without a temporary object
+> at all.
+>
+> That's useful because no matter how much cleverness RVO and move semantic bring to the table
+> there are still complicated cases where a push_back is likely to make unnecessary copies (or move).
+> For example, with the traditional insert() function of a std::map, you have to create a temporary,
+> which will then be copied into a std::pair<Key, Value>, which will then be copied into the map
+
+```cpp
+std::map<int, Complicated> m;
+int anInt = 4;
+double aDouble = 5.0;
+std::string aString = "C++";
+
+// cross your finger so that the optimizer is really good
+m.insert(std::make_pair(4, Complicated(anInt, aDouble, aString))); 
+
+// should be easier for the optimizer
+m.emplace(4, anInt, aDouble, aString);
+```
 
 ## Constructors - default, delete and explicit keywords
 
@@ -728,6 +758,10 @@ This seems like a very good way of handling complex makefiles
 - <http://derekmolloy.ie/hello-world-introductions-to-cmake/>
 - <https://blog.kitware.com/cmake-building-with-all-your-cores/>
 - <https://cliutils.gitlab.io/modern-cmake/chapters/intro/running.html>
+
+#### CMake Public and Private target link libraries
+
+- TODO - understand public/private linkage to avoid forcing re-linking for every change, only for public ones
 
 ### Quick summary
 
