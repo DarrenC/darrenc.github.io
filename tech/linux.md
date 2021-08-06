@@ -12,6 +12,7 @@
     - [Apt and apt-get](#apt-and-apt-get)
     - [Using Debian package manager](#using-debian-package-manager)
     - [Checking Kernel and system info](#checking-kernel-and-system-info)
+    - [Checking version of linux](#checking-version-of-linux)
     - [Checking Hardware Configuration](#checking-hardware-configuration)
   - [Checking network usage](#checking-network-usage)
   - [User Stuff](#user-stuff)
@@ -205,6 +206,28 @@ sudo apt --purge autoremove # remove unused old kernels (only removes auto insta
 - Updating kernel via grub reboot
 - sudo grub-reboot "Advanced options for Ubuntu>Ubuntu, with Linux 4.2.0-16-generic"
 - sudo reboot
+
+### Checking version of linux 
+
+- <https://stackoverflow.com/questions/13036048/how-do-i-identify-the-particular-linux-flavor-via-command-line>
+
+```bash
+# Get the initial flavour
+cat /proc/version
+
+# Then followup with specific commands
+
+# Red Hat for example
+cat /etc/redhat-release
+
+# Debian
+cat /etc/debian_version
+
+# or in general :
+cat /etc/*-release
+# Also you could use the following command
+cat /etc/issue
+```
 
 ### Checking Hardware Configuration
 

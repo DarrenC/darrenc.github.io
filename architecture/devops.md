@@ -2,6 +2,8 @@
 
 - [Devops](#devops)
   - [Devops Roadmap](#devops-roadmap)
+  - [Ansible Notes](#ansible-notes)
+    - [Terms](#terms)
 
 ## Devops Roadmap
 
@@ -26,3 +28,12 @@ I am sure I missed a lot. But even more importantly in devops are some general p
     Agile/Scrum
 
 I would suggest checking out some books such as the Phoenix Project, DevOps Handbook, The Goal, Site Reliability Engineering (O'Reilly), Infrastructure as Code (O'Reilly),
+
+
+## Ansible Notes
+
+- From linkedIn learning course - <https://www.linkedin.com/learning/learning-ansible-2020/an-introduction-to-ansible?u=75507506>
+
+### Terms
+
+- Control Node - machine running ansible scripts which can control/run commands on other machines

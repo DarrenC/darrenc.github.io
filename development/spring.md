@@ -17,6 +17,7 @@
     - [Consuming REST service from Spring Server Example](#consuming-rest-service-from-spring-server-example)
     - [@Autowired vs @Inject and Constructor injection annotations](#autowired-vs-inject-and-constructor-injection-annotations)
     - [Constructor Injection example](#constructor-injection-example)
+  - [Spring Boot](#spring-boot)
 
 ## Overview
 
@@ -229,3 +230,7 @@ private SearchService service;
 ```
 
 - Document from JBoss with example: <https://docs.jboss.org/weld/reference/1.1.0.Final/en-US/html/injection.html>
+
+## Spring Boot
+
+- 
