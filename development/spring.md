@@ -2,7 +2,7 @@
 
 - [Spring Framework Stuff](#spring-framework-stuff)
   - [Overview](#overview)
-  - [Getting Started with Spring MVC](#getting-started-with-spring-mvc)
+  - [Getting Started with Spring MVC (OUTDATED)](#getting-started-with-spring-mvc-outdated)
     - [Examples](#examples)
     - [Links](#links)
   - [Spring Mail](#spring-mail)
@@ -18,6 +18,7 @@
     - [@Autowired vs @Inject and Constructor injection annotations](#autowired-vs-inject-and-constructor-injection-annotations)
     - [Constructor Injection example](#constructor-injection-example)
   - [Spring Boot](#spring-boot)
+    - [Testing MVC in Spring Boot](#testing-mvc-in-spring-boot)
 
 ## Overview
 
@@ -28,7 +29,7 @@
 
 - [Martin Fowler's article on Inversion of Control/Dependency Injection](http://www.martinfowler.com/articles/injection.html)
 
-## Getting Started with Spring MVC
+## Getting Started with Spring MVC (OUTDATED)
 
 - Maven archetype for Spring 4 + Java 1.8 - <blog.codeleak.pl/2014/12/spring-mvc-4-quickstart-maven-archetype.html>
 - Maven archetype std webapp with Spring added after -
@@ -233,4 +234,41 @@ private SearchService service;
 
 ## Spring Boot
 
-- 
+- Linked in Course - <https://www.linkedin.com/learning/learning-spring-with-spring-boot-2/summary-of-the-web-application-2?u=75507506>
+
+### Testing MVC in Spring Boot
+
+- Shows the use of the latest JUnit5 + Spring boot for testing - <https://rieckpil.de/guide-to-testing-spring-boot-applications-with-mockmvc/>
+  - No "@RunWith" anymore - taken care of by @SpringBootTest
+
+```java
+@WebMvcTest(RoomReservationWebController.class)
+class RoomReservationWebControllerTest {
+  @MockBean
+  private ReservationService reservationService;
+
+  @Autowired
+  private MockMvc mockMvc;
+
+  @Test
+  public void getReservations() throws Exception{
+    String dateString = "2020-01-01";
+    Date date = DateUtils.createDateFromDateString(dateString);
+    List<RoomReservation> roomReservations = new ArrayList<>();
+    RoomReservation roomReservation = new RoomReservation();
+    roomReservation.setLastName("Unit");
+    roomReservation.setFirstName("Junit");
+    roomReservation.setDate(date);
+    roomReservation.setGuestId(1);
+    roomReservation.setRoomId(100);
+    roomReservation.setRoomName("Junit Room");
+    roomReservation.setRoomNumber("J1");
+    roomReservations.add(roomReservation);
+    given(reservationService.getRoomReservationsForDate(date)).willReturn(roomReservations);
+
+    this.mockMvc.perform(get("/reservations?date=2020-01-01"))
+        .andExpect(status().isOk())
+        .andExpect(content().string(containsString("Unit, Junit")));
+  }
+}
+```

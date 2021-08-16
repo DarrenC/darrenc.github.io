@@ -34,9 +34,10 @@
     - [Statics](#statics)
     - [Serialization](#serialization)
       - [Example of Simple reading in of an object](#example-of-simple-reading-in-of-an-object)
+    - [Reading from Standard in using Scanner](#reading-from-standard-in-using-scanner)
     - [Date and Time](#date-and-time)
     - [Threading](#threading)
-    - [Collections](#collections)
+  - [Collections](#collections)
     - [Searching](#searching)
     - [JavaMail](#javamail)
     - [Testing with Initial Context](#testing-with-initial-context)
@@ -387,6 +388,7 @@ try
     //blah
 }
 ```
+
 ### Reading from Standard in using Scanner
 
 - <https://www.reddit.com/r/javahelp/wiki/scanner>
@@ -405,7 +407,7 @@ Joda time is becoming more of a standard
 Thread and sync changes in java 1.5
 <http://onjava.com/onjava/excerpt/jthreads3_ch6/index1.html>
 
-### Collections
+## Collections
 
 Collections Tutorial on Sun/Oracle site:
 <http://docs.oracle.com/javase/tutorial/collections/intro/index.html>
@@ -414,6 +416,14 @@ My notes here - [Java Collections](Java Collections)
 
 also - estimation of big O notation
 <http://www.dreamincode.net/forums/topic/125427-determining-big-o-notation/>
+
+- Iterable to Collection examples - <https://www.baeldung.com/java-iterable-to-collection>
+
+```java
+    // handy snippet
+    List<String> result = new ArrayList<String>();
+    iterable.forEach(result::add);
+```
 
 ### Searching
 
