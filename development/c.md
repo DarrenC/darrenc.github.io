@@ -1034,6 +1034,9 @@ bit**
 - Cherno video - <https://www.youtube.com/watch?v=UOB7-B2MfwA>
 - Nice example of smart pointers and memory allocation plus discussion
   - <https://www.reddit.com/r/cpp_questions/comments/fckt3h/why_this_line_of_code_causes_2_heap_allocations/>
+- Returning a smart pointer from a function - TLDR: return by value and let compiler RVO take care of it, return by ref would screw up the reference count.
+  - <https://stackoverflow.com/questions/10643563/how-to-return-smart-pointers-shared-ptr-by-reference-or-by-value>
+  - Also this detailed article on the subject: <https://web.archive.org/web/20140116234633/http://cpp-next.com:80/archive/2009/08/want-speed-pass-by-value/>
 
 ### Exceptions
 
