@@ -754,6 +754,9 @@ find . -name "simulation.log" -delete
 
 # find with multiple matches (from a bash script)
 list_of_files="$(find . -type f -name "filename1-*" -or -name "*-filename2")"
+
+# find files where we have .blah and a corresponding .blah.log - finds cases of missing .log files and counts them
+find . -name "*.blah" '!' -exec test -e "{}.log" ';' -print | wc -l
 ```
 
 ### List files in directories in a Tree
@@ -762,9 +765,8 @@ list_of_files="$(find . -type f -name "filename1-*" -or -name "*-filename2")"
 
 ```bash
 # Install if not available on your machine
-
-# List all files and directories including hidden files (-a), to 2
-levels with size of each file tree -a -L 2 -s
+# List all files and directories including hidden files (-a), to 2 levels with size of each file 
+tree -a -L 2 -s
 
 ```
 
