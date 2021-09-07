@@ -21,11 +21,12 @@
       - [Some other articles about ssh login without password (NB - ssh agent solution is useful)](#some-other-articles-about-ssh-login-without-password-nb---ssh-agent-solution-is-useful)
   - [Cleaning Snaps](#cleaning-snaps)
   - [FStab](#fstab)
-    - [Managing Swap space](#managing-swap-space)
-    - [Managing /var space](#managing-var-space)
-    - [Setting java version](#setting-java-version)
-    - [Using Screen](#using-screen)
-    - [filesys overview](#filesys-overview)
+  - [Managing Swap space](#managing-swap-space)
+  - [Managing /var space](#managing-var-space)
+  - [Setting java version](#setting-java-version)
+  - [Using Screen](#using-screen)
+    - [Alternative to screen for an already running process](#alternative-to-screen-for-an-already-running-process)
+  - [filesys overview](#filesys-overview)
   - [Small Linux installs](#small-linux-installs)
     - [**Creating a boot USB key**](#creating-a-boot-usb-key)
   - [SED AWK](#sed-awk)
@@ -50,7 +51,7 @@
     - [netstat](#netstat)
     - [Lookup hostname from IP address](#lookup-hostname-from-ip-address)
     - [File Permissions](#file-permissions)
-    - [Find files](#find-files)
+    - [Find utility](#find-utility)
     - [List files in directories in a Tree](#list-files-in-directories-in-a-tree)
     - [Word Counts - find number of files in dir](#word-counts---find-number-of-files-in-dir)
     - [Grep](#grep)
@@ -329,7 +330,7 @@ automate the process of mounting partitions.
 - Mounting fstab without reboot -
     <https://www.shellhacks.com/remount-etc-fstab-without-reboot-linux/>
 
-### Managing Swap space
+## Managing Swap space
 
 - swap file instead of partition - <https://linuxize.com/post/create-a-linux-swap-file/>
 - Also here with some info about using dd not fallocate - <https://www.howtogeek.com/455981/how-to-create-a-swap-file-on-linux/>
@@ -353,7 +354,7 @@ sudo vim /etc/fstab
 /home/swapfile swap swap defaults 0 0
 ```
 
-### Managing /var space
+## Managing /var space
 
 - Clean way is to correctly organise at install :) but otherwise can resize the logical volume
   - <https://www.digitalocean.com/community/tutorials/how-to-use-lvm-to-manage-storage-devices-on-ubuntu-18-04> as a starting point
@@ -412,14 +413,14 @@ else
     sudo cp /etc/fstab.bak /etc/fstab
 ```
 
-### Setting java version
+## Setting java version
 
 ```bash
 sudo update-alternatives --display java
 sudo update-alternatives --config java
 ```
 
-### Using Screen
+## Using Screen
 
 - <https://linuxize.com/post/how-to-use-linux-screen/>
 - User Manual <https://www.gnu.org/software/screen/manual/screen.html>
@@ -465,7 +466,19 @@ sudo update-alternatives --config java
 
 ```
 
-### filesys overview
+### Alternative to screen for an already running process
+
+- <https://serverfault.com/questions/34750/is-it-possible-to-detach-a-process-from-its-terminal-or-i-should-have-used-s>
+
+```bash
+# How-to:
+  # Ctrl+z to interrupt, 
+  bg #to put in background, 
+  jobs # to see job number, 
+  disown %<jobNumber> # get the <jobNumber> value from jobs command
+```  
+
+## filesys overview
 
 - <https://opensource.com/life/16/10/introduction-linux-filesystems>
 
@@ -731,7 +744,7 @@ Give user,group and other permissions to read, write and execute
     chmod +x filename.sh
 ```
 
-### Find files
+### Find utility
 
 ```bash
 # find jpg files in the current directory
@@ -757,7 +770,14 @@ list_of_files="$(find . -type f -name "filename1-*" -or -name "*-filename2")"
 
 # find files where we have .blah and a corresponding .blah.log - finds cases of missing .log files and counts them
 find . -name "*.blah" '!' -exec test -e "{}.log" ';' -print | wc -l
+
+# some more examples 
+<https://geekflare.com/linux-find-commands/>
 ```
+
+- find can also be combined with | xargs and in some cases this can be efficient to batch the subsequent commands
+  - <https://stackoverflow.com/questions/896808/find-exec-cmd-vs-xargs>
+  - With -exec you can end by + instead of \; to batch but may not be the most portable way of writing it.
 
 ### List files in directories in a Tree
 

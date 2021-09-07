@@ -6,6 +6,7 @@
   - [Swagger](#swagger)
     - [Specifications](#specifications)
   - [YAML](#yaml)
+  - [Rest Topics to learn about](#rest-topics-to-learn-about)
 
 - HTTP 1.1 vs 2 -
     <https://www.digitalocean.com/community/tutorials/http-1-1-vs-http-2-what-s-the-difference>
@@ -60,3 +61,16 @@ What It Is: YAML is a human friendly data serialization
 
 - Interesting article on Rest with Swagger -> talks about service first design
   - <https://blog.philipphauer.de/enriching-restful-services-swagger/>
+
+## Rest Topics to learn about
+
+- Resource
+- Hateoas
+- Versioning
+- Controller
+- Data model
+- HTTP methods, header, status
+- DNS URI
+- AsyncAPI, Asynchronous REST
+- Polymorphism & Data Dictionary
+- Swagger & OpenAPI
