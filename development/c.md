@@ -21,7 +21,7 @@
       - [String Splitting using boost (among others)](#string-splitting-using-boost-among-others)
   - [C++ examples](#c-examples)
     - [auto&& auto - auto type deduction in range based for loops](#auto-auto---auto-type-deduction-in-range-based-for-loops)
-    - [References and Pointers](#references-and-pointers)
+    - [References and Pointers examples](#references-and-pointers-examples)
       - [Pointer Links](#pointer-links)
     - [String Manipulation](#string-manipulation)
       - [Printing integers, appending to strings](#printing-integers-appending-to-strings)
@@ -41,11 +41,15 @@
     - [Vector searching](#vector-searching)
     - [Vector (and containers in general) removing things in-place](#vector-and-containers-in-general-removing-things-in-place)
     - [Containers - emplace_back vs push_back](#containers---emplace_back-vs-push_back)
-  - [Constructors - default, delete and explicit keywords](#constructors---default-delete-and-explicit-keywords)
+  - [References and Pointers](#references-and-pointers)
+    - [Articles](#articles)
+  - [Constructors and Destructors - default, delete and explicit keywords](#constructors-and-destructors---default-delete-and-explicit-keywords)
     - [Default](#default)
     - [Delete](#delete)
     - [Explicit](#explicit)
     - [Initialization](#initialization)
+    - [Virtual Destructor](#virtual-destructor)
+  - [Move Semantics - C++11](#move-semantics---c11)
   - [C++ Stack and Heap](#c-stack-and-heap)
   - [Pragma directive](#pragma-directive)
   - [Macros](#macros)
@@ -267,17 +271,11 @@ When failing a test you can add a custom message like this:
   - Information about using const auto&, auto&& etc. in loops and the different implications.
 - Details of the possible performance gains of using it
   - <https://www.codeproject.com/Articles/453022/The-new-Cplusplus-11-rvalue-reference-and-why-you>
+- MS Docs very nice explanation of auto - <https://docs.microsoft.com/en-us/cpp/cpp/auto-cpp?view=msvc-160>
 
-### References and Pointers
+### References and Pointers examples
 
-- References are like the difference between primitives and objects in Java
-- int a = 4; int& b = a;
-  - if **a** changes value **b** does too since it's like another label for **a**
-- Can't change the assignment of **b** once applied.
-- Also reference can't be null, must be an object
-- To pass a pointer to something expecting a ref, we can just deref the pointer
-  - e.g. Blah &blah = *somePointerBlah;
-
+TODO - provide some basic examples here, the rest is moved to it's own section
 TODO -> example from Julien with pointers and addresses...
 
 #### Pointer Links
@@ -549,7 +547,23 @@ m.insert(std::make_pair(4, Complicated(anInt, aDouble, aString)));
 m.emplace(4, anInt, aDouble, aString);
 ```
 
-## Constructors - default, delete and explicit keywords
+## References and Pointers
+
+- References are like the difference between primitives and objects in Java
+- int a = 4; int& b = a;
+  - if **a** changes value **b** does too since it's like another label for **a**
+- Can't change the assignment of **b** once applied.
+- Also reference can't be null, must be an object
+- To pass a pointer to something expecting a ref, we can just deref the pointer
+  - e.g. Blah &blah = *somePointerBlah;
+- used a lot for passing function params.
+  - Allows to modify external objects within a function IMPORTANT - C++ passes parameters by VALUE only so ref allows passing args which can be used to modify things outside the function
+
+### Articles
+
+- Explains lvalues, rvalues and rvalue references: <http://thbecker.net/articles/rvalue_references/section_01.html>
+
+## Constructors and Destructors - default, delete and explicit keywords
 
 ### Default
 
@@ -636,6 +650,21 @@ int main() {
 
 - This is the type of error you'll see if not
   - “'MyClass::myRefMember' must be initialized in constructor base/member initializer list”.
+
+### Virtual Destructor
+
+- From stackoverflow <https://stackoverflow.com/questions/461203/when-to-use-virtual-destructors> and <https://stackoverflow.com/questions/353817/should-every-class-have-a-virtual-destructor>
+  - Very quickly you should have a virtual destructor if you have a class which could be derived and referenced polymorphically.
+    - i.e. your Base class has a Derived class and you have a Base * b pointer to a new Derived() object. Calling delete b; is undefined and may be a memory leak. 
+    - There are other aspects around vptr and vtable which I don't yet know which are TODO
+    - also refs to Scott Myers effective C++ books - Item 7 <https://learning.oreilly.com/library/view/effective-c-third/0321334876/ch02.html>
+  - So use one if you have abstract classes which could be derived.
+
+## Move Semantics - C++11
+
+- Nice explanation here in the answers - <https://stackoverflow.com/questions/3106110/what-is-move-semantics>
+  - C++11 uses the rvalue reference which allows the possibility to "move a resource from one object to another without copying" i.e. avoiding copy constructor
+    - Very basic explanation and apparently lots more to learn from this one....
 
 ## C++ Stack and Heap
 
