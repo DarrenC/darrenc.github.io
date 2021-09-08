@@ -1199,9 +1199,17 @@ big
 
 - Slide 157
 
-Backward compatibility and ISO standards #include <utility> -> C++
-way to include a standard library #include <cstdio> and not #include
-<stdio.h> - makes ANSI C functions available in the std namespace
+Backward compatibility and ISO standards
+
+```cpp
+
+#include <utility> 
+-> C++ way to include a standard library 
+#include <cstdio> 
+and not 
+#include <stdio.h> 
+- makes ANSI C functions available in the std namespace
+```
 
 - Slide 160
 
