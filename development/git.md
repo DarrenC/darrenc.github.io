@@ -831,6 +831,10 @@ git checkout target-branch git cherry-pick xyz123456
 ### Working with Remotes
 
 ```bash
+# Add a remote - by default origin is the only remote
+git remote add upstream <upstream url>
+
+# Operate on a remote
 git fetch/pull/push [remote name][branch name]
 ```
 

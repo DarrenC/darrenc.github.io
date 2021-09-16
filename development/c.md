@@ -101,6 +101,7 @@
       - <http://www.worldbestlearningcenter.com/index_files/cpp-tutorial-questions-answers-pointers-partII.htm>
       - <https://openclassrooms.com/fr/courses/1894236-programmez-avec-le-langage-c>
   - Most Vexing parse problem - <https://en.wikipedia.org/wiki/Most_vexing_parse>
+  - C++11 overview - <https://smartbear.com/blog/the-biggest-changes-in-c11-and-why-you-should-care/>
 
 ### My Small TODO list for basic C learning
 
