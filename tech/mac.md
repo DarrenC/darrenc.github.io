@@ -5,6 +5,7 @@
   - [Restoring MacOSx](#restoring-macosx)
     - [Mavericks Migration notes](#mavericks-migration-notes)
     - [Memory Upgrades](#memory-upgrades)
+  - [Dual boot linux with mac](#dual-boot-linux-with-mac)
   - [MacPorts](#macports)
     - [Cheatsheet](#cheatsheet)
   - [Useful Apps](#useful-apps)
@@ -53,6 +54,15 @@
 ### Memory Upgrades
 
 - 1333MHz DDR3 PC3-10600 SDRAM
+
+## Dual boot linux with mac
+
+I've used the liveUSB for ubuntu 20 on the iMac and it seems like nearly everything worked - magic mouse + keyboard etc.
+I'd like a more permanent setup than the liveusb so maybe linux mint might be cool too.
+
+- Instructions for dual boot install on MacBook Pro - <https://forums.linuxmint.com/viewtopic.php?t=261805>
+- Install on iMac <https://forums.linuxmint.com/viewtopic.php?t=273073>
+- Nice step by step guide with pictures - <https://linuxnewbieguide.org/how-to-install-linux-on-a-macintosh-computer/>
 
 ## MacPorts
 
