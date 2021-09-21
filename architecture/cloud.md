@@ -57,7 +57,7 @@ Also:
 - Prometheus - monitoring and alerting
 - Grafana/Kibana - data visualization
 - Fluentd - data gathering
-- Kafka - messaging
+- Kafka - messaging - Overview of Kafka <https://medium.com/swlh/apache-kafka-in-a-nutshell-5782b01d9ffb>
 
 ### Logging
 
