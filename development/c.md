@@ -31,6 +31,9 @@
     - [string::assign vs assignment operator "="](#stringassign-vs-assignment-operator-)
     - [Named Parameters](#named-parameters)
       - [Enums and pointers to enums](#enums-and-pointers-to-enums)
+  - [Templates - (notes from effective C++)](#templates---notes-from-effective-c)
+    - [Basic introduction](#basic-introduction)
+    - [Class vs typename](#class-vs-typename)
   - [Vectors, Maps etc](#vectors-maps-etc)
     - [Map](#map)
       - [Map with struct as a key](#map-with-struct-as-a-key)
@@ -151,13 +154,17 @@ technical features - eventually add/create the advanced stuff too.
 
 - <https://www.genivia.com/doc/guide/html/index.html#soapcpp2-f>
 
-**soapcpp2 -f**
+```bash
+soapcpp2 -f
+```
 
 This option splits the serialization source code saved to soapC.c and soapC.cpp files into multiple soapC_NNN files as specified by the numeric parameter. This option alleviates compilation issues with very large source code files.
 
 For example:
 
+```bash
 soapcpp2 -f40 file.h
+```
 
 This generates multiple soapC_NNN.cpp files each with 40 serializers, with NNN counting from 001 onward.
 
@@ -404,6 +411,26 @@ a GSoap pointer to an enum value:
 
 }
 ```
+
+## Templates - (notes from effective C++)
+
+### Basic introduction
+
+Templates are also called Generic programming so some parallels with java from that point of view (although this is based
+on my current basic understanding).
+
+<https://learning.oreilly.com/library/view/effective-c-third/0321334876/ch07.html>
+
+- object-oriented programming revolves around explicit interfaces and runtime polymorphism
+- Template program focuses more on implicit interfaces and compile time polymorphism
+  - when you see something inside a templated function, you can see it must respect an implicit interface based on what methods etc. it calls.
+  - Instantiating function templates with different template parameters leads to different functions being called - compile time polymorphism.
+
+### Class vs typename
+
+- For declaring template parameters, NO DIFFERENCE
+- For declaring variables etc. inside the template, there are two cases: types dependent on template parameter and independent types
+  - typename should be used to identify only nested dependent type names by adding it before the declaration to clarify.
 
 ## Vectors, Maps etc
 

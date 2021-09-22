@@ -44,6 +44,7 @@
     - [Monitoring processes - top, vmstat, sysstat](#monitoring-processes---top-vmstat-sysstat)
     - [top cheatsheet](#top-cheatsheet)
     - [tar](#tar)
+    - [mkdir creating directories](#mkdir-creating-directories)
     - [ifconfig is dead, use ip instead](#ifconfig-is-dead-use-ip-instead)
     - [Disk Usage, Disk Free space](#disk-usage-disk-free-space)
       - [NCDU - disk space usage checker](#ncdu---disk-space-usage-checker)
@@ -677,6 +678,17 @@ Julia Evans cartoon of it:
 <https://twitter.com/b0rk/status/993682480069824512?lang=en>
 
 ![julia evans cartoon of tar](/tar_fromjuliaevans.jpeg){width="800"}
+
+### mkdir creating directories
+
+```bash
+# Create a dir, if the parent directories don't exist, create them too
+$ mkdir -p /target/dir 
+
+# Can create multiple directories and multiple levels of dirs too
+$ mkdir -p /target/{sub1, sub2}/{subsub1, subsub2}
+```
+
 
 ### ifconfig is dead, use ip instead
 
