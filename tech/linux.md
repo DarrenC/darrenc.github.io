@@ -29,6 +29,7 @@
   - [filesys overview](#filesys-overview)
   - [Small Linux installs](#small-linux-installs)
     - [**Creating a boot USB key**](#creating-a-boot-usb-key)
+    - [Beautiful icon sets](#beautiful-icon-sets)
   - [SED AWK](#sed-awk)
     - [SED Stuff](#sed-stuff)
       - [Simple SED examples](#simple-sed-examples)
@@ -502,6 +503,10 @@ activate the partition.
 
 - Using dd to flash an iso to a USB key -
     <https://medium.com/@tbeach/use-unix-dd-command-to-os-bootable-on-usb-drive-6671945d95a6>
+
+### Beautiful icon sets
+
+- <https://github.com/EliverLara/candy-icons>
 
 ## SED AWK
 
