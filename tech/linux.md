@@ -4,7 +4,9 @@
   - [Books and articles](#books-and-articles)
   - [Ubuntu](#ubuntu)
     - [Ubuntu Midi keyboard](#ubuntu-midi-keyboard)
+  - [Tools](#tools)
     - [Onedrive sync for linux](#onedrive-sync-for-linux)
+    - [Taskwarrior - a todo list on the commandline](#taskwarrior---a-todo-list-on-the-commandline)
   - [Bash shell programming](#bash-shell-programming)
   - [SMB drive mappings](#smb-drive-mappings)
   - [Ubuntu key shortcuts](#ubuntu-key-shortcuts)
@@ -90,9 +92,16 @@
 - Super Basic HowTo Connect a MIDI Keyboard -
     <https://ubuntuforums.org/showthread.php?t=1303306>
 
+
+## Tools
+
 ### Onedrive sync for linux
 
 <https://www.maketecheasier.com/sync-onedrive-linux/>
+
+### Taskwarrior - a todo list on the commandline
+
+- <https://taskwarrior.org/docs/>
 
 ## Bash shell programming
 
