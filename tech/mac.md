@@ -6,6 +6,7 @@
     - [Mavericks Migration notes](#mavericks-migration-notes)
     - [Memory Upgrades](#memory-upgrades)
   - [Dual boot linux with mac](#dual-boot-linux-with-mac)
+    - [link dump](#link-dump)
   - [MacPorts](#macports)
     - [Cheatsheet](#cheatsheet)
   - [Useful Apps](#useful-apps)
@@ -61,8 +62,27 @@ I've used the liveUSB for ubuntu 20 on the iMac and it seems like nearly everyth
 I'd like a more permanent setup than the liveusb so maybe linux mint might be cool too.
 
 - Instructions for dual boot install on MacBook Pro - <https://forums.linuxmint.com/viewtopic.php?t=261805>
+- DUal boot on imac <https://forums.linuxmint.com/viewtopic.php?t=261805>
 - Install on iMac <https://forums.linuxmint.com/viewtopic.php?t=273073>
 - Nice step by step guide with pictures - <https://linuxnewbieguide.org/how-to-install-linux-on-a-macintosh-computer/>
+
+### link dump
+
+- From the mint site <https://linuxmint-installation-guide.readthedocs.io/en/latest/partitioning.html>
+- <https://apple.stackexchange.com/questions/85121/resetting-mbr-on-imac>
+- <https://askubuntu.com/questions/765254/add-grub-menu-for-os-x>
+- <https://www.lifewire.com/dual-boot-linux-and-mac-os-4125733#using-refind-as-your-dual-boot-manager>
+- <https://forums.bunsenlabs.org/viewtopic.php?id=5136>
+- Problem after dual boot install <https://forums.linuxmint.com/viewtopic.php?t=269661>
+- talks about install and using refind <https://medium.com/@genebean/dual-booting-macos-high-sierra-and-linux-mint-4bbc21b830ef>
+- Again an install but with some links to fixing the boot <https://forums.linuxmint.com/viewtopic.php?t=239565>
+  - <https://www.everydaylinuxuser.com/2014/07/how-to-install-linux-mint-alongside-osx.html>
+  - <http://askubuntu.com/questions/765254/add-grub-menu-for-os-x>
+  - <https://askubuntu.com/questions/1220175/how-do-i-get-the-grub-menu-to-show-on-a-macbook/1299955#1299955>
+- Another dual boot install <https://forums.linuxmint.com/viewtopic.php?t=269661>
+- Error I get for grub MokListRT <https://askubuntu.com/questions/1279602/ubuntu-20-04-failed-to-set-moklistrt-invalid-parameter>
+  - And another on the same error <https://forums.linuxmint.com/viewtopic.php?t=337744>
+  - <https://apple.stackexchange.com/questions/85121/resetting-mbr-on-imac>
 
 ## MacPorts
 
