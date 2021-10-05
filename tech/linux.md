@@ -431,6 +431,19 @@ sudo update-alternatives --display java
 sudo update-alternatives --config java
 ```
 
+I followed this tuto for installing java + setting the JAVA_HOME <https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-18-04>
+
+it set JAVA_HOME in /etc/environment which updates for ALL users of the system which isn't necessarily the right way :).
+
+```bash
+# Searching for JAVA_HOME setting
+$ grep JAVA_HOME  ~/.bashrc_custom ~/.bash_login ~/.profile ~/.bashrc
+$ grep JAVA_HOME /etc/environment /etc/bash.bashrc /etc/profile.d/* /etc/profile
+
+...Found it in /etc/environment
+
+```
+
 ## Using Screen
 
 - <https://linuxize.com/post/how-to-use-linux-screen/>
