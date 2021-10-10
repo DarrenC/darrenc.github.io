@@ -56,3 +56,22 @@ OReilly "Web application development with Spring and Angular"
     - really old 2.13 vs actual 5.4.1 - issues when using the
             gradlew commands since my JDK 11 was not compatible.
   - <https://spring.io/guides/gs/spring-boot-docker/>
+
+
+## Link dump
+
+- <http://www.benstopford.com/2018/06/07/rest-request-response-gateway/>
+- <https://docs.microsoft.com/en-us/azure/architecture/patterns/sidecar>
+- <https://github.com/dapr/dapr>
+- <https://dapr.io>
+- <https://vertx.io/introduction-to-vertx-and-reactive/>
+- <https://developer.lightbend.com/docs/introduction/traditional-architecture.html>
+- <https://martinfowler.com/articles/microservices.html#footnote-etymology>
+- <https://en.wikipedia.org/wiki/Service-oriented_architecture>
+- <https://www.ibm.com/cloud/blog/soa-vs-microservices>
+- <https://www.progress.com/blogs/the-relationship-between-cep-eda-and-soa>
+- <https://quarkus.io/guides/rest-client>
+- <https://kafka.apache.org/20/documentation/streams/developer-guide/testing.html>
+- <https://quarkus.io/guides/getting-started>
+- <https://medium.com/swlh/apache-kafka-in-a-nutshell-5782b01d9ffb>
+- 
