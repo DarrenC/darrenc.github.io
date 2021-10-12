@@ -1,4 +1,6 @@
-# Overview
+# Learning Project
+
+## Overview
 
 - Learning project to explore some new tech and keep up to date on
     full stack stuff
