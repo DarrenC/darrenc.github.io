@@ -8,6 +8,7 @@
     - [Onedrive sync for linux](#onedrive-sync-for-linux)
     - [Taskwarrior - a todo list on the commandline](#taskwarrior---a-todo-list-on-the-commandline)
   - [Bash shell programming](#bash-shell-programming)
+  - [ZSH](#zsh)
   - [SMB drive mappings](#smb-drive-mappings)
   - [Ubuntu key shortcuts](#ubuntu-key-shortcuts)
   - [Installing Packages](#installing-packages)
@@ -92,7 +93,6 @@
 - Super Basic HowTo Connect a MIDI Keyboard -
     <https://ubuntuforums.org/showthread.php?t=1303306>
 
-
 ## Tools
 
 ### Onedrive sync for linux
@@ -113,6 +113,10 @@
     <https://explainshell.com/>
 - PDF with a LOT of different resources -
     <https://www.usenix.org/sites/default/files/conference/protected-files/lisa19_maheshwari.pdf>
+
+## ZSH
+
+- <https://medium.com/@harrison.miller13_28580/bash-vs-z-shell-a-tale-of-two-command-line-shells-c65bb66e4658>
 
 ## SMB drive mappings
 
