@@ -194,6 +194,10 @@ Show the location where the package is installed. The "-S" (capital S) stands fo
 sudo dpkg -S {package_name}
 sudo dpkg -S skype
 
+
+# Installing a local package 
+sudo dpkg -i package_file.deb
+
 ```
 
 ### Checking Kernel and system info
