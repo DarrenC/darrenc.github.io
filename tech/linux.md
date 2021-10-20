@@ -4,6 +4,7 @@
   - [Books and articles](#books-and-articles)
   - [Ubuntu](#ubuntu)
     - [Ubuntu Midi keyboard](#ubuntu-midi-keyboard)
+    - [Recording screen + audio](#recording-screen--audio)
   - [Tools](#tools)
     - [Onedrive sync for linux](#onedrive-sync-for-linux)
     - [Taskwarrior - a todo list on the commandline](#taskwarrior---a-todo-list-on-the-commandline)
@@ -93,6 +94,10 @@
 - Super Basic HowTo Connect a MIDI Keyboard -
     <https://ubuntuforums.org/showthread.php?t=1303306>
 
+### Recording screen + audio
+
+- Discussion on LinuxMint - <https://forums.linuxmint.com/viewtopic.php?t=350180>
+- OBS tool <https://obsproject.com/download> 
 ## Tools
 
 ### Onedrive sync for linux

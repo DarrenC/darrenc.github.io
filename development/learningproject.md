@@ -59,7 +59,6 @@ OReilly "Web application development with Spring and Angular"
             gradlew commands since my JDK 11 was not compatible.
   - <https://spring.io/guides/gs/spring-boot-docker/>
 
-
 ## Link dump
 
 - <http://www.benstopford.com/2018/06/07/rest-request-response-gateway/>
@@ -69,6 +68,10 @@ OReilly "Web application development with Spring and Angular"
 - <https://vertx.io/introduction-to-vertx-and-reactive/>
 - <https://developer.lightbend.com/docs/introduction/traditional-architecture.html>
 - <https://martinfowler.com/articles/microservices.html#footnote-etymology>
+  - READ
+    - Follow ons
+      - <https://martinfowler.com/bliki/TolerantReader.html>
+      - <https://martinfowler.com/articles/consumerDrivenContracts.html>
 - <https://en.wikipedia.org/wiki/Service-oriented_architecture>
 - <https://www.ibm.com/cloud/blog/soa-vs-microservices>
 - <https://www.progress.com/blogs/the-relationship-between-cep-eda-and-soa>
