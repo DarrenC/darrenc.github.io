@@ -84,6 +84,79 @@ I'd like a more permanent setup than the liveusb so maybe linux mint might be co
   - And another on the same error <https://forums.linuxmint.com/viewtopic.php?t=337744>
   - <https://apple.stackexchange.com/questions/85121/resetting-mbr-on-imac>
 
+
+#### Notes from the install
+
+- Refind for the win to dual boot - loads MacOS, mint or grub - <https://rodsbooks.com/refind/index.html>
+  - Before installing I could not get Grub2 to boot MacOS - not by manually entering a path, nor auto detection. It seems that a lot of guides are older, maybe pre-yosemite which changed some things in the booting of Macs and the filesystems
+  - Link where I found someone talking about Refind - <https://askubuntu.com/questions/688632/dual-boot-mac-el-captain-along-with-ubuntu-14-04>
+
+Linux Mint Setup notes
+========================================================
+
+Initial setups: 
+-----------------------
+
+- Handle the Fan stuff - mbpfan
+	- installed from apt (sudo apt install mbpfan)
+	- run by sudo mbpfan
+	- config files exist -> no need to touch them by default
+	- seems to still run after reboot ..... to be confirmed
+- Handle the brightness - brightnessctl
+	- installed from apt
+	- sudo brightnessctl s 20% 
+
+- Screen sleep - I turned it off because I couldn't wake it up from sleep
+
+- grub
+	- had to switch to using console mode to have the list of entries (/etc/default/grub)
+	- still trying to find osx solution
+		- sudo vim /etc/grub.d/40_custom
+		- added an OSX entry (first one didn't work (hd0,2) not found error)
+menuentry "OSX" {
+    insmod hfsplus
+    insmod part_apple
+    insmod chain
+    set root=(hd0,2)
+    chainloader /System/Library/CoreServices/boot.efi
+}
+
+menuentry "OS X v2" {
+    insmod hfsplus
+    search --set=root --file /System/Library/CoreServices/boot.efi
+    chainloader /System/Library/CoreServices/boot.efi
+}
+		- then sudo update-grub
+			
+
+Coding tools
+
+- JDK
+	- sudo apt-get update
+	- sudo apt-get install -y default-jdk default-jre
+	- got me OpenJDK 11 by default
+
+-Maven 
+	- https://maven.apache.org/install.html
+	- https://www.thecodejournal.tech/2020/08/install-apache-maven-on-linux/
+	- https://www.baeldung.com/install-maven-on-windows-linux-mac
+
+- git 
+	- installed with sudo apt install git
+
+- ZSH and ohmyzsh
+	- TODO
+	- https://www.howtogeek.com/362409/what-is-zsh-and-why-should-you-use-it-instead-of-bash/
+	- https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
+
+
+- Sublime text I took from the software centre (didn't notice if flatpak or not)
+- VSCode - I saw reviews saying the flatpak was rubbish and NOT officially supported so I followed the VSCode site and installed by apt
+- Intellij 
+	- downloaded from the jetbrains site and unpacked to /opt/idea 
+	- https://techviewleo.com/how-to-install-intellij-idea-on-linux-mint/
+	- /opt/idea/bin/idea.sh
+
 ## MacPorts
 
 Package installer for Mac
