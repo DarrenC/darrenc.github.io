@@ -3,6 +3,8 @@
 - [Maven](#maven)
   - [Books, articles](#books-articles)
     - [Maven References to quick schemas and tags](#maven-references-to-quick-schemas-and-tags)
+  - [Installing](#installing)
+    - [Linux](#linux)
   - [POM Reference - excluding Dependencies](#pom-reference---excluding-dependencies)
     - [Exclusions](#exclusions)
   - [Maven plugin for JaxB](#maven-plugin-for-jaxb)
@@ -25,6 +27,30 @@
 
 - Lifecycles and phases - <http://maven.apache.org/ref/3.8.1/maven-core/lifecycles.html>
 - POM element schema structure quick-card - <https://maven.apache.org/ref/3.8.1/maven-model/maven.html>
+
+## Installing 
+
+### Linux
+
+Can install from package manager on Ubuntu but to get a newer version you can download + install
+
+- Download - <https://maven.apache.org/download.cgi>
+- Install to /opt and symlink
+
+```bash
+# may need sudo for some commands
+$ wget https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz -P /tmp
+$ tar xvf /tmp/apache-maven-3.6.3-bin.tar.gz -C /opt
+$ ln -s /opt/apache-maven-3.6.3 /opt/maven
+
+# Possibly permissions update 
+sudo chmod -R ugo+rx /opt/apache-maven-3.8.4/
+
+# Set in ~./profile as Maven home and export to path
+# export MAVEN_HOME="/opt/maven"
+# export PATH=${MAVEN_HOME}/bin:${PATH}
+source ~/.profile 
+```
 
 ## POM Reference - excluding Dependencies
 
