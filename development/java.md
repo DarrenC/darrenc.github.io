@@ -150,6 +150,30 @@ getAllJavaArticles() {
 - <http://www.oracle.com/technetwork/articles/java/java8-optional-2175753.html>
 - <http://winterbe.com/posts/2015/03/15/avoid-null-checks-in-java/>
 
+- Nice example of a nested mapping approach with Optional - <https://lprakashv.medium.com/handling-nulls-in-nested-objects-java-7079b9413ec9>
+
+```java
+public static String safeGreetOptionalWay(RootObject rootObject) {
+  return Optional.ofNullable(rootObject)
+        .map(r -> r.getFirstLevelObject())
+        .map(f -> f.getSecondLevelObject())
+        .map(s -> s.getThirdLevelObject())
+        .map(t -> t.getName())
+        .map(n -> "Hello " + n)
+        .orElse("Hey There!");
+}
+```
+
+- More examples here - <https://www.baeldung.com/java-avoid-null-check>
+
+```java
+// Get's the first value and flatmaps so we get Optional<String> not Optional<Optional<String>>
+public Optional<String> optionalListFirst() {
+   return getOptionalList()
+      .flatMap(list -> list.stream().findFirst());
+}
+```
+
 ### Streams
 
 NB - not like the network IO streams - concept based on functional
@@ -388,6 +412,8 @@ try
     //blah
 }
 ```
+
+
 
 ### Reading from Standard in using Scanner
 

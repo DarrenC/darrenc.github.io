@@ -4,8 +4,12 @@
   - [Books and articles](#books-and-articles)
   - [Ubuntu](#ubuntu)
     - [Ubuntu Midi keyboard](#ubuntu-midi-keyboard)
+    - [Recording screen + audio](#recording-screen--audio)
+  - [Tools](#tools)
     - [Onedrive sync for linux](#onedrive-sync-for-linux)
+    - [Taskwarrior - a todo list on the commandline](#taskwarrior---a-todo-list-on-the-commandline)
   - [Bash shell programming](#bash-shell-programming)
+  - [ZSH](#zsh)
   - [SMB drive mappings](#smb-drive-mappings)
   - [Ubuntu key shortcuts](#ubuntu-key-shortcuts)
   - [Installing Packages](#installing-packages)
@@ -90,9 +94,19 @@
 - Super Basic HowTo Connect a MIDI Keyboard -
     <https://ubuntuforums.org/showthread.php?t=1303306>
 
+### Recording screen + audio
+
+- Discussion on LinuxMint - <https://forums.linuxmint.com/viewtopic.php?t=350180>
+- OBS tool <https://obsproject.com/download> 
+## Tools
+
 ### Onedrive sync for linux
 
 <https://www.maketecheasier.com/sync-onedrive-linux/>
+
+### Taskwarrior - a todo list on the commandline
+
+- <https://taskwarrior.org/docs/>
 
 ## Bash shell programming
 
@@ -104,6 +118,10 @@
     <https://explainshell.com/>
 - PDF with a LOT of different resources -
     <https://www.usenix.org/sites/default/files/conference/protected-files/lisa19_maheshwari.pdf>
+
+## ZSH
+
+- <https://medium.com/@harrison.miller13_28580/bash-vs-z-shell-a-tale-of-two-command-line-shells-c65bb66e4658>
 
 ## SMB drive mappings
 
@@ -180,6 +198,10 @@ Show the location where the package is installed. The "-S" (capital S) stands fo
 
 sudo dpkg -S {package_name}
 sudo dpkg -S skype
+
+
+# Installing a local package 
+sudo dpkg -i package_file.deb
 
 ```
 
@@ -420,6 +442,19 @@ else
 ```bash
 sudo update-alternatives --display java
 sudo update-alternatives --config java
+```
+
+I followed this tuto for installing java + setting the JAVA_HOME <https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-18-04>
+
+it set JAVA_HOME in /etc/environment which updates for ALL users of the system which isn't necessarily the right way :).
+
+```bash
+# Searching for JAVA_HOME setting
+$ grep JAVA_HOME  ~/.bashrc_custom ~/.bash_login ~/.profile ~/.bashrc
+$ grep JAVA_HOME /etc/environment /etc/bash.bashrc /etc/profile.d/* /etc/profile
+
+...Found it in /etc/environment
+
 ```
 
 ## Using Screen

@@ -50,6 +50,7 @@ What makes APIs success stories:
 
 - Swagger 2 spec - <https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md>
 - OpenAPI 3 spec - <https://github.com/OAI/OpenAPI-Specification>
+  - <https://blog.stoplight.io/difference-between-open-v2-v3-v31>
 
 ## YAML
 
