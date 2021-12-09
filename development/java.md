@@ -13,12 +13,12 @@
     - [Java 8 from Evernote](#java-8-from-evernote)
     - [Articles](#articles)
     - [Using Optional to avoid NullPointerExceptions, Null Checks etc](#using-optional-to-avoid-nullpointerexceptions-null-checks-etc)
-    - [Streams](#streams)
     - [Lambda Expressions](#lambda-expressions)
     - [Dropbox - Tech Docs - Introducing Java 8](#dropbox---tech-docs---introducing-java-8)
       - [Features](#features)
-    - [Streams examples](#streams-examples)
-      - [Eclipse Collections vs Lambdas](#eclipse-collections-vs-lambdas)
+  - [Streams](#streams)
+    - [Eclipse Collections vs Lambdas](#eclipse-collections-vs-lambdas)
+    - [Streams with an index](#streams-with-an-index)
     - [Quartz Scheduler](#quartz-scheduler)
     - [Regex](#regex)
     - [Logging in Java](#logging-in-java)
@@ -174,14 +174,6 @@ public Optional<String> optionalListFirst() {
 }
 ```
 
-### Streams
-
-NB - not like the network IO streams - concept based on functional
-programming and map reduce stuff
-
-- Tutorials -
-    winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/
-
 ### Lambda Expressions
 
 - way of passing code as parameter to avoid unwieldy anonymous inner
@@ -237,12 +229,21 @@ Some Main Objectives:
           Allow better modelling when a value can be there or not.
           Helps avoid NullPointerExceptions - good for nested retrieves and providing alternative values
 
-### Streams examples
+## Streams
+
+NB - not like the network IO streams - concept based on functional
+programming and map reduce stuff
+
+- Tutorials -
+  - winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/
+  - The old faithful - <https://www.baeldung.com/java-8-streams>
+
+- Example with replacing for loops - <https://dzone.com/articles/java-8-concepts-fp-lambda-expressions-and-streams>
+
+### Eclipse Collections vs Lambdas
 
 NB - Eclipse Collections has some really nice examples of efficient
 searches, even compared to lambdas
-
-#### Eclipse Collections vs Lambdas
 
 Example 1 - Filter a list (here it's based on finding IError.getType()
 equal to ErrorType.WARNING)
@@ -261,6 +262,13 @@ myResponse.getErrors().stream().anyMatch(e ->
 e.getType().equals(ERROR));
 
 ```
+
+### Streams with an index
+
+How to have an index i instead of having to use a for loop(int i=0 ....
+
+- <https://www.geeksforgeeks.org/program-to-iterate-over-a-stream-with-indices-in-java-8/>
+- <https://stackoverflow.com/questions/18552005/is-there-a-concise-way-to-iterate-over-a-stream-with-indices-in-java-8>
 
 ### Quartz Scheduler
 
