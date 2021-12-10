@@ -59,6 +59,7 @@
   - [JAXB](#jaxb)
     - [Generate an XSD if you just have a plain XML example file](#generate-an-xsd-if-you-just-have-a-plain-xml-example-file)
     - [Use your XSD along with a binding file to generate some Java objects via the XJC compiler](#use-your-xsd-along-with-a-binding-file-to-generate-some-java-objects-via-the-xjc-compiler)
+    - [Marshal unmarshall in JaxB](#marshal-unmarshall-in-jaxb)
 
 ## Java Subjects
 
@@ -608,4 +609,38 @@ incorporated into an ANT task.
 
 ```bash
 $xjc -b binding.xml -p com.yourcompany.generated test_0.xsd
+```
+
+### Marshal unmarshall in JaxB
+
+This will give you a nice xml string output from a JaxB object.s
+
+```java
+
+/**
+ * Marshall input object to a formatted XML String
+ */
+protected <T> String marshal(T input) throws JAXBException {
+    StringWriter writer = new StringWriter();
+
+    JAXBContext jc = JAXBContext.newInstance(input.getClass());
+    Marshaller marshaller = jc.createMarshaller();
+    marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+    marshaller.marshal(input, writer);
+    return writer.toString();
+}
+```
+
+If for some reason we don't have a full XML schema object stack from the root, we can still marshal.
+For example you only want to marshal part of a jaxb object.
+
+```java
+          //If we DO NOT have JAXB annotated class
+          JAXBElement<Employee> jaxbElement = 
+            new JAXBElement<Employee>( new QName("", "employee"), 
+                      Employee.class, 
+                      employeeObj);
+             
+          jaxbMarshaller.marshal(jaxbElement, System.out);
+
 ```
