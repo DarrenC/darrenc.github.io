@@ -23,6 +23,7 @@
   - [SSH tips](#ssh-tips)
     - [links about using ssh agent & security](#links-about-using-ssh-agent--security)
       - [Some other articles about ssh login without password (NB - ssh agent solution is useful)](#some-other-articles-about-ssh-login-without-password-nb---ssh-agent-solution-is-useful)
+  - [Bash profile & History](#bash-profile--history)
   - [Cleaning Snaps](#cleaning-snaps)
   - [FStab](#fstab)
   - [Managing Swap space](#managing-swap-space)
@@ -97,7 +98,8 @@
 ### Recording screen + audio
 
 - Discussion on LinuxMint - <https://forums.linuxmint.com/viewtopic.php?t=350180>
-- OBS tool <https://obsproject.com/download> 
+- OBS tool <https://obsproject.com/download>
+
 ## Tools
 
 ### Onedrive sync for linux
@@ -339,6 +341,11 @@ netstat -anp --inet
 - talks about keychain and -K option for restarts - <https://stackoverflow.com/questions/21095054/ssh-key-still-asking-for-password-and-passphrase>
 - <https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login>
 - <https://stackoverflow.com/questions/12033249/ssh-agent-forwarding-inside-cron-jobs>
+
+## Bash profile & History
+
+- <https://www.shellhacks.com/tune-command-line-history-bash/>
+  - Tune the number of lines kept, when it gets written (end of session or immediately)
 
 ## Cleaning Snaps
 
