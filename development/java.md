@@ -271,7 +271,26 @@ How to have an index i instead of having to use a for loop(int i=0 ....
 - <https://www.geeksforgeeks.org/program-to-iterate-over-a-stream-with-indices-in-java-8/>
 - <https://stackoverflow.com/questions/18552005/is-there-a-concise-way-to-iterate-over-a-stream-with-indices-in-java-8>
 
-### Quartz Scheduler
+### Streams maps with a lambda with parameters instead of a functional interface method
+
+- How to make a .map() call in a stream if we need to call a method that takes parameters -> use a lambda call
+  - <https://stackoverflow.com/questions/44848086/java-8-streams-maps-with-parameters/44848118>
+
+```java
+void toto (String someParam) {
+  collectionOfStuff.stream()
+              .filter (blah -> blah.getLevels().contains(someParam))
+              .map(this::sendTiTi); // can do this if sendSMS(Blah blah)
+              .map(b -> sendTiTi(b, someParam)); // OR can do this if sendSMS(Blah blah, String someParam)
+}
+
+private Blah sendTiTi (Blah blah, String someParam) {
+    .....
+    return blah;
+}
+```
+
+## Quartz Scheduler
 
 Quartz Scheduler
 
@@ -279,7 +298,7 @@ Quartz Scheduler
 
 TODO - Corrections for their readmes and also add BCC to sendMailJob
 
-### Regex
+## Regex
 
 Regex Tester - really handy tool <https://www.debuggex.com/>
 
@@ -291,7 +310,7 @@ Examples:
 ^(([0-9a-zA-Z]{2},\s*)*([0-9a-zA-Z]{2}))$
 ```
 
-### Logging in Java
+## Logging in Java
 
 - <https://www.baeldung.com/java-logging-intro>
 - <https://www.marcobehler.com/guides/a-guide-to-logging-in-java> -
