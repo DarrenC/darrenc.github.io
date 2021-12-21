@@ -13,12 +13,12 @@
     - [Java 8 from Evernote](#java-8-from-evernote)
     - [Articles](#articles)
     - [Using Optional to avoid NullPointerExceptions, Null Checks etc](#using-optional-to-avoid-nullpointerexceptions-null-checks-etc)
-    - [Streams](#streams)
     - [Lambda Expressions](#lambda-expressions)
     - [Dropbox - Tech Docs - Introducing Java 8](#dropbox---tech-docs---introducing-java-8)
       - [Features](#features)
-    - [Streams examples](#streams-examples)
-      - [Eclipse Collections vs Lambdas](#eclipse-collections-vs-lambdas)
+  - [Streams](#streams)
+    - [Eclipse Collections vs Lambdas](#eclipse-collections-vs-lambdas)
+    - [Streams with an index](#streams-with-an-index)
     - [Quartz Scheduler](#quartz-scheduler)
     - [Regex](#regex)
     - [Logging in Java](#logging-in-java)
@@ -59,6 +59,7 @@
   - [JAXB](#jaxb)
     - [Generate an XSD if you just have a plain XML example file](#generate-an-xsd-if-you-just-have-a-plain-xml-example-file)
     - [Use your XSD along with a binding file to generate some Java objects via the XJC compiler](#use-your-xsd-along-with-a-binding-file-to-generate-some-java-objects-via-the-xjc-compiler)
+    - [Marshal unmarshall in JaxB](#marshal-unmarshall-in-jaxb)
 
 ## Java Subjects
 
@@ -150,13 +151,29 @@ getAllJavaArticles() {
 - <http://www.oracle.com/technetwork/articles/java/java8-optional-2175753.html>
 - <http://winterbe.com/posts/2015/03/15/avoid-null-checks-in-java/>
 
-### Streams
+- Nice example of a nested mapping approach with Optional - <https://lprakashv.medium.com/handling-nulls-in-nested-objects-java-7079b9413ec9>
 
-NB - not like the network IO streams - concept based on functional
-programming and map reduce stuff
+```java
+public static String safeGreetOptionalWay(RootObject rootObject) {
+  return Optional.ofNullable(rootObject)
+        .map(r -> r.getFirstLevelObject())
+        .map(f -> f.getSecondLevelObject())
+        .map(s -> s.getThirdLevelObject())
+        .map(t -> t.getName())
+        .map(n -> "Hello " + n)
+        .orElse("Hey There!");
+}
+```
 
-- Tutorials -
-    winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/
+- More examples here - <https://www.baeldung.com/java-avoid-null-check>
+
+```java
+// Get's the first value and flatmaps so we get Optional<String> not Optional<Optional<String>>
+public Optional<String> optionalListFirst() {
+   return getOptionalList()
+      .flatMap(list -> list.stream().findFirst());
+}
+```
 
 ### Lambda Expressions
 
@@ -213,12 +230,21 @@ Some Main Objectives:
           Allow better modelling when a value can be there or not.
           Helps avoid NullPointerExceptions - good for nested retrieves and providing alternative values
 
-### Streams examples
+## Streams
+
+NB - not like the network IO streams - concept based on functional
+programming and map reduce stuff
+
+- Tutorials -
+  - winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/
+  - The old faithful - <https://www.baeldung.com/java-8-streams>
+
+- Example with replacing for loops - <https://dzone.com/articles/java-8-concepts-fp-lambda-expressions-and-streams>
+
+### Eclipse Collections vs Lambdas
 
 NB - Eclipse Collections has some really nice examples of efficient
 searches, even compared to lambdas
-
-#### Eclipse Collections vs Lambdas
 
 Example 1 - Filter a list (here it's based on finding IError.getType()
 equal to ErrorType.WARNING)
@@ -238,7 +264,33 @@ e.getType().equals(ERROR));
 
 ```
 
-### Quartz Scheduler
+### Streams with an index
+
+How to have an index i instead of having to use a for loop(int i=0 ....
+
+- <https://www.geeksforgeeks.org/program-to-iterate-over-a-stream-with-indices-in-java-8/>
+- <https://stackoverflow.com/questions/18552005/is-there-a-concise-way-to-iterate-over-a-stream-with-indices-in-java-8>
+
+### Streams maps with a lambda with parameters instead of a functional interface method
+
+- How to make a .map() call in a stream if we need to call a method that takes parameters -> use a lambda call
+  - <https://stackoverflow.com/questions/44848086/java-8-streams-maps-with-parameters/44848118>
+
+```java
+void toto (String someParam) {
+  collectionOfStuff.stream()
+              .filter (blah -> blah.getLevels().contains(someParam))
+              .map(this::sendTiTi); // can do this if sendSMS(Blah blah)
+              .map(b -> sendTiTi(b, someParam)); // OR can do this if sendSMS(Blah blah, String someParam)
+}
+
+private Blah sendTiTi (Blah blah, String someParam) {
+    .....
+    return blah;
+}
+```
+
+## Quartz Scheduler
 
 Quartz Scheduler
 
@@ -246,7 +298,7 @@ Quartz Scheduler
 
 TODO - Corrections for their readmes and also add BCC to sendMailJob
 
-### Regex
+## Regex
 
 Regex Tester - really handy tool <https://www.debuggex.com/>
 
@@ -258,7 +310,7 @@ Examples:
 ^(([0-9a-zA-Z]{2},\s*)*([0-9a-zA-Z]{2}))$
 ```
 
-### Logging in Java
+## Logging in Java
 
 - <https://www.baeldung.com/java-logging-intro>
 - <https://www.marcobehler.com/guides/a-guide-to-logging-in-java> -
@@ -388,6 +440,8 @@ try
     //blah
 }
 ```
+
+
 
 ### Reading from Standard in using Scanner
 
@@ -574,4 +628,38 @@ incorporated into an ANT task.
 
 ```bash
 $xjc -b binding.xml -p com.yourcompany.generated test_0.xsd
+```
+
+### Marshal unmarshall in JaxB
+
+This will give you a nice xml string output from a JaxB object.s
+
+```java
+
+/**
+ * Marshall input object to a formatted XML String
+ */
+protected <T> String marshal(T input) throws JAXBException {
+    StringWriter writer = new StringWriter();
+
+    JAXBContext jc = JAXBContext.newInstance(input.getClass());
+    Marshaller marshaller = jc.createMarshaller();
+    marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+    marshaller.marshal(input, writer);
+    return writer.toString();
+}
+```
+
+If for some reason we don't have a full XML schema object stack from the root, we can still marshal.
+For example you only want to marshal part of a jaxb object.
+
+```java
+          //If we DO NOT have JAXB annotated class
+          JAXBElement<Employee> jaxbElement = 
+            new JAXBElement<Employee>( new QName("", "employee"), 
+                      Employee.class, 
+                      employeeObj);
+             
+          jaxbMarshaller.marshal(jaxbElement, System.out);
+
 ```

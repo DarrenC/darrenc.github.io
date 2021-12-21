@@ -79,4 +79,8 @@ OReilly "Web application development with Spring and Angular"
 - <https://kafka.apache.org/20/documentation/streams/developer-guide/testing.html>
 - <https://quarkus.io/guides/getting-started>
 - <https://medium.com/swlh/apache-kafka-in-a-nutshell-5782b01d9ffb>
-- 
+
+
+### Event driven vs Reactive
+
+- Event driven is from process based events, Reactive is data driven - reacting to the change of a data value.

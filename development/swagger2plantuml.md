@@ -2,25 +2,30 @@
 
 - [Swagger2puml and OpenApi2puml](#swagger2puml-and-openapi2puml)
   - [My fork of Swagger2PlantUML](#my-fork-of-swagger2plantuml)
-  - [Links for adding SpringBoot:](#links-for-adding-springboot)
-  - [Continuous Integration, publishing etc.](#continuous-integration-publishing-etc)
+  - [Links for adding SpringBoot](#links-for-adding-springboot)
+  - [Continuous Integration, publishing etc](#continuous-integration-publishing-etc)
   - [OpenAPI2PUML technical notes](#openapi2puml-technical-notes)
-    - [Control flow](#control-flow)
-    - [My Notes](#my-notes)
+    - [Control flow V2](#control-flow-v2)
+      - [Class building](#class-building)
+      - [Interface building](#interface-building)
+      - [Relation building](#relation-building)
+      - [My Notes](#my-notes)
+    - [Control Flow v3](#control-flow-v3)
+      - [Class Building](#class-building-1)
     - [Links to PlantUML resources](#links-to-plantuml-resources)
 
 ## My fork of Swagger2PlantUML
 
 - <https://github.com/DarrenC/swagger2puml>
 
-## Links for adding SpringBoot:
+## Links for adding SpringBoot
 
 - <https://www.baeldung.com/spring-boot-migration>
 - <https://3ldn.nl/2016/02/16/spring-boot-in-an-existing-application-part-1/>
 - <https://github.com/kuipercm/springboot-hello-world-app/blob/master/pom.xml>
 - <https://stackoverflow.com/questions/14467325/maven-combining-multiple-module-jars-into-one-war-file>
 
-## Continuous Integration, publishing etc.
+## Continuous Integration, publishing etc
 
 - Travis CI -
     <https://blog.frankel.ch/travis-ci-tutorial-for-java-projects/>
@@ -30,7 +35,7 @@
 These are my notes about how the project is structured and the flow
 through the logic
 
-### Control flow
+### Control flow V2
 
 - Entry point is OpenApi2PlantUML class where the main() is
   - It will handle the inputs, does some checking and then calls
@@ -53,22 +58,23 @@ through the logic
         mustache template
   - calling the mustache template to generate the plantuml code
 
-### Class building
+#### Class building
 
 We get the list of Models and loop through each one
+
 - Super class: this is getting I guess the extended parent class but has different processing depending on if model is arrray model or impl TODO - understand this better
 - Class Members: getting the properties of the class but varies depending on ref properties or simple properties and a lot of refactoring is neeeded here 
   - TODO: many repeated overloads without clear indication of what the override does
 - Child classes: getting child class relations here but not very clear about what this is and why it is needed... TODO - expand understanding of this one and especially why we don't have source class added here and instead do it in the relation building.
 
-### Interface building
+#### Interface building
 
 - Converts paths to Interfaces
   - TODO - the way that the tags are used to determine Interface name means that we cannot decode the stripe spec for example since it doesn't use tags or ids.
 
-### Relation building
+#### Relation building
 
-### My Notes
+#### My Notes
 
 - There are a lot of misplaced responsibilities in the current setup
   - The mustache utility also writes the plantuml file
@@ -102,6 +108,13 @@ endif
 stop
 @enduml
 ```
+
+### Control Flow v3
+
+
+#### Class Building
+
+Everything starts from Components->Schemas. Everything is a Schema object including the properties of a Schema. I haven't yet found a list of all the properties but I know there are simple Schema Types like Strings, Integers etc. but also things like Array which need to be handled differently.
 
 ### Links to PlantUML resources
 
