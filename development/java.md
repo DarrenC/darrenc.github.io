@@ -663,3 +663,8 @@ For example you only want to marshal part of a jaxb object.
           jaxbMarshaller.marshal(jaxbElement, System.out);
 
 ```
+
+## JAX-RS 
+
+- Building a JSON response <https://www.baeldung.com/jax-rs-response>
+- Validating with JAX-RS rest assured <https://www.baeldung.com/rest-assured-tutorial>
