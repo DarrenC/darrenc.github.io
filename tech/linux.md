@@ -104,7 +104,39 @@
 
 ### Onedrive sync for linux
 
-<https://www.maketecheasier.com/sync-onedrive-linux/>
+- <https://www.maketecheasier.com/sync-onedrive-linux/>
+- <https://www.linuxuprising.com/2020/02/how-to-keep-onedrive-in-sync-with.html>
+- Simple with RClone - <https://www.linuxuprising.com/2018/07/how-to-mount-onedrive-in-linux-using.html>
+
+My Notes:
+  - Reading the pages above I went to the onedrive client github and followed the install instructions
+    - <https://github.com/abraunegg/onedrive/blob/master/docs/INSTALL.md>
+      
+```bash      
+  sudo apt install build-essential
+  sudo apt install libcurl4-openssl-dev
+  sudo apt install libsqlite3-dev
+  sudo apt install pkg-config
+  sudo apt install git
+  sudo apt install curl
+  curl -fsS https://dlang.org/install.sh | bash -s dmd
+
+  # For notifications
+  sudo apt install libnotify-dev
+```
+
+  - Following the dependency installs I followed the compile section
+    - Activate dmd following the output of the install from above
+
+```bash
+  Run `source ~/dlang/dmd-2.098.1/activate` in your shell to use dmd-2.098.1.
+  This will setup PATH, LIBRARY_PATH, LD_LIBRARY_PATH, DMD, DC, and PS1.
+  Run `deactivate` later on to restore your environment.
+
+```
+  - After that the make etc. worked and I could authorize the app with onedrive
+  - onedrive --synchronize --single-directory 'LinuxSync'
+
 
 ### Taskwarrior - a todo list on the commandline
 

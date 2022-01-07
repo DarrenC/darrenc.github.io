@@ -405,6 +405,8 @@ It will definitely make things easier.
 
 ## Notes from Sandro Mancuso Refactoring and Testing Legacy code
 
+- link to video on YouTube: <https://www.youtube.com/watch?v=_NnElPO5BU0>
+
 ### Tips
 
       Refactor from deepest to shallowest branch
@@ -419,3 +421,4 @@ It will definitely make things easier.
 
 Stopped watching at 32 mins but need to take notes, especially for the
 BUILDER type pattern he used for creating Users, it's really nice.
+- link to it on github <https://github.com/sandromancuso/trip-service-kata/blob/java-solution/java/trip-service-kata/src/test/java/org/craftedsw/tripservicekata/user/test/UserBuilder.java>
