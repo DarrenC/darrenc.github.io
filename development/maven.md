@@ -291,6 +291,13 @@ mvn gatling:test -Dgatling.simulationClass=org.blah.SomeGatlingSimulationClassNa
 # </configuration>
 ```
 
+### Example of skipping Dependency analysis
+
+```bash
+# https://maven.apache.org/plugins/maven-dependency-plugin/analyze-mojo.html#skip
+mvn -Dmdep.analyze.skip=true clean deploy
+```
+
 ### Maven links
 
 - <https://www.baeldung.com/maven>
