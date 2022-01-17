@@ -1360,3 +1360,13 @@ STL uses no inheritance and has no object orientation...
   - Help with permissions issue for sleep hooks in pm-suspend -> make sure it's root:root for owner:group
   - <https://www.linuxsecrets.com/archlinux-wiki/wiki.archlinux.org/index.php/Pm-utils.html>
   - <http://iam.tj/prototype/enhancements/Windows-acpi_osi.html>
+
+
+
+## Interview stuff
+
+- <https://www.onlinegdb.com/>
+- <https://www.learncpp.com/cpp-tutorial/basic-inheritance-in-c/>
+- <https://www.geeksforgeeks.org/inheritance-in-c/>
+- <https://www.geeksforgeeks.org/pure-virtual-destructor-c/>
+- <http://www.dailycppinterview.com/>
