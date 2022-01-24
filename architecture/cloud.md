@@ -55,6 +55,20 @@ Also:
 - Region: group of AZ deployed with a defined latency perimeter, connected by low-latency network
 - Geography: area of the world containing a discrete market containing one/more regions
 
+### Cloud Native
+
+- Definition (Cloud Native Computing Foundation)
+
+```text
+
+    Cloud-native technologies empower organizations to build and run scalable applications in modern, dynamic environments such as public, private, and hybrid clouds. Containers, service meshes, microservices, immutable infrastructure, and declarative APIs exemplify this approach.
+
+    These techniques enable loosely coupled systems that are resilient, manageable, and observable. Combined with robust automation, they allow engineers to make high-impact changes frequently and predictably with minimal toil.
+
+```
+
+- <https://docs.microsoft.com/en-us/dotnet/architecture/cloud-native/definition>
+
 ### Kubernetes
 
 - Containers grouped in pods, deployed on nodes (physical servers) within a cluster.
@@ -184,3 +198,7 @@ BUT THERE ARE DRAWBACKS
   - Unsafe defaults. Kafka authors make several bold claims around the strength of their ordering and delivery guarantees. You would then be forgiven for assuming that the defaults are sensible, insofar as they ought to favour safety over other competing qualities. Kafka defaults tend to be optimised for performance and will need to be explicitly overridden on the client when safety is a critical objective. Some of the specific gotchas to bear in mind:
   - enable.auto.commit — defaults to true, which results in consumers committing offsets every 5 seconds (configured by auto.commit.interval.ms), irrespective of whether the consumer has finished processing the record. This may lead to mixed delivery semantics — in the event of consumer failure, some records might be delivered twice, while others might not be delivered at all. Set this to false, allowing your application to dictate the commit point.
     max.in.flight.requests.per.connection — defaults to 5, which may result in messages being published out-of-order if one (or more) of the enqueued messages times out and is retried. Set to 1.
+
+## NATS
+
+- <https://medium.com/capital-one-tech/lightweight-cloud-native-messaging-with-nats-ad730ca2becf>

@@ -411,7 +411,7 @@ realised it was due to my private email settings.
 
 - Colorizing git prompt
   - <https://medium.com/ag-grid/git-on-the-command-line-improving-the-experience-5a604cb14cf6>
-  - <https://github.com/DarrenC/bash-git-prompt>
+  - <https://github.com/DarrenC/bash-git-prompt> - this is the one I use which is easy to setup :)
 
 ## Notes from git basic training
 
