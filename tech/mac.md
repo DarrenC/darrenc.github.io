@@ -91,8 +91,7 @@ I'd like a more permanent setup than the liveusb so maybe linux mint might be co
   - Before installing I could not get Grub2 to boot MacOS - not by manually entering a path, nor auto detection. It seems that a lot of guides are older, maybe pre-yosemite which changed some things in the booting of Macs and the filesystems
   - Link where I found someone talking about Refind - <https://askubuntu.com/questions/688632/dual-boot-mac-el-captain-along-with-ubuntu-14-04>
 
-Linux Mint Setup notes
-========================================================
+### Linux Mint Setup notes
 
 Initial setups: 
 -----------------------
@@ -109,10 +108,10 @@ Initial setups:
 - Screen sleep - I turned it off because I couldn't wake it up from sleep
 
 - grub
-	- had to switch to using console mode to have the list of entries (/etc/default/grub)
-	- still trying to find osx solution
-		- sudo vim /etc/grub.d/40_custom
-		- added an OSX entry (first one didn't work (hd0,2) not found error)
+  - had to switch to using console mode to have the list of entries (/etc/default/grub)
+  - still trying to find osx solution
+    - sudo vim /etc/grub.d/40_custom
+    - added an OSX entry (first one didn't work (hd0,2) not found error)
 menuentry "OSX" {
     insmod hfsplus
     insmod part_apple
@@ -136,10 +135,10 @@ Coding tools
 	- sudo apt-get install -y default-jdk default-jre
 	- got me OpenJDK 11 by default
 
--Maven 
-	- https://maven.apache.org/install.html
-	- https://www.thecodejournal.tech/2020/08/install-apache-maven-on-linux/
-	- https://www.baeldung.com/install-maven-on-windows-linux-mac
+-Maven
+  - https://maven.apache.org/install.html
+  - https://www.thecodejournal.tech/2020/08/install-apache-maven-on-linux/
+  - https://www.baeldung.com/install-maven-on-windows-linux-mac
 
 - git 
 	- installed with sudo apt install git

@@ -77,6 +77,7 @@ OReilly "Web application development with Spring and Angular"
 - <https://www.progress.com/blogs/the-relationship-between-cep-eda-and-soa>
 - <https://quarkus.io/guides/rest-client>
 - <https://kafka.apache.org/20/documentation/streams/developer-guide/testing.html>
+- <https://www.reddit.com/r/apachekafka/comments/seifte/kafka_learning_path/>
 - <https://quarkus.io/guides/getting-started>
 - <https://medium.com/swlh/apache-kafka-in-a-nutshell-5782b01d9ffb>
 
@@ -84,3 +85,10 @@ OReilly "Web application development with Spring and Angular"
 ### Event driven vs Reactive
 
 - Event driven is from process based events, Reactive is data driven - reacting to the change of a data value.
+
+
+
+### Fibre optic
+
+- <https://lafibre.info/raccordement-maison/maison-au-fond-dun-passage-de-10-maisons/>
+- <https://reseaux.orange.fr/maison/comment-avoir-fibre>

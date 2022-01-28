@@ -156,6 +156,14 @@ My Notes:
 ## ZSH
 
 - <https://medium.com/@harrison.miller13_28580/bash-vs-z-shell-a-tale-of-two-command-line-shells-c65bb66e4658>
+- <https://www.howtogeek.com/362409/what-is-zsh-and-why-should-you-use-it-instead-of-bash/>
+- Nice getting started guide - <https://www.sitepoint.com/zsh-tips-tricks/>
+- <https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH>
+
+- <https://github.com/derailed/k9s>
+- <https://webinstall.dev/>
+- <https://github.com/romkatv/powerlevel10k#oh-my-zsh>
+- <https://github.com/ohmyzsh/ohmyzsh>
 
 ## SMB drive mappings
 
