@@ -164,6 +164,7 @@ My Notes:
 - <https://webinstall.dev/>
 - <https://github.com/romkatv/powerlevel10k#oh-my-zsh>
 - <https://github.com/ohmyzsh/ohmyzsh>
+- Also install some extra fonts - <https://github.com/powerline/fonts>
 
 ## SMB drive mappings
 
