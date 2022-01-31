@@ -72,7 +72,7 @@ Also:
 ### Kubernetes
 
 - Containers grouped in pods, deployed on nodes (physical servers) within a cluster.
-- Kubernetes has solutions for shared volumes between containers (TODO - investigate this) and other shared and mirrored data sources when working with stateful microservices.
+- Kubernetes has solutions for shared volumes between containers (TODO - investigate this) and other shared and mirrored data sources when working with stateful micro-services.
 
 ### Microservice
 
@@ -81,7 +81,7 @@ Also:
   
 ### Service Mesh
 
-- Network of microservices making up an application.
+- Network of micro-services making up an application.
 - ISTIO, Linkerd are tools that handle this as complexity grows.
 
 ### Monitoring and Alerting
