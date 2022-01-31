@@ -164,6 +164,26 @@ My Notes:
 - <https://webinstall.dev/>
 - <https://github.com/romkatv/powerlevel10k#oh-my-zsh>
 - <https://github.com/ohmyzsh/ohmyzsh>
+- Also install some extra fonts - <https://github.com/powerline/fonts>
+- Productivity plugins - <https://travis.media/top-10-oh-my-zsh-plugins-for-productive-developers/#20210719-json>
+
+### powerline10k
+
+- following guide in readme - https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k
+
+```bash
+# from mint machine
+darren@darren-iMac-Mint:~$ zsh
+                                                                                
+New config: ~/.p10k.zsh.
+Backup of ~/.zshrc: /tmp/.zshrc.JZtb3qunUJ.
+
+See ~/.zshrc changes:
+
+  diff /tmp/.zshrc.JZtb3qunUJ ~/.zshrc
+
+```
+
 
 ## SMB drive mappings
 
