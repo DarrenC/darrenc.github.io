@@ -136,7 +136,12 @@ useful when you accidentally add something you don't want to commit.
 
 ```bash
 git reset <file>
+
+# Also to checkout back to the most recent HEAD
+git checkout -- .
 ```
+
+- Interesting article comparing them - <https://stackoverflow.com/questions/3639342/whats-the-difference-between-git-reset-and-git-checkout>
 
 ### Get rid of local changes to a file before they are added
 
@@ -281,7 +286,8 @@ feature branch commits after that.
 ```bash
  $ git checkout my-feature-branch
  $ git rebase master <my-feature-branch>
-  ... resolve conflicts
+  ... resolve conflicts and then ...
+ $ git rebase --continue
 ```
 
 ### **Links**
@@ -746,31 +752,25 @@ git commit --amend -m "New Message for the commit"
 git commit --amend --author="Mr Test<MrTest@localhost>"
 ```
 
-## Undoing a commit
+## Undoing a commit - git reset
 
-The HEAD position is changed to point to a given commit, and then
-depending on the type of reset there are different impacts
-
-- Soft reset
-  - working directory and staging area remain the same
+The HEAD position is changed to point to a given commit, and then depending on the type of reset there are different impacts
 
 ```bash
+# Soft reset
+# - working directory and staging area remain the same
 git reset --soft HEAD^
-```
 
-- Mixed reset - the DEFAULT behaviour
-  - working directory remains the same but unstages any changes
-
-```bash
+# Mixed reset - the DEFAULT behaviour
+# - working directory remains the same but unstages any changes
 git reset HEAD^
-```
 
-- Hard reset
-  - working directory and staging area changed back to the commit
-        tree structure, commit undone.
-
-```bash
+# Hard reset
+# - working directory and staging area changed back to the commit tree structure, commit undone.
 git reset --hard HEAD^
+
+# Going back a number of commits from HEAD - e.g. 2 (NB - if the commits were merges it will impact both the merge commit + commits introduced by merge)
+git reset HEAD~2
 ```
 
 ### **Clarification of terms**
