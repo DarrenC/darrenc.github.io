@@ -19,9 +19,10 @@
   - [Streams](#streams)
     - [Eclipse Collections vs Lambdas](#eclipse-collections-vs-lambdas)
     - [Streams with an index](#streams-with-an-index)
-    - [Quartz Scheduler](#quartz-scheduler)
-    - [Regex](#regex)
-    - [Logging in Java](#logging-in-java)
+    - [Streams maps with a lambda with parameters instead of a functional interface method](#streams-maps-with-a-lambda-with-parameters-instead-of-a-functional-interface-method)
+  - [Quartz Scheduler](#quartz-scheduler)
+  - [Regex](#regex)
+  - [Logging in Java](#logging-in-java)
     - [Log4J2 and SLF4J](#log4j2-and-slf4j)
   - [Spring Framework - TO MOVE](#spring-framework---to-move)
     - [REST API with Async calls in Spring](#rest-api-with-async-calls-in-spring)
@@ -60,6 +61,8 @@
     - [Generate an XSD if you just have a plain XML example file](#generate-an-xsd-if-you-just-have-a-plain-xml-example-file)
     - [Use your XSD along with a binding file to generate some Java objects via the XJC compiler](#use-your-xsd-along-with-a-binding-file-to-generate-some-java-objects-via-the-xjc-compiler)
     - [Marshal unmarshall in JaxB](#marshal-unmarshall-in-jaxb)
+  - [JAX-RS](#jax-rs)
+  - [Asynchronous Programming](#asynchronous-programming)
 
 ## Java Subjects
 
@@ -664,7 +667,16 @@ For example you only want to marshal part of a jaxb object.
 
 ```
 
-## JAX-RS 
+## JAX-RS
 
 - Building a JSON response <https://www.baeldung.com/jax-rs-response>
 - Validating with JAX-RS rest assured <https://www.baeldung.com/rest-assured-tutorial>
+
+## Asynchronous Programming
+
+Involves using Completable Futures and Futures to handle asynchronous programming.
+
+- Baeldung nice guide with explanations of applyAsync() etc. <https://www.baeldung.com/java-completablefuture>
+- Also lots of nice examples and explanations - <https://www.callicoder.com/java-8-completablefuture-tutorial/>, <https://www.callicoder.com/java-callable-and-future-tutorial/>
+- DZone dump of examples - <https://dzone.com/articles/20-examples-of-using-javas-completablefuture>
+- Asynchronous implementation libraries <https://www.baeldung.com/java-asynchronous-programming>

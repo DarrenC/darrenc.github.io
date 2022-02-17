@@ -6,6 +6,7 @@
     - [Service Models](#service-models)
     - [Deployment Models](#deployment-models)
     - [Regions, AZ](#regions-az)
+    - [Cloud Native](#cloud-native)
     - [Kubernetes](#kubernetes)
     - [Microservice](#microservice)
     - [Service Mesh](#service-mesh)
@@ -19,6 +20,7 @@
     - [Components](#components)
     - [KEY CONCEPT - Topics and Partitions](#key-concept---topics-and-partitions)
     - [Kafka Performance points](#kafka-performance-points)
+  - [NATS](#nats)
 
 ## Cloud definitions
 
@@ -202,3 +204,4 @@ BUT THERE ARE DRAWBACKS
 ## NATS
 
 - <https://medium.com/capital-one-tech/lightweight-cloud-native-messaging-with-nats-ad730ca2becf>
+- <https://docs.nats.io/nats-concepts/jetstream>
