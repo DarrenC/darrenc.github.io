@@ -3,6 +3,7 @@
 - [Git Stuff](#git-stuff)
   - [Working on a branch notes](#working-on-a-branch-notes)
   - [Git Submodules](#git-submodules)
+  - [Git tools](#git-tools)
   - [Git tips](#git-tips)
     - [Git Bash in Windows](#git-bash-in-windows)
     - [Credentials management Configuration](#credentials-management-configuration)
@@ -11,6 +12,7 @@
     - [Long file paths workaround](#long-file-paths-workaround)
     - [Reset to version in HEAD](#reset-to-version-in-head)
     - [Get rid of local changes to a file before they are added](#get-rid-of-local-changes-to-a-file-before-they-are-added)
+    - [Reflog - getting out of trouble](#reflog---getting-out-of-trouble)
     - [Check where your remote repo is - e.g. personal, main repo, fork etc](#check-where-your-remote-repo-is---eg-personal-main-repo-fork-etc)
     - [Comparing with previous version (works for file or dir) - useful after pull](#comparing-with-previous-version-works-for-file-or-dir---useful-after-pull)
     - [Seeing a large diff in the command line to compare a remote to your repo](#seeing-a-large-diff-in-the-command-line-to-compare-a-remote-to-your-repo)
@@ -58,7 +60,7 @@
   - [Finding a commit](#finding-a-commit)
   - [Checking out files](#checking-out-files)
     - [Amending a commit](#amending-a-commit)
-  - [Undoing a commit](#undoing-a-commit)
+  - [Undoing a commit - git reset](#undoing-a-commit---git-reset)
     - [**Clarification of terms**](#clarification-of-terms)
   - [Rebase vs Merge + good practices](#rebase-vs-merge--good-practices)
     - [Cherry picking](#cherry-picking)
@@ -86,6 +88,14 @@
 
 - A way to include a repository within another repository.
 - <https://codingkilledthecat.wordpress.com/2012/04/28/why-your-company-shouldnt-use-git-submodules/>
+
+## Git tools
+
+- gitk -> nice visual viewer for history (like a git log but graphic + has diffs), waaaaayyyy better than looking on bitbucket
+  - <https://www.atlassian.com/git/tutorials/gitk>
+- tig - command line git browser (e.g. tig blame <path>) - <https://jonas.github.io/tig/doc/tig.1.html>
+- git mergetool (with config for p4merge) for graphical merge
+- git gui - looking at commits (install via sudo apt .... git-gui since not bundled with git, after that git gui launches it)
 
 ## Git tips
 
@@ -150,6 +160,10 @@ can also get specific versions etc.
 ```bash
 git checkout -- file
 ```
+
+### Reflog - getting out of trouble
+
+- <https://git-scm.com/docs/git-reflog>
 
 ### Check where your remote repo is - e.g. personal, main repo, fork etc
 
@@ -794,7 +808,8 @@ Allows you to pick a commit from one branch and apply it to another
 
 ```bash
 # Source branch has a commit hash xyz123456 that is needed on the target-branch
-git checkout target-branch git cherry-pick xyz123456
+git checkout target-branch 
+git cherry-pick xyz123456
 ```
 
 ## Cloning, Remotes and Tracking branches
