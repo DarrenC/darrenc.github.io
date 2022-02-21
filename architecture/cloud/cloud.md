@@ -63,7 +63,7 @@ Also:
 
 ```text
 
-    Cloud-native technologies empower organizations to build and run scalable applications in modern, dynamic environments such as public, private, and hybrid clouds. Containers, service meshes, microservices, immutable infrastructure, and declarative APIs exemplify this approach.
+    Cloud-native technologies empower organizations to build and run scalable applications in modern, dynamic environments such as public, private, and hybrid clouds. Containers, service meshes, micro-services, immutable infrastructure, and declarative APIs exemplify this approach.
 
     These techniques enable loosely coupled systems that are resilient, manageable, and observable. Combined with robust automation, they allow engineers to make high-impact changes frequently and predictably with minimal toil.
 
@@ -75,6 +75,7 @@ Also:
 
 - Containers grouped in pods, deployed on nodes (physical servers) within a cluster.
 - Kubernetes has solutions for shared volumes between containers (TODO - investigate this) and other shared and mirrored data sources when working with stateful micro-services.
+- [Kubernetes and Helm](./kubernetes_helm.md)
 
 ### Microservice
 
@@ -157,7 +158,7 @@ TODO -> need a page just for this I think
     - record has offset and may have key & value
     - Multiple Producers may publish records to a partition but the order is always respected (but really publish to a topic)
     - There is no order across Producers though
-  - Within a topic, partitions are idependent - i.e. PARTIALLY ORDERED with respect to the topic
+  - Within a topic, partitions are independent - i.e. PARTIALLY ORDERED with respect to the topic
   - Allows processing in parallel where possible, in order where necessary
   - Producers give records the same key to indicate they should be on the same partition (kafka hashes the key to calc partition). With different keys they may be on different partitions
 - Consumers subscribe to a topic as part of a consumer group
