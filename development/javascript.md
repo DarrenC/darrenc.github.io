@@ -8,6 +8,7 @@
     - [Firebug vs Firefox Development Tools](#firebug-vs-firefox-development-tools)
     - [Google Map API](#google-map-api)
   - [Node & NPM](#node--npm)
+    - [Node JS](#node-js)
     - [Issues with Node permissions](#issues-with-node-permissions)
     - [Markdown Linter & Commandline version](#markdown-linter--commandline-version)
   - [JQuery](#jquery)
@@ -23,7 +24,7 @@
   - [Backbone JS](#backbone-js)
   - [JSON](#json)
     - [JSON Object Example](#json-object-example)
-    - [Node JS](#node-js)
+    - [JSON objects in Postman](#json-objects-in-postman)
     - [Tutorials n Stuff](#tutorials-n-stuff)
 
 ## Resources
@@ -80,6 +81,11 @@ solving issue of multiple calls to fit bounds
 <http://stackoverflow.com/questions/11336405/google-maps-api-v3-fitbounds-after-multiple-geocoder-requests?rq=1>
 
 ## Node & NPM
+
+### Node JS
+
+- InfoQ article:
+    <http://www.infoq.com/resource/articles/nodejs-in-action/en/resources/NodejsinActionCH03.pdf>
 
 ### Issues with Node permissions
 
@@ -203,10 +209,22 @@ var myJSONObject = {"bindings": [
 };
 ```
 
-### Node JS
+### JSON objects in Postman
 
-- InfoQ article:
-    <http://www.infoq.com/resource/articles/nodejs-in-action/en/resources/NodejsinActionCH03.pdf>
+```javascript
+pm.test("Successful HTTP 200", function () {
+  pm.response.to.have.status(200);
+});
+
+pm.test("has results", function () {
+  const responseJson = xml2Json(pm.response.text());
+  const response = responseJson?.SomeResponse?.Response;
+  
+  pm.expect(response).to.be.not.undefined;
+  
+  // Optional selector for nested objects - if any null, returns undefined without error
+  pm.environment.set("1N_shopping_response_id", response?.BodyReply?.Item[0]);
+});
 
 ### Tutorials n Stuff
 

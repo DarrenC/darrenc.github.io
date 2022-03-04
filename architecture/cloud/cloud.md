@@ -14,6 +14,7 @@
     - [Logging](#logging)
   - [Microservices](#microservices)
   - [Messaging - Kafka](#messaging---kafka)
+    - [Tooling](#tooling)
     - [Use Cases](#use-cases)
     - [Kafka APIs](#kafka-apis)
     - [Semantics](#semantics)
@@ -109,6 +110,10 @@ Also:
 ## Messaging - Kafka
 
 TODO -> need a page just for this I think
+
+### Tooling
+
+- Kafka commandline cheatsheet - <https://thecodinginterface.com/blog/kafka-cli-cheat-sheet/>
 
 ### Use Cases
 
