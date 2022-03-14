@@ -86,6 +86,7 @@
     - [Templates Continued](#templates-continued)
     - [STL Library stuff](#stl-library-stuff)
   - [UBUNTU Suspend notes](#ubuntu-suspend-notes)
+  - [Interview stuff](#interview-stuff)
 
 - C++ in 21 days - <http://101.lv/learn/C++/>
 - <http://www.icce.rug.nl/documents/cplusplus/>
@@ -105,6 +106,9 @@
       - <https://openclassrooms.com/fr/courses/1894236-programmez-avec-le-langage-c>
   - Most Vexing parse problem - <https://en.wikipedia.org/wiki/Most_vexing_parse>
   - C++11 overview - <https://smartbear.com/blog/the-biggest-changes-in-c11-and-why-you-should-care/>
+  - Rule of 3 and 5 about creating destructors and copy constructors- <https://en.wikipedia.org/wiki/Rule_of_three_(C%2B%2B_programming)>
+    - <https://en.cppreference.com/w/cpp/language/rule_of_three>
+  - Static polymorphism vs dynamic polymorphism <https://iamsorush.com/posts/static-polymorphism-cpp/>
 
 ### My Small TODO list for basic C learning
 

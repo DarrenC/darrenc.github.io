@@ -63,6 +63,8 @@
     - [Marshal unmarshall in JaxB](#marshal-unmarshall-in-jaxb)
   - [JAX-RS](#jax-rs)
   - [Asynchronous Programming](#asynchronous-programming)
+  - [Javadoc](#javadoc)
+    - [Referencing methods in javadoc](#referencing-methods-in-javadoc)
 
 ## Java Subjects
 
@@ -680,3 +682,33 @@ Involves using Completable Futures and Futures to handle asynchronous programmin
 - Also lots of nice examples and explanations - <https://www.callicoder.com/java-8-completablefuture-tutorial/>, <https://www.callicoder.com/java-callable-and-future-tutorial/>
 - DZone dump of examples - <https://dzone.com/articles/20-examples-of-using-javas-completablefuture>
 - Asynchronous implementation libraries <https://www.baeldung.com/java-asynchronous-programming>
+
+## Javadoc
+
+### Referencing methods in javadoc
+
+- Nice overview <https://www.baeldung.com/java-method-in-javadoc>
+  - Format is ```{@link #methodName(argType)} labelToDisplay```
+
+```java
+
+class SomeClass {
+  /**
+   * REF a method in the same class
+   * Also, check the {@link #move() Move} method for more movement details.
+   */
+  public void walk() {}
+
+  public void move() {}
+
+  /**
+   * REF a method in another package and class (NB - can omit the package if same)
+ * Also consider checking {@link com.baeldung.sealed.classes.Vehicle#Vehicle() Vehicle} 
+ * constructor to initialize vehicle object.
+ */
+public void goToWork() {
+
+}
+}
+
+```

@@ -145,7 +145,13 @@ git config --global core.longpaths true
 useful when you accidentally add something you don't want to commit.
 
 ```bash
-git reset <file>
+# Restoring old way
+git reset -- <file>
+
+# Newer way 
+git restore .
+git restore '*.c'
+
 
 # Also to checkout back to the most recent HEAD
 git checkout -- .
