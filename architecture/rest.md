@@ -7,6 +7,7 @@
     - [Specifications](#specifications)
   - [YAML](#yaml)
   - [Rest Topics to learn about](#rest-topics-to-learn-about)
+  - [Hanlding JSON](#hanlding-json)
 
 - HTTP 1.1 vs 2 -
     <https://www.digitalocean.com/community/tutorials/http-1-1-vs-http-2-what-s-the-difference>
@@ -75,3 +76,9 @@ What It Is: YAML is a human friendly data serialization
 - AsyncAPI, Asynchronous REST
 - Polymorphism & Data Dictionary
 - Swagger & OpenAPI
+
+## Hanlding JSON
+
+- Deserializing non-standard JSON fields (e.g. snake case naming) <https://www.baeldung.com/jackson-deserialize-snake-to-camel-case>
+  - Many options but some examples
+    - Annotations - @JsonProperty on fields, @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class) for class level (NB- many types of strategies)
