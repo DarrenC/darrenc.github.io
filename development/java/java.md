@@ -184,6 +184,7 @@ public Optional<String> optionalListFirst() {
 
 - way of passing code as parameter to avoid unwieldy anonymous inner
     classes
+- Some tips - <https://www.baeldung.com/java-8-lambda-expressions-tips>
 
 ### Dropbox - Tech Docs - Introducing Java 8
 
@@ -673,6 +674,8 @@ For example you only want to marshal part of a jaxb object.
 
 - Building a JSON response <https://www.baeldung.com/jax-rs-response>
 - Validating with JAX-RS rest assured <https://www.baeldung.com/rest-assured-tutorial>
+
+(See also the Rest page in architecture)
 
 ## Asynchronous Programming
 

@@ -7,10 +7,9 @@
     - [Specifications](#specifications)
   - [YAML](#yaml)
   - [Rest Topics to learn about](#rest-topics-to-learn-about)
-  - [Hanlding JSON](#hanlding-json)
+  - [Handling JSON](#handling-json)
 
-- HTTP 1.1 vs 2 -
-    <https://www.digitalocean.com/community/tutorials/http-1-1-vs-http-2-what-s-the-difference>
+- HTTP 1.1 vs 2 - <https://www.digitalocean.com/community/tutorials/http-1-1-vs-http-2-what-s-the-difference>
 
 ## General REST
 
@@ -57,9 +56,7 @@ What makes APIs success stories:
 
 <http://www.yaml.org/start.html> YAML: YAML Ain\'t Markup Language
 
-What It Is: YAML is a human friendly data serialization
-
-    standard for all programming languages.
+What It Is: YAML is a human friendly data serialization standard for all programming languages.
 
 - Interesting article on Rest with Swagger -> talks about service first design
   - <https://blog.philipphauer.de/enriching-restful-services-swagger/>
@@ -77,8 +74,17 @@ What It Is: YAML is a human friendly data serialization
 - Polymorphism & Data Dictionary
 - Swagger & OpenAPI
 
-## Hanlding JSON
+## Handling JSON
 
 - Deserializing non-standard JSON fields (e.g. snake case naming) <https://www.baeldung.com/jackson-deserialize-snake-to-camel-case>
   - Many options but some examples
     - Annotations - @JsonProperty on fields, @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class) for class level (NB- many types of strategies)
+    - A little gotcha in Quarkus, there can be conflicts if mixing the resteasy jsonb and jackson dependencies resulting in the JsonProperty annotations being ignored. Solution is to use jackson ones with the JsonProperty stuff for my case but it seems like jsonb properties could be more standard.
+
+From stackoverflow: <https://stackoverflow.com/a/64101349>
+
+```pre
+ Your pom.xml include quarkus-rest-client and quarkus-resteasy-jsonb, I think these will trigger the use of JSONB for the rest client. I suggest to use quarkus-resteasy-jackson instead. You cannot use a different serialization layer for your REST endpoint and the REST client.
+```
+
+And here something about JSONB - <https://rieckpil.de/whatis-json-binding-json-b/>
