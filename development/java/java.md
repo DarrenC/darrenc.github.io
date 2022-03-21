@@ -63,6 +63,7 @@
     - [Marshal unmarshall in JaxB](#marshal-unmarshall-in-jaxb)
   - [JAX-RS](#jax-rs)
   - [Asynchronous Programming](#asynchronous-programming)
+    - [Mocking errors in CompletableFuture](#mocking-errors-in-completablefuture)
   - [Javadoc](#javadoc)
     - [Referencing methods in javadoc](#referencing-methods-in-javadoc)
 
@@ -685,6 +686,19 @@ Involves using Completable Futures and Futures to handle asynchronous programmin
 - Also lots of nice examples and explanations - <https://www.callicoder.com/java-8-completablefuture-tutorial/>, <https://www.callicoder.com/java-callable-and-future-tutorial/>
 - DZone dump of examples - <https://dzone.com/articles/20-examples-of-using-javas-completablefuture>
 - Asynchronous implementation libraries <https://www.baeldung.com/java-asynchronous-programming>
+
+### Mocking errors in CompletableFuture
+
+- Seems better to return a future containing an Exception rather than mockito().throws() - <https://stackoverflow.com/questions/45657008/simulate-completionexception-in-a-test>
+
+```java
+CompletableFuture<Long> future = new CompletableFuture<>();
+future.completeExceptionally(new Exception("HTTP call failed!"));
+
+Mockito.when(mockClient.getSize())
+        .thenReturn(future);
+
+```
 
 ## Javadoc
 
