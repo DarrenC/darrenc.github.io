@@ -10,6 +10,7 @@
     - [Taskwarrior - a todo list on the commandline](#taskwarrior---a-todo-list-on-the-commandline)
   - [Bash shell programming](#bash-shell-programming)
   - [ZSH](#zsh)
+    - [powerline10k](#powerline10k)
   - [SMB drive mappings](#smb-drive-mappings)
   - [Ubuntu key shortcuts](#ubuntu-key-shortcuts)
   - [Installing Packages](#installing-packages)
@@ -29,6 +30,8 @@
   - [Managing Swap space](#managing-swap-space)
   - [Managing /var space](#managing-var-space)
   - [Setting java version](#setting-java-version)
+  - [Cron](#cron)
+    - [Simple Commands](#simple-commands)
   - [Using Screen](#using-screen)
     - [Alternative to screen for an already running process](#alternative-to-screen-for-an-already-running-process)
   - [filesys overview](#filesys-overview)
@@ -42,10 +45,13 @@
       - [Miscellaneous SED stuff](#miscellaneous-sed-stuff)
     - [AWK Stuff](#awk-stuff)
   - [Annoying repeated - "System program problem detected" messages](#annoying-repeated---system-program-problem-detected-messages)
+  - [CURL](#curl)
+    - [Example of CURL Post](#example-of-curl-post)
   - [Terminal Commands](#terminal-commands)
     - [Moving and copying files](#moving-and-copying-files)
     - [Checking number of CPUs - lscpu](#checking-number-of-cpus---lscpu)
     - [SCP & cp](#scp--cp)
+    - [Rsync](#rsync)
     - [Linux IP address](#linux-ip-address)
     - [Monitoring processes - top, vmstat, sysstat](#monitoring-processes---top-vmstat-sysstat)
     - [top cheatsheet](#top-cheatsheet)
@@ -109,10 +115,11 @@
 - Simple with RClone - <https://www.linuxuprising.com/2018/07/how-to-mount-onedrive-in-linux-using.html>
 
 My Notes:
-  - Reading the pages above I went to the onedrive client github and followed the install instructions
-    - <https://github.com/abraunegg/onedrive/blob/master/docs/INSTALL.md>
-      
-```bash      
+
+- Reading the pages above I went to the onedrive client github and followed the install instructions
+  - <https://github.com/abraunegg/onedrive/blob/master/docs/INSTALL.md>
+
+```bash
   sudo apt install build-essential
   sudo apt install libcurl4-openssl-dev
   sudo apt install libsqlite3-dev
@@ -125,8 +132,8 @@ My Notes:
   sudo apt install libnotify-dev
 ```
 
-  - Following the dependency installs I followed the compile section
-    - Activate dmd following the output of the install from above
+- Following the dependency installs I followed the compile section
+- Activate dmd following the output of the install from above
 
 ```bash
   Run `source ~/dlang/dmd-2.098.1/activate` in your shell to use dmd-2.098.1.
@@ -183,7 +190,6 @@ See ~/.zshrc changes:
   diff /tmp/.zshrc.JZtb3qunUJ ~/.zshrc
 
 ```
-
 
 ## SMB drive mappings
 
@@ -524,6 +530,20 @@ $ grep JAVA_HOME /etc/environment /etc/bash.bashrc /etc/profile.d/* /etc/profile
 
 ```
 
+## Cron
+
+- Site to help setup crontab entries - <https://crontab.guru/>
+- Overview - <https://phoenixnap.com/kb/set-up-cron-job-linux>
+
+### Simple Commands
+
+```bash
+  # List crons
+  crontab -l 
+  # edit crontab for current user
+  crontab -e
+```
+
 ## Using Screen
 
 - <https://linuxize.com/post/how-to-use-linux-screen/>
@@ -672,6 +692,23 @@ sudo rm /var/crash/*
 
 ```
 
+## CURL
+
+- Nice overview of options - <https://gist.github.com/subfuzion/08c5d85437d5d4f00e58>
+- Tips on displaying just headers - <https://catonmat.net/cookbooks/curl/print-response-headers>
+  - ```-s -o /dev/null -D -```
+  - Use the above to get ONLY headers printed :) complex indeed !!!
+
+### Example of CURL Post
+
+```bash
+curl -s -o /dev/null -D - --location --request POST 'https://somesite.com' \
+--data '@somefile.json'
+
+# useful options
+-i, --include # include HTTP Headers in the output
+```
+
 ## Terminal Commands
 
 ### Moving and copying files
@@ -717,8 +754,12 @@ Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cm
 
 ### SCP & cp
 
-- SCP examples -
-    <https://haydenjames.io/linux-securely-copy-files-using-scp/>
+- SCP examples - <https://haydenjames.io/linux-securely-copy-files-using-scp/>
+
+```bash
+  # Simple example of copy to remote
+  scp somefile.txt myuser@myhost:~/somedirectory
+```
 
 ```bash
 # Recursive copy
@@ -726,6 +767,19 @@ cp -r <pathToTarget> <pathToDest>
 
 # Copy multiple named files
 cp ./{File1,File2,File3} <pathToDest>
+```
+
+### Rsync
+
+- Use to sync local or remote directories - <https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories>
+
+- Options
+  - -a - most commonly used "archive" which preserves all timestamps, permissions etc. and works recursively
+  - -r - just recursively
+
+```bash
+  # Remote rsync
+  rsync -a ~/dir1 username@remote_host:destination_directory
 ```
 
 ### Linux IP address

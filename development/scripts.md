@@ -12,8 +12,10 @@
     - [Shell Parameter Expansions](#shell-parameter-expansions)
   - [Bash script snippets](#bash-script-snippets)
     - [Checking logged in user](#checking-logged-in-user)
+    - [Using script Source directory for path to have relative paths to resource files etc](#using-script-source-directory-for-path-to-have-relative-paths-to-resource-files-etc)
     - [Here docs - ssh and then run commands from a script](#here-docs---ssh-and-then-run-commands-from-a-script)
       - [Example of running a here doc with the ssh command to launch commands remotely](#example-of-running-a-here-doc-with-the-ssh-command-to-launch-commands-remotely)
+    - [Printing \n in scripts](#printing-n-in-scripts)
     - [Source vs ./](#source-vs-)
   - [Stuff for the reporting script](#stuff-for-the-reporting-script)
     - [Reporting](#reporting)
@@ -166,6 +168,17 @@ if [ "$(whoami)" != "username" ]; then
 fi
 ```
 
+### Using script Source directory for path to have relative paths to resource files etc
+
+- Bash FAQ about accessing resources etc. from within script - <http://mywiki.wooledge.org/BashFAQ/028>
+
+```bash
+# cd into the bundle and use relative paths for resource files within the script
+if [[ $BASH_SOURCE = */* ]]; then
+    cd -- "${BASH_SOURCE%/*}/" || exit
+fi
+```
+
 ### Here docs - ssh and then run commands from a script
 
 - <http://www.tldp.org/LDP/abs/html/here-docs.html>
@@ -176,6 +189,14 @@ fi
 ssh ${connection_string} <<'ENDSSH'
  cd \~
  ls -la ENDSSH
+```
+
+### Printing \n in scripts
+
+echo prints literally, use printf instead
+
+```bash
+printf "hello\nworld\n"
 ```
 
 ### Source vs ./
