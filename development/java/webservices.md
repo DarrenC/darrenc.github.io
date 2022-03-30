@@ -123,8 +123,7 @@ public class GreeterAsyncHandler implements AsyncHandler<GreeterResponse> {
 
 - This one is okay but still has a sleep on a thread + then a blocking get() call to future
 
-```java 
-
+```java
 
 /**
  * ASYNC HANDLER CLASS
@@ -151,8 +150,6 @@ public class TestAsyncHandler implements AsyncHandler<GreetMeSometimeResponse> {
     return reply.getResponseType();
   }
 }
-
-
 
 /**
  * And the calling code
@@ -193,11 +190,7 @@ public final class Client {
     System.exit(0);
   }
 }
-
-
-
 ```
-
 
 ### Tools
 

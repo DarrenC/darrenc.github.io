@@ -63,6 +63,7 @@
     - [Marshal unmarshall in JaxB](#marshal-unmarshall-in-jaxb)
   - [JAX-RS](#jax-rs)
   - [Asynchronous Programming](#asynchronous-programming)
+    - [thenApply vs thenCompose](#thenapply-vs-thencompose)
     - [Mocking errors in CompletableFuture](#mocking-errors-in-completablefuture)
   - [Javadoc](#javadoc)
     - [Referencing methods in javadoc](#referencing-methods-in-javadoc)
@@ -686,6 +687,14 @@ Involves using Completable Futures and Futures to handle asynchronous programmin
 - Also lots of nice examples and explanations - <https://www.callicoder.com/java-8-completablefuture-tutorial/>, <https://www.callicoder.com/java-callable-and-future-tutorial/>
 - DZone dump of examples - <https://dzone.com/articles/20-examples-of-using-javas-completablefuture>
 - Asynchronous implementation libraries <https://www.baeldung.com/java-asynchronous-programming>
+
+### thenApply vs thenCompose
+
+- Equivalent to map and flatmap
+  - map - [1,2,3,4]
+  - flatmap - [(1,2), (3,4)]
+  - apply - use when a single completable future
+  - compose - when a nested completable future
 
 ### Mocking errors in CompletableFuture
 
