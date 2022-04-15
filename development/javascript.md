@@ -10,6 +10,12 @@
   - [Node & NPM](#node--npm)
     - [Node JS](#node-js)
     - [Issues with Node permissions](#issues-with-node-permissions)
+    - [What happens if you do standard install of node](#what-happens-if-you-do-standard-install-of-node)
+      - [uninstalling this mess](#uninstalling-this-mess)
+    - [Install Node using NVM (PREFERRED WAY APPARENTLY)](#install-node-using-nvm-preferred-way-apparently)
+      - [Running node (or other node libraries) V.IMPORTANT](#running-node-or-other-node-libraries-vimportant)
+      - [Updating npm](#updating-npm)
+    - [Installing Yarn](#installing-yarn)
     - [Markdown Linter & Commandline version](#markdown-linter--commandline-version)
   - [JQuery](#jquery)
     - [Selecting Previous Siblings](#selecting-previous-siblings)
@@ -97,6 +103,135 @@ can\'t run anything without using sudo\....
     <https://www.competa.com/blog/how-to-run-npm-without-sudo/>
 - Newer post about using NVM -
     <https://www.competa.com/blog/use-nvm-for-fun-and-profit-and-to-run-npm-without-sudo/>
+
+### What happens if you do standard install of node
+
+It seems the standard sudo apt get install way of installing node + npm is WRONG and will give you permissions issues when you try to 
+install other stuff (global packages) e.g. yarn
+
+```bash
+14:45 $ npm ls -gp --depth=0 | awk -F/ '/node_modules/ && !/\/npm$/ {print $NF}' | xargs npm -g rm
+npm ERR! code EACCES
+npm ERR! syscall rename
+npm ERR! path /usr/lib/node_modules/corepack
+npm ERR! dest /usr/lib/node_modules/.corepack-Ly9MGgoL
+npm ERR! errno -13
+npm ERR! Error: EACCES: permission denied, rename '/usr/lib/node_modules/corepack' -> '/usr/lib/node_modules/.corepack-Ly9MGgoL'
+npm ERR!  [Error: EACCES: permission denied, rename '/usr/lib/node_modules/corepack' -> '/usr/lib/node_modules/.corepack-Ly9MGgoL'] {
+npm ERR!   errno: -13,
+npm ERR!   code: 'EACCES',
+npm ERR!   syscall: 'rename',
+npm ERR!   path: '/usr/lib/node_modules/corepack',
+npm ERR!   dest: '/usr/lib/node_modules/.corepack-Ly9MGgoL'
+npm ERR! }
+npm ERR! 
+npm ERR! The operation was rejected by your operating system.
+npm ERR! It is likely you do not have the permissions to access this file as the current user
+npm ERR! 
+npm ERR! If you believe this might be a permissions issue, please double-check the
+npm ERR! permissions of the file and its containing directories, or try running
+npm ERR! the command again as root/Administrator.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/dcostello/.npm/_logs/2022-04-15T12_46_14_181Z-debug-0.log
+```
+
+#### uninstalling this mess
+
+- based on this stackoverflow - <https://stackoverflow.com/a/33947181/864024>
+
+```bash
+sudo apt-get remove nodejs
+
+# When I ran this command it said nothing was installed so maybe the first command was enough - 
+# Error was: "Package 'npm' is not installed, so not removed"
+sudo apt-get remove npm 
+
+# Then go to /etc/apt/sources.list.d and remove any node list if you have. 
+sudo rm /etc/apt/sources.list.d/nodesource.list
+
+# Then this
+sudo apt-get update
+
+# Finally get rid of .npm from home dir
+rm -rf ~/.npm/
+
+# Sanity check - shouldn't find anything
+which node
+which nodejs
+which npm
+```
+
+### Install Node using NVM (PREFERRED WAY APPARENTLY)
+
+- <https://github.com/nvm-sh/nvm>
+  - The page proposes to install using this line 
+    - wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+    - It creates/copies content to ~/.nvm
+    - It updates your profile/bash file (in my case .bashrc) with some env info
+
+```bash
+# This was added to ~/.bashrc - I also added the "no-use" but not sure if it's taken into account correctly :)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+```
+
+- Then can launch a new terminal to check if nvm was installed correctly
+
+```bash
+# Should output nvm if installed correctly, see github page for readme and troubleshooting
+$ command -v nvm
+nvm
+
+# NB - which nvm doesn't find anything since it's a script
+```
+
+- After that to install node & npm
+
+```bash
+# Version string or blank for latest version
+$ nvm install 16.14.2
+
+# Check versions
+$ node --version
+v16.14.2
+$ npm --version
+8.5.0
+
+# list versions local or remote
+nvm ls
+nvm ls-remote
+```
+
+#### Running node (or other node libraries) V.IMPORTANT
+
+After doing the install of nvm, to use node, just do this:
+
+```bash
+nvm use node
+```
+
+#### Updating npm
+
+- Can update npm through itself :), node should be handled by the nvm though
+
+```bash
+npm install -g npm
+```
+
+### Installing Yarn
+
+- Classic version
+
+After setting up node as per instructions above, then run
+
+```bash
+npm install --global yarn
+```
+
+- Overview + Docs for yarn - <https://classic.yarnpkg.com/en/docs/getting-started>
+- Apparently there is a newer non-backward compatible version also :)
 
 ### Markdown Linter & Commandline version
 
