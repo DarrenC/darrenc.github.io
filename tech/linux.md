@@ -103,6 +103,8 @@
 
 ### Recording screen + audio
 
+- Simple Screen Recorder - <https://itsfoss.com/record-screen-ubuntu-simplescreenrecorder/>
+  - One I used in work which seems to work well (even though people mention not supporting Wayland)
 - Discussion on LinuxMint - <https://forums.linuxmint.com/viewtopic.php?t=350180>
 - OBS tool <https://obsproject.com/download>
 
