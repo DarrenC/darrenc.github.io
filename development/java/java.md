@@ -20,6 +20,7 @@
     - [Eclipse Collections vs Lambdas](#eclipse-collections-vs-lambdas)
     - [Streams with an index](#streams-with-an-index)
     - [Streams maps with a lambda with parameters instead of a functional interface method](#streams-maps-with-a-lambda-with-parameters-instead-of-a-functional-interface-method)
+    - [Stream to check for existence of something in a collection](#stream-to-check-for-existence-of-something-in-a-collection)
   - [Quartz Scheduler](#quartz-scheduler)
   - [Regex](#regex)
   - [Logging in Java](#logging-in-java)
@@ -296,6 +297,20 @@ private Blah sendTiTi (Blah blah, String someParam) {
     .....
     return blah;
 }
+```
+
+### Stream to check for existence of something in a collection
+
+- Using stream and "anyMatch" to check for the presence of some value or field etc.
+
+```java
+  // Example for a protobuf object in java form
+  private static boolean hasFieldsToBuild(Builder brandingBuilder) {
+    return Builder.getDescriptor()
+        .getFields()
+        .stream()
+        .anyMatch(brandingBuilder::hasField);
+  }
 ```
 
 ## Quartz Scheduler
