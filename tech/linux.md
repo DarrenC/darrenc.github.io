@@ -1167,6 +1167,7 @@ to describe the deployment.
 ## Vim Cheatsheet
 
 - VIM Cheatsheet - <https://vim.rtorr.com/>
+- <https://vimsheet.com/>
 
 ### General text manipulation
 
