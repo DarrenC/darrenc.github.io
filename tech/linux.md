@@ -149,7 +149,27 @@ My Notes:
 
 ### Taskwarrior - a todo list on the commandline
 
-- <https://taskwarrior.org/docs/>
+- Detailed online documentation <https://taskwarrior.org/docs/>
+
+```bash
+# Cheatsheet
+
+# basic functions
+$ task list
+$ task add Some description
+$ task 1 done
+$ task 1 delete
+
+# Add priority
+$ task add priority:H Pay bills
+
+# Show tasks ordered by priority
+$ task next
+
+# With a project
+task add project:Home Some description 
+
+```
 
 ## Bash shell programming
 
