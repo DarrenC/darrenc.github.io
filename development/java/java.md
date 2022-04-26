@@ -34,11 +34,13 @@
   - [Memory and Garbage Collection](#memory-and-garbage-collection)
     - [Finding jars and classes loaded during execution](#finding-jars-and-classes-loaded-during-execution)
     - [Statics](#statics)
-    - [Serialization](#serialization)
-      - [Example of Simple reading in of an object](#example-of-simple-reading-in-of-an-object)
+  - [Serialization](#serialization)
+    - [Example of Simple reading in of an object](#example-of-simple-reading-in-of-an-object)
     - [Reading from Standard in using Scanner](#reading-from-standard-in-using-scanner)
-    - [Date and Time](#date-and-time)
-    - [Threading](#threading)
+  - [File operations](#file-operations)
+    - [NIO library example for writing to file](#nio-library-example-for-writing-to-file)
+  - [Date and Time](#date-and-time)
+  - [Threading](#threading)
   - [Collections](#collections)
     - [Searching](#searching)
     - [JavaMail](#javamail)
@@ -437,7 +439,7 @@ The static method "override" question pops up sometimes: Basically you
 can't override, it's a redefinition and the object reference type
 determines the method called.
 
-### Serialization
+## Serialization
 
 Method of writing/read objects to or from a stream in order to transfer
 them to file/transport etc.
@@ -450,7 +452,7 @@ Multiple methods of serialization:
 
 transient - mark a property that is not to be serialized.
 
-#### Example of Simple reading in of an object
+### Example of Simple reading in of an object
 
 ```java
 try
@@ -464,8 +466,6 @@ try
 }
 ```
 
-
-
 ### Reading from Standard in using Scanner
 
 - <https://www.reddit.com/r/javahelp/wiki/scanner>
@@ -473,13 +473,32 @@ try
 link to article on serialization:
 <http://java.sun.com/developer/technicalArticles/Programming/serialization/>
 
-### Date and Time
+## File operations
+
+### NIO library example for writing to file
+
+```java
+// Simple case with some strings and the NIO Files API
+Path path = Paths.get("src/main/resources/question.txt"); 
+String question = "To be or not to be?";
+Files.write(path, question.getBytes());
+
+// More efficient with large files using a bufferedWriter
+Path path = Paths.get("src/main/resources/shakespeare.txt");
+try(BufferedWriter writer = Files.newBufferedWriter(path, Charset.forName("UTF-8"))){
+  writer.write("To be, or not to be. That is the question.");
+}catch(IOException ex){
+  ex.printStackTrace();
+}
+```
+
+## Date and Time
 
 Joda time is becoming more of a standard
 
 <http://www.odi.ch/prog/design/datetime.php>
 
-### Threading
+## Threading
 
 Thread and sync changes in java 1.5
 <http://onjava.com/onjava/excerpt/jthreads3_ch6/index1.html>
