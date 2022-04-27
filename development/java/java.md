@@ -65,6 +65,7 @@
     - [Use your XSD along with a binding file to generate some Java objects via the XJC compiler](#use-your-xsd-along-with-a-binding-file-to-generate-some-java-objects-via-the-xjc-compiler)
     - [Marshal unmarshall in JaxB](#marshal-unmarshall-in-jaxb)
   - [JAX-RS](#jax-rs)
+    - [Printing a JSON Response body](#printing-a-json-response-body)
   - [Asynchronous Programming](#asynchronous-programming)
     - [thenApply vs thenCompose](#thenapply-vs-thencompose)
     - [Mocking errors in CompletableFuture](#mocking-errors-in-completablefuture)
@@ -710,6 +711,18 @@ For example you only want to marshal part of a jaxb object.
 
 - Building a JSON response <https://www.baeldung.com/jax-rs-response>
 - Validating with JAX-RS rest assured <https://www.baeldung.com/rest-assured-tutorial>
+
+### Printing a JSON Response body
+
+- <https://mkyong.com/webservices/jax-rs/jax-rs-how-to-read-response-body-from-a-post-request/>
+
+```java
+  import jakarta.ws.rs.core.Response;
+
+  Response response = //...
+  // read response body
+  String body = response.readEntity(String.class);
+```
 
 (See also the Rest page in architecture)
 
