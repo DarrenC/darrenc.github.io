@@ -697,13 +697,10 @@ If for some reason we don't have a full XML schema object stack from the root, w
 For example you only want to marshal part of a jaxb object.
 
 ```java
-          //If we DO NOT have JAXB annotated class
-          JAXBElement<Employee> jaxbElement = 
-            new JAXBElement<Employee>( new QName("", "employee"), 
-                      Employee.class, 
-                      employeeObj);
-             
-          jaxbMarshaller.marshal(jaxbElement, System.out);
+//If we DO NOT have JAXB annotated class
+JAXBElement<Employee> jaxbElement = new JAXBElement<Employee>(new QName("", "employee"), Employee.class, employeeObj);
+      
+jaxbMarshaller.marshal(jaxbElement, System.out);
 
 ```
 
@@ -719,9 +716,14 @@ For example you only want to marshal part of a jaxb object.
 ```java
   import jakarta.ws.rs.core.Response;
 
-  Response response = //...
+  Response response = //... get the response object
+
+  // Optional - Buffer entity if you want to read response body AND subsequently readEntity to object, otherwise it will fail
+  response.bufferEntity(); 
+  
   // read response body
   String body = response.readEntity(String.class);
+
 ```
 
 (See also the Rest page in architecture)
