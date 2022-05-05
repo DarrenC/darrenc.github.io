@@ -14,7 +14,9 @@
   - [Maven Build Helper plugin](#maven-build-helper-plugin)
   - [Maven Profiles](#maven-profiles)
   - [Options for plugins](#options-for-plugins)
-    - [Maven links](#maven-links)
+    - [Example of skipping Dependency analysis](#example-of-skipping-dependency-analysis)
+  - [MVND - a Maven daemon for building in parallel to speed up compile](#mvnd---a-maven-daemon-for-building-in-parallel-to-speed-up-compile)
+  - [Maven links](#maven-links)
 
 ## Books, articles
 
@@ -28,7 +30,7 @@
 - Lifecycles and phases - <http://maven.apache.org/ref/3.8.1/maven-core/lifecycles.html>
 - POM element schema structure quick-card - <https://maven.apache.org/ref/3.8.1/maven-model/maven.html>
 
-## Installing 
+## Installing
 
 ### Linux
 
@@ -172,34 +174,34 @@ mvn org.apache.maven.plugins:maven-assembly-plugin:2.3:single
 
 ```xml
     <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <version>2.3</version>
-        <executions>
-            <execution>
-                <id>make-assembly-uberjar</id>
-                <phase>install</phase>
-                <goals>
-                    <goal>single</goal>
-                </goals>
-                <configuration>
-                    <descriptor>src/main/assembly/assembly_uberjar.xml</descriptor>
-                    <finalName>gatling</finalName>
-                    <appendAssemblyId>false</appendAssemblyId>
-                </configuration>
-            </execution>
-            <execution>
-                <id>make-assembly-zip</id>
-                <phase>install</phase>
-                <goals>
-                    <goal>single</goal>
-                </goals>
-                <configuration>
-                    <descriptor>src/main/assembly/assembly_zip.xml</descriptor>
-                    <finalName>gatlingCommandLine</finalName>
-                    <appendAssemblyId>false</appendAssemblyId>
-                </configuration>
-            </execution>
-        </executions>
+      <artifactId>maven-assembly-plugin</artifactId>
+      <version>2.3</version>
+      <executions>
+          <execution>
+              <id>make-assembly-uberjar</id>
+              <phase>install</phase>
+              <goals>
+                  <goal>single</goal>
+              </goals>
+              <configuration>
+                  <descriptor>src/main/assembly/assembly_uberjar.xml</descriptor>
+                  <finalName>gatling</finalName>
+                  <appendAssemblyId>false</appendAssemblyId>
+              </configuration>
+          </execution>
+          <execution>
+              <id>make-assembly-zip</id>
+              <phase>install</phase>
+              <goals>
+                  <goal>single</goal>
+              </goals>
+              <configuration>
+                  <descriptor>src/main/assembly/assembly_zip.xml</descriptor>
+                  <finalName>gatlingCommandLine</finalName>
+                  <appendAssemblyId>false</appendAssemblyId>
+              </configuration>
+          </execution>
+      </executions>
     </plugin>
 ```
 
@@ -222,28 +224,28 @@ mvn org.apache.maven.plugins:maven-dependency-plugin:3.1.2:copy-dependencies
 ```xml
 <plugin>
 
-              <plugin>
-                  <groupId>org.apache.maven.plugins</groupId>
-                  <artifactId>maven-dependency-plugin</artifactId>
-                  <version>3.1.2</version>
-                  <executions>
-                      <execution>
-                          <id>copy-dependencies</id>
-                          <phase>install</phase>
-                          <goals>
-                              <goal>copy-dependencies</goal>
-                          </goals>
-                          <configuration>
-                              <outputDirectory>../DCRepo</outputDirectory>
-                              <useRepositoryLayout>true</useRepositoryLayout>
-                              <copyPom>true</copyPom>
-                              <overWriteReleases>false</overWriteReleases>
-                              <overWriteSnapshots>false</overWriteSnapshots>
-                              <overWriteIfNewer>true</overWriteIfNewer>
-                          </configuration>
-                      </execution>
-                  </executions>
-              </plugin>
+  <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-dependency-plugin</artifactId>
+      <version>3.1.2</version>
+      <executions>
+          <execution>
+              <id>copy-dependencies</id>
+              <phase>install</phase>
+              <goals>
+                  <goal>copy-dependencies</goal>
+              </goals>
+              <configuration>
+                  <outputDirectory>../DCRepo</outputDirectory>
+                  <useRepositoryLayout>true</useRepositoryLayout>
+                  <copyPom>true</copyPom>
+                  <overWriteReleases>false</overWriteReleases>
+                  <overWriteSnapshots>false</overWriteSnapshots>
+                  <overWriteIfNewer>true</overWriteIfNewer>
+              </configuration>
+          </execution>
+      </executions>
+  </plugin>
 
 ```
 
@@ -298,7 +300,11 @@ mvn gatling:test -Dgatling.simulationClass=org.blah.SomeGatlingSimulationClassNa
 mvn -Dmdep.analyze.skip=true clean deploy
 ```
 
-### Maven links
+## MVND - a Maven daemon for building in parallel to speed up compile
+
+- <https://github.com/apache/maven-mvnd>
+
+## Maven links
 
 - <https://www.baeldung.com/maven>
 - <https://www.baeldung.com/maven-profiles>
