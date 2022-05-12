@@ -6,6 +6,7 @@
   - [JUnit testing with Java](#junit-testing-with-java)
     - [JUnit 5](#junit-5)
     - [Using Tag to include/exclude tests](#using-tag-to-includeexclude-tests)
+    - [Asserting exceptions](#asserting-exceptions)
   - [Frameworks](#frameworks)
     - [Mockito](#mockito)
     - [PowerMock](#powermock)
@@ -88,6 +89,35 @@ public class Selenium2Example {
 - Tag("integration-test") - can tag unit tests with Tag annotation to allow you to group tests
 - Intellij JUnit configuration can use "Test Kind" drop-down with "Tag" value to allow filtering by tags for running tests
 - Can exclude a tag with "!my-tag-name"
+
+### Asserting exceptions
+
+- Asserting exceptions in JUnit 4 & 5 - <https://www.baeldung.com/junit-assert-exception>
+
+```java
+
+// JUnit4
+@Test(expected = NullPointerException.class)
+public void whenExceptionThrown_thenExpectationSatisfied() {
+    String test = null;
+    test.length();
+}
+
+// JUnit5
+@Test
+public void whenExceptionThrown_thenAssertionSucceeds() {
+    Exception exception = assertThrows(NumberFormatException.class, () -> {
+        Integer.parseInt("1a");
+    });
+
+    String expectedMessage = "For input string";
+    String actualMessage = exception.getMessage();
+
+    assertTrue(actualMessage.contains(expectedMessage));
+}
+```
+
+
 
 ## Frameworks
 

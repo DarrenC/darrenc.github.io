@@ -445,6 +445,9 @@ determines the method called.
 Method of writing/read objects to or from a stream in order to transfer
 them to file/transport etc.
 
+- Serialize to a stream
+- Deserialize to an object
+
 Multiple methods of serialization:
 
 - Default Protocol - Interface - implements Serializable

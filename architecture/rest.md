@@ -7,7 +7,9 @@
     - [Specifications](#specifications)
   - [YAML](#yaml)
   - [Rest Topics to learn about](#rest-topics-to-learn-about)
-  - [Handling JSON](#handling-json)
+  - [Handling JSON with Jackson](#handling-json-with-jackson)
+    - [Deserializing non-standard case JSON fields](#deserializing-non-standard-case-json-fields)
+    - [Handling missing or unknown JSON fields](#handling-missing-or-unknown-json-fields)
 
 - HTTP 1.1 vs 2 - <https://www.digitalocean.com/community/tutorials/http-1-1-vs-http-2-what-s-the-difference>
 
@@ -74,7 +76,11 @@ What It Is: YAML is a human friendly data serialization standard for all program
 - Polymorphism & Data Dictionary
 - Swagger & OpenAPI
 
-## Handling JSON
+## Handling JSON with Jackson
+
+- Examples of Serializing/Deserializing: <https://stackabuse.com/definitive-guide-to-jackson-objectmapper-serialize-and-deserialize-java-objects/>
+
+### Deserializing non-standard case JSON fields
 
 - Deserializing non-standard JSON fields (e.g. snake case naming) <https://www.baeldung.com/jackson-deserialize-snake-to-camel-case>
   - Many options but some examples
@@ -88,3 +94,27 @@ From stackoverflow: <https://stackoverflow.com/a/64101349>
 ```
 
 And here something about JSONB - <https://rieckpil.de/whatis-json-binding-json-b/>
+
+
+### Handling missing or unknown JSON fields
+
+- If an API changes or if we receive partial messages it can provoke errors when trying to read the response entities
+  - e.g. UnrecognizedPropertyException
+- Page describing different approaches <https://www.baeldung.com/jackson-deserialize-json-unknown-properties>
+
+**Solution:**
+
+- Configure ObjectMapper to IGNORE any unknown or missing properties
+
+```java
+  ObjectMapper mapper = new ObjectMapper()
+    .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+```
+
+```bash
+# Example of log for this issue
+Caused by: com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: 
+Unrecognized field "referenceId" (class com.me.MyClass), not marked as ignorable 
+(3 known properties: "name", "address", "dob"])
+
+```
