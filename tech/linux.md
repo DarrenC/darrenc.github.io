@@ -939,6 +939,14 @@ Give user,group and other permissions to read, write and execute
     chmod +x filename.sh
 ```
 
+- CHMOD calculator <https://chmod-calculator.com/>
+
+#### Common CHMODs 
+
+- 777 - all permissions
+- 644 - R/W for owner, R for others
+- 755 - RWX for owner, RX for others
+
 ### Find utility
 
 ```bash
