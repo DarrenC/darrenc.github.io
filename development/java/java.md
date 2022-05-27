@@ -71,6 +71,7 @@
     - [Mocking errors in CompletableFuture](#mocking-errors-in-completablefuture)
   - [Javadoc](#javadoc)
     - [Referencing methods in javadoc](#referencing-methods-in-javadoc)
+  - [Application Servers](#application-servers)
 
 ## Java Subjects
 
@@ -790,3 +791,14 @@ public void goToWork() {
 }
 
 ```
+
+## Application Servers
+
+- JBoss - different versions
+  - JBoss WildFly or JBoss AS (old name) - Open source base version of JBoss
+    - JBoss AS renamed to Wildfly starting with version 8
+    - JBoss Web - Tomcat based Servlet container Red Hat used in JBoss EAP 6
+      - From EAP 7 (WildFly 8+) new Servlet container/http engine called Undertow.
+  - JBoss EAP - commercially supported version which eventually absorbs features from the upstream JBoss Wildfly once stable.
+
+- <https://stackoverflow.com/questions/31756933/what-is-the-difference-between-jboss-eap-wildfly-jboss-web-and-jboss-server>

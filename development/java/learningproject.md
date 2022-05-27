@@ -59,7 +59,7 @@ OReilly "Web application development with Spring and Angular"
             gradlew commands since my JDK 11 was not compatible.
   - <https://spring.io/guides/gs/spring-boot-docker/>
 
-## Link dump
+## Link dump - Event driven project + cloud TODO
 
 - <http://www.benstopford.com/2018/06/07/rest-request-response-gateway/>
 - <https://docs.microsoft.com/en-us/azure/architecture/patterns/sidecar>
@@ -86,8 +86,6 @@ OReilly "Web application development with Spring and Angular"
 ### Event driven vs Reactive
 
 - Event driven is from process based events, Reactive is data driven - reacting to the change of a data value.
-
-
 
 ### Fibre optic
 
