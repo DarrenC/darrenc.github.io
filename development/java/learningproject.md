@@ -61,10 +61,10 @@ OReilly "Web application development with Spring and Angular"
 
 ## Link dump - Event driven project + cloud TODO
 
-- <http://www.benstopford.com/2018/06/07/rest-request-response-gateway/>
-- <https://docs.microsoft.com/en-us/azure/architecture/patterns/sidecar>
-- <https://github.com/dapr/dapr>
-- <https://dapr.io>
+- <http://www.benstopford.com/2018/06/07/rest-request-response-gateway/> - DONE
+- <https://docs.microsoft.com/en-us/azure/architecture/patterns/sidecar> - DONE
+- <https://github.com/dapr/dapr> - DONE
+- <https://dapr.io> - DONE
 - <https://vertx.io/introduction-to-vertx-and-reactive/>
 - <https://developer.lightbend.com/docs/introduction/traditional-architecture.html>
 - <https://martinfowler.com/articles/microservices.html#footnote-etymology>
@@ -81,7 +81,6 @@ OReilly "Web application development with Spring and Angular"
 - <https://quarkus.io/guides/getting-started>
 - <https://medium.com/swlh/apache-kafka-in-a-nutshell-5782b01d9ffb>
 - Kafka Cheatsheet - <https://thecodinginterface.com/blog/kafka-cli-cheat-sheet/>
-
 
 ### Event driven vs Reactive
 

@@ -41,6 +41,7 @@
   - [Notes from Sandro Mancuso Refactoring and Testing Legacy code](#notes-from-sandro-mancuso-refactoring-and-testing-legacy-code)
     - [Tips](#tips)
     - [Writing Tests](#writing-tests)
+  - [How to Learn, learning techniques](#how-to-learn-learning-techniques)
 
 ## Reading diary
 
@@ -422,3 +423,8 @@ It will definitely make things easier.
 Stopped watching at 32 mins but need to take notes, especially for the
 BUILDER type pattern he used for creating Users, it's really nice.
 - link to it on github <https://github.com/sandromancuso/trip-service-kata/blob/java-solution/java/trip-service-kata/src/test/java/org/craftedsw/tripservicekata/user/test/UserBuilder.java>
+
+## How to Learn, learning techniques
+
+- How to learn - consistency vs intensity - <https://unlearninglabs.com/2022/05/19/how-do-we-prioritize-consistency-in-learning-over-intensity/>
+  - Related Coursera - <https://www.coursera.org/learn/learning-how-to-learn/home/week/1>

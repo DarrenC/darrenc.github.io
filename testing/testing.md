@@ -11,6 +11,7 @@
     - [Mockito](#mockito)
     - [PowerMock](#powermock)
     - [Geb Testing Framework](#geb-testing-framework)
+    - [Robot Framework](#robot-framework)
   - [JUnit etc. - TODO  merge with sections above](#junit-etc---todo--merge-with-sections-above)
     - [Mockito - Partial Mocking and Spying](#mockito---partial-mocking-and-spying)
     - [Mockito - any() and raw values](#mockito---any-and-raw-values)
@@ -161,6 +162,12 @@ with testing frameworks such as Spock, JUnit & TestNG.
 
 The Book of Geb contains all the information you need to get started
 with Geb. \</pre\>
+
+### Robot Framework
+
+Robot is a framework which is "language agnostic" and aimed at automating testing with a type of Python based scripts + libraries to integrate 
+
+- <https://robotframework.org/?tab=2#getting-started>
 
 ## JUnit etc. - TODO  merge with sections above
 
