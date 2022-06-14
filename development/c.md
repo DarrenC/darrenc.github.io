@@ -197,6 +197,8 @@ These are different use cases for GTest [Stack Overflow question about the diffs
 - TEST_F - test fixtures if you want tests on the same data
 - TEST_P - tests with parameters
 
+- Parameterized testing - <https://www.sandordargo.com/blog/2019/04/24/parameterized-testing-with-gtest>
+
 ### Custom Failure Message in Assertions
 
 When failing a test you can add a custom message like this:

@@ -2,6 +2,7 @@
 
 - [REST JSON and Webservices](#rest-json-and-webservices)
   - [General REST](#general-rest)
+    - [HTTP Authentication Schemes and HTTP Authorization header](#http-authentication-schemes-and-http-authorization-header)
   - [Examples of good APIs](#examples-of-good-apis)
   - [Swagger](#swagger)
     - [Specifications](#specifications)
@@ -26,6 +27,18 @@
 - <http://www.ics.uci.edu/~fielding/pubs/dissertation/fielding_dissertation.pdf>
 - Rest API guidelines Zalando -
     <https://opensource.zalando.com/restful-api-guidelines/#introduction>
+
+### HTTP Authentication Schemes and HTTP Authorization header
+
+You can get authorization to request a resource by providing an authorization header with a authentication string. 
+This might be a multi-step approach - send an authorization header with an encoded user/pass and get an access token to send in subsequent requests in the same authorization header.
+Typically Basic and Bearer for the types of request as the value of the authorization header.
+
+- Details <https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#authentication_schemes>
+  - Basic - (RFC 7617), base64-encoded credentials - i.e. encoded string with form user:password - 200 OK if successful
+    - Can be a specific authentication resource and might give back a token (see next point)
+    - Base64 can be simply decoded so only use with HTTPS and regard as not really secure.
+  - Bearer - (RFC 6750), bearer tokens to access OAuth 2.0-protected resources - could be obtained from basic authentication request
 
 ## Examples of good APIs
 
