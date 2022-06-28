@@ -19,6 +19,7 @@
 
 - Container Orchestration tool
 - Google originally developed it
+- basic tutorial <https://kubernetes.io/docs/tutorials/kubernetes-basics/>
 
 ## Kubernetes commands
 

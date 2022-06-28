@@ -34,7 +34,9 @@
     - [Simple Commands](#simple-commands)
   - [Using Screen](#using-screen)
     - [Alternative to screen for an already running process](#alternative-to-screen-for-an-already-running-process)
-  - [filesys overview](#filesys-overview)
+  - [TMux](#tmux)
+    - [Example Tmux commands](#example-tmux-commands)
+  - [Filesystem overview](#filesystem-overview)
   - [Small Linux installs](#small-linux-installs)
     - [**Creating a boot USB key**](#creating-a-boot-usb-key)
     - [Beautiful icon sets](#beautiful-icon-sets)
@@ -64,6 +66,7 @@
     - [netstat](#netstat)
     - [Lookup hostname from IP address](#lookup-hostname-from-ip-address)
     - [File Permissions](#file-permissions)
+      - [Common CHMODs](#common-chmods)
     - [Find utility](#find-utility)
     - [List files in directories in a Tree](#list-files-in-directories-in-a-tree)
     - [Word Counts - find number of files in dir](#word-counts---find-number-of-files-in-dir)
@@ -624,7 +627,48 @@ $ grep JAVA_HOME /etc/environment /etc/bash.bashrc /etc/profile.d/* /etc/profile
   disown %<jobNumber> # get the <jobNumber> value from jobs command
 ```  
 
-## filesys overview
+## TMux
+
+Alternative to Screen and maybe more user friendly
+
+- <https://www.howtogeek.com/671422/how-to-use-tmux-on-linux-and-why-its-better-than-screen/>
+
+### Example Tmux commands
+
+```bash
+
+# Start a session with a name 
+$ tmux new -s <session_name>
+
+# For TMux start giving a command by Ctrl+b then the command, similar to Ctrl+A for Screen
+
+# Create a new window/tab
+$ c
+
+# List windows/tabs 
+$ w
+
+# Navigate windows - Next, Previous, numbered window
+$ N
+$ P
+$ 0-9
+
+# Split window
+$ % # vertical split
+$ \" # horizontal split
+$ up,down,left,right # navigate splits
+
+# Attach/Detach from sessions
+$ D # detaches from session but leaves it running in the background
+$ tmux attach-session -t <session_name> # e.g. geek-1
+
+# List running sessions
+$ S
+
+
+```
+
+## Filesystem overview
 
 - <https://opensource.com/life/16/10/introduction-linux-filesystems>
 
