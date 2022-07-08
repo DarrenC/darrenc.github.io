@@ -2,6 +2,8 @@
 
 - [Java](#java)
   - [Java Subjects](#java-subjects)
+    - [Java 11](#java-11)
+      - [Java 11 Overview](#java-11-overview)
     - [Javalin framework](#javalin-framework)
     - [JSR 303](#jsr-303)
     - [Apache StringUtils](#apache-stringutils)
@@ -74,6 +76,16 @@
   - [Application Servers](#application-servers)
 
 ## Java Subjects
+
+### Java 11
+
+#### Java 11 Overview
+
+- Really nice overview of java 11 with code examples - <https://dzone.com/articles/whats-new-between-java-11-and-java-17#:~:text=Java%2017%20is%20an%20LTS,for%20production%20and%20commercial%20use.>
+  - Stream.toList() instead of Collectors.toList()
+  - Helpful Null Pointer Exceptions
+    - ``` Cannot invoke "com.blah.GrapeClass.getColor()" because the return value of "java.util.HashMap.get(Object)" is null ```
+  - Records - instead of boilerplate or lombok for pojo classes you can define as records with fields
 
 ### Javalin framework
 
