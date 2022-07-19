@@ -867,7 +867,7 @@ top -n 10 -d 2 -o %CPU -b \> \~/dcTOP.txt
 # To limit output can run top once interactively, limit number of
 processes with n then W to write a user config file
 
-# VMSTAT - gives memory and cpu info - the command below will run it with a timestamp, format the memory in MB and repeat every 30s for 500 repetitions (enough for 2hrs run)
+# VMSTAT - gives memory and cpu info - the command below will run it with a timestamp, format the memory in MB and repeat every 30s for 500 repetitions (enough for 2hrs of info)
 vmstat -t -S M 30 500 2>&1 | tee vmstats.txt
 ```
 
