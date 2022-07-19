@@ -12,7 +12,6 @@
     - [Service Mesh](#service-mesh)
     - [Monitoring and Alerting](#monitoring-and-alerting)
     - [Logging](#logging)
-  - [Microservices](#microservices)
   - [Messaging - Kafka](#messaging---kafka)
     - [Tooling](#tooling)
     - [Use Cases](#use-cases)
@@ -83,6 +82,10 @@ Also:
 - Independently deployable service with a single clearly scoped purpose or capability.
   - Cloud native, scalable, platform independent, decoupled and isolated, autonomous, devops continuous integration & deployment.
   
+- Also see <https://martinfowler.com/articles/microservices.html>
+
+> The term "Microservice Architecture" has sprung up over the last few years to describe a particular way of designing software applications as suites of independently deployable services. While there is no precise definition of this architectural style, there are certain common characteristics around organization around business capability, automated deployment, intelligence in the endpoints, and decentralized control of languages and data.
+
 ### Service Mesh
 
 - Network of micro-services making up an application.
@@ -100,12 +103,6 @@ Also:
 - Splunk
 - Elastic search
 - ELK - elastic search, logstash, kibana
-
-## Microservices
-
-<https://martinfowler.com/articles/microservices.html>
-
-> The term "Microservice Architecture" has sprung up over the last few years to describe a particular way of designing software applications as suites of independently deployable services. While there is no precise definition of this architectural style, there are certain common characteristics around organization around business capability, automated deployment, intelligence in the endpoints, and decentralized control of languages and data.
 
 ## Messaging - Kafka
 

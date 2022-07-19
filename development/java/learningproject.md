@@ -65,14 +65,15 @@ OReilly "Web application development with Spring and Angular"
 - <https://docs.microsoft.com/en-us/azure/architecture/patterns/sidecar> - DONE
 - <https://github.com/dapr/dapr> - DONE
 - <https://dapr.io> - DONE
-- <https://vertx.io/introduction-to-vertx-and-reactive/>
-- <https://developer.lightbend.com/docs/introduction/traditional-architecture.html>
+- <https://vertx.io/introduction-to-vertx-and-reactive/> - $$$$$$$$$$$$$$$$$$$$$ TODO TODO TODO TODO $$$$$$$$$$$$$$$$$$
+- <https://developer.lightbend.com/docs/introduction/traditional-architecture.html> - DONE
+- <https://en.wikipedia.org/wiki/Service-oriented_architecture>
 - <https://martinfowler.com/articles/microservices.html#footnote-etymology>
   - READ
     - Follow ons
       - <https://martinfowler.com/bliki/TolerantReader.html>
       - <https://martinfowler.com/articles/consumerDrivenContracts.html>
-- <https://en.wikipedia.org/wiki/Service-oriented_architecture>
+
 - <https://www.ibm.com/cloud/blog/soa-vs-microservices>
 - <https://www.progress.com/blogs/the-relationship-between-cep-eda-and-soa>
 - <https://quarkus.io/guides/rest-client>
