@@ -69,6 +69,18 @@ Also:
 
 ```
 
+also:
+
+```text
+The term cloud native refers to the concept of building and running applications to take advantage of the distributed computing offered by the cloud delivery model. Cloud native apps are designed and built to exploit the scale, elasticity, resiliency, and flexibility the cloud provides.
+```
+
+- scale
+- elasticity
+- resiliency
+- flexibility
+- observable
+
 - <https://docs.microsoft.com/en-us/dotnet/architecture/cloud-native/definition>
 
 ### Kubernetes

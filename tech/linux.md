@@ -6,6 +6,7 @@
     - [Ubuntu Midi keyboard](#ubuntu-midi-keyboard)
     - [Recording screen + audio](#recording-screen--audio)
   - [Tools](#tools)
+    - [Pavucontrol for audio](#pavucontrol-for-audio)
     - [Onedrive sync for linux](#onedrive-sync-for-linux)
     - [Taskwarrior - a todo list on the commandline](#taskwarrior---a-todo-list-on-the-commandline)
   - [Bash shell programming](#bash-shell-programming)
@@ -112,6 +113,13 @@
 - OBS tool <https://obsproject.com/download>
 
 ## Tools
+
+### Pavucontrol for audio 
+
+- <https://stackoverflow.com/a/66009679/864024>
+  - pavucontrol
+
+allows you to have a list of the sources for input output audio and select per running application
 
 ### Onedrive sync for linux
 
