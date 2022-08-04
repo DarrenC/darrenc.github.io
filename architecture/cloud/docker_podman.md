@@ -6,6 +6,7 @@
     - [Trainings](#trainings)
   - [Basic commands](#basic-commands)
     - [Starting and stopping containers](#starting-and-stopping-containers)
+    - [Using network host](#using-network-host)
   - [Volumes and Mounting](#volumes-and-mounting)
   - [Port Forwarding and server logs](#port-forwarding-and-server-logs)
   - [Dockerfiles](#dockerfiles)
@@ -134,7 +135,17 @@ docker network prune --force # good to run every so often to get rid of conflict
 
 # See the configuration of the docker container
 docker inspect <container_id>
+
+
+# Get the IP address for a running container, searching by image name
+docker inspect --format='{{.NetworkSettings.IPAddress}}' $(docker ps -f ancestor=myImageName --format "{{.ID}}")
+
 ```
+
+### Using network host
+
+- Tutorial on docker site <https://docs.docker.com/network/network-tutorial-host/>
+  - Basically it's a way to use the host (i.e. something like localhost) to be the docker network instead of configuring a real docker network separately.
 
 ## Volumes and Mounting
 

@@ -9,6 +9,7 @@
     - [Pavucontrol for audio](#pavucontrol-for-audio)
     - [Onedrive sync for linux](#onedrive-sync-for-linux)
     - [Taskwarrior - a todo list on the commandline](#taskwarrior---a-todo-list-on-the-commandline)
+    - [Sqlite on command line](#sqlite-on-command-line)
   - [Bash shell programming](#bash-shell-programming)
   - [ZSH](#zsh)
     - [powerline10k](#powerline10k)
@@ -180,6 +181,30 @@ $ task next
 # With a project
 task add project:Home Some description 
 
+```
+
+### Sqlite on command line
+
+Some links
+
+- Basic tutorial to see syntax: <https://www.sqlitetutorial.net/>
+- Selects <https://www.sqlitetutorial.net/sqlite-select/>
+
+```bash
+# Connect to a DB file
+$ sqlite3 mySQLLiteFile.db
+
+# Once connected, you have the sqllite command prompt
+sqlite>
+
+# Exit from sqlite command prompt :)
+Ctrl+d
+
+# Command to list all tables
+.tables
+
+# Comamnd to select something from a table - NB for ; at the end
+select * from MyTable where someColumnName = '%partialValueMatch%';
 ```
 
 ## Bash shell programming

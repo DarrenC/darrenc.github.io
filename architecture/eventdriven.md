@@ -7,6 +7,7 @@
       - [DAPR](#dapr)
     - [Traditional architectures versus Reactive Microservices](#traditional-architectures-versus-reactive-microservices)
       - [Notes](#notes)
+    - [Service Oriented Architecture](#service-oriented-architecture)
 
 - Describing event driven APIs <https://www.asyncapi.com/>
 
@@ -66,3 +67,27 @@ Dapr injects a side-car (container or process) to each compute unit. The side-ca
     - Event driven
     - Mobility (can be moved but reached in same way no matter its location)
     - Owns its own state.
+
+### Service Oriented Architecture
+
+- Article Notes on - <https://en.wikipedia.org/wiki/Service-oriented_architecture>
+
+`Definition:`
+
+> SOA (service-oriented architecture) is an architectural style that focus on discrete services instead of a monolithic design.
+
+- Service is a discrete unit of functionality that can be accessed remotely and acted upon and updated independently
+  - e.g Retrieving a credit card statement online, retrieving an order etc.
+
+- Example properties that a service can have
+  - Logically represents a repeatable business activity with a specified outcome.
+  - Self-contained.
+  - Black box for consumers - i.e. not aware of inner workings/implementation.
+  - Can be composed of other services.
+
+- Service Mesh
+  - Using different services in conjunction to provide functionality for a large application
+    - E.g. separately distributed, maintained and deployed software components. Enabled by network communication e.g. IP network.
+
+- SOA vs API
+  - API is the service, SOA is the architecture that allows the service to operate.

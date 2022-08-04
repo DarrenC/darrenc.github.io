@@ -1,6 +1,7 @@
 # Web Services
 
 - [Web Services](#web-services)
+  - [Introduction articles](#introduction-articles)
   - [Definitions](#definitions)
   - [CXF](#cxf)
   - [JAX WS](#jax-ws)
@@ -10,15 +11,11 @@
     - [Tools](#tools)
     - [Handling SOAP exceptions](#handling-soap-exceptions)
 
-Introduction article
-<http://onjava.com/pub/a/onjava/2001/08/07/webservices.html>
+## Introduction articles
 
-JAXB Introduction article
-<http://java.sun.com/developer/technicalArticles/WebServices/jaxb/>
-[JAXB](JAXB)
-
-SOAP humour
-<http://wanderingbarque.com/nonintersecting/2006/11/15/the-s-stands-for-simple/>
+- Very old intro - <http://onjava.com/pub/a/onjava/2001/08/07/webservices.html>
+- JAXB Introduction article - <http://java.sun.com/developer/technicalArticles/WebServices/jaxb/>
+- SOAP humour - <http://wanderingbarque.com/nonintersecting/2006/11/15/the-s-stands-for-simple/>
 
 ## Definitions
 
@@ -34,7 +31,7 @@ SOAP humour
 - <http://cxf.apache.org/docs/defining-contract-first-webservices-with-wsdl-generation-from-java.html>
 - <http://www.jroller.com/gmazza/entry/soap_client_tutorial>
 
-Can return PDFs from webservice as a byte\[\]
+Can return PDFs from webservice as a byte[] array
 
 ## JAX WS
 
@@ -52,7 +49,6 @@ Can create JAX-WS services either from code or from a WSDL. WSDL is better suppo
     - We have a CompletableFuture based approach which can work for the case where you don't need to process the response in the handler (see below)
 
 ```java
-
 public interface GreeterAsync {
  
   // Blocking Synchronous call 

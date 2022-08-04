@@ -67,15 +67,15 @@ OReilly "Web application development with Spring and Angular"
 - <https://dapr.io> - DONE
 - <https://vertx.io/introduction-to-vertx-and-reactive/> - $$$$$$$$$$$$$$$$$$$$$ TODO TODO TODO TODO $$$$$$$$$$$$$$$$$$
 - <https://developer.lightbend.com/docs/introduction/traditional-architecture.html> - DONE
-- <https://en.wikipedia.org/wiki/Service-oriented_architecture>
+- <https://en.wikipedia.org/wiki/Service-oriented_architecture> - DONE
 - <https://martinfowler.com/articles/microservices.html#footnote-etymology>
   - READ
     - Follow ons
       - <https://martinfowler.com/bliki/TolerantReader.html>
       - <https://martinfowler.com/articles/consumerDrivenContracts.html>
 
-- <https://www.ibm.com/cloud/blog/soa-vs-microservices>
-- <https://www.progress.com/blogs/the-relationship-between-cep-eda-and-soa>
+- <https://www.ibm.com/cloud/blog/soa-vs-microservices> - DONE (NOT GOOD)
+- <https://www.progress.com/blogs/the-relationship-between-cep-eda-and-soa> - DONE (NOT GOOD)
 - <https://quarkus.io/guides/rest-client>
 - <https://kafka.apache.org/20/documentation/streams/developer-guide/testing.html>
 - <https://www.reddit.com/r/apachekafka/comments/seifte/kafka_learning_path/>
