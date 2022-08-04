@@ -32,6 +32,7 @@
   - [Managing Swap space](#managing-swap-space)
   - [Managing /var space](#managing-var-space)
   - [Setting java version](#setting-java-version)
+    - [Using SDKMan for java installs on Linux](#using-sdkman-for-java-installs-on-linux)
   - [Cron](#cron)
     - [Simple Commands](#simple-commands)
   - [Using Screen](#using-screen)
@@ -587,6 +588,11 @@ $ grep JAVA_HOME /etc/environment /etc/bash.bashrc /etc/profile.d/* /etc/profile
 ...Found it in /etc/environment
 
 ```
+
+### Using SDKMan for java installs on Linux
+
+- Article about setup - <https://mydeveloperplanet.com/2022/04/05/how-to-manage-your-jdks-with-sdkman/>
+- Main SDKMan site - <https://sdkman.io/>
 
 ## Cron
 
