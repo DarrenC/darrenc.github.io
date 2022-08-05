@@ -219,4 +219,4 @@ BUT THERE ARE DRAWBACKS
 ## NATS
 
 - <https://medium.com/capital-one-tech/lightweight-cloud-native-messaging-with-nats-ad730ca2becf>
-- <https://docs.nats.io/nats-concepts/jetstream>
+- NATS Jetstream explanation - <https://docs.nats.io/nats-concepts/jetstream>

@@ -7,7 +7,9 @@
       - [DAPR](#dapr)
     - [Traditional architectures versus Reactive Microservices](#traditional-architectures-versus-reactive-microservices)
       - [Notes](#notes)
+    - [Reactive message concepts - Smallrye Reactive Messaging Framework](#reactive-message-concepts---smallrye-reactive-messaging-framework)
     - [Service Oriented Architecture](#service-oriented-architecture)
+  - [Technologies](#technologies)
 
 - Describing event driven APIs <https://www.asyncapi.com/>
 
@@ -68,6 +70,26 @@ Dapr injects a side-car (container or process) to each compute unit. The side-ca
     - Mobility (can be moved but reached in same way no matter its location)
     - Owns its own state.
 
+### Reactive message concepts - Smallrye Reactive Messaging Framework
+
+- from SmallRye Reactive Messaging - Concepts - <https://smallrye.io/smallrye-reactive-messaging/smallrye-reactive-messaging/3.9/concepts.html>
+
+- `Messages` - message is an envelope around a payload. 
+  - Applications work on messages and they can consume or produce them. 
+  - They can be sent to/obtained from message brokers (e.g. Kafka). 
+  - In Reactive Messaging the class is Message<T> and the payload is <T> e.g. String or some class.
+  - In addition to Payload, can also have Metadata (e.g. Kafka MetaData, tracing data or even business related data)
+- Channels
+  - Messages transmit on a channel - a virtual destination identified by a name.
+    - Stream is a structure of channels for component to read from and write to.
+- Connectors
+  - How your application interacts with the message brokers/event backbone. 
+  - Connector connects to the broker and receives messages for the app, transmits to the broker on the specific channels for those functions.
+  - Connector is tech specific e.g. Kafka broker.
+  - Can work without connectors but must provide the message chain yourself - e.g. an @incoming method and @outgoing method.
+
+TODO - Smallrye is definitely used with Kafka in Quarkus but is it also with NATS ? Not directly currently (from their website) but through Camel but this brings its own limitations... (aka our experience)
+
 ### Service Oriented Architecture
 
 - Article Notes on - <https://en.wikipedia.org/wiki/Service-oriented_architecture>
@@ -91,3 +113,7 @@ Dapr injects a side-car (container or process) to each compute unit. The side-ca
 
 - SOA vs API
   - API is the service, SOA is the architecture that allows the service to operate.
+
+## Technologies
+
+- `Microprofile` - <https://projects.eclipse.org/projects/technology.microprofile> - Equivalent of JEE for microservices architecture.

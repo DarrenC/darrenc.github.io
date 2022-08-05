@@ -66,6 +66,7 @@ OReilly "Web application development with Spring and Angular"
 - <https://github.com/dapr/dapr> - DONE
 - <https://dapr.io> - DONE
 - <https://vertx.io/introduction-to-vertx-and-reactive/> - $$$$$$$$$$$$$$$$$$$$$ TODO TODO TODO TODO $$$$$$$$$$$$$$$$$$
+- <https://smallrye.io/smallrye-reactive-messaging/smallrye-reactive-messaging/3.9/concepts.html>
 - <https://developer.lightbend.com/docs/introduction/traditional-architecture.html> - DONE
 - <https://en.wikipedia.org/wiki/Service-oriented_architecture> - DONE
 - <https://martinfowler.com/articles/microservices.html#footnote-etymology>
