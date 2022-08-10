@@ -19,6 +19,7 @@
     - [Dropbox - Tech Docs - Introducing Java 8](#dropbox---tech-docs---introducing-java-8)
       - [Features](#features)
   - [Streams](#streams)
+    - [Stream Examples](#stream-examples)
     - [Eclipse Collections vs Lambdas](#eclipse-collections-vs-lambdas)
     - [Streams with an index](#streams-with-an-index)
     - [Streams maps with a lambda with parameters instead of a functional interface method](#streams-maps-with-a-lambda-with-parameters-instead-of-a-functional-interface-method)
@@ -265,6 +266,16 @@ programming and map reduce stuff
   - The old faithful - <https://www.baeldung.com/java-8-streams>
 
 - Example with replacing for loops - <https://dzone.com/articles/java-8-concepts-fp-lambda-expressions-and-streams>
+
+### Stream Examples
+
+```java
+
+// Ordering a collection
+List<String> list = Arrays.asList("9", "A", "Z", "1", "B", "Y", "4", "a", "c");
+List<String> sortedList = list.stream().sorted().collect(Collectors.toList());
+sortedList.forEach(System.out::print); // 1 4 9 A B Y Z a c
+```
 
 ### Eclipse Collections vs Lambdas
 

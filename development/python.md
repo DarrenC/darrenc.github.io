@@ -3,7 +3,6 @@
 - [Python](#python)
   - [Python Setup and Infrastructure](#python-setup-and-infrastructure)
     - [Virtual Environments](#virtual-environments)
-      - [Venv in production](#venv-in-production)
       - [Installing venv (and pip too)](#installing-venv-and-pip-too)
     - [Getting it working with PyCharm when installed using Ubuntu Snap](#getting-it-working-with-pycharm-when-installed-using-ubuntu-snap)
     - [Running Python scripts from commandline](#running-python-scripts-from-commandline)
@@ -96,18 +95,27 @@
 ### Virtual Environments
 
 - <https://realpython.com/python-virtual-environments-a-primer/>
-
-#### Venv in production
-
-It seems like venv can be a good thing to use in production environments also to avoid dependencies with other projects and impacting system level packages.
-
-- [Reddit discussion on venv in prod](https://www.reddit.com/r/Python/comments/2grmnn/virtualenv_on_production/)
+- <https://python.land/virtual-environments/virtualenv>
+- Can be a good thing in PRD too, avoiding dependencies and system level packages - - [Reddit discussion on venv in prod](https://www.reddit.com/r/Python/comments/2grmnn/virtualenv_on_production/)
 
 #### Installing venv (and pip too)
 
 Command I used was:
 
-- sudo apt install python3-venv python3-pip
+```bash
+# Installing
+sudo apt install python3-venv python3-pip
+
+# Starting a venv
+source myvenv/bin/activate
+. ./.venv/bin/activate
+
+# Exiting a venv
+deactivate
+
+# inside the venv we can install requirements etc. without impacting elsewhere
+pip3 install -r requirements.txt
+```
 
 ### Getting it working with PyCharm when installed using Ubuntu Snap
 
@@ -116,12 +124,13 @@ the pip and venv installed from command in section above it was okay.
 
 - <https://superuser.com/questions/1319047/cant-install-virtual-interpreter-in-pycharm-in-linux>
 
-Anaconda - like an environment, includes virtualenv and Spyder - a nice
-IDE PyCharm - IntelliJ python IDE - meant to be the best - can modify
-virtualenv from within IDE import this -> prints the Python Zen poem :)
-PEP8 - style guide, use it!
-
-PEP - Python Enhancement Proposal
+- Anaconda - like an environment, includes virtualenv and Spyder 
+- a nice IDE PyCharm 
+  - IntelliJ python IDE - meant to be the best 
+  - can modify virtualenv from within IDE 
+  - import this -> prints the Python Zen poem :) 
+  - PEP8 - style guide, use it! 
+  - PEP - Python Enhancement Proposal
 
 ### Running Python scripts from commandline
 

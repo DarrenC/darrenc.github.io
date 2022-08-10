@@ -83,6 +83,7 @@ OReilly "Web application development with Spring and Angular"
 - <https://quarkus.io/guides/getting-started>
 - <https://medium.com/swlh/apache-kafka-in-a-nutshell-5782b01d9ffb>
 - Kafka Cheatsheet - <https://thecodinginterface.com/blog/kafka-cli-cheat-sheet/>
+- ArgoCD - gitops style continuous deployment - <https://argo-cd.readthedocs.io/en/stable/>
 
 ### Event driven vs Reactive
 
