@@ -70,6 +70,10 @@ Dapr injects a side-car (container or process) to each compute unit. The side-ca
     - Mobility (can be moved but reached in same way no matter its location)
     - Owns its own state.
 
+- Event Sourcing
+  - Possibilities to create event logs and to capture events not possible with a traditional storage - e.g. tracking events of products added and then removed from a cart
+    - Adds complexity though - need to have a way to regroup these - e.g. splunk
+
 ### Reactive message concepts - Smallrye Reactive Messaging Framework
 
 - from SmallRye Reactive Messaging - Concepts - <https://smallrye.io/smallrye-reactive-messaging/smallrye-reactive-messaging/3.9/concepts.html>
