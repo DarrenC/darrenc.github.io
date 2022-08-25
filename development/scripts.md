@@ -105,6 +105,8 @@ done
 array[$i]="abc"
 ```
 
+- Working with an array of strings in Bash - <https://www.freecodecamp.org/news/bash-array-how-to-declare-an-array-of-strings-in-a-bash-script/>
+
 ### SED
 
 Streaming editor suited to modifying a per-line stream of text from a file or input string.

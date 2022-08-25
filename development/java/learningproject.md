@@ -84,6 +84,11 @@ OReilly "Web application development with Spring and Angular"
 - <https://medium.com/swlh/apache-kafka-in-a-nutshell-5782b01d9ffb>
 - Kafka Cheatsheet - <https://thecodinginterface.com/blog/kafka-cli-cheat-sheet/>
 - ArgoCD - gitops style continuous deployment - <https://argo-cd.readthedocs.io/en/stable/>
+- Loom virtual threads in Quarkus - <https://developers.redhat.com/devnation/tech-talks/integrate-loom-quarkus>
+- Reactive in Quarkus - TODO mutiny vs Completable future - <https://quarkus.io/guides/quarkus-reactive-architecture>
+  - Apparently mutiny is more truly reactive
+  - but sometimes need both - <https://medium.com/@alexei.rubinov/combining-smallrye-mutiny-and-completionstage-approach-in-quarkus-ec23751578b9>
+  - Comparing them + suggesting use cases e.g. single microservice collateral call vs stream of calls - <https://www.jrebel.com/blog/java-completablefuture-api>
 
 ### Event driven vs Reactive
 
