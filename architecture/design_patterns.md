@@ -8,6 +8,7 @@
     - [Creational pattern](#creational-pattern)
     - [Structural](#structural)
     - [Behavioral](#behavioral)
+  - [Overview of Common Design Patterns](#overview-of-common-design-patterns)
 
 ## Links
 
@@ -89,3 +90,7 @@ communication between objects.
     class, allowing its subclasses to provide concrete behavior.
 - Visitor separates an algorithm from an object structure by moving
     the hierarchy of methods into one object.
+
+## Overview of Common Design Patterns
+
+![Design Patterns overview](PatternsOverview.jpeg)
