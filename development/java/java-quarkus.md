@@ -3,6 +3,8 @@
 - [Java - Quarkus](#java---quarkus)
   - [Log-Levels](#log-levels)
   - [MicroProfile Rest Client vs Server side Jax-RS](#microprofile-rest-client-vs-server-side-jax-rs)
+    - [Microprofile RestClient Exception handling](#microprofile-restclient-exception-handling)
+  - [Scheduling stuff in Quarkus](#scheduling-stuff-in-quarkus)
 
 ## Log-Levels
 
@@ -21,4 +23,81 @@ quarkus.log.category."org.apache".level=DEBUG
 
 - Standard JAX-RS - Server side to map Exception to Response - javax.ws.rs.ext.ExceptionMapper
 - MicroProfile Rest Client - org.eclipse.microprofile.rest.client.ext.ResponseExceptionMapper client side inverse
-  - Default ResponseExceptionMapper throws a WebApplicationException for any Response with status >= 400
+  - Default ResponseExceptionMapper throws a WebApplicationException for any Response with status >= 400 <https://download.eclipse.org/microprofile/microprofile-rest-client-2.0/microprofile-rest-client-spec-2.0.html#_responseexceptionmapper>
+
+### Microprofile RestClient Exception handling
+
+When you are working with the microprofile rest client it throws a WebApplicationException for http codes >=400.
+If you want to see the content of the Response to get headers etc. you need to create a custom mapper that extends the ResponseExceptionMapper and register it with the rest client by annotation.
+This is slightly different to standard JAX-RS (but which uses exception mappers too - <https://dennis-xlc.gitbooks.io/restful-java-with-jax-rs-2-0-2rd-edition/content/en/part1/chapter7/exception_handling.html> or <https://access.redhat.com/documentation/en-us/red_hat_jboss_fuse/6.2.1/html/apache_cxf_development_guide/restexceptionmapper>)
+
+- Spec - <https://download.eclipse.org/microprofile/microprofile-rest-client-2.0/microprofile-rest-client-spec-2.0.html#_responseexceptionmapper>
+- Issue that tipped me off about this feature - <https://github.com/quarkusio/quarkus/issues/17153>
+- Nice worked example - <https://itnext.io/how-to-deal-with-4xx-5xx-responses-in-microprofile-rest-client-2e16559f542>
+- And even in Quarkus Rest client reactive exception handling - <https://quarkus.io/guides/rest-client-reactive#exception-handling>
+
+```java
+@Path("/api/test")
+@RegisterRestClient(configKey = "api-call")
+@RegisterProvider(CustomResponseExceptionMapper.class)
+@ApplicationScoped
+public interface SomeService {
+
+  @POST
+  @Consumes(MediaType.APPLICATION_JSON)
+  @Produces(MediaType.APPLICATION_JSON)
+  CompletionStage<Response> someServiceCall(@HeaderParam("some-header-name") String someHeader,
+      SomeRequest someRequest);
+}
+```
+
+```java
+public class CustomResponseExceptionMapper implements ResponseExceptionMapper<WebApplicationException> {
+
+  public WebApplicationException toThrowable(Response response) {
+    if (response.getStatus() == 500) {
+      Object errorCodeHeader = response.getHeaders().get(0);
+      Object errorMsgHeader = response.getHeaders().get(1);
+
+      if (errorCodeHeader != null && errorMsgHeader != null) {
+        log.error("Error response: {} - {}", errorCodeHeader, errorMsgHeader);
+      }
+    }
+
+    return new WebApplicationException("Service error, status code " + response.getStatus(), response);
+  }
+}
+
+```
+
+## Scheduling stuff in Quarkus
+
+Can use standard Quarkus schedule or an actual Quarkus-Quartz Scheduler library which seems more fully featured
+
+- Quartz - <https://quarkus.io/guides/quartz>
+- Quarkus Scheduler - <https://quarkus.io/guides/scheduler>
+
+```xml
+<!-- Update for pom.xml -->
+<dependency>
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-scheduler</artifactId>
+</dependency>
+```
+
+```java
+@ApplicationScoped              
+public class SomeBean {
+
+    
+    @Scheduled(every="10s")     
+    void doStuff() {...}
+
+    @Scheduled(cron="0 15 10 * * ?") 
+    void doStuff() {...}
+
+    // Cron in the application config
+    @Scheduled(cron = "{cron.expr}") 
+    void doStuff() {...}
+}
+```

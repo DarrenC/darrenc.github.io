@@ -11,7 +11,7 @@
 ## Beer
 
 - <https://drink314.com/2019/10/how-to-perfectly-pair-sausage-with-just-the-right-beer/>
-
+- Nice list of lots of addresses for french beers and bars <http://frenchbeergeek.fr/Adresses/>
 
 ## Recipes
 

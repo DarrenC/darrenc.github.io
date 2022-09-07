@@ -11,6 +11,7 @@
   - [Handling JSON with Jackson](#handling-json-with-jackson)
     - [Deserializing non-standard case JSON fields](#deserializing-non-standard-case-json-fields)
     - [Handling missing or unknown JSON fields](#handling-missing-or-unknown-json-fields)
+    - [Ignoring certain fields to not map them](#ignoring-certain-fields-to-not-map-them)
 
 - HTTP 1.1 vs 2 - <https://www.digitalocean.com/community/tutorials/http-1-1-vs-http-2-what-s-the-difference>
 
@@ -108,7 +109,6 @@ From stackoverflow: <https://stackoverflow.com/a/64101349>
 
 And here something about JSONB - <https://rieckpil.de/whatis-json-binding-json-b/>
 
-
 ### Handling missing or unknown JSON fields
 
 - If an API changes or if we receive partial messages it can provoke errors when trying to read the response entities
@@ -129,5 +129,24 @@ And here something about JSONB - <https://rieckpil.de/whatis-json-binding-json-b
 Caused by: com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: 
 Unrecognized field "referenceId" (class com.me.MyClass), not marked as ignorable 
 (3 known properties: "name", "address", "dob"])
+
+```
+
+### Ignoring certain fields to not map them 
+
+- <https://www.baeldung.com/jackson-ignore-properties-on-serialization>
+  - Can ignore fields by defining with annotation at class or field level in the code
+  - Can ignore entire class with @JsonIgnoreType
+    - Can even ignore classes we don't control with a Jackson MixIn and adding a mapping in the mapper
+  - Can filter fields - <https://www.baeldung.com/jackson-ignore-properties-on-serialization#filters>
+
+```java
+public MyClass {
+
+  private String name;
+  // Ignore on a field
+  @JsonIgnore
+  private String internalInfo;
+}
 
 ```

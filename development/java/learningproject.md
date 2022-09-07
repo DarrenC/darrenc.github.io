@@ -78,6 +78,8 @@ OReilly "Web application development with Spring and Angular"
 - <https://www.ibm.com/cloud/blog/soa-vs-microservices> - DONE (NOT GOOD)
 - <https://www.progress.com/blogs/the-relationship-between-cep-eda-and-soa> - DONE (NOT GOOD)
 - <https://quarkus.io/guides/rest-client>
+- FINISH READING Reactive messaging spec <https://download.eclipse.org/microprofile/microprofile-reactive-messaging-1.0/microprofile-reactive-messaging-spec.pdf>
+- CQRS - command query responsibility segregation - <https://martinfowler.com/bliki/CQRS.html>
 - <https://kafka.apache.org/20/documentation/streams/developer-guide/testing.html>
 - <https://www.reddit.com/r/apachekafka/comments/seifte/kafka_learning_path/>
 - <https://quarkus.io/guides/getting-started>
@@ -89,6 +91,11 @@ OReilly "Web application development with Spring and Angular"
   - Apparently mutiny is more truly reactive
   - but sometimes need both - <https://medium.com/@alexei.rubinov/combining-smallrye-mutiny-and-completionstage-approach-in-quarkus-ec23751578b9>
   - Comparing them + suggesting use cases e.g. single microservice collateral call vs stream of calls - <https://www.jrebel.com/blog/java-completablefuture-api>
+
+### Kubernetes stuff
+
+- <https://www.tutorialworks.com/kubernetes-pod-communication/>
+- <https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/>
 
 ### Event driven vs Reactive
 

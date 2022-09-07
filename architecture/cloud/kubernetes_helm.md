@@ -5,6 +5,8 @@
   - [Kubernetes Notes](#kubernetes-notes)
     - [Kubernetes Overview](#kubernetes-overview)
   - [Kubernetes commands](#kubernetes-commands)
+    - [Getting a shell to a running container](#getting-a-shell-to-a-running-container)
+  - [Inter pod communication](#inter-pod-communication)
 
 ## Kubernetes Articles
 
@@ -21,6 +23,7 @@
 - Container Orchestration tool
 - Google originally developed it
 - basic tutorial <https://kubernetes.io/docs/tutorials/kubernetes-basics/>
+- <https://kubernetes.io/docs/concepts/overview/components/>
 
 ## Kubernetes commands
 
@@ -40,3 +43,19 @@ kubectl get service --all-namespaces
 # all images inside the K3S cluster (but again Lens will probably be better for it)
 docker exec k3d-k3s-default-server-0 sh -c "ctr image list"
 ```
+
+### Getting a shell to a running container
+
+- <https://kubernetes.io/docs/tasks/debug/debug-application/get-shell-running-container/>
+
+```bash
+
+# Basic form
+kubectl exec --stdin --tty shell-demo -- /bin/bash
+```
+
+## Inter pod communication
+
+- <https://www.tutorialworks.com/kubernetes-pod-communication/>
+  - THis is part of the learning list so I'll add notes here once done
+- <https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/>

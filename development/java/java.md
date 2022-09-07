@@ -67,6 +67,7 @@
     - [Generate an XSD if you just have a plain XML example file](#generate-an-xsd-if-you-just-have-a-plain-xml-example-file)
     - [Use your XSD along with a binding file to generate some Java objects via the XJC compiler](#use-your-xsd-along-with-a-binding-file-to-generate-some-java-objects-via-the-xjc-compiler)
     - [Marshal unmarshall in JaxB](#marshal-unmarshall-in-jaxb)
+    - [Date formatting in JaxB XML](#date-formatting-in-jaxb-xml)
   - [JAX-RS](#jax-rs)
     - [Printing a JSON Response body](#printing-a-json-response-body)
   - [Asynchronous Programming](#asynchronous-programming)
@@ -410,7 +411,10 @@ A few reasons:
 NB - immutable through it's public API. Can still manipulate by
 reflection.
 
-<http://www.programcreek.com/2013/04/why-string-is-immutable-in-java/>
+- <http://www.programcreek.com/2013/04/why-string-is-immutable-in-java/>
+
+- Nice baeldung page on string pool and intern() <https://www.baeldung.com/java-string-pool>
+  - intern() is useful when using new String("dsfdsf") to create strings since it forces the use of the String Pool whereas otherwise it would result in a new object always.
 
 ## Thread local
 
@@ -522,9 +526,7 @@ try(BufferedWriter writer = Files.newBufferedWriter(path, Charset.forName("UTF-8
 
 ## Date and Time
 
-Joda time is becoming more of a standard
-
-<http://www.odi.ch/prog/design/datetime.php>
+- Java 8 date type replaces joda time - <https://www.baeldung.com/java-8-date-time-intro>
 
 ## Threading
 
@@ -620,8 +622,7 @@ Code for importing an external file into a JSP Page
 
 ## Spring Framework
 
-Good intro tutorial
-<http://blog.springsource.com/2011/01/04/green-beans-getting-started-with-spring-mvc/>
+- TODO - deprecated this one -> Good intro tutorial <http://blog.springsource.com/2011/01/04/green-beans-getting-started-with-spring-mvc/>
 
 ### Spring with Groovy
 
@@ -697,12 +698,12 @@ invoked on the command line but can also (using an extra jar) be
 incorporated into an ANT task.
 
 ```bash
-$xjc -b binding.xml -p com.yourcompany.generated test_0.xsd
+  $xjc -b binding.xml -p com.yourcompany.generated test_0.xsd
 ```
 
 ### Marshal unmarshall in JaxB
 
-This will give you a nice xml string output from a JaxB object.s
+This will give you a nice xml string output from a JaxB object.
 
 ```java
 
@@ -724,11 +725,28 @@ If for some reason we don't have a full XML schema object stack from the root, w
 For example you only want to marshal part of a jaxb object.
 
 ```java
-//If we DO NOT have JAXB annotated class
-JAXBElement<Employee> jaxbElement = new JAXBElement<Employee>(new QName("", "employee"), Employee.class, employeeObj);
-      
-jaxbMarshaller.marshal(jaxbElement, System.out);
+  //If we DO NOT have JAXB annotated class
+  JAXBElement<Employee> jaxbElement = new JAXBElement<Employee>(new QName("", "employee"), Employee.class, employeeObj);
+        
+  jaxbMarshaller.marshal(jaxbElement, System.out);
 
+```
+
+### Date formatting in JaxB XML
+
+- <https://www.baeldung.com/java-localdate-to-xmlgregoriancalendar>
+  - LocalDate to JaxB XML Gregorian Calendar standard
+
+```java
+  // DatatypeFactory comes from javax.xml.datatype (same package as XMLGregorianCalendar)
+
+  // Build directly from a date
+  LocalDate localDate = LocalDate.of(2019, 4, 25);  
+  XMLGregorianCalendar xmlGregorianCalendar = DatatypeFactory.newInstance().newXMLGregorianCalendar(localDate.toString());
+
+  // Build from a formatted string
+  String localDate2 = LocalDate.now().plusDays(30).format(DateTimeFormatter.ISO_DATE);
+  XMLGregorianCalendar departureDateXmlCalendar = DatatypeFactory.newInstance().newXMLGregorianCalendar(localDate2);
 ```
 
 ## JAX-RS
@@ -763,6 +781,11 @@ Involves using Completable Futures and Futures to handle asynchronous programmin
 - Also lots of nice examples and explanations - <https://www.callicoder.com/java-8-completablefuture-tutorial/>, <https://www.callicoder.com/java-callable-and-future-tutorial/>
 - DZone dump of examples - <https://dzone.com/articles/20-examples-of-using-javas-completablefuture>
 - Asynchronous implementation libraries <https://www.baeldung.com/java-asynchronous-programming>
+- Another example - <https://www.twilio.com/blog/asynchronous-api-requests-java-completablefutures>
+- Java 8 Oreilly - CompletableFuture composable asynchronous programming - <https://learning.oreilly.com/library/view/java-8-in/9781617291999/kindle_split_023.html>
+
+
+
 
 ### thenApply vs thenCompose
 

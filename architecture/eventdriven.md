@@ -8,6 +8,7 @@
     - [Traditional architectures versus Reactive Microservices](#traditional-architectures-versus-reactive-microservices)
       - [Notes](#notes)
     - [Reactive message concepts - Smallrye Reactive Messaging Framework](#reactive-message-concepts---smallrye-reactive-messaging-framework)
+      - [Microprofile Reactive Messaging Specification](#microprofile-reactive-messaging-specification)
     - [Service Oriented Architecture](#service-oriented-architecture)
   - [Technologies](#technologies)
 
@@ -58,6 +59,9 @@ Dapr injects a side-car (container or process) to each compute unit. The side-ca
       - Independently deployable service with a single clearly scoped purpose or capability.
       - Cloud native, scalable, platform independent, decoupled and isolated, autonomous, devops continuous integration & deployment.
 
+- Eclipse Microprofile is a group of API specifications for reactive microservices - basically what JEE architecture is for standard java applications, microprofile is for microservices/cloud - <https://microprofile.io/>.
+  - SmallRye implements some of the APIs - e.g. reactive messaging
+
 #### Notes
 
 - Reactive principles (NB - Reactive manifesto - <https://www.reactivemanifesto.org/>)
@@ -93,6 +97,11 @@ Dapr injects a side-car (container or process) to each compute unit. The side-ca
   - Can work without connectors but must provide the message chain yourself - e.g. an @incoming method and @outgoing method.
 
 TODO - Smallrye is definitely used with Kafka in Quarkus but is it also with NATS ? Not directly currently (from their website) but through Camel but this brings its own limitations... (aka our experience)
+
+#### Microprofile Reactive Messaging Specification
+
+- <https://download.eclipse.org/microprofile/microprofile-reactive-messaging-1.0/microprofile-reactive-messaging-spec.pdf>
+  - 
 
 ### Service Oriented Architecture
 
