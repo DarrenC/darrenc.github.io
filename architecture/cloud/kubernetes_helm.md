@@ -4,6 +4,7 @@
   - [Kubernetes Articles](#kubernetes-articles)
   - [Kubernetes Notes](#kubernetes-notes)
     - [Kubernetes Overview](#kubernetes-overview)
+    - [Components](#components)
   - [Kubernetes commands](#kubernetes-commands)
     - [Getting a shell to a running container](#getting-a-shell-to-a-running-container)
   - [Inter pod communication](#inter-pod-communication)
@@ -24,6 +25,14 @@
 - Google originally developed it
 - basic tutorial <https://kubernetes.io/docs/tutorials/kubernetes-basics/>
 - <https://kubernetes.io/docs/concepts/overview/components/>
+
+### Components
+
+- Deployment -> Replica Set -> Pod
+  - Favour Deployment over directly using a replica set since you can give declarative updates to your pods
+    - <https://kubernetes.io/docs/concepts/workloads/controllers/deployment/>
+    - Deployment `describes` a desired state (in the yaml spec: section) and the Deployment Controller changes actual state to reflect desired state.
+    - Replica Set aims to maintain a stable set of replica Pods running at any given time <https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/>.
 
 ## Kubernetes commands
 
