@@ -35,6 +35,7 @@
     - [Strings and Immutability](#strings-and-immutability)
   - [Thread local](#thread-local)
   - [Memory and Garbage Collection](#memory-and-garbage-collection)
+    - [Memory leak tooling in Java](#memory-leak-tooling-in-java)
     - [Finding jars and classes loaded during execution](#finding-jars-and-classes-loaded-during-execution)
     - [Statics](#statics)
   - [Serialization](#serialization)
@@ -69,7 +70,8 @@
     - [Marshal unmarshall in JaxB](#marshal-unmarshall-in-jaxb)
     - [Date formatting in JaxB XML](#date-formatting-in-jaxb-xml)
   - [JAX-RS](#jax-rs)
-    - [Printing a JSON Response body](#printing-a-json-response-body)
+    - [Server side - build a JSON Response body](#server-side---build-a-json-response-body)
+    - [Client side - Reading or Printing a JSON Response body](#client-side---reading-or-printing-a-json-response-body)
   - [Asynchronous Programming](#asynchronous-programming)
     - [thenApply vs thenCompose](#thenapply-vs-thencompose)
     - [Mocking errors in CompletableFuture](#mocking-errors-in-completablefuture)
@@ -443,8 +445,8 @@ public class Foo
 
 Garbage Collection can be requested but never guaranteed to run.
 Simplest memory leak example is a static List where the app continually
-adds items without every removing them. In this case the objects are
-allocated but never deallocated because they are never in a situation
+adds items without ever removing them. In this case the objects are
+allocated but never de-allocated because they are never in a situation
 where they cannot be referenced.
 
 - Description of Memory allocation & garbage collection (Also features
@@ -452,6 +454,11 @@ where they cannot be referenced.
     <http://www.ibm.com/developerworks/java/library/j-jtp01274/index.html>
 - Interesting article on types of memory leak:
     <http://blog.dynatrace.com/2011/04/20/the-top-java-memory-problems-part-1/>
+
+### Memory leak tooling in Java
+
+- FlightRecorder - <https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/memleaks001.html#CIHHGDJH>
+- Online heap dump analyzer - <https://heaphero.io/heap-index.jsp>
 
 ### Finding jars and classes loaded during execution
 
@@ -753,21 +760,50 @@ For example you only want to marshal part of a jaxb object.
 
 - Building a JSON response <https://www.baeldung.com/jax-rs-response>
 - Validating with JAX-RS rest assured <https://www.baeldung.com/rest-assured-tutorial>
+- Example with jersey jax-rs client - <https://www.baeldung.com/jersey-jax-rs-client>
 
-### Printing a JSON Response body
+### Server side - build a JSON Response body
+
+- <https://www.baeldung.com/jax-rs-response>
+
+```java
+@GET
+@Path("/pojo")
+public Response getPojoResponse() {
+
+    Person person = new Person("SomeName", "SomePlace");
+
+    return Response
+      .status(Response.Status.OK)
+      .entity(person)
+      .build();
+}
+```
+
+### Client side - Reading or Printing a JSON Response body
 
 - <https://mkyong.com/webservices/jax-rs/jax-rs-how-to-read-response-body-from-a-post-request/>
+- Difference between readEntity(<class>) and getEntity - <https://stackoverflow.com/questions/48781860/getentity-vs-readentity-in-response-javax-ws-rs>
+  - Detail of API readEntity() - <https://docs.oracle.com/javaee/7/api/javax/ws/rs/core/Response.html#readEntity-java.lang.Class->
+  - ResponseBuilder if needing to add meta-data <https://docs.oracle.com/javaee/7/api/javax/ws/rs/core/Response.ResponseBuilder.html>
 
 ```java
   import jakarta.ws.rs.core.Response;
 
   Response response = //... get the response object
 
-  // Optional - Buffer entity if you want to read response body AND subsequently readEntity to object, otherwise it will fail
+  // Optional - Buffer entity if you want to read response body AND subsequently readEntity to object, otherwise it will fail due to the stream being closed.
+  // This is specific to when you want to read response body as say a string and then later read the entity to an object
   response.bufferEntity(); 
   
   // read response body
   String body = response.readEntity(String.class);
+
+  // After reading with readEntity, can use getEntity to retrieve the cached object
+  Object obj = response.getEntity();
+
+  // Could also readEntity to a class
+
 
 ```
 
