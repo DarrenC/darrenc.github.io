@@ -3,6 +3,7 @@
 - [Swagger2puml and OpenApi2puml](#swagger2puml-and-openapi2puml)
   - [My fork of Swagger2PlantUML](#my-fork-of-swagger2plantuml)
   - [Links for adding SpringBoot](#links-for-adding-springboot)
+  - [Themes](#themes)
   - [Continuous Integration, publishing etc](#continuous-integration-publishing-etc)
   - [OpenAPI2PUML technical notes](#openapi2puml-technical-notes)
     - [Control flow V2](#control-flow-v2)
@@ -24,6 +25,10 @@
 - <https://3ldn.nl/2016/02/16/spring-boot-in-an-existing-application-part-1/>
 - <https://github.com/kuipercm/springboot-hello-world-app/blob/master/pom.xml>
 - <https://stackoverflow.com/questions/14467325/maven-combining-multiple-module-jars-into-one-war-file>
+
+## Themes
+
+- Plant UML themes - <https://bschwarz.github.io/puml-themes/gallery.html>
 
 ## Continuous Integration, publishing etc
 

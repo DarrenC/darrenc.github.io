@@ -3,6 +3,7 @@
 - [Java - Quarkus](#java---quarkus)
   - [Log-Levels](#log-levels)
   - [MicroProfile Rest Client vs Server side Jax-RS](#microprofile-rest-client-vs-server-side-jax-rs)
+    - [Quarkus Reactive programming for RestEasy](#quarkus-reactive-programming-for-resteasy)
     - [Microprofile RestClient Exception handling](#microprofile-restclient-exception-handling)
   - [Scheduling stuff in Quarkus](#scheduling-stuff-in-quarkus)
 
@@ -24,6 +25,11 @@ quarkus.log.category."org.apache".level=DEBUG
 - Standard JAX-RS - Server side to map Exception to Response - javax.ws.rs.ext.ExceptionMapper
 - MicroProfile Rest Client - org.eclipse.microprofile.rest.client.ext.ResponseExceptionMapper client side inverse
   - Default ResponseExceptionMapper throws a WebApplicationException for any Response with status >= 400 <https://download.eclipse.org/microprofile/microprofile-rest-client-2.0/microprofile-rest-client-spec-2.0.html#_responseexceptionmapper>
+
+### Quarkus Reactive programming for RestEasy
+
+- SUPER IMPORTANT TODO - RESTEasy Reactive in Quarkus- <https://www.youtube.com/watch?v=30eFZGml_-g>
+  - This is something we can do to gain performance
 
 ### Microprofile RestClient Exception handling
 
