@@ -12,12 +12,12 @@
 - <https://quarkus.io/guides/logging>
 
 ```properties
-# Inside application.properties ...
+  # Inside application.properties ...
 
-# Standard quarkus global level
-quarkus.log.level=INFO
-# particular packages
-quarkus.log.category."org.apache".level=DEBUG
+  # Standard quarkus global level
+  quarkus.log.level=INFO
+  # particular packages
+  quarkus.log.category."org.apache".level=DEBUG
 ```
 
 ## MicroProfile Rest Client vs Server side Jax-RS
@@ -30,6 +30,7 @@ quarkus.log.category."org.apache".level=DEBUG
 
 - SUPER IMPORTANT TODO - RESTEasy Reactive in Quarkus- <https://www.youtube.com/watch?v=30eFZGml_-g>
   - This is something we can do to gain performance
+  - also intro to mutiny primer - <https://quarkus.io/guides/mutiny-primer>
 
 ### Microprofile RestClient Exception handling
 

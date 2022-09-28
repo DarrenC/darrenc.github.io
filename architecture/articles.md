@@ -100,7 +100,8 @@
 
 ## Lucene + SOLR
 
-LUCENE + SOLR stuff - do some tutorials
+- [lucene, solr and elastic search](../development/java/lucene_solr.md)
+
 
 ## Architecture + Craftsmanship stuff
 

@@ -44,6 +44,7 @@
   - [File operations](#file-operations)
     - [NIO library example for writing to file](#nio-library-example-for-writing-to-file)
   - [Date and Time](#date-and-time)
+    - [Timezone updates for the JDK/JRE](#timezone-updates-for-the-jdkjre)
   - [Threading](#threading)
   - [Collections](#collections)
     - [Searching](#searching)
@@ -534,6 +535,17 @@ try(BufferedWriter writer = Files.newBufferedWriter(path, Charset.forName("UTF-8
 ## Date and Time
 
 - Java 8 date type replaces joda time - <https://www.baeldung.com/java-8-date-time-intro>
+
+- Using zoned date times in a diff calculation - <https://stackoverflow.com/questions/41077142/java-8-calculate-difference-between-two-zoneddatetime>
+  - Basically use [ChronoUnit](https://docs.oracle.com/javase/9/docs/api/java/time/temporal/ChronoUnit.html)
+    - ChronoUnit.SECONDS.between(tzdate1, tzdate2);
+    - Careful to use same types e.g all timezonedDates or LocalDateTimes
+
+### Timezone updates for the JDK/JRE
+
+- <https://stackoverflow.com/questions/27925035/wrong-offset-for-timezone-casablanca-java>
+  - TZUpdater is a tool to update the JDK/JRE with corrected timezone offset, daylight savings etc.
+  - Not updating will lead to errors for e.g. moroccan DST change in 2017/2018.
 
 ## Threading
 

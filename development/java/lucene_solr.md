@@ -3,10 +3,16 @@
 This is now OLD and should do it with elastic search
 
 - [Lucene and Solr](#lucene-and-solr)
+  - [Articles](#articles)
   - [Clearing a Solr Index](#clearing-a-solr-index)
   - [Solr suggestion autocomplete](#solr-suggestion-autocomplete)
   - [Spring with Solr](#spring-with-solr)
     - [Spring Rest calling](#spring-rest-calling)
+
+## Articles
+
+- Intro to Lucene - <https://www.reddit.com/r/java/comments/xdhdoy/intro_to_lucene_how_to_build_your_search_engine/>
+  - linked article with step by step example of search building - <https://advancedweb.hu/intro-to-lucene/>
 
 ## Clearing a Solr Index
 
