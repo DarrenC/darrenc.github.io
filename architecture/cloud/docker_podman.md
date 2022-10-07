@@ -4,6 +4,7 @@
   - [Overview](#overview)
   - [Articles](#articles)
     - [Trainings](#trainings)
+  - [Installing](#installing)
   - [Basic commands](#basic-commands)
     - [Starting and stopping containers](#starting-and-stopping-containers)
     - [Using network host](#using-network-host)
@@ -56,6 +57,11 @@ Docker is a container engine built on LXC tech - VE implementations of Linux env
 
 - Tip - use the docs on dockerhub to see how to use the images
   - [MySQL image](https://hub.docker.com/_/mysql)
+
+## Installing
+
+- Installing on RHEL (with CentOS packages) <https://bytexd.com/how-to-install-docker-on-rhel/>
+- Moving the default storage locatin - <https://www.guguweb.com/2019/02/07/how-to-move-docker-data-directory-to-another-location-on-ubuntu/>
 
 ## Basic commands
 
