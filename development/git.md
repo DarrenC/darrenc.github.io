@@ -46,6 +46,7 @@
       - [**Symbolic Refs**](#symbolic-refs)
     - [Relative Commit names](#relative-commit-names)
     - [Branches](#branches)
+    - [Newer way of working with branches - switch and restores](#newer-way-of-working-with-branches---switch-and-restores)
     - [Merges](#merges)
     - [Example of a basic Merge](#example-of-a-basic-merge)
     - [Discarding Merges](#discarding-merges)
@@ -615,6 +616,10 @@ git branch -d <BranchName>
 
 git branch -D <BranchName> # FORCE delete
 ```
+
+### Newer way of working with branches - switch and restores
+
+- Using switch and restore <https://tanzu.vmware.com/developer/blog/git-switch-and-restore-an-improved-user-experience/>
 
 ### Merges
 

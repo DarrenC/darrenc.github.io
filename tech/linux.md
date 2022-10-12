@@ -41,7 +41,10 @@
     - [Example Tmux commands](#example-tmux-commands)
   - [Filesystem overview](#filesystem-overview)
   - [Small Linux installs](#small-linux-installs)
-    - [**Creating a boot USB key**](#creating-a-boot-usb-key)
+    - [Install utilities - USB boot keys etc](#install-utilities---usb-boot-keys-etc)
+      - [UNetBootIn - Utility for creating USB live sticks for Linux distros](#unetbootin---utility-for-creating-usb-live-sticks-for-linux-distros)
+      - [Creating a boot USB key](#creating-a-boot-usb-key)
+      - [Ventoy - bootable usb drives](#ventoy---bootable-usb-drives)
     - [Beautiful icon sets](#beautiful-icon-sets)
   - [SED AWK](#sed-awk)
     - [SED Stuff](#sed-stuff)
@@ -719,17 +722,25 @@ Some small Linux installs for old computers - less than 1GB ram needed.
     use on any computer
 - Zenix - everything fits on USB live stick
 
-**UNetBootIn** Utility for creating USB live sticks for Linux distros
+### Install utilities - USB boot keys etc
+
+#### UNetBootIn - Utility for creating USB live sticks for Linux distros
+
 The Mac version has an annoying bug where you need to do an fdisk on the
 usb stick after formatting but before creating your install in order to
 activate the partition.
 
 - <http://perpetual-notion.blogspot.fr/2011/08/unetbootin-on-mac-os-x.html>
 
-### **Creating a boot USB key**
+#### Creating a boot USB key
 
 - Using dd to flash an iso to a USB key -
     <https://medium.com/@tbeach/use-unix-dd-command-to-os-bootable-on-usb-drive-6671945d95a6>
+
+#### Ventoy - bootable usb drives
+
+- <https://www.ventoy.net/en/index.html>
+  - Not sure if I've ever used this utility
 
 ### Beautiful icon sets
 

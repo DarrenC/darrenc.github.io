@@ -105,3 +105,7 @@ OReilly "Web application development with Spring and Angular"
 
 - <https://lafibre.info/raccordement-maison/maison-au-fond-dun-passage-de-10-maisons/>
 - <https://reseaux.orange.fr/maison/comment-avoir-fibre>
+
+## Games in java
+
+- Golden Axe clone in java - <https://github.com/derek-keeler/GoldenAxeClone>

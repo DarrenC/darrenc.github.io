@@ -13,6 +13,7 @@
   - [Maven copy dependencies plugin](#maven-copy-dependencies-plugin)
   - [Maven Build Helper plugin](#maven-build-helper-plugin)
   - [Maven Profiles](#maven-profiles)
+  - [Multi Module project](#multi-module-project)
   - [Options for plugins](#options-for-plugins)
     - [Example of skipping Dependency analysis](#example-of-skipping-dependency-analysis)
   - [MVND - a Maven daemon for building in parallel to speed up compile](#mvnd---a-maven-daemon-for-building-in-parallel-to-speed-up-compile)
@@ -271,6 +272,11 @@ You can build differently depending on the required context - e.g. environment d
 mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
 mvn clean package -P build_for_test
 ```
+
+## Multi Module project
+
+- <https://www.baeldung.com/maven-multi-module>
+  - Example of having multiple modules in a project
 
 ## Options for plugins
 
