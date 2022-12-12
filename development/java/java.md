@@ -24,6 +24,7 @@
     - [Streams with an index](#streams-with-an-index)
     - [Streams maps with a lambda with parameters instead of a functional interface method](#streams-maps-with-a-lambda-with-parameters-instead-of-a-functional-interface-method)
     - [Stream to check for existence of something in a collection](#stream-to-check-for-existence-of-something-in-a-collection)
+    - [Effectively final vs final](#effectively-final-vs-final)
   - [Quartz Scheduler](#quartz-scheduler)
   - [Regex](#regex)
   - [Logging in Java](#logging-in-java)
@@ -320,8 +321,8 @@ How to have an index i instead of having to use a for loop(int i=0 ....
 void toto (String someParam) {
   collectionOfStuff.stream()
               .filter (blah -> blah.getLevels().contains(someParam))
-              .map(this::sendTiTi); // can do this if sendSMS(Blah blah)
-              .map(b -> sendTiTi(b, someParam)); // OR can do this if sendSMS(Blah blah, String someParam)
+              .map(this::sendTiTi); // can do this if sendTiTi(Blah blah)
+              .map(b -> sendTiTi(b, someParam)); // OR can do this if sendTiTi(Blah blah, String someParam)
 }
 
 private Blah sendTiTi (Blah blah, String someParam) {
@@ -342,6 +343,24 @@ private Blah sendTiTi (Blah blah, String someParam) {
         .stream()
         .anyMatch(brandingBuilder::hasField);
   }
+```
+
+### Effectively final vs final
+
+- <https://www.baeldung.com/java-effectively-final>
+  - When working with lambdas, you can't pass regular variables for use inside the lambda expression so you need either a final or effectively final variable.
+  - <https://www.baeldung.com/java-8-lambda-expressions-tips>
+
+```java
+
+public void method() {
+    String localVariable = "Local";
+    Foo foo = parameter -> {
+        String localVariable = parameter;
+        return localVariable;
+    };
+}
+
 ```
 
 ## Quartz Scheduler

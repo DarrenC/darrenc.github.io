@@ -4,6 +4,7 @@
   - [Links](#links)
   - [Spring Design Patterns](#spring-design-patterns)
   - [JEE Design Patterns](#jee-design-patterns)
+  - [Microservice Patterns](#microservice-patterns)
   - [List of Design Patterns](#list-of-design-patterns)
     - [Creational pattern](#creational-pattern)
     - [Structural](#structural)
@@ -22,6 +23,10 @@
 ## JEE Design Patterns
 
 TODO
+
+## Microservice Patterns
+
+- API Gateway pattern for microservices <https://medium.com/design-microservices-architecture-with-patterns/api-gateway-pattern-8ed0ddfce9df>
 
 ## List of Design Patterns
 
