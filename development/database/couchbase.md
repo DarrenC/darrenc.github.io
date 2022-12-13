@@ -50,4 +50,10 @@ Couchbase is a distributed document database (JSON).
       - SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY, LIMIT, OFFSET, JOIN, ORDER BY
       - DISTINCT exists also
       - use ` ` to enclose collection/field names with special characters e.g. SELECT * FROM `My-Collection`
-      - Case sensitive -> attribute names and bucket names but not the querying keywords
+      - Case sensitive -> attribute names and bucket names but not the querying keywords.
+
+- Indexing
+  - Should be using indexes always in Couchbase to improve performance.
+
+- Joining
+  - Can join on Keys without needing an index since Couchbase is a KEY-VALUE Store
