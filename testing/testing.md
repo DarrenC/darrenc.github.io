@@ -108,7 +108,7 @@ public void whenExceptionThrown_thenExpectationSatisfied() {
 @Test
 public void whenExceptionThrown_thenAssertionSucceeds() {
     Exception exception = assertThrows(NumberFormatException.class, () -> {
-        Integer.parseInt("1a");
+        Integer.parseInt("12345aa");
     });
 
     String expectedMessage = "For input string";
