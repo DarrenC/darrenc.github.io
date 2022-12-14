@@ -24,6 +24,7 @@
     - [Streams with an index](#streams-with-an-index)
     - [Streams maps with a lambda with parameters instead of a functional interface method](#streams-maps-with-a-lambda-with-parameters-instead-of-a-functional-interface-method)
     - [Stream to check for existence of something in a collection](#stream-to-check-for-existence-of-something-in-a-collection)
+    - [Nested Streams](#nested-streams)
     - [Effectively final vs final](#effectively-final-vs-final)
   - [Quartz Scheduler](#quartz-scheduler)
   - [Regex](#regex)
@@ -198,7 +199,7 @@ public static String safeGreetOptionalWay(RootObject rootObject) {
 - More examples here - <https://www.baeldung.com/java-avoid-null-check>
 
 ```java
-// Get's the first value and flatmaps so we get Optional<String> not Optional<Optional<String>>
+// Gets the first value and flatmaps so we get Optional<String> not Optional<Optional<String>>
 public Optional<String> optionalListFirst() {
    return getOptionalList()
       .flatMap(list -> list.stream().findFirst());
@@ -343,6 +344,46 @@ private Blah sendTiTi (Blah blah, String someParam) {
         .stream()
         .anyMatch(brandingBuilder::hasField);
   }
+```
+
+### Nested Streams
+
+- <https://stackoverflow.com/questions/51630352/nested-lists-with-streams-in-java8>
+
+To replace something like this:
+
+```java
+C c1 = null;
+String name = "name1"
+for (A a: listOfAObjects) {
+    for (B b: a.getList()) {
+        for (C c: b.getPr()) {
+            if (c.getName().equalsIgnoreCase(name)) {
+                c1= c;
+                break;
+            }
+        }
+    }
+}
+```
+
+Can do this:
+
+```java
+
+C c1 = listOfAObjects.stream()
+        .flatMap(a -> a.getList().stream())
+        .flatMap(b -> b.getPr().stream())
+        .filter(c -> c.getName().equalsIgnoreCase(name))
+        .findFirst()
+        .orElse(null);
+
+```
+
+Can also filter nulls with this:
+
+```java
+  .filter(Objects::nonNull)
 ```
 
 ### Effectively final vs final
