@@ -153,6 +153,8 @@ docker inspect --format='{{.NetworkSettings.IPAddress}}' $(docker ps -f ancestor
 - Tutorial on docker site <https://docs.docker.com/network/network-tutorial-host/>
   - Basically it's a way to use the host (i.e. something like localhost) to be the docker network instead of configuring a real docker network separately.
 
+- Discussion of docker0, veth and linux network - <https://dev.to/polarbit/how-docker-container-networking-works-mimic-it-using-linux-network-namespaces-9mj>
+
 ## Volumes and Mounting
 
 ```bash
