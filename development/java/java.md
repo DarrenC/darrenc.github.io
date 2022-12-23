@@ -696,7 +696,7 @@ good explanation on WebApp and JSTL/JSP versions:
 Code for importing an external file into a JSP Page
 
 ```jsp
-<c:import url="http://www.iamdarren.net/RssReader/GoogleRssReader/RssHelloWorldV4.html"></c:import>
+<c:import url="http://www.someSite.net/RssReader/GoogleRssReader/RssHelloWorldV4.html"></c:import>
 ```
 
 ## Spring Framework

@@ -291,9 +291,9 @@ public class ExampleTest {
 ### Load Testing
 
 - Link to new page for load testing -
-    <http://www.iamdarren.net/wikidc/doku.php?id=testing:loadtesting>
+    TODO - link to testing:loadtesting
 
 ### Restful Resources Testing - Postman and Newman
 
 - link to postman page -
-    <http://www.iamdarren.net/wikidc/doku.php?id=testing:postman>
+    TODO - link to testing postman page 

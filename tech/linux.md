@@ -215,13 +215,10 @@ select * from MyTable where someColumnName = '%partialValueMatch%';
 ## Bash shell programming
 
 - dedicated page:
-    <http://www.iamdarren.net/wikidc/doku.php?id=development:scripts>
-- Links to some nice resources for Shell and commandline -
-    <https://www.reddit.com/r/linuxquestions/comments/ewbl9f/explainshellcom_is_an_awesome_resource/>
-- Really NICE SITE TO BREAKDOWN COMMANDS AND EXPLAIN THEM:
-    <https://explainshell.com/>
-- PDF with a LOT of different resources -
-    <https://www.usenix.org/sites/default/files/conference/protected-files/lisa19_maheshwari.pdf>
+  - TODO - proper link to dedicated scripting page
+- Links to some nice resources for Shell and command-line - <https://www.reddit.com/r/linuxquestions/comments/ewbl9f/explainshellcom_is_an_awesome_resource/>
+- Really NICE SITE TO BREAKDOWN COMMANDS AND EXPLAIN THEM: <https://explainshell.com/>
+- PDF with a LOT of different resources - <https://www.usenix.org/sites/default/files/conference/protected-files/lisa19_maheshwari.pdf>
 
 ## ZSH
 
@@ -243,7 +240,7 @@ select * from MyTable where someColumnName = '%partialValueMatch%';
 
 ```bash
 # from mint machine
-darren@darren-iMac-Mint:~$ zsh
+dog@kennel:~$ zsh
                                                                                 
 New config: ~/.p10k.zsh.
 Backup of ~/.zshrc: /tmp/.zshrc.JZtb3qunUJ.

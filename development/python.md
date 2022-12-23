@@ -1,6 +1,7 @@
 # Python
 
 - [Python](#python)
+  - [Overview](#overview)
   - [Python Setup and Infrastructure](#python-setup-and-infrastructure)
     - [Virtual Environments](#virtual-environments)
       - [Installing venv (and pip too)](#installing-venv-and-pip-too)
@@ -30,7 +31,7 @@
     - [CSV Reader/Writer](#csv-readerwriter)
     - [Jupyter](#jupyter)
     - [Flask Web Framework](#flask-web-framework)
-    - [Pandas & Matplotlib](#pandas--matplotlib)
+    - [Pandas \& Matplotlib](#pandas--matplotlib)
     - [Notes from Evernote](#notes-from-evernote)
     - [Articles To Read](#articles-to-read)
     - [Lists of Useful Python Links](#lists-of-useful-python-links)
@@ -44,7 +45,7 @@
       - [Sequences](#sequences)
       - [Sets](#sets)
       - [Strings](#strings)
-      - [Refs & Mutable Objs](#refs--mutable-objs)
+      - [Refs \& Mutable Objs](#refs--mutable-objs)
       - [passing parameters](#passing-parameters)
       - [Modules and Packages](#modules-and-packages)
       - [Package](#package)
@@ -81,6 +82,8 @@
   - [Data Visualization - Pandas and Matplotlib](#data-visualization---pandas-and-matplotlib)
     - [Really simple example of reading a file into a panda dataframe then plotting it to a file](#really-simple-example-of-reading-a-file-into-a-panda-dataframe-then-plotting-it-to-a-file)
     - [Some links](#some-links)
+
+## Overview
 
 - Main documentation: <https://docs.python.org/3/tutorial/index.html>
 - Book with nice tips:
@@ -284,7 +287,7 @@ y = {} # Creates empty dictionary
 
 y["pi"] = 3.14
 
-y = {'pi':3.14, 'darren': 'person', 'name':'john'}
+y = {'pi':3.14, 'object': 'person', 'name':'john'}
 
 # Views not lists - TODO what's the difference?
 y.keys()
