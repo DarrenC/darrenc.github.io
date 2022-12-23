@@ -22,11 +22,12 @@
     - [Checking version of linux](#checking-version-of-linux)
     - [Checking Hardware Configuration](#checking-hardware-configuration)
   - [Checking network usage](#checking-network-usage)
+    - [Checking active network interface and traffic](#checking-active-network-interface-and-traffic)
   - [User Stuff](#user-stuff)
   - [SSH tips](#ssh-tips)
-    - [links about using ssh agent & security](#links-about-using-ssh-agent--security)
+    - [links about using ssh agent \& security](#links-about-using-ssh-agent--security)
       - [Some other articles about ssh login without password (NB - ssh agent solution is useful)](#some-other-articles-about-ssh-login-without-password-nb---ssh-agent-solution-is-useful)
-  - [Bash profile & History](#bash-profile--history)
+  - [Bash profile \& History](#bash-profile--history)
   - [Cleaning Snaps](#cleaning-snaps)
   - [FStab](#fstab)
   - [Managing Swap space](#managing-swap-space)
@@ -58,7 +59,7 @@
   - [Terminal Commands](#terminal-commands)
     - [Moving and copying files](#moving-and-copying-files)
     - [Checking number of CPUs - lscpu](#checking-number-of-cpus---lscpu)
-    - [SCP & cp](#scp--cp)
+    - [SCP \& cp](#scp--cp)
     - [Rsync](#rsync)
     - [Linux IP address](#linux-ip-address)
     - [Monitoring processes - top, vmstat, sysstat](#monitoring-processes---top-vmstat-sysstat)
@@ -439,6 +440,16 @@ sudo lshw -class memory
 ```bash
 # See what process send/receives most packets
 netstat -anp --inet
+```
+
+### Checking active network interface and traffic
+
+```bash
+# Interface is connected if link=yes
+$ sudo lshw -c network | egrep 'description|name|link'
+
+#Monitor the traffic on connected interfaces:
+$ watch ip -s link
 ```
 
 ## User Stuff

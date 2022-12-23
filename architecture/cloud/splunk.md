@@ -10,6 +10,7 @@
         - [Search tab](#search-tab)
         - [Search Modes](#search-modes)
     - [Knowledge Objects](#knowledge-objects)
+    - [Creating Reports and Dashboards](#creating-reports-and-dashboards)
 
 ## Notes from Training
 
@@ -89,3 +90,28 @@ TODO - need to understand some more with examples
 
 ### Knowledge Objects
 
+Tools that help you discover and analyze data and can be used/reused and shared to others.
+
+5 types
+
+- Data interpretation
+  - Fields, field extractions, calculated fields
+- Data Classification
+  - Event Types to categorize data, transactions to regroup events
+- Data Enrichment
+  - Lookup data to enrich, workflow actions can link to external resources
+- Data Normalization
+  - Tags to label data, field aliases to normalize data from multiple sources
+- Data Models
+  - Hierarchically structure datasets
+Knowledge manager - responsible for stewarding the data
+
+### Creating Reports and Dashboards
+
+- Reports
+  - Save and share searches
+  - Can select to add or not the time range picker
+  - Should define naming convention
+  - Can display for and run as different users to allow access to info not normally available to someone
+- Dashboard regroups the information of multiple reports
+  - 
