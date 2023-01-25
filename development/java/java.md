@@ -2,6 +2,7 @@
 
 - [Java](#java)
   - [Java Subjects](#java-subjects)
+    - [Java 17](#java-17)
     - [Java 11](#java-11)
       - [Java 11 Overview](#java-11-overview)
     - [Javalin framework](#javalin-framework)
@@ -30,6 +31,7 @@
   - [Regex](#regex)
   - [Logging in Java](#logging-in-java)
     - [Log4J2 and SLF4J](#log4j2-and-slf4j)
+    - [Logging and Mapped Diagnostic Context MDC](#logging-and-mapped-diagnostic-context-mdc)
   - [Spring Framework - TO MOVE](#spring-framework---to-move)
     - [REST API with Async calls in Spring](#rest-api-with-async-calls-in-spring)
   - [Java Articles](#java-articles)
@@ -83,6 +85,10 @@
   - [Application Servers](#application-servers)
 
 ## Java Subjects
+
+### Java 17
+
+- Migration tips for moving to JDK 17 - <https://ahrooran.hashnode.dev/technical-challenges-migrating-from-jdk-8-to-17-and-spring-boot-2x-to-3x>
 
 ### Java 11
 
@@ -442,6 +448,18 @@ with a bridge to allow a third party jar using SLF4J to log under the
 log4J2 config
 
 - <https://github.com/DarrenC/openapi2puml/commit/6474f408770231f4ec0527c436fed1ed2a10b4e5>
+
+### Logging and Mapped Diagnostic Context MDC
+
+- <https://www.baeldung.com/mdc-in-log4j-2-logback>
+  - Shows how MDC can be used in Log4J, Log4j2, Slf4j etc.
+  - Basic idea is to create a context where we can put information when we have it - e.g. transaction ids etc. and then it can be included in logging messages where we may not have access to the context e.g. handle an error or logging a field value
+  - Need to setup and then clean the context, especially when using thread pools or there is a risk of stale data being used.
+
+Further reading:
+
+- <https://medium.com/asyncparadigm/logging-in-a-multithreaded-environment-and-with-completablefuture-construct-using-mdc-1c34c691cef0>
+- <https://logback.qos.ch/manual/mdc.html>
 
 ## Spring Framework - TO MOVE
 

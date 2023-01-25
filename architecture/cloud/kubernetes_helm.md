@@ -2,6 +2,7 @@
 
 - [Kubernetes and Helm (and other stuff)](#kubernetes-and-helm-and-other-stuff)
   - [Kubernetes Articles](#kubernetes-articles)
+  - [Kubernetes Tools](#kubernetes-tools)
   - [Kubernetes Notes](#kubernetes-notes)
     - [Kubernetes Overview](#kubernetes-overview)
     - [Components](#components)
@@ -16,6 +17,14 @@
 
 - Kuberenetes with Nana <https://www.youtube.com/watch?v=s_o8dwzRlu4&list=PLXUDioG7XwE59TfSXWN-nDWiTlT5RwrZL&index=56&t=882s>
 - Kubernetes crash loop backoff with some nice utilities for logs etc - <https://sysdig.com/blog/debug-kubernetes-crashloopbackoff/>
+
+## Kubernetes Tools
+
+- <https://k9scli.io/> home with cheatsheets instructions etc. 
+  - Installing - https://github.com/derailed/k9s#installation
+    - On Ubuntu can install easily via webinstall (see page above for details)
+- VSCode extension - <https://marketplace.visualstudio.com/items?itemName=ms-kubernetes-tools.vscode-kubernetes-tools>
+- Lens - discounted due to licensing and shenanigans around the open source version currently -> to be rechecked at some point
 
 ## Kubernetes Notes
 
@@ -42,7 +51,8 @@
 # kubectl but my alias is "k"
 
 # Listing stuff
-kubectl get pods --all-namespaces
+kubectl get pods --all-namespaces            # list pods in all namespaces not just the current one
+k get pods -n kubernetes-system              # List pods in a given namespace
 kubectl get pods -o wide                     # Get a lot more details
 kubectl get pods -w                          # Watch (useful waiting for stuff to get running)
 
