@@ -26,6 +26,7 @@
     - [Streams maps with a lambda with parameters instead of a functional interface method](#streams-maps-with-a-lambda-with-parameters-instead-of-a-functional-interface-method)
     - [Stream to check for existence of something in a collection](#stream-to-check-for-existence-of-something-in-a-collection)
     - [Nested Streams](#nested-streams)
+    - [Stream to join Strings](#stream-to-join-strings)
     - [Effectively final vs final](#effectively-final-vs-final)
   - [Quartz Scheduler](#quartz-scheduler)
   - [Regex](#regex)
@@ -390,6 +391,24 @@ Can also filter nulls with this:
 
 ```java
   .filter(Objects::nonNull)
+```
+
+### Stream to join Strings
+
+- Article with example (see below) <https://ivarconr.wordpress.com/2013/11/20/java-8-joining-strings-with-stream-api/>
+  - Collectors.joining(<char>) is a helper for this task, the input string is the separator between each value
+- More information in the JDK docs about the reduction operations available - <https://docs.oracle.com/javase/tutorial/collections/streams/reduction.html>
+
+```java
+  List<Person> persons = new ArrayList<>();
+  persons.add(new Person("Ola Hansen", 21));  ..
+  
+  
+  String names = persons.stream()
+    .filter(p -> p.getAge() > 18)
+    .sorted((p1, p2) -> p1.getAge() - p2.getAge())
+    .map(p -> p.getAge() + ":" + p.getName())
+    .collect(Collectors.joining(", "));
 ```
 
 ### Effectively final vs final
