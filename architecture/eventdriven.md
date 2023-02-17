@@ -10,9 +10,8 @@
     - [Reactive message concepts - Smallrye Reactive Messaging Framework](#reactive-message-concepts---smallrye-reactive-messaging-framework)
       - [Microprofile Reactive Messaging Specification](#microprofile-reactive-messaging-specification)
     - [Service Oriented Architecture](#service-oriented-architecture)
+  - [Microservice exception handling](#microservice-exception-handling)
   - [Technologies](#technologies)
-
-- Describing event driven APIs <https://www.asyncapi.com/>
 
 ## Articles Review
 
@@ -126,6 +125,11 @@ TODO - Smallrye is definitely used with Kafka in Quarkus but is it also with NAT
 
 - SOA vs API
   - API is the service, SOA is the architecture that allows the service to operate.
+
+## Microservice exception handling
+
+- <https://www.quora.com/How-do-you-handle-exceptions-in-microservices>
+- Access control and latency - <https://www.quora.com/What-are-some-effective-patterns-for-access-control-in-a-service-oriented-microservice-architecture-especially-when-low-response-time-is-important-like-services-that-back-a-user-facing-app/answer/Peat-Bakke?ch=10&oid=6356704&share=615e2293&target_type=answer>
 
 ## Technologies
 

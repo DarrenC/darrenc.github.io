@@ -27,6 +27,8 @@ TODO
 ## Microservice Patterns
 
 - API Gateway pattern for microservices <https://medium.com/design-microservices-architecture-with-patterns/api-gateway-pattern-8ed0ddfce9df>
+- Site with lots of nice patterns to use - <https://microservices.io/index.html>
+  - Created by Chris Richardson who wrote "Microservice Patterns" book
 
 ## List of Design Patterns
 
