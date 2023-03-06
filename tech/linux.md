@@ -933,6 +933,7 @@ vmstat -t -S M 30 500 2>&1 | tee vmstats.txt
 
 - After running top command:
   - Shift+m - Sort processes by memory usage
+  - c to toggle between full command line and process name
   - Shift+f to enter the interactive menu
     - press the up or down arrow until the %MEM choice is
             highlighted
