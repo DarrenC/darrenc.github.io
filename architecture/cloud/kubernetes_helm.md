@@ -25,6 +25,10 @@
     - On Ubuntu can install easily via webinstall (see page above for details)
 - VSCode extension - <https://marketplace.visualstudio.com/items?itemName=ms-kubernetes-tools.vscode-kubernetes-tools>
 - Lens - discounted due to licensing and shenanigans around the open source version currently -> to be rechecked at some point
+- Validation tools
+  - Basic yaml linter - <https://yamllint.readthedocs.io/en/stable/>
+  - Kube and helm chart linter - <https://docs.kubelinter.io/#/>
+  - Detect old dependencies - <https://github.com/FairwindsOps/pluto>
 
 ## Kubernetes Notes
 
