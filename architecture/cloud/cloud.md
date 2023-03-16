@@ -123,6 +123,7 @@ TODO -> need a page just for this I think
 ### Tooling
 
 - Kafka commandline cheatsheet - <https://thecodinginterface.com/blog/kafka-cli-cheat-sheet/>
+- Kafka tutorials - <https://developer.confluent.io/quickstart/kafka-local/>
 
 ### Use Cases
 
@@ -179,6 +180,7 @@ TODO -> need a page just for this I think
   - First consumer gets all the partitions
   - Second consumer arrives and takes half and so on.....
   - Partition is never assigned to multiple consumers (if more consumers than partitions, idle consumers)
+    - Like this you avoid an app in PRD reading the same message twice - all consumers (instances of app ) in same group - only 1 per partition and so each message only read by 1 consumer
 - Consuming record does not delete
   - Topic is an append only ledger
   - Kafka (or Producer) is the only one to modify

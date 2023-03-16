@@ -10,6 +10,9 @@
     - [Onedrive sync for linux](#onedrive-sync-for-linux)
     - [Taskwarrior - a todo list on the commandline](#taskwarrior---a-todo-list-on-the-commandline)
     - [Sqlite on command line](#sqlite-on-command-line)
+    - [Presentation tools](#presentation-tools)
+      - [Slidev](#slidev)
+      - [Reveal MD](#reveal-md)
   - [Bash shell programming](#bash-shell-programming)
   - [ZSH](#zsh)
     - [powerline10k](#powerline10k)
@@ -211,6 +214,25 @@ Ctrl+d
 # Comamnd to select something from a table - NB for ; at the end
 select * from MyTable where someColumnName = '%partialValueMatch%';
 ```
+
+### Presentation tools
+
+#### Slidev
+
+- <https://sli.dev/>
+  - I used the docker image to avoid installs - <https://sli.dev/guide/install.html#install-on-docker>
+    - Some small drawbacks
+      - must use slides.md as the file name and have one per folder
+
+```bash
+  # run the docker image 
+  docker run --name slidev --rm -it --user node -v ${PWD}:/slidev -p 3030:3030 tangramor/slidev:latest
+
+  # Export the slides to static SPA - NB need to update the relative links "/assets" becomes "./assets". Also need to run on a webserver
+  docker exec -i slidev npx slidev export
+```
+
+#### Reveal MD
 
 ## Bash shell programming
 

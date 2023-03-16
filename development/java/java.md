@@ -5,6 +5,8 @@
     - [Java 17](#java-17)
     - [Java 11](#java-11)
       - [Java 11 Overview](#java-11-overview)
+    - [Java 9](#java-9)
+      - [Java Modules](#java-modules)
     - [Javalin framework](#javalin-framework)
     - [JSR 303](#jsr-303)
     - [Apache StringUtils](#apache-stringutils)
@@ -100,6 +102,17 @@
   - Helpful Null Pointer Exceptions
     - ``` Cannot invoke "com.blah.GrapeClass.getColor()" because the return value of "java.util.HashMap.get(Object)" is null ```
   - Records - instead of boilerplate or lombok for pojo classes you can define as records with fields
+
+### Java 9
+
+#### Java Modules
+
+- Introduction to Modules - <https://www.javacodegeeks.com/2023/03/java-modules-an-introduction.html>
+  - Way of encapsulating project to reduce runtime, explicitly specify dependencies
+  - Specify using `module-info.java` file
+  - Special way to build and run using the java commands to indicate it's a module
+  - Completely different to maven multi-module which is related to compile time dependencies
+    - JPMS modules are to do with runtime dependencies
 
 ### Javalin framework
 
