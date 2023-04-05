@@ -73,6 +73,7 @@
     - [Disk Usage, Disk Free space](#disk-usage-disk-free-space)
       - [NCDU - disk space usage checker](#ncdu---disk-space-usage-checker)
       - [du and df](#du-and-df)
+    - [Xargs](#xargs)
     - [netstat](#netstat)
     - [Lookup hostname from IP address](#lookup-hostname-from-ip-address)
     - [File Permissions](#file-permissions)
@@ -1035,6 +1036,12 @@ du -h --max-depth=1
 ```bash
 df
 ```
+
+### Xargs
+
+Xargs can be used to pipe a list of results into a command - for example find a list of directories and then for each one xargs into a subsequent command (e.g. helm dependency update)
+
+- Xargs uses <https://www.tecmint.com/xargs-command-examples/>
 
 ### netstat
 

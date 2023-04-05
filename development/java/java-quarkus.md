@@ -11,6 +11,7 @@
 ## Useful Links
 
 - Cheat sheet - <https://lordofthejars.github.io/quarkus-cheat-sheet/>
+- Quarkus - benchmark of native vs JVM - <https://quarkus.io/blog/runtime-performance/>
 
 ## Log-Levels
 

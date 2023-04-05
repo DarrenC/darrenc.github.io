@@ -7,7 +7,8 @@
   - [Installing](#installing)
   - [Basic commands](#basic-commands)
     - [Starting and stopping containers](#starting-and-stopping-containers)
-    - [Using network host](#using-network-host)
+  - [Basic images](#basic-images)
+  - [Using network host](#using-network-host)
   - [Volumes and Mounting](#volumes-and-mounting)
   - [Port Forwarding and server logs](#port-forwarding-and-server-logs)
   - [Dockerfiles](#dockerfiles)
@@ -148,7 +149,12 @@ docker inspect --format='{{.NetworkSettings.IPAddress}}' $(docker ps -f ancestor
 
 ```
 
-### Using network host
+## Basic images
+
+- Alpine, simple lightweight linux base image - <https://www.docker.com/blog/how-to-use-the-alpine-docker-official-image/>
+  - Ash instead of Bash for the shell :)
+
+## Using network host
 
 - Tutorial on docker site <https://docs.docker.com/network/network-tutorial-host/>
   - Basically it's a way to use the host (i.e. something like localhost) to be the docker network instead of configuring a real docker network separately.
