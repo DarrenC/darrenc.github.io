@@ -7,6 +7,7 @@
     - [Quarkus Reactive programming for RestEasy](#quarkus-reactive-programming-for-resteasy)
     - [Microprofile RestClient Exception handling](#microprofile-restclient-exception-handling)
   - [Scheduling stuff in Quarkus](#scheduling-stuff-in-quarkus)
+  - [Remote debug in Quarkus](#remote-debug-in-quarkus)
 
 ## Useful Links
 
@@ -113,4 +114,23 @@ public class SomeBean {
     @Scheduled(cron = "{cron.expr}") 
     void doStuff() {...}
 }
+```
+
+## Remote debug in Quarkus
+
+- <https://access.redhat.com/documentation/en-us/red_hat_build_of_quarkus/1.3/html/developing_and_compiling_your_quarkus_applications_with_apache_maven/proc-debugging-your-quarkus-project_quarkus-maven>
+- <https://blog.sebastian-daschner.com/entries/quarkus-remote-dev-in-containers-update>
+- <https://gist.github.com/philipz/734b7e7595a8a3702f937a30ad5c5d81>
+- <https://stackoverflow.com/questions/55190015/how-can-i-debug-my-quarkus-application-that-is-running-in-dev-mode>
+
+```bash
+# In local 
+mvn quarkus:dev
+
+# in remote container for example
+mvn quarkus:remote-dev -Ddebug=false \
+  -Dquarkus.package.type=mutable-jar \
+  -Dquarkus.live-reload.url=http://localhost:8080 \
+  -Dquarkus.live-reload.password=123
+
 ```

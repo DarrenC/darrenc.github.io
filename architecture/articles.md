@@ -4,6 +4,7 @@
   - [Reading diary](#reading-diary)
   - [Utilities](#utilities)
   - [List of Articles](#list-of-articles)
+  - [AI](#ai)
   - [Agile](#agile)
   - [Lucene + SOLR](#lucene--solr)
   - [Architecture + Craftsmanship stuff](#architecture--craftsmanship-stuff)
@@ -30,7 +31,7 @@
     - [Video 2 in the series](#video-2-in-the-series)
       - [Related Articles](#related-articles)
   - [Explaining Agile: Martin Fowler and Neil Ford talk 2013](#explaining-agile-martin-fowler-and-neil-ford-talk-2013)
-  - [Legacy Code: 7 tips for approaching code you didn't write \| Vokal](#legacy-code-7-tips-for-approaching-code-you-didnt-write--vokal)
+  - [Legacy Code: 7 tips for approaching code you didn't write | Vokal](#legacy-code-7-tips-for-approaching-code-you-didnt-write--vokal)
     - [Embrace the Past](#embrace-the-past)
     - [Don't Kick The Can](#dont-kick-the-can)
     - [Refactor, Test, Refactor](#refactor-test-refactor)
@@ -91,6 +92,10 @@
 - Flowcharts online - <https://www.draw.io/>
 - Motherboard - VICE technology - <https://www.vice.com/en/section/tech>
 - Including an Architecture.md - <https://matklad.github.io/2021/02/06/ARCHITECTURE.md.html>
+
+## AI
+
+- Alessandro Baffa - ChatGpt4 demo <https://twitter.com/baffasan/status/1646421635145281537>
 
 ## Agile
 
