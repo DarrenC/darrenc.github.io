@@ -3,6 +3,7 @@
 - [Kubernetes and Helm (and other stuff)](#kubernetes-and-helm-and-other-stuff)
   - [Kubernetes Articles](#kubernetes-articles)
   - [Kubernetes Tools](#kubernetes-tools)
+    - [Kubectl and Kustomize](#kubectl-and-kustomize)
   - [Kubernetes Notes](#kubernetes-notes)
     - [Kubernetes Overview](#kubernetes-overview)
     - [Components](#components)
@@ -31,6 +32,11 @@
   - Basic yaml linter - <https://yamllint.readthedocs.io/en/stable/>
   - Kube and helm chart linter - <https://docs.kubelinter.io/#/>
   - Detect old dependencies - <https://github.com/FairwindsOps/pluto>
+
+### Kubectl and Kustomize
+
+- Kustomize - Way of customizing kubernetes config files without templates - <https://kubectl.docs.kubernetes.io/guides/introduction/kustomize/>
+- Kubectl - command line of kubernetes - <https://kubectl.docs.kubernetes.io/guides/introduction/kubectl/>
 
 ## Kubernetes Notes
 
