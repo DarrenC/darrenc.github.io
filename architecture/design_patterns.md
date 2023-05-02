@@ -10,6 +10,8 @@
     - [Structural](#structural)
     - [Behavioral](#behavioral)
   - [Overview of Common Design Patterns](#overview-of-common-design-patterns)
+  - [API Design Patterns O'Reilly Book](#api-design-patterns-oreilly-book)
+    - [Chapter 4 - Resource Scope and Hierarchy](#chapter-4---resource-scope-and-hierarchy)
 
 ## Links
 
@@ -101,3 +103,18 @@ communication between objects.
 ## Overview of Common Design Patterns
 
 ![Design Patterns overview](PatternsOverview.jpeg)
+
+## API Design Patterns O'Reilly Book
+
+- <https://learning.oreilly.com/library/view/api-design-patterns/9781617295850/OEBPS/Text/04.htm#heading_id_14>
+
+
+### Chapter 4 - Resource Scope and Hierarchy
+
+- See highlights for direct link to AntiPatterns of Resource organization
+- Antipatterns list
+  - Everything is a resource
+  - Deep hierarchies
+  - Inline everything
+
+- TODO - exercises 4.4
