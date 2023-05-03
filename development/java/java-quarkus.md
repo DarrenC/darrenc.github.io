@@ -8,6 +8,7 @@
     - [Microprofile RestClient Exception handling](#microprofile-restclient-exception-handling)
   - [Scheduling stuff in Quarkus](#scheduling-stuff-in-quarkus)
   - [Remote debug in Quarkus](#remote-debug-in-quarkus)
+  - [Quarkus Testing](#quarkus-testing)
 
 ## Useful Links
 
@@ -134,3 +135,8 @@ mvn quarkus:remote-dev -Ddebug=false \
   -Dquarkus.live-reload.password=123
 
 ```
+
+## Quarkus Testing
+
+- Change config via test profiles - <https://quarkus.io/blog/quarkus-test-profiles/>
+  - Implement an interface to provide a map of overridden properties
