@@ -16,6 +16,7 @@
   - [Multi Module project](#multi-module-project)
   - [Options for plugins](#options-for-plugins)
     - [Example of skipping Dependency analysis](#example-of-skipping-dependency-analysis)
+    - [Maven Dependency Tree](#maven-dependency-tree)
   - [MVND - a Maven daemon for building in parallel to speed up compile](#mvnd---a-maven-daemon-for-building-in-parallel-to-speed-up-compile)
   - [Maven links](#maven-links)
 
@@ -305,6 +306,41 @@ mvn gatling:test -Dgatling.simulationClass=org.blah.SomeGatlingSimulationClassNa
 # https://maven.apache.org/plugins/maven-dependency-plugin/analyze-mojo.html#skip
 mvn -Dmdep.analyze.skip=true clean deploy
 ```
+
+### Maven Dependency Tree
+
+```bash
+$ mvn dependency:tree
+        ....
+        [INFO] com.restapi:msproducts:jar:0.0.1-SNAPSHOT
+        [INFO] +- org.springframework.boot:spring-boot-starter-data-jpa:jar:2.2.6.RELEASE:compile
+        [INFO] |  +- org.springframework.boot:spring-boot-starter-aop:jar:2.2.6.RELEASE:compile
+        [INFO] |  |  +- org.springframework:spring-aop:jar:5.2.5.RELEASE:compile
+        [INFO] |  |  \- org.aspectj:aspectjweaver:jar:1.9.5:compile
+        [INFO] |  +- org.springframework.boot:spring-boot-starter-jdbc:jar:2.2.6.RELEASE:compile
+        [INFO] |  |  +- com.zaxxer:HikariCP:jar:3.4.2:compile
+        [INFO] |  |  \- org.springframework:spring-jdbc:jar:5.2.5.RELEASE:compile
+        [INFO] |  +- jakarta.activation:jakarta.activation-api:jar:1.2.2:compile
+        [INFO] |  +- jakarta.persistence:jakarta.persistence-api:jar:2.2.3:compile
+        [INFO] |  +- jakarta.transaction:jakarta.transaction-api:jar:1.3.3:compile
+        [INFO] |  +- org.hibernate:hibernate-core:jar:5.4.12.Final:compile
+```
+
+```bash
+# Can filter to search for or exclude dependencies
+$ mvn dependency:tree -Dincludes=org.projectlombok
+
+        [INFO] --- maven-dependency-plugin:3.1.2:tree (default-cli) @ msproducts ---
+        [INFO] com.restapi:msproducts:jar:0.0.1-SNAPSHOT
+        [INFO] \- org.projectlombok:lombok:jar:1.18.12:compile (optional)
+
+$ mvn dependency:tree -Dexcludes=org.springframework.*,org.projectlombok
+```
+
+Also more here -
+
+- use verbose mode (useful for conflicts), filter examples <https://devwithus.com/maven-dependency-tree/>
+- Official docs - <https://maven.apache.org/plugins/maven-dependency-plugin/tree-mojo.html>
 
 ## MVND - a Maven daemon for building in parallel to speed up compile
 

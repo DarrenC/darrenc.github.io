@@ -140,3 +140,19 @@ mvn quarkus:remote-dev -Ddebug=false \
 
 - Change config via test profiles - <https://quarkus.io/blog/quarkus-test-profiles/>
   - Implement an interface to provide a map of overridden properties
+
+```java
+@QuarkusTest
+@TestProfile(SomeQuarkusTest.MyTestProfile.class)
+class SomeQuarkusTest {
+
+  public static class MyTestProfile implements QuarkusTestProfile {
+    @Override
+    public Map<String, String> getConfigOverrides() {
+      return Map.of("someproperty.value", "true",
+          "someservice.url", "http://localhost:9001/mockService");
+    }
+  }
+```
+
+- This works even from a Quarkus TestResource (when defining your own impl of the resource lifecycle manager) but without a test profile, the regular profile doesn't get access to the config params - maybe a lifecycle issue with instantiation.

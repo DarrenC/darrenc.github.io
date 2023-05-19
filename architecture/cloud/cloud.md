@@ -21,6 +21,7 @@
     - [KEY CONCEPT - Topics and Partitions](#key-concept---topics-and-partitions)
     - [Kafka Performance points](#kafka-performance-points)
   - [NATS](#nats)
+    - [Checking NATS messages](#checking-nats-messages)
 
 ## Cloud definitions
 
@@ -222,3 +223,10 @@ BUT THERE ARE DRAWBACKS
 
 - <https://medium.com/capital-one-tech/lightweight-cloud-native-messaging-with-nats-ad730ca2becf>
 - NATS Jetstream explanation - <https://docs.nats.io/nats-concepts/jetstream>
+
+### Checking NATS messages 
+
+``` bash
+# When running a nats server (or inside a nats box container)
+nats sub '*.>' | grep '] Received on ' 
+```
