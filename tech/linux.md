@@ -6,6 +6,7 @@
     - [Ubuntu Midi keyboard](#ubuntu-midi-keyboard)
     - [Recording screen + audio](#recording-screen--audio)
   - [Tools](#tools)
+    - [Video editor](#video-editor)
     - [Pavucontrol for audio](#pavucontrol-for-audio)
     - [Onedrive sync for linux](#onedrive-sync-for-linux)
     - [Taskwarrior - a todo list on the commandline](#taskwarrior---a-todo-list-on-the-commandline)
@@ -123,6 +124,11 @@
 - OBS tool <https://obsproject.com/download>
 
 ## Tools
+
+### Video editor
+
+- List of video editors - <https://itsfoss.com/best-video-editing-software-linux/>
+  - I took Open Shot
 
 ### Pavucontrol for audio 
 

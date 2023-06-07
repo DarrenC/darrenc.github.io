@@ -86,6 +86,8 @@
   - [Javadoc](#javadoc)
     - [Referencing methods in javadoc](#referencing-methods-in-javadoc)
   - [Application Servers](#application-servers)
+  - [IDEs](#ides)
+    - [Intellij](#intellij)
 
 ## Java Subjects
 
@@ -1006,3 +1008,10 @@ public void goToWork() {
   - JBoss EAP - commercially supported version which eventually absorbs features from the upstream JBoss Wildfly once stable.
 
 - <https://stackoverflow.com/questions/31756933/what-is-the-difference-between-jboss-eap-wildfly-jboss-web-and-jboss-server>
+
+
+## IDEs 
+
+### Intellij
+
+- if you have issues with "sticky" mouse selection and right-click not working, it might be because you touched the touchscreen of the laptop at the same time as using the mouse/trackpad. Focus on the Intellij window and then touch the touchscreen again to resolve the issue.
