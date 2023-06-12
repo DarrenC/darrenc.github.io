@@ -69,6 +69,7 @@
     - [Monitoring processes - top, vmstat, sysstat](#monitoring-processes---top-vmstat-sysstat)
     - [top cheatsheet](#top-cheatsheet)
     - [tar](#tar)
+    - [tcpdump](#tcpdump)
     - [mkdir creating directories](#mkdir-creating-directories)
     - [ifconfig is dead, use ip instead](#ifconfig-is-dead-use-ip-instead)
     - [Disk Usage, Disk Free space](#disk-usage-disk-free-space)
@@ -130,7 +131,7 @@
 - List of video editors - <https://itsfoss.com/best-video-editing-software-linux/>
   - I took Open Shot
 
-### Pavucontrol for audio 
+### Pavucontrol for audio
 
 - <https://stackoverflow.com/a/66009679/864024>
   - pavucontrol
@@ -993,6 +994,22 @@ Julia Evans cartoon of it:
 <https://twitter.com/b0rk/status/993682480069824512?lang=en>
 
 ![julia evans cartoon of tar](/tar_fromjuliaevans.jpeg){width="800"}
+
+### tcpdump
+
+- Intro to tcp dump - <https://opensource.com/article/18/10/introduction-tcpdump>
+  - Gives basic setup and usages
+- Julia Evan's EXCELLENT comic <https://jvns.ca/tcpdump-zine.pdf>
+
+Docker page also for docker specific usage of tcp dump - "Related Articles for TCPDUMP"
+
+```bash
+
+$ sudo tcpdump -v -i any -c250 -nn host 10.56.208.4
+
+# read verbose on any network interface, 250 messages, filter by host
+
+```
 
 ### mkdir creating directories
 
