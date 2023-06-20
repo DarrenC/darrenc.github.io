@@ -43,6 +43,7 @@
     - [Tips](#tips)
     - [Writing Tests](#writing-tests)
   - [How to Learn, learning techniques](#how-to-learn-learning-techniques)
+  - [AI stuff](#ai-stuff)
 
 ## Reading diary
 
@@ -435,3 +436,10 @@ BUILDER type pattern he used for creating Users, it's really nice.
 
 - How to learn - consistency vs intensity - <https://unlearninglabs.com/2022/05/19/how-do-we-prioritize-consistency-in-learning-over-intensity/>
   - Related Coursera - <https://www.coursera.org/learn/learning-how-to-learn/home/week/1>
+
+
+## AI stuff
+
+- Chat GPT prompt tips - <https://twitter.com/iam_chonchol/status/1670072410320560128>
+
+- <https://www.freecodecamp.org/news/how-to-communicate-with-ai-tools-prompt-engineering/>
