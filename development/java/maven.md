@@ -18,6 +18,7 @@
     - [Example of skipping Dependency analysis](#example-of-skipping-dependency-analysis)
     - [Maven Dependency Tree](#maven-dependency-tree)
   - [MVND - a Maven daemon for building in parallel to speed up compile](#mvnd---a-maven-daemon-for-building-in-parallel-to-speed-up-compile)
+  - [Maven logging](#maven-logging)
   - [Maven links](#maven-links)
 
 ## Books, articles
@@ -345,6 +346,15 @@ Also more here -
 ## MVND - a Maven daemon for building in parallel to speed up compile
 
 - <https://github.com/apache/maven-mvnd>
+
+## Maven logging
+
+- <https://www.baeldung.com/maven-logging>
+
+```bash
+mvn --log-file ./mvn.log clean compile
+
+```
 
 ## Maven links
 

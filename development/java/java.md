@@ -19,6 +19,7 @@
     - [Articles](#articles)
     - [Using Optional to avoid NullPointerExceptions, Null Checks etc](#using-optional-to-avoid-nullpointerexceptions-null-checks-etc)
     - [Lambda Expressions](#lambda-expressions)
+      - [StreamEx library - enhanced streams in java](#streamex-library---enhanced-streams-in-java)
     - [Dropbox - Tech Docs - Introducing Java 8](#dropbox---tech-docs---introducing-java-8)
       - [Features](#features)
   - [Streams](#streams)
@@ -233,6 +234,11 @@ public Optional<String> optionalListFirst() {
 - way of passing code as parameter to avoid unwieldy anonymous inner
     classes
 - Some tips - <https://www.baeldung.com/java-8-lambda-expressions-tips>
+
+#### StreamEx library - enhanced streams in java
+
+- <https://github.com/amaembo/streamex>
+- Baeldung article - <https://www.baeldung.com/streamex>
 
 ### Dropbox - Tech Docs - Introducing Java 8
 
@@ -570,8 +576,15 @@ where they cannot be referenced.
 
 ### Memory leak tooling in Java
 
-- FlightRecorder - <https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/memleaks001.html#CIHHGDJH>
+- From Java 11, JFR was non-commercial
+  - Baeldung overview - <https://www.baeldung.com/java-flight-recorder-monitoring>
+- Articles - <https://inside.java/tag/jfr>
+  - JFR with pratical example - <https://inside.java/2020/09/20/jdk-introduction/>
+    - direct link to youtube video - <https://www.youtube.com/watch?v=7z_R2Aq-Fl8>
+
+- Java 8 FlightRecorder - <https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/memleaks001.html#CIHHGDJH>
 - Online heap dump analyzer - <https://heaphero.io/heap-index.jsp>
+- JFR high level archi Overview - <https://www.youtube.com/watch?v=XEKkUpPnf4Q&list=WL&index=88>
 
 ### Finding jars and classes loaded during execution
 
@@ -673,6 +686,16 @@ My notes here - [Java Collections](Java Collections)
 
 also - estimation of big O notation
 <http://www.dreamincode.net/forums/topic/125427-determining-big-o-notation/>
+
+- Creating a list from a group of objects
+
+``` java
+  // Java 8
+  Arrays.asList(Objects...);
+
+  // Java 9+
+  List.of(Objects...);
+```
 
 - Iterable to Collection examples - <https://www.baeldung.com/java-iterable-to-collection>
 

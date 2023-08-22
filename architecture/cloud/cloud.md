@@ -223,10 +223,12 @@ BUT THERE ARE DRAWBACKS
 
 - <https://medium.com/capital-one-tech/lightweight-cloud-native-messaging-with-nats-ad730ca2becf>
 - NATS Jetstream explanation - <https://docs.nats.io/nats-concepts/jetstream>
+- <https://www.baeldung.com/nats-java-client>
 
-### Checking NATS messages 
+### Checking NATS messages
 
 ``` bash
 # When running a nats server (or inside a nats box container)
-nats sub '*.>' | grep '] Received on ' 
+nats sub '*.>' -s "server url" | grep '] Received on ' 
+
 ```

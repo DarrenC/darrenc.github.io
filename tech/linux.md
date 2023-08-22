@@ -69,6 +69,7 @@
     - [Monitoring processes - top, vmstat, sysstat](#monitoring-processes---top-vmstat-sysstat)
     - [top cheatsheet](#top-cheatsheet)
     - [tar](#tar)
+      - [Extract files to directory named from zip file](#extract-files-to-directory-named-from-zip-file)
     - [tcpdump](#tcpdump)
     - [mkdir creating directories](#mkdir-creating-directories)
     - [ifconfig is dead, use ip instead](#ifconfig-is-dead-use-ip-instead)
@@ -994,6 +995,12 @@ Julia Evans cartoon of it:
 <https://twitter.com/b0rk/status/993682480069824512?lang=en>
 
 ![julia evans cartoon of tar](/tar_fromjuliaevans.jpeg){width="800"}
+
+#### Extract files to directory named from zip file
+
+```bash
+tar -xzf someArchive.tar.gz --one-top-level
+```
 
 ### tcpdump
 
