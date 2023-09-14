@@ -10,6 +10,8 @@
   - [Kubernetes commands](#kubernetes-commands)
     - [Getting a shell to a running container](#getting-a-shell-to-a-running-container)
   - [Inter pod communication](#inter-pod-communication)
+    - [K9s Useful Commands](#k9s-useful-commands)
+      - [Commands](#commands)
 
 ## Kubernetes Articles
 
@@ -90,3 +92,23 @@ kubectl exec --stdin --tty shell-demo -- /bin/bash
 - <https://www.tutorialworks.com/kubernetes-pod-communication/>
   - THis is part of the learning list so I'll add notes here once done
 - <https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/>
+
+
+### K9s Useful Commands
+
+- <https://k9scli.io/topics/commands/> list of commands
+- <https://blog.palark.com/k9s-the-powerful-terminal-ui-for-kubernetes/> nice tutorial with plenty of examples
+
+#### Commands
+
+- The ":" is used as a command prefix and then can be followed by a command
+  - :pods - see pods
+  - :svc - see services
+  - :deploy - see deployments
+  - :sts - see stateful sets
+  - :rs - see replica sets
+  - :ns - see namespaces
+  - :no - see nodes
+  - :sec - see secrets
+  - :cm - config maps
+- :xray -> different views of the cluster with a tree layout

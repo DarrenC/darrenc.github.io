@@ -204,6 +204,12 @@ not obvious what was on a branch when a release tag was created.
 
 ### Pulling in a remote Pull Request to a local repo
 
+This is a newer way of doing it - see the older way below
+
+```bash
+  git fetch origin refs/pull-requests/$PR_NO/from:$LOCAL_BRANCH
+```
+
 This is useful if you'd like to get the contents of a remote pull
 request in a local repo or local fork repo
 
