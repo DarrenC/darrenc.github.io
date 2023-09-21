@@ -586,6 +586,10 @@ where they cannot be referenced.
 - Online heap dump analyzer - <https://heaphero.io/heap-index.jsp>
 - JFR high level archi Overview - <https://www.youtube.com/watch?v=XEKkUpPnf4Q&list=WL&index=88>
 
+- Intellij profiling - <https://blog.jetbrains.com/idea/2020/03/profiling-tools-and-intellij-idea-ultimate/>
+- Visual VM - <https://visualvm.github.io/>
+- On OpenShift - a JFR tool - <https://cryostat.io/>
+
 ### Finding jars and classes loaded during execution
 
 If you add -verbose:class to the arguments for the JVM for launching,

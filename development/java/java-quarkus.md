@@ -9,6 +9,7 @@
   - [Scheduling stuff in Quarkus](#scheduling-stuff-in-quarkus)
   - [Remote debug in Quarkus](#remote-debug-in-quarkus)
   - [Quarkus Testing](#quarkus-testing)
+  - [Quarkus CXF](#quarkus-cxf)
 
 ## Useful Links
 
@@ -156,3 +157,23 @@ class SomeQuarkusTest {
 ```
 
 - This works even from a Quarkus TestResource (when defining your own impl of the resource lifecycle manager) but without a test profile, the regular profile doesn't get access to the config params - maybe a lifecycle issue with instantiation.
+
+
+## Quarkus CXF
+
+- Adding interceptors - <https://docs.quarkiverse.io/quarkus-cxf/dev/reference/extensions/quarkus-cxf.html>
+  - TODO -> why is there endpoint + client
+
+```bash
+quarkus.cxf.endpoint."endpoints".out-fault-interceptors
+The comma-separated list of OutFaultInterceptor classes
+Environment variable: QUARKUS_CXF_ENDPOINT__ENDPOINTS__OUT_FAULT_INTERCEPTORS
+
+
+quarkus.cxf.client."clients".out-fault-interceptors
+The comma-separated list of OutFaultInterceptor classes
+Environment variable: QUARKUS_CXF_CLIENT__CLIENTS__OUT_FAULT_INTERCEPTORS
+
+```
+
+- https://github.com/quarkiverse/quarkus-cxf/issues/4 - non blocking quarkus calls

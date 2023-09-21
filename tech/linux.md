@@ -1090,6 +1090,8 @@ nslookup <ip address>
 hostname -a <ip address>
 ```
 
+- <https://jvns.ca/blog/2023/05/08/new-talk-learning-dns-in-10-years/>
+
 ### File Permissions
 
 Give user,group and other permissions to read, write and execute

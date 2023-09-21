@@ -66,6 +66,8 @@ OReilly "Web application development with Spring and Angular"
 - <https://github.com/dapr/dapr> - DONE
 - <https://dapr.io> - DONE
 - <https://vertx.io/introduction-to-vertx-and-reactive/> - DONE BUT WORTH A SECOND LOOK
+  - <https://alexey-soshin.medium.com/understanding-vert-x-event-loop-46373115fb3e>
+  - <https://www.fatalerrors.org/a/completablefuture-keep-your-code-from-blocking.html>
 - <https://smallrye.io/smallrye-reactive-messaging/smallrye-reactive-messaging/3.9/concepts.html> DONE
 - <https://developer.lightbend.com/docs/introduction/traditional-architecture.html> - DONE
 - <https://en.wikipedia.org/wiki/Service-oriented_architecture> - DONE
@@ -91,6 +93,7 @@ OReilly "Web application development with Spring and Angular"
   - Apparently mutiny is more truly reactive
   - but sometimes need both - <https://medium.com/@alexei.rubinov/combining-smallrye-mutiny-and-completionstage-approach-in-quarkus-ec23751578b9>
   - Comparing them + suggesting use cases e.g. single microservice collateral call vs stream of calls - <https://www.jrebel.com/blog/java-completablefuture-api>
+  - Executor service for async in Java <https://www.baeldung.com/java-executor-service-tutorial>
 
 ### Kubernetes stuff
 

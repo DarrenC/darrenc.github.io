@@ -40,6 +40,7 @@ Can create JAX-WS services either from code or from a WSDL. WSDL is better suppo
 ### Asynchronous JAX-WS
 
 - Nice example of a simple async ws <https://godatadriven.com/blog/reactive-web-service-client-with-jax-ws/>
+- <https://www.nickebbitt.com/blog/2017/03/22/asynchronous-web-service-using-completable-future/>
 
 #### Basic Procedure Notes
 
