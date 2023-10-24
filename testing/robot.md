@@ -9,7 +9,6 @@
 Robot is a framework which is "language agnostic" and aimed at automating testing with a type of Python based scripts + libraries to integrate
 
 - <https://robotframework.org/?tab=2#getting-started>
-
 - Robot CHEATSHEET - <https://robocorp.com/docs/languages-and-frameworks/robot-framework/cheat-sheet>
 
 ## Docker with Robot Framework

@@ -92,6 +92,7 @@ kubectl exec --stdin --tty shell-demo -- /bin/bash
 - <https://www.tutorialworks.com/kubernetes-pod-communication/>
   - THis is part of the learning list so I'll add notes here once done
 - <https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/>
+- <https://dev.to/narasimha1997/communication-between-microservices-in-a-kubernetes-cluster-1n41>
 
 
 ### K9s Useful Commands

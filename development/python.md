@@ -14,6 +14,7 @@
     - [Files and Paths](#files-and-paths)
       - [Use pathlib instead of os.path](#use-pathlib-instead-of-ospath)
       - [Reading and writing lines of files](#reading-and-writing-lines-of-files)
+    - [Working with JSON in files and manipulating](#working-with-json-in-files-and-manipulating)
   - [Getting input](#getting-input)
     - [Nice input paradigm](#nice-input-paradigm)
   - [Working with the Operating System](#working-with-the-operating-system)
@@ -22,6 +23,7 @@
     - [Chptr 7 - Dictionaries](#chptr-7---dictionaries)
       - [Keys](#keys)
       - [Examples of using a dictionary](#examples-of-using-a-dictionary)
+      - [Further links and reading](#further-links-and-reading)
     - [Chptr 19 - Data Types as Objects](#chptr-19---data-types-as-objects)
       - [Composite](#composite)
     - [Processing - Visual arts with Python](#processing---visual-arts-with-python)
@@ -39,12 +41,14 @@
   - [Romain's Book](#romains-book)
     - [General Notes](#general-notes)
       - [functions](#functions)
+        - [Default values and types](#default-values-and-types)
       - [method](#method)
       - [documenting functions](#documenting-functions)
       - [Errors](#errors)
       - [Sequences](#sequences)
       - [Sets](#sets)
       - [Strings](#strings)
+        - [Format String to date](#format-string-to-date)
       - [Refs \& Mutable Objs](#refs--mutable-objs)
       - [passing parameters](#passing-parameters)
       - [Modules and Packages](#modules-and-packages)
@@ -78,10 +82,11 @@
     - [Comments](#comments)
     - [Other topics to be covered](#other-topics-to-be-covered)
   - [O'Reilly cookbook on python strings](#oreilly-cookbook-on-python-strings)
-  - [Slices](#slices)
+  - [Slices - Strings \& sequences](#slices---strings--sequences)
   - [Data Visualization - Pandas and Matplotlib](#data-visualization---pandas-and-matplotlib)
     - [Really simple example of reading a file into a panda dataframe then plotting it to a file](#really-simple-example-of-reading-a-file-into-a-panda-dataframe-then-plotting-it-to-a-file)
     - [Some links](#some-links)
+  - [Design patterns in Python](#design-patterns-in-python)
 
 ## Overview
 
@@ -229,6 +234,17 @@ with open(file_name, 'w') as f:
     f.writelines(file_lines)
 ```
 
+### Working with JSON in files and manipulating
+
+- <https://realpython.com/python-json/>
+  - Examples of loading from file/string to dicts then dumping back to file/strings
+  - List of json to python structures (e.g. dict becomes a json object, array becomes a json list etc.)
+- <https://www.programiz.com/python-programming/json> - similar
+- <https://www.baeldung.com/linux/json-object-add-field>
+  - Interesting to see how to add fields etc and generally manipulate a json structure in python simply.
+
+
+
 ## Getting input
 
 ### Nice input paradigm
@@ -297,13 +313,18 @@ y.items() # keys and values
 list(y.keys()) # get a list of keys
 
 # Getting things from dictionary:
-y["pi"] # test with "pi" in y
-otherwise there's an error TODO - look this up again
+y["pi"] # test with "pi" in y otherwise there's an error TODO - look this up again
 
 # or use get()
 y.get("pi", "alternative value")
 
 ```
+
+#### Further links and reading
+
+- Nice overview with plenty of examples - <https://realpython.com/python-dicts/>
+- Ordered dicts vs unordered - <https://realpython.com/python-ordereddict/>
+- Iterating dictionaries - <https://realpython.com/iterate-through-dictionary-python/>
 
 ### Chptr 19 - Data Types as Objects
 
@@ -394,25 +415,34 @@ TODO - get from the book
 ### General Notes
 
 - None is an Object type in Python, can be used as return value
-
-```python
-
-# + is used for addition but also concatenates Strings, Tuples and Lists
-# ** is the power operator
-
-# in - tests if element is in a list, Tuple, Dictionary or substring within a String
-# is - identity compare of 2 values
-
-# TRUTH -
-#  - most initialized, non empty structures can be true
-#  - 0 or empty structures are false
-
-```
+- Operators
+  - `+` is used for addition but also concatenates Strings, Tuples and Lists
+  - `**` is the power operator
+- Checking presence
+  - `in` - tests if element is in a list, Tuple, Dictionary or substring within a String
+  - `is` - identity compare of 2 values
+- Checking TRUTH -
+  - most initialized, non empty structures can be true
+  - 0 or empty structures are false
 
 #### functions
 
 - pass by reference
 - always return a value (by default None)
+
+##### Default values and types
+
+- Type for a function/method parameter seems to be quite new (python 3.8+ AFAIK)
+  - <https://stackoverflow.com/questions/50916887/set-default-value-and-type-for-parameter>
+
+- for enforcing a type and setting a default value, use the following syntax:
+
+```python
+
+def profile(request, pk: int = 0):
+    #to do
+
+```
 
 #### method
 
@@ -453,6 +483,10 @@ raise Exception name()
 - List comprehensions - way to create lists in Python in a natural way
   - <http://www.secnetix.de/olli/Python/list_comprehensions.hawk>
 
+- Slicing a String - i.e. substring
+  - <https://www.freecodecamp.org/news/how-to-substring-a-string-in-python/>
+  - `string[start:end:step]`
+
 #### Sets
 
 - Set
@@ -469,6 +503,23 @@ raise Exception name()
   - split()
   - join(list)
   - AND more!!!!
+
+##### Format String to date
+
+- <https://www.programiz.com/python-programming/datetime/strftime>
+
+```python
+from datetime import datetime
+
+now = datetime.now() # current date and time
+
+# Year only
+year = now.strftime("%Y") # format to output year string
+
+# Date and time
+date_time = now.strftime("%m/%d/%Y, %H:%M:%S")
+print("date and time:",date_time)
+```
 
 #### Refs & Mutable Objs
 
@@ -518,8 +569,9 @@ This is now being added to by me separately to the training.
         <https://www.programiz.com/python-programming/generator>
 
 Generator is a way of simplifying something where we want to produce a
-collection of values but there's some logic associated with it. TODO -
-add the other benefits -> perf with lazy load etc.
+collection of values but there's some logic associated with it. 
+
+TODO - add the other benefits -> perf with lazy load etc.
 
 Review dicts, tuples etc. -> see example of printing all fields with
 replacing Nones by '-'
@@ -529,6 +581,13 @@ replacing Nones by '-'
 - Tox framework
   - pip install tox
 - flake8 -> applies the PEP 8 style guide and fails if not respected.
+
+- using multiple test files across directories
+  - Always add an `_init_.py` to allow them to be loaded as modules
+  - Allows VSCode plugins (and other IDEs) to find them
+  - <https://stackoverflow.com/a/58626505/864024>
+  - <https://github.com/Microsoft/vscode-python/issues/3410>
+
 
 ### File Handling
 
@@ -584,16 +643,13 @@ with open('some_output_file.txt', 'w') as file_out:
 
 ### Context Managers
 
-follow on from file handling -> context
-managers (i.e. the part after "with") are used everywhere to avoid
-cumbersome try/finally structures. Should be used always for file IO,
-DBs etc.
+follow on from file handling -> context managers (i.e. the part after "with") are used everywhere to avoid
+cumbersome try/finally structures. Should be used always for file IO, DBs etc.
 
 ### Dicts and Tuples
 
-Dict is not ordered so using tuple is a way of
-getting around this -> See log.py for an example of using this to avoid
-self.[dict.items()
+Dict is not ordered so using tuple is a way of getting around this -> See log.py for an example of using this to avoid
+self.dict.items()
 
 ### Miscellaneous Topics
 
@@ -824,7 +880,7 @@ url.startswith(tuple(choices))
 
 ```
 
-## Slices
+## Slices - Strings & sequences
 
 Separate little detour on slices which can be used to cut up lists,
 strings, arrays etc
@@ -885,3 +941,12 @@ Save plot to a file - https://chartio.com/resources/tutorials/how-to-save-a-plot
 https://python-graph-gallery.com/matplotlib/
 
 - [Pandas, grouping by multiple columns e.g. by date and category](https://scentellegher.github.io/programming/2017/07/15/pandas-groupby-multiple-columns-plot.html)
+
+
+## Design patterns in Python
+
+- Fluent API
+  - <https://kracekumar.com/post/100897281440/fluent-interface-in-python/>
+    - original stackoverflow question - <https://stackoverflow.com/questions/37827808/fluent-interface-with-python>
+    - NB - uses an approach which creates a new instance of the class for each method call
+  - Another approach - <https://florianeinfalt.de/posts/fluent-interfaces-in-python/>
