@@ -12,8 +12,9 @@
     - [Deserializing non-standard case JSON fields](#deserializing-non-standard-case-json-fields)
     - [Handling missing or unknown JSON fields](#handling-missing-or-unknown-json-fields)
     - [Ignoring certain fields to not map them](#ignoring-certain-fields-to-not-map-them)
-
-- HTTP 1.1 vs 2 - <https://www.digitalocean.com/community/tutorials/http-1-1-vs-http-2-what-s-the-difference>
+  - [API Design Patterns book](#api-design-patterns-book)
+    - [Part 2 Design Principles](#part-2-design-principles)
+      - [Chapter 3 - Naming](#chapter-3---naming)
 
 ## General REST
 
@@ -150,3 +151,21 @@ public MyClass {
 }
 
 ```
+
+## API Design Patterns book
+
+- <https://learning.oreilly.com/library/view/api-design-patterns/9781617295850/OEBPS/Text/ifc.xhtml>
+
+### Part 2 Design Principles
+
+#### Chapter 3 - Naming
+
+- Updating a name is really expensive and difficult - worth spending time getting it right
+  - PUBLIC face of your API
+  - Very different to code where you can update quickly as understanding changes
+  - Aim for
+    - expressive - clearly conveys the thing it names
+    - simple - not too long but not truncated either
+    - predictable - be consistent - same name should be the same thing, different name should be a different thing
+
+
