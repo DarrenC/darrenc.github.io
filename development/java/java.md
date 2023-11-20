@@ -18,6 +18,7 @@
     - [Java 8 from Evernote](#java-8-from-evernote)
     - [Articles](#articles)
     - [Using Optional to avoid NullPointerExceptions, Null Checks etc](#using-optional-to-avoid-nullpointerexceptions-null-checks-etc)
+      - [Optional articles - especially the avoiding anti-patterns](#optional-articles---especially-the-avoiding-anti-patterns)
     - [Lambda Expressions](#lambda-expressions)
       - [StreamEx library - enhanced streams in java](#streamex-library---enhanced-streams-in-java)
     - [Dropbox - Tech Docs - Introducing Java 8](#dropbox---tech-docs---introducing-java-8)
@@ -228,6 +229,14 @@ public Optional<String> optionalListFirst() {
       .flatMap(list -> list.stream().findFirst());
 }
 ```
+
+#### Optional articles - especially the avoiding anti-patterns
+
+- <https://www.linkedin.com/pulse/java-optional-cookbook-vincent-vauban/>
+  - This one is really good -> TODO extract the examples
+    - return status.orElse(SOME_VALUE); // use this instead of an if(optional.ispresent())optional.get
+    - optional.ifPresent() is good too.
+- <https://gradlehero.com/java-optional/#5-when-should-you-_not_-use-optional>
 
 ### Lambda Expressions
 

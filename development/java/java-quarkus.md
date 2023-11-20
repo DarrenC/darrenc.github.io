@@ -10,6 +10,7 @@
   - [Remote debug in Quarkus](#remote-debug-in-quarkus)
   - [Quarkus Testing](#quarkus-testing)
   - [Quarkus CXF](#quarkus-cxf)
+  - [Context handling in Quarkus microservices](#context-handling-in-quarkus-microservices)
 
 ## Useful Links
 
@@ -177,3 +178,22 @@ Environment variable: QUARKUS_CXF_CLIENT__CLIENTS__OUT_FAULT_INTERCEPTORS
 ```
 
 - https://github.com/quarkiverse/quarkus-cxf/issues/4 - non blocking quarkus calls
+
+## Context handling in Quarkus microservices
+
+- <https://quarkus.io/guides/context-propagation#usage-example-for-completionstage>
+  - When using a completion stage to chain up operations (e.g. calling multiple remote services) you need to use manual context propagation to ensure the context is passed along the chain.
+  - The page above goes in to detail about how to do this with either mutiny or completion stage.
+  - For completion stage the key thing to use is `threadContext.withContextCapture` to capture the context and then `thenApplyAsync` to ensure the context is passed along the chain.
+
+```java
+  return threadContext.withContextCapture(client.get("/api/people/").send())
+                .thenApplyAsync(response -> {
+                    if (response.getStatus() != 200) {
+                        throw new IllegalStateException("Error calling people service");
+                    }
+                    return response.persons;
+                }, managedExecutor);
+
+
+```

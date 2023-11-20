@@ -315,6 +315,9 @@ feature branch commits after that.
  $ git rebase master <my-feature-branch>
   ... resolve conflicts and then ...
  $ git rebase --continue
+
+ # NB - you will probably have to git push -f to force the update of your remote branch after the rebase.
+ # DO NOT DO THIS ON SHARED BRANCHES - or you may overwrite other people's work. It should only be on your own feature branches.
 ```
 
 ### **Links**
