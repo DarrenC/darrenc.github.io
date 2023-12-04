@@ -16,7 +16,7 @@
   - [Multi Module project](#multi-module-project)
   - [Options for plugins](#options-for-plugins)
     - [Example of skipping Dependency analysis](#example-of-skipping-dependency-analysis)
-    - [Maven Dependency Tree](#maven-dependency-tree)
+    - [Checking Maven Dependencies](#checking-maven-dependencies)
   - [MVND - a Maven daemon for building in parallel to speed up compile](#mvnd---a-maven-daemon-for-building-in-parallel-to-speed-up-compile)
   - [Maven logging](#maven-logging)
   - [Maven links](#maven-links)
@@ -308,7 +308,12 @@ mvn gatling:test -Dgatling.simulationClass=org.blah.SomeGatlingSimulationClassNa
 mvn -Dmdep.analyze.skip=true clean deploy
 ```
 
-### Maven Dependency Tree
+### Checking Maven Dependencies
+
+```bash
+# Can check for problems with dependencies
+$ mvn dependency:analyze
+```
 
 ```bash
 $ mvn dependency:tree

@@ -88,6 +88,7 @@
       - [**Other options**](#other-options)
     - [Grep to find text within files](#grep-to-find-text-within-files)
       - [Grep patterns](#grep-patterns)
+    - [Working with yaml and json](#working-with-yaml-and-json)
     - [System Suspend from commandline](#system-suspend-from-commandline)
     - [Ubuntu on a netbook](#ubuntu-on-a-netbook)
     - [Docker Installs for Linux - Ubuntu](#docker-installs-for-linux---ubuntu)
@@ -1234,6 +1235,11 @@ The *GNU General Public License* is a free, copyleft license for...
 Developers that use the GNU *GPL* protect your rights with two steps: ...
   
 ```
+
+### Working with yaml and json
+
+- <https://github.com/mikefarah/yq> yq utility for the commandline
+- <https://github.com/jqlang/jq>
 
 ### System Suspend from commandline
 
