@@ -30,6 +30,13 @@
   quarkus.log.category."org.apache".level=DEBUG
 ```
 
+- Setting as an environment variable
+
+```properties
+  # E.g. in a deployment file - need to use double underscore instead of "." for the category
+  QUARKUS_LOG_CATEGORY__ORG_MY__LEVEL=WARN
+```
+
 ## MicroProfile Rest Client vs Server side Jax-RS
 
 - Standard JAX-RS - Server side to map Exception to Response - javax.ws.rs.ext.ExceptionMapper

@@ -26,6 +26,7 @@
     - [**Links**](#links)
     - [.gitignore](#gitignore)
     - [Keeping in synch with upstream repo](#keeping-in-synch-with-upstream-repo)
+    - [Copying a repo including branches and history](#copying-a-repo-including-branches-and-history)
     - [Stashing](#stashing)
     - [Showing details of commits and trees](#showing-details-of-commits-and-trees)
     - [Adding, Committing, status and removing](#adding-committing-status-and-removing)
@@ -361,6 +362,29 @@ $ git rebase upstream/master
 - A very nice explanation of git fetching and effect on branches +
     origins -
   - <https://stackoverflow.com/questions/11892517/git-fetch-vs-git-fetch-origin-master-have-different-effects-on-tracking-branch/11896392#11896392>
+
+### Copying a repo including branches and history
+
+- <https://www.atlassian.com/git/tutorials/git-move-repository>
+
+```bash
+# Get everything from the source repo
+git clone --mirror ssh://git@git.rnd.amadeus.net/tcn/offer-ndc-touchpoint-cna.git
+
+# Check the branches and tags
+git tag
+git branch -a
+
+# Remove the origin
+git remote rm origin
+
+# Add new origin
+git remote add origin ssh://git@git.rnd.amadeus.net/dapi/offer-ndc-touchpoint-cna.git
+
+# push everything to the new origin
+git push origin --all
+git push --tags
+```
 
 ### Stashing
 

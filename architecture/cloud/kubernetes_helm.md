@@ -34,6 +34,9 @@
   - Basic yaml linter - <https://yamllint.readthedocs.io/en/stable/>
   - Kube and helm chart linter - <https://docs.kubelinter.io/#/>
   - Detect old dependencies - <https://github.com/FairwindsOps/pluto>
+- Diagrams - <https://github.com/mingrammer/diagrams>
+  - Python based tool to generate diagrams from code
+  - Can generate kubernetes diagrams really easily
 
 ### Kubectl and Kustomize
 
