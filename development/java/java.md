@@ -85,6 +85,7 @@
   - [Asynchronous Programming](#asynchronous-programming)
     - [thenApply vs thenCompose](#thenapply-vs-thencompose)
     - [Mocking errors in CompletableFuture](#mocking-errors-in-completablefuture)
+  - [Lombok](#lombok)
   - [Javadoc](#javadoc)
     - [Referencing methods in javadoc](#referencing-methods-in-javadoc)
   - [Application Servers](#application-servers)
@@ -1003,6 +1004,14 @@ Mockito.when(mockClient.getSize())
         .thenReturn(future);
 
 ```
+
+## Lombok
+
+- <https://www.baeldung.com/intro-to-project-lombok>
+
+
+- RequiredArgsConstructor annotation
+
 
 ## Javadoc
 

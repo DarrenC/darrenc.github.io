@@ -93,6 +93,7 @@
 - Flowcharts online - <https://www.draw.io/>
 - Motherboard - VICE technology - <https://www.vice.com/en/section/tech>
 - Including an Architecture.md - <https://matklad.github.io/2021/02/06/ARCHITECTURE.md.html>
+- Blockchain in java - <https://www.baeldung.com/java-blockchain>
 
 ## AI
 

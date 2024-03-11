@@ -83,6 +83,7 @@
       - [Common CHMODs](#common-chmods)
     - [Find utility](#find-utility)
     - [List files in directories in a Tree](#list-files-in-directories-in-a-tree)
+    - [Symbolic links](#symbolic-links)
     - [Word Counts - find number of files in dir](#word-counts---find-number-of-files-in-dir)
     - [Grep](#grep)
       - [**Other options**](#other-options)
@@ -392,7 +393,7 @@ sudo apt --purge autoremove # remove unused old kernels (only removes auto insta
 - sudo grub-reboot "Advanced options for Ubuntu>Ubuntu, with Linux 4.2.0-16-generic"
 - sudo reboot
 
-### Checking version of linux 
+### Checking version of linux
 
 - <https://stackoverflow.com/questions/13036048/how-do-i-identify-the-particular-linux-flavor-via-command-line>
 
@@ -463,6 +464,8 @@ sudo lshw -class memory
             clock: 2400MHz (0.4ns)
 
 ```
+
+- Sensors - checking cpu temp etc.
 
 ## Checking network usage
 
@@ -1156,6 +1159,23 @@ find . -name "*.blah" '!' -exec test -e "{}.log" ';' -print | wc -l
 # List all files and directories including hidden files (-a), to 2 levels with size of each file 
 tree -a -L 2 -s
 
+```
+
+### Symbolic links
+
+```bash
+# Create a symbolic link
+ln -s /path/to/original /path/to/symlink
+
+# List all symbolic links in a directory
+ls -l | grep ^l
+
+# List all symbolic links in a directory and their targets
+ls -l | grep ^l | awk '{print $9 " -> " $11}'
+
+# Remove a symbolic link
+rm /path/to/symlink
+unlink /path/to/symlink
 ```
 
 ### Word Counts - find number of files in dir

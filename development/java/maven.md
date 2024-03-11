@@ -57,6 +57,11 @@ sudo chmod -R ugo+rx /opt/apache-maven-3.8.4/
 source ~/.profile 
 ```
 
+```
+  Newer version 
+  https://downloads.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz
+```
+
 ## POM Reference - excluding Dependencies
 
 ### Exclusions

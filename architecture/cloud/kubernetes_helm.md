@@ -8,10 +8,12 @@
     - [Kubernetes Overview](#kubernetes-overview)
     - [Components](#components)
   - [Kubernetes commands](#kubernetes-commands)
+    - [Admin stuff](#admin-stuff)
     - [Getting a shell to a running container](#getting-a-shell-to-a-running-container)
   - [Inter pod communication](#inter-pod-communication)
     - [K9s Useful Commands](#k9s-useful-commands)
       - [Commands](#commands)
+  - [Simple yaml for a pod](#simple-yaml-for-a-pod)
 
 ## Kubernetes Articles
 
@@ -72,6 +74,11 @@ kubectl get pods --all-namespaces            # list pods in all namespaces not j
 k get pods -n kubernetes-system              # List pods in a given namespace
 kubectl get pods -o wide                     # Get a lot more details
 kubectl get pods -w                          # Watch (useful waiting for stuff to get running)
+kubectl get pods -l some-label                # List pods with a given label
+kubectl get pods -l some-label --show-labels  # Show the labels
+
+# Adding a label
+kubectl label pod <somepodname> <somelabel>=true
 
 # all running services - get the ports!
 kubectl get service --all-namespaces
@@ -79,6 +86,24 @@ kubectl get service --all-namespaces
 # all images inside the K3S cluster (but again Lens will probably be better for it)
 docker exec k3d-k3s-default-server-0 sh -c "ctr image list"
 ```
+
+### Admin stuff
+
+```bash
+# Create a namespace
+kubectl create namespace <namespace_name>
+
+# Creating a rolebinding for a service account
+kubectl create rolebinding -n "<somens>" edit --clusterrole=edit --serviceaccount="<somens>":<someaccount>
+
+# Running a command as a service account or some other user to see if it is possible
+kubectl --as=system:serviceaccount:"$NS":$SA auth can-i use
+
+# kube-apiserver command
+kubectl exec -it -n kube-system kube-apiserver-kind-control-plane -- kube-apiserver -h
+```
+
+- Debug - run as another user - <https://kubernetes.io/docs/reference/access-authn-authz/authentication/#user-impersonation>
 
 ### Getting a shell to a running container
 
@@ -116,3 +141,30 @@ kubectl exec --stdin --tty shell-demo -- /bin/bash
   - :sec - see secrets
   - :cm - config maps
 - :xray -> different views of the cluster with a tree layout
+
+## Simple yaml for a pod
+
+- From this page <https://downey.io/notes/dev/ubuntu-sleep-pod-yaml/>
+- Pod sleeps for a week
+  - Save to a file called ubuntu.yaml
+  - create with - ```kubectl apply -f ubuntu.yaml```
+  - connect with - ```kubectl exec -it ubuntu -- /bin/bash```
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubuntu
+  labels:
+    app: ubuntu
+spec:
+  containers:
+  - image: ubuntu
+    command:
+      - "sleep"
+      - "604800"
+    imagePullPolicy: IfNotPresent
+    name: ubuntu
+  restartPolicy: Always
+
+```  
