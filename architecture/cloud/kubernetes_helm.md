@@ -2,8 +2,9 @@
 
 - [Kubernetes and Helm (and other stuff)](#kubernetes-and-helm-and-other-stuff)
   - [Kubernetes Articles](#kubernetes-articles)
-  - [Kubernetes Tools](#kubernetes-tools)
+  - [Kubernetes Tools - Basic list](#kubernetes-tools---basic-list)
     - [Kubectl and Kustomize](#kubectl-and-kustomize)
+    - [Microcks - testing with Kubernetes](#microcks---testing-with-kubernetes)
   - [Kubernetes Notes](#kubernetes-notes)
     - [Kubernetes Overview](#kubernetes-overview)
     - [Components](#components)
@@ -12,7 +13,7 @@
     - [Getting a shell to a running container](#getting-a-shell-to-a-running-container)
   - [Inter pod communication](#inter-pod-communication)
     - [K9s Useful Commands](#k9s-useful-commands)
-      - [Commands](#commands)
+      - [K9s Commands cheatsheet](#k9s-commands-cheatsheet)
   - [Simple yaml for a pod](#simple-yaml-for-a-pod)
 
 ## Kubernetes Articles
@@ -25,7 +26,7 @@
 - Remote Debug kubernetes pod with Intellij or VSCode - <https://refactorfirst.com/how-to-remote-debug-java-application-on-kubernetes>
   - Also see the quarkus remote Dev stuff on quarkus page - [java-quarkus](../../development/java/java-quarkus.md) 
 
-## Kubernetes Tools
+## Kubernetes Tools - Basic list
 
 - <https://k9scli.io/> home with cheatsheets instructions etc. 
   - Installing - https://github.com/derailed/k9s#installation
@@ -45,6 +46,11 @@
 - Kustomize - Way of customizing kubernetes config files without templates - <https://kubectl.docs.kubernetes.io/guides/introduction/kustomize/>
 - Kubectl - command line of kubernetes - <https://kubectl.docs.kubernetes.io/guides/introduction/kubectl/>
 
+### Microcks - testing with Kubernetes
+
+- <https://www.linkedin.com/pulse/how-microcks-fit-unify-inner-outer-loops-cloud-native-kheddache/>
+- 
+
 ## Kubernetes Notes
 
 ### Kubernetes Overview
@@ -61,6 +67,9 @@
     - <https://kubernetes.io/docs/concepts/workloads/controllers/deployment/>
     - Deployment `describes` a desired state (in the yaml spec: section) and the Deployment Controller changes actual state to reflect desired state.
     - Replica Set aims to maintain a stable set of replica Pods running at any given time <https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/>.
+  - Restarting Pods 
+    - listing of a few methods
+      - <https://spacelift.io/blog/restart-kubernetes-pods-with-kubectl>
 
 ## Kubernetes commands
 
@@ -122,13 +131,12 @@ kubectl exec --stdin --tty shell-demo -- /bin/bash
 - <https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/>
 - <https://dev.to/narasimha1997/communication-between-microservices-in-a-kubernetes-cluster-1n41>
 
-
 ### K9s Useful Commands
 
 - <https://k9scli.io/topics/commands/> list of commands
 - <https://blog.palark.com/k9s-the-powerful-terminal-ui-for-kubernetes/> nice tutorial with plenty of examples
 
-#### Commands
+#### K9s Commands cheatsheet
 
 - The ":" is used as a command prefix and then can be followed by a command
   - :pods - see pods
@@ -166,5 +174,4 @@ spec:
     imagePullPolicy: IfNotPresent
     name: ubuntu
   restartPolicy: Always
-
-```  
+```

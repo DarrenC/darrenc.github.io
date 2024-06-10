@@ -208,8 +208,10 @@ not obvious what was on a branch when a release tag was created.
 This is a newer way of doing it - see the older way below
 
 ```bash
-  git fetch origin refs/pull-requests/$PR_NO/from:$LOCAL_BRANCH
+  git fetch origin refs/pull-requests/$PR_NO/from:$LOCAL_BRANCH  
 ```
+
+- Also this for adding remotes + the refs you want - branches, prs etc. so you can pull locally <https://www.atlassian.com/git/articles/pull-request-proficiency-fetching-abilities-unlocked>
 
 This is useful if you'd like to get the contents of a remote pull
 request in a local repo or local fork repo

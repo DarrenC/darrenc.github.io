@@ -518,6 +518,11 @@ $ watch ip -s link
 - <https://www.shellhacks.com/tune-command-line-history-bash/>
   - Tune the number of lines kept, when it gets written (end of session or immediately)
 
+- <https://www.cherryservers.com/blog/a-complete-guide-to-linux-bash-history>
+  - history command lists the history with a line number
+  - history -d <linenumber> or <range> to delete
+- Adding a space before a command will not add it to history (not in all distros)
+
 ## Cleaning Snaps
 
 - <https://superuser.com/questions/1310825/how-to-remove-old-version-of-installed-snaps>

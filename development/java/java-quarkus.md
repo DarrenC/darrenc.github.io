@@ -16,6 +16,7 @@
 
 - Cheat sheet - <https://lordofthejars.github.io/quarkus-cheat-sheet/>
 - Quarkus - benchmark of native vs JVM - <https://quarkus.io/blog/runtime-performance/>
+- <https://medium.com/ing-blog/how-does-non-blocking-io-work-under-the-hood-6299d2953c74>
 
 ## Log-Levels
 

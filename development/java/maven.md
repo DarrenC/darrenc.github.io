@@ -20,6 +20,9 @@
   - [MVND - a Maven daemon for building in parallel to speed up compile](#mvnd---a-maven-daemon-for-building-in-parallel-to-speed-up-compile)
   - [Maven logging](#maven-logging)
   - [Maven links](#maven-links)
+  - [Testing](#testing)
+  - [Maven Surefire plugin - running tests](#maven-surefire-plugin---running-tests)
+  - [Running a single test from commandline](#running-a-single-test-from-commandline)
 
 ## Books, articles
 
@@ -380,3 +383,18 @@ mvn --log-file ./mvn.log clean compile
 - <https://www.baeldung.com/maven>
 - <https://www.baeldung.com/maven-profiles>
 - <https://www.baeldung.com/executable-jar-with-maven>
+
+## Testing
+
+## Maven Surefire plugin - running tests
+
+- <https://maven.apache.org/surefire/maven-surefire-plugin/usage.html>
+
+## Running a single test from commandline
+
+- Examples of running various single tests - <https://www.baeldung.com/maven-run-single-test>
+
+```bash
+# Run a single test in a test class from mvn
+mvn -Dtest=TestApp#testMethod test
+```

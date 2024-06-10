@@ -51,6 +51,8 @@ Docker is a container engine built on LXC tech - VE implementations of Linux env
 - [Nice overview of building java apps with docker including multi-stage](https://blog.frankel.ch/hitchhiker-guide-containerizing-java-apps/)
 - [Overview of docker by a fullstack-dev](https://blog.andrewray.me/towards-a-strong-mental-model-of-docker/)
 - [Building docker images with small final size](https://phoenixnap.com/kb/docker-image-size)
+- quay.io - image storage site by redhat
+- buildah - alternative to docker/podman build for building images (but maybe not recommended)
 
 ### Trainings
 
@@ -58,6 +60,12 @@ Docker is a container engine built on LXC tech - VE implementations of Linux env
 
 - Tip - use the docs on dockerhub to see how to use the images
   - [MySQL image](https://hub.docker.com/_/mysql)
+
+- Redhat developer network - https://github.com/redhat-scholars/containers-tutorial
+  - https://developers.redhat.com/cheat-sheets
+    - Containers - https://red.ht/3wLLVvP
+    - Podman - https://red.ht/3WVldf4
+    - Buildah - https://red.ht/3JwBwMk
 
 ## Installing
 

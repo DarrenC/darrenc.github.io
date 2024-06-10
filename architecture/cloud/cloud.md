@@ -22,6 +22,7 @@
     - [Kafka Performance points](#kafka-performance-points)
   - [NATS](#nats)
     - [Checking NATS messages](#checking-nats-messages)
+  - [Fin Ops](#fin-ops)
 
 ## Cloud definitions
 
@@ -232,3 +233,8 @@ BUT THERE ARE DRAWBACKS
 nats sub '*.>' -s "server url" | grep '] Received on ' 
 
 ```
+
+
+## Fin Ops
+
+- <>

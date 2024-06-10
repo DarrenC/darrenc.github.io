@@ -18,6 +18,8 @@
     - [Mockito - stub() when() and given() - when to use what](#mockito---stub-when-and-given---when-to-use-what)
     - [JUNIT Testing Hamcrest](#junit-testing-hamcrest)
     - [Mockito and Dependency Injection](#mockito-and-dependency-injection)
+  - [JUnit setting env variables](#junit-setting-env-variables)
+  - [JUnit - reading for a log message](#junit---reading-for-a-log-message)
   - [Miscellaneous Testing](#miscellaneous-testing)
     - [Load Testing](#load-testing)
     - [Restful Resources Testing - Postman and Newman](#restful-resources-testing---postman-and-newman)
@@ -266,6 +268,41 @@ public class ExampleTest {
     }
 }
 ```
+
+## JUnit setting env variables
+
+Especially in multithreaded tests, if you have a static class calling System.getenv() then you can get into trouble. This is because the environment variables are set at the start of the JVM and are not updated when you change them in the test. Even Mockito mock static can have issues in multi-threaded tests.
+
+- <https://www.baeldung.com/java-unit-testing-environment-variables#setting-environment-variables-with-system-stubs>
+  - System stubs library can help with this
+
+```xml
+<dependency>
+    <groupId>uk.org.webcompere</groupId>
+    <artifactId>system-stubs-jupiter</artifactId>    
+    <scope>test</scope>
+</dependency>
+```
+
+```java
+// Add the extension to the test class
+@ExtendWith(SystemStubsExtension.class)
+class EnvironmentVariablesUnitTest {
+}
+
+// For a test where we know in advance the value we can set it as a variable with creation, otherwise can do a beforeEach method
+@SystemStub
+private EnvironmentVariables environment = new EnvironmentVariables("MY_VARIABLE", "is set");
+
+// Now when we call System.getEnv("MY_VARIABLE") we will get "is set"
+
+```
+
+## JUnit - reading for a log message
+
+- <https://stackoverflow.com/questions/1827677/how-to-do-a-junit-assert-on-a-message-in-a-logger>
+
+- Solution using spring-boot test class seems to be the simplest, otherwise can use a log appender.
 
 ## Miscellaneous Testing
 
