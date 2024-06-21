@@ -15,11 +15,12 @@
     - [K9s Useful Commands](#k9s-useful-commands)
       - [K9s Commands cheatsheet](#k9s-commands-cheatsheet)
   - [Simple yaml for a pod](#simple-yaml-for-a-pod)
+  - [Helm](#helm)
+    - [Configmaps in helm](#configmaps-in-helm)
 
 ## Kubernetes Articles
 
 - <https://medium.com/google-cloud/kubernetes-101-pods-nodes-containers-and-clusters-c1509e409e16>
-- <https://kubernetes.io/docs/concepts/workloads/pods/>
 
 - Kuberenetes with Nana <https://www.youtube.com/watch?v=s_o8dwzRlu4&list=PLXUDioG7XwE59TfSXWN-nDWiTlT5RwrZL&index=56&t=882s>
 - Kubernetes crash loop backoff with some nice utilities for logs etc - <https://sysdig.com/blog/debug-kubernetes-crashloopbackoff/>
@@ -40,6 +41,8 @@
 - Diagrams - <https://github.com/mingrammer/diagrams>
   - Python based tool to generate diagrams from code
   - Can generate kubernetes diagrams really easily
+- <https://k8studio.io/> - K8s studio - todo - check this out
+  - NB Licence free for personal use but paid for PRO
 
 ### Kubectl and Kustomize
 
@@ -62,6 +65,8 @@
 
 ### Components
 
+- Pods - <https://kubernetes.io/docs/concepts/workloads/pods/>
+  - Managing workloads - https://kubernetes.io/docs/concepts/workloads/management/
 - Deployment -> Replica Set -> Pod
   - Favour Deployment over directly using a replica set since you can give declarative updates to your pods
     - <https://kubernetes.io/docs/concepts/workloads/controllers/deployment/>
@@ -70,6 +75,10 @@
   - Restarting Pods 
     - listing of a few methods
       - <https://spacelift.io/blog/restart-kubernetes-pods-with-kubectl>
+- Operator Pattern - https://kubernetes.io/docs/concepts/extend-kubernetes/operator/
+  - https://www.redhat.com/en/topics/containers/what-is-a-kubernetes-operator
+  - https://www.cncf.io/blog/2022/06/15/kubernetes-operators-what-are-they-some-examples/
+- Custom Resources - https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/
 
 ## Kubernetes commands
 
@@ -175,3 +184,11 @@ spec:
     name: ubuntu
   restartPolicy: Always
 ```
+
+## Helm
+
+- Customizing the configmap name generated - [ChatGPT question - "research helm, when installing a helm chart which creates a configmap, the configmap is always named with the namespace and release name but I want only the release name"](https://chatgpt.com/c/26d6868f-8625-4414-bd34-b9d2203697c1?oai-dm=1)
+
+### Configmaps in helm
+
+- https://stackoverflow.com/questions/69837364/helm-configmap-in-values-yaml

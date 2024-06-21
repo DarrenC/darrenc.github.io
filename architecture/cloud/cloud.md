@@ -126,6 +126,7 @@ TODO -> need a page just for this I think
 
 - Kafka commandline cheatsheet - <https://thecodinginterface.com/blog/kafka-cli-cheat-sheet/>
 - Kafka tutorials - <https://developer.confluent.io/quickstart/kafka-local/>
+- Redhat intro - https://developers.redhat.com/learn/apache-kafka/kafka-101
 
 ### Use Cases
 

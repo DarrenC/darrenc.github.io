@@ -82,9 +82,10 @@
   - [JAX-RS](#jax-rs)
     - [Server side - build a JSON Response body](#server-side---build-a-json-response-body)
     - [Client side - Reading or Printing a JSON Response body](#client-side---reading-or-printing-a-json-response-body)
-  - [Asynchronous Programming](#asynchronous-programming)
+  - [Asynchronous Programming - Completable Futures \& Futures](#asynchronous-programming---completable-futures--futures)
     - [thenApply vs thenCompose](#thenapply-vs-thencompose)
-    - [Mocking errors in CompletableFuture](#mocking-errors-in-completablefuture)
+    - [Exception handling](#exception-handling)
+      - [Mocking errors in CompletableFuture](#mocking-errors-in-completablefuture)
   - [Lombok](#lombok)
   - [Javadoc](#javadoc)
     - [Referencing methods in javadoc](#referencing-methods-in-javadoc)
@@ -206,6 +207,8 @@ getAllJavaArticles() {
 
 - <http://www.oracle.com/technetwork/articles/java/java8-optional-2175753.html>
 - <http://winterbe.com/posts/2015/03/15/avoid-null-checks-in-java/>
+- <https://stackoverflow.com/questions/17081063/how-should-we-manage-jdk8-stream-for-null-values>
+- <https://www.baeldung.com/java-null-safe-streams-from-collections>
 
 - Nice example of a nested mapping approach with Optional - <https://lprakashv.medium.com/handling-nulls-in-nested-objects-java-7079b9413ec9>
 
@@ -970,7 +973,7 @@ public Response getPojoResponse() {
 
 (See also the Rest page in architecture)
 
-## Asynchronous Programming
+## Asynchronous Programming - Completable Futures & Futures
 
 Involves using Completable Futures and Futures to handle asynchronous programming.
 
@@ -981,9 +984,6 @@ Involves using Completable Futures and Futures to handle asynchronous programmin
 - Another example - <https://www.twilio.com/blog/asynchronous-api-requests-java-completablefutures>
 - Java 8 Oreilly - CompletableFuture composable asynchronous programming - <https://learning.oreilly.com/library/view/java-8-in/9781617291999/kindle_split_023.html>
 
-
-
-
 ### thenApply vs thenCompose
 
 - Equivalent to map and flatmap
@@ -992,7 +992,13 @@ Involves using Completable Futures and Futures to handle asynchronous programmin
   - apply - use when a single completable future
   - compose - when a nested completable future
 
-### Mocking errors in CompletableFuture
+### Exception handling
+
+- 3 Ways to Handle Exception In Completable Future - <https://mincong.io/2020/05/30/exception-handling-in-completable-future/>
+- Asynchronous Timeouts with CompletableFuture - <https://dzone.com/articles/asynchronous-timeouts>
+- <https://www.dariawan.com/tutorials/java/java-12-exception-handling-completionstage-completablefuture/>
+
+#### Mocking errors in CompletableFuture
 
 - Seems better to return a future containing an Exception rather than mockito().throws() - <https://stackoverflow.com/questions/45657008/simulate-completionexception-in-a-test>
 

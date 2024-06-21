@@ -41,6 +41,9 @@ Can create JAX-WS services either from code or from a WSDL. WSDL is better suppo
 
 - Nice example of a simple async ws <https://godatadriven.com/blog/reactive-web-service-client-with-jax-ws/>
 - <https://www.nickebbitt.com/blog/2017/03/22/asynchronous-web-service-using-completable-future/>
+- <https://users.cxf.apache.narkive.com/g0gTOzdd/making-async-interfaces-manually-with-annotations-etc>
+- WSDL for Asynchronous Examples - <https://docs.huihoo.com/iona/celtix/1.1/jaxws/JAXWSAsyncDevWSDL.html>
+- Async with CXF - <https://stackoverflow.com/questions/25241712/non-blocking-ws-call-with-cxf?noredirect=1&lq=1>
 
 #### Basic Procedure Notes
 
@@ -197,8 +200,6 @@ public final class Client {
   - These plugins are called via the cxf codegen plugin 
 
 TODO -> Example from the CXF examples showing both directions
-
-
 
 ### Handling SOAP exceptions
 
