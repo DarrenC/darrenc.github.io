@@ -3,13 +3,17 @@
 - [Java - Quarkus](#java---quarkus)
   - [Useful Links](#useful-links)
   - [Log-Levels](#log-levels)
+  - [Quarkus Config](#quarkus-config)
   - [MicroProfile Rest Client vs Server side Jax-RS](#microprofile-rest-client-vs-server-side-jax-rs)
     - [Quarkus Reactive programming for RestEasy](#quarkus-reactive-programming-for-resteasy)
+      - [Rest](#rest)
     - [Microprofile RestClient Exception handling](#microprofile-restclient-exception-handling)
   - [Scheduling stuff in Quarkus](#scheduling-stuff-in-quarkus)
   - [Remote debug in Quarkus](#remote-debug-in-quarkus)
   - [Quarkus Testing](#quarkus-testing)
+    - [Testing Mock Server](#testing-mock-server)
   - [Quarkus CXF](#quarkus-cxf)
+    - [CXF for quarkus timeouts](#cxf-for-quarkus-timeouts)
   - [Context handling in Quarkus microservices](#context-handling-in-quarkus-microservices)
 
 ## Useful Links
@@ -38,6 +42,11 @@
   QUARKUS_LOG_CATEGORY__ORG_MY__LEVEL=WARN
 ```
 
+## Quarkus Config
+
+- <https://quarkus.io/guides/config-reference#environment-variables>
+  - Details how to handle non-alpha non-numeric chars in environment variables by replacing with underscores
+
 ## MicroProfile Rest Client vs Server side Jax-RS
 
 - Standard JAX-RS - Server side to map Exception to Response - javax.ws.rs.ext.ExceptionMapper
@@ -49,7 +58,18 @@
 - SUPER IMPORTANT TODO - RESTEasy Reactive in Quarkus- <https://www.youtube.com/watch?v=30eFZGml_-g>
   - This is something we can do to gain performance
   - also intro to mutiny primer - <https://quarkus.io/guides/mutiny-primer>
+- And Vert.X (vertx) <https://quarkus.io/guides/vertx-reference>
 
+#### Rest
+
+- [RESTEasy Reactive - To block or not to block](https://quarkus.io/blog/resteasy-reactive-smart-dispatch)
+  - Examples of using mutiny uni etc.
+  - Advanced Vert.x guide - <https://vert-x3.github.io/advanced-vertx-guide/index.html>
+  - https://vertx.io/docs/vertx-core/java/#event_bus - https://stackoverflow.com/questions/40709931/vertx-scaling-the-number-of-instances-per-thread
+  - https://stackoverflow.com/questions/25180866/vert-x-wait-for-reply-on-multiple-messages 
+
+- https://stackoverflow.com/questions/64541883/quarkus-how-to-setup-a-global-custom-threadpoolexecutor
+- 
 ### Microprofile RestClient Exception handling
 
 When you are working with the microprofile rest client it throws a WebApplicationException for http codes >=400.
@@ -167,6 +187,12 @@ class SomeQuarkusTest {
 
 - This works even from a Quarkus TestResource (when defining your own impl of the resource lifecycle manager) but without a test profile, the regular profile doesn't get access to the config params - maybe a lifecycle issue with instantiation.
 
+### Testing Mock Server
+
+Can use Mock Server http server in testing - quarkus has a mock server extension
+
+- <https://docs.quarkiverse.io/quarkus-mockserver/dev/index.html>
+  - Based on this under the covers netty based mock http server <https://mock-server.com/>
 
 ## Quarkus CXF
 
@@ -187,6 +213,11 @@ Environment variable: QUARKUS_CXF_CLIENT__CLIENTS__OUT_FAULT_INTERCEPTORS
 
 - https://github.com/quarkiverse/quarkus-cxf/issues/4 - non blocking quarkus calls
 
+### CXF for quarkus timeouts 
+
+- https://stackoverflow.com/questions/31797778/timeout-not-working-with-apache-cxf-for-aysnchronous-calls
+- Link to configuration params - https://docs.quarkiverse.io/quarkus-cxf/dev/reference/extensions/quarkus-cxf.html#quarkus-cxf_quarkus-cxf-client-client-name-receive-timeout
+
 ## Context handling in Quarkus microservices
 
 - <https://quarkus.io/guides/context-propagation#usage-example-for-completionstage>
@@ -205,3 +236,4 @@ Environment variable: QUARKUS_CXF_CLIENT__CLIENTS__OUT_FAULT_INTERCEPTORS
 
 
 ```
+

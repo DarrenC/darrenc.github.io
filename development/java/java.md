@@ -84,8 +84,12 @@
     - [Client side - Reading or Printing a JSON Response body](#client-side---reading-or-printing-a-json-response-body)
   - [Asynchronous Programming - Completable Futures \& Futures](#asynchronous-programming---completable-futures--futures)
     - [thenApply vs thenCompose](#thenapply-vs-thencompose)
+    - [ThenApply vs ThenApplyAsync](#thenapply-vs-thenapplyasync)
     - [Exception handling](#exception-handling)
       - [Mocking errors in CompletableFuture](#mocking-errors-in-completablefuture)
+    - [Join vs Get in Completable Future](#join-vs-get-in-completable-future)
+    - [Thread pooling with Completable Futures](#thread-pooling-with-completable-futures)
+  - [Failsafe and fault tolerant JVM patterns](#failsafe-and-fault-tolerant-jvm-patterns)
   - [Lombok](#lombok)
   - [Javadoc](#javadoc)
     - [Referencing methods in javadoc](#referencing-methods-in-javadoc)
@@ -992,6 +996,10 @@ Involves using Completable Futures and Futures to handle asynchronous programmin
   - apply - use when a single completable future
   - compose - when a nested completable future
 
+### ThenApply vs ThenApplyAsync
+
+- <https://www.baeldung.com/java-completablefuture-thenapply-thenapplyasync>
+
 ### Exception handling
 
 - 3 Ways to Handle Exception In Completable Future - <https://mincong.io/2020/05/30/exception-handling-in-completable-future/>
@@ -1010,6 +1018,24 @@ Mockito.when(mockClient.getSize())
         .thenReturn(future);
 
 ```
+
+### Join vs Get in Completable Future
+
+- <https://www.baeldung.com/java-completablefuture>
+- <https://www.baeldung.com/java-completablefuture-join-vs-get>
+  - join() - throws unchecked exceptions
+  - get() - throws checked exceptions
+- <https://www.tedblob.com/completablefuture-join-vs-get/>
+
+### Thread pooling with Completable Futures
+
+- <https://www.baeldung.com/java-completablefuture-threadpool>
+
+
+## Failsafe and fault tolerant JVM patterns
+
+- <https://failsafe.dev/>
+- <https://www.baeldung.com/java-failsafe-fault-tolerance>
 
 ## Lombok
 

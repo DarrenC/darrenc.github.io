@@ -8,6 +8,7 @@
   - [Agile](#agile)
   - [Lucene + SOLR](#lucene--solr)
   - [Architecture + Craftsmanship stuff](#architecture--craftsmanship-stuff)
+    - [Microservices](#microservices)
   - [Code Software Craftsmanship](#code-software-craftsmanship)
   - [Data Science](#data-science)
   - [Domain Specific Languages](#domain-specific-languages)
@@ -142,6 +143,10 @@
       Arlo Belshee - Refactoring - http://arlobelshee.com/the-core-6-refactorings/#more-243
       Arlo Belshee - DRY vs WET - Write explicit tests - http://arlobelshee.com/wet-when-dry-doesnt-apply/#more-239
 - Domain Driven Design - file:///home/dcostello/Downloads/Mastering%20Strategic%20Domain-Driven%20Design%20-%20Maciej%20Jedrzejewski.pdf
+
+### Microservices
+
+- https://martinfowler.com/bliki/MonolithFirst.html
 
 ## Code Software Craftsmanship
 

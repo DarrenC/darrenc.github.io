@@ -91,6 +91,15 @@
 - A way to include a repository within another repository.
 - <https://codingkilledthecat.wordpress.com/2012/04/28/why-your-company-shouldnt-use-git-submodules/>
 
+```bash
+  # Clone and update sub-modules
+  git clone --recurse-submodules <clone url>
+
+  # Key commands from inside the parent directory if you've already cloned
+  git submodule init 
+  git submodule update
+```
+
 ## Git tools
 
 - gitk -> nice visual viewer for history (like a git log but graphic + has diffs), waaaaayyyy better than looking on bitbucket

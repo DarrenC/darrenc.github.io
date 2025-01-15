@@ -61,3 +61,33 @@
   - https://www.dcrainmaker.com/2019/08/how-to-install-free-maps-on-your-garmin-edge.html
   - https://forums.garmin.com/sports-fitness/cycling/f/edge-520-520-plus/129614/update-maps-from-openstreetmaps
   - https://5cycling.com/garmin-edge-520-plus-review/  
+
+### Updating OpenStreetMap
+
+- https://www.boards.ie/discussion/2058349397/a-request-to-action-camera-users
+
+```
+
+I was hoping to appeal to those of you with action cameras (garmin virb, gopro, insta360, an so on) to consider helping improve OpenStreetMap by uploading your recorded cycles.
+
+I am not sure if you have considered it much but OpenStreetMap is used a lot in various tools used for us from our bike computers to route planning (strava, komoot and much more). OpenStreetMap us updated by anyone who wants to which can mean depending on the area if can be really well mapped or in other cases very lacking.
+
+If your cycles are being recorded they can be uploaded to one of a few website which can take the recordings and overlay them on OpenStreetMap and this can then be used by anyone in Ireland or wider a field to update OpenStreetMap without the need to physically visit a location.
+
+Updates can be beneficial to us for example we can record
+
+    surface type and quality of roads or trails, which is great for route planning on komoot or strava
+    bike paths and if they are segregated
+    locations of cafes
+    public water sources
+    repair stands
+    bicycle parking (capacity, stand time, covered or not)
+    CCTV in relation to bike parking
+
+If you'd be interested in sharing recorded rides or just see how it works the three main places at the moment that they can be uploaded to are
+
+    Mapillary https://www.mapillary.com/
+    Kartaview https://kartaview.org/
+    Panoramax https://panoramax.fr/
+
+```

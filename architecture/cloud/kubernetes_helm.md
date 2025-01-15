@@ -17,6 +17,8 @@
   - [Simple yaml for a pod](#simple-yaml-for-a-pod)
   - [Helm](#helm)
     - [Configmaps in helm](#configmaps-in-helm)
+  - [Definitions](#definitions)
+  - [Basic Kuberenetes Tutorial](#basic-kuberenetes-tutorial)
 
 ## Kubernetes Articles
 
@@ -192,3 +194,16 @@ spec:
 ### Configmaps in helm
 
 - https://stackoverflow.com/questions/69837364/helm-configmap-in-values-yaml
+
+
+## Definitions
+
+- https://redhat-scholars.github.io/kubernetes-tutorial/kubernetes-tutorial/secrets.html
+- https://stackoverflow.com/questions/61171487/what-is-the-difference-between-namespaces-and-contexts-in-kubernetes
+- https://stackoverflow.com/questions/55373686/how-to-switch-namespace-in-kubernetes
+- https://semaphoreci.com/blog/replicaset-statefulset-daemonset-deployments
+
+## Basic Kuberenetes Tutorial
+(SEE Also DC local files and obsidian for notes)
+- <https://redhat-scholars.github.io/kubernetes-tutorial/kubernetes-tutorial/index.html>
+- https://github.com/redhat-scholars/kubernetes-tutorial
