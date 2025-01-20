@@ -7,6 +7,7 @@
   - [Installing](#installing)
   - [Basic commands](#basic-commands)
     - [Starting and stopping containers](#starting-and-stopping-containers)
+    - [Viewing and connecting to containers](#viewing-and-connecting-to-containers)
   - [Basic images](#basic-images)
   - [Using network host](#using-network-host)
   - [Volumes and Mounting](#volumes-and-mounting)
@@ -155,6 +156,33 @@ docker inspect <container_id>
 # Get the IP address for a running container, searching by image name
 docker inspect --format='{{.NetworkSettings.IPAddress}}' $(docker ps -f ancestor=myImageName --format "{{.ID}}")
 
+```
+
+### Viewing and connecting to containers
+
+```bash
+# Seeing running docker containers
+docker ps
+# filter by name
+docker ps -f "name=myApp"
+# Show all (not just running containers)
+docker ps -a
+ 
+# Connecting to the constainer
+docker exec -ti <container id from docker ps> bash
+ 
+# Docker compose with detached and select container to start
+$ docker-compose up -d <app_name>
+$ docker-compose down
+ 
+# tailing the container log
+$ docker log -f <container id>
+ 
+# killing all running myImage containers
+docker kill $(docker ps -f "ancestor=dockerhub.com/com/myimage" -a -q)
+  
+# Copy the app logs from the running app container
+$ docker cp $(docker ps -f "name=myApp" -q):/myAppPath/Log .
 ```
 
 ## Basic images
