@@ -10,6 +10,7 @@
     - [Components](#components)
   - [Kubernetes commands](#kubernetes-commands)
     - [Admin stuff](#admin-stuff)
+    - [Copying files](#copying-files)
     - [Getting a shell to a running container](#getting-a-shell-to-a-running-container)
   - [Inter pod communication](#inter-pod-communication)
     - [K9s Useful Commands](#k9s-useful-commands)
@@ -122,6 +123,13 @@ kubectl --as=system:serviceaccount:"$NS":$SA auth can-i use
 # kube-apiserver command
 kubectl exec -it -n kube-system kube-apiserver-kind-control-plane -- kube-apiserver -h
 ```
+
+### Copying files
+
+```bash
+kubectl cp <somepodname>:/path/to/file /path/to/destination
+```
+- https://stackoverflow.com/questions/52407277/how-to-copy-files-from-kubernetes-pods-to-local-system
 
 - Debug - run as another user - <https://kubernetes.io/docs/reference/access-authn-authz/authentication/#user-impersonation>
 
